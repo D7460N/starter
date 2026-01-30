@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+/* ^^^ @import must always be top ^^^ */
+
+/*
+MARK: STARTER SETUP
+
+Features:
+- Platform-agnostic
+- Project-agnostic
+- Framework-agnostic
+- Data-agnostic
+- Minimal reset
+- Minimal nesting
+- Minimal markup 
+- Semantic markup
+- Zero-dependencies
+- Zero div
+- Zero span
+- Zero id
+- Zero class
+- Zero data-*
+- Light/dark/system mode
+- Liquid typography
+- Cross-browser formatting consensus
+- Image behavior conformity
+- Transition consistancy
+- JS for API/CRUD only
+*/
+
+/* MARK: RESET
+*/
+*,
+* *,
+*:before,
+*:after,
+::after,
+::before {
+  --transition-property: display, height, width, padding, margin, color, border, opacity;
+  --transition-duration: 250ms;
+  --transition-timing-function: ease;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition-behavior: allow-discrete;
+  transition-property: var(--transition-property);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+/* https://drafts.csswg.org/selectors-4/#typedef-forgiving-selector-list
+- Forgiving selector list
+- Specificity == 0
+- Allows easy override */
+:where(img, picture, video, canvas, svg) {
+  display: block;
+  max-inline-size: 100%;
+}
+
+:where(button, input, select, textarea) {
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: currentColor;
+}
+
+:root {
+  --transition-duration: 250ms;
+  --transition-property: visibility, opacity, display, transform, background,
+    background-color, border-color, color, min-width;
+  --transition-timing-function: ease-in;
+  color-scheme: light dark;
+  font-family: Oxanium, sans-serif;
+  font-size: clamp(1rem, calc(1rem + 0.8cqi), 1.75rem);
+  /* https://html-css-tip-of-the-week.netlify.app/tip/interpolate-size/
+  https://12daysofweb.dev/2024/calc-size-and-interpolate-size/ */
+  interpolate-size: allow-keywords;
+  scroll-behavior: smooth;
+}
+
+/* DOM order */
+:where(app-container, header, nav, main, article, section, aside, footer) {
+  display: grid;
+  border: solid 1px currentcolor;
+  border-radius: 0.3rem;
+}
+
+/* MARK: LAYOUT */
+app-container {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  height: 100dvh;
+  grid-template-rows: auto auto 1fr auto;
+  align-items: start;
+  border: none;
+}
+
+main {
+  height: 100%;
+  align-content: start;
+}
+
+article,
+section {
+  border: none;
+  height: 100%;
+}
+
+/* Only content level elements receive padding/margin */
+:where(app-logo, app-copy, app-version) {
+  padding: 1rem;
+}
+
+h1,
+p {
+  padding-block-start: 1rem;
+  padding-inline: 1rem;
+}
+
+/* MARK: TYPOGRAPGY */
+h1 {
+  font-size: 1.3rem;
+}
+p {
+  font-size: 0.9rem;
+}
+
+/* MARK: HEURISTICS */
+/* intrinsic sticky headers */
+app-container,
+main,
+article {
+  overflow: hidden;
+}
+
+section {
+  overflow: auto;
+}
+
+/* aside hidden until receives content */
+aside {
+  display: none;
+  
+  &:not(:empty) {
+    display: grid;
+  }
+}
+
+/* Intrinsic space trigger */
+nav {
+  grid-auto-flow: column;
+  justify-items: start;
+
+  label {
+    padding-inline: 0.5rem;
+    padding-block: 0.5em;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.6;
+
+    &:has(input:checked) {
+      opacity: 1;
+    }
+  }
+}
+
+/* State machine */
+[aria-hidden="true"] {
+  display: none;
+}
