@@ -1,0 +1,154 @@
+/* MARK: THEME | Dark
+*/
+:root {
+  accent-color: light-dark(#005A9C, #66CCFF);
+
+  --bg-color: 19, 20, 23;
+  --bg-opacity: 1.0;
+  --bg-02-color: 39, 49, 54;
+  --bg-02-opacity: 1.0;
+  --bg-panel-color: 255, 255, 255;
+  --bg-panel-opacity: 0.05;
+  --bg-active-color: 255, 255, 255;
+  --bg-active-opacity: 0.05;
+  --bg-accent-color: 48, 190, 255;
+  --bg-accent-opacity: 0.5;
+  --bg-grd: linear-gradient(180deg,
+      rgba(50, 70, 80, 0.9) 0,
+      #0d101b 100%);
+  --txt-color: 255, 255, 255;
+  --txt-opacity: 0.6;
+  --txt-active: 255, 255, 255;
+  --txt-active-opacity: 1.0;
+  --txt-link: 102, 204, 255;
+  --txt-link-opacity: .5;
+  --txt-muted: 255, 255, 255;
+  --txt-muted-opacity: 0.5;
+  --txt-shadow: -1px 1px rgba(var(--txt-shadow-color),
+      var(--txt-shadow-opacity));
+  --txt-shadow-color: 0, 0, 0;
+  --txt-shadow-opacity: 1.0;
+  --accent: #005A9C;
+  --accent2: 48, 190, 255;
+}
+
+
+/* MARK: THEME | Light
+*/
+@media (prefers-color-scheme: dark) {
+  :root:has(header label:last-of-type input:checked) {
+    --bg-color: 0, 0, 0;
+    --bg-opacity: 0.8;
+    --bg-02-color: 0, 0, 0;
+    --bg-02-opacity: 0.5;
+    --bg-panel-color: 255, 255, 255;
+    --bg-panel-opacity: 0.2;
+    --bg-active-color: 255, 255, 255;
+    --bg-active-opacity: 0.2;
+    --bg-grd: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.7) 0,
+        rgba(255, 255, 255, 0.4) 100%);
+    --txt-color: 54, 54, 77;
+    --txt-opacity: 1.0;
+    --txt-link: 41, 41, 169;
+    --txt-link-opacity: .5;
+    --txt-active: 0, 0, 0;
+    --txt-active-opacity: 1.0;
+    --txt-muted: 0, 0, 0;
+    --txt-muted-opacity: 0.5;
+    --txt-shadow: -1px 1px 0 rgba(var(--txt-shadow-color),
+        var(--txt-shadow-opacity));
+    --txt-shadow-color: 255, 255, 255;
+    --txt-shadow-opacity: 0.3;
+    --accent: rgb(102, 204, 255);
+    --accent2: 48, 190, 255;
+  }
+}
+
+/* MARK: LOOK/FEEL
+*/
+body {
+  background-color: rgba(var(--bg-color), var(--bg-opacity));
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100dvh;
+    background-attachment: initial;
+    background-color: transparent;
+    background-image: url('../images/app/ui/pattern.png');
+    background-size: 4.6875rem;
+    background-repeat: repeat;
+    z-index: -5;
+  }
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100dvh;
+  z-index: -5;
+  background: var(--bg-grd);
+}
+
+
+
+/* html:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+  height: 100dvh;
+  background-color: rgba(var(--bg-02-color), var(--bg-02-opacity));
+  background-image: url('../images/brand/logos/logo.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: inherit; */
+/* background-size: cover; */
+/* background-size: 75% 75%;
+} */
+
+/* MARK: ALL PANELS
+*/
+app-container > * {
+  background-color: rgba(var(--bg-panel-color), var(--bg-panel-opacity));
+}
+
+[role="button"],
+button {
+  --bg-panel-opacity: 0.1;
+}
+
+/* MARK: FORMS
+*/
+form fieldset label:focus {
+  color: rgba(var(--txt-color), 1.0)
+}
+
+/*
+div {
+background: */
+/* cover */
+/* linear-gradient(var(--bg-panel-color) 33%,
+      rgba(var(--bg-panel-color), 0.0)),
+    linear-gradient(rgba(var(--bg-panel-color), 0.0),
+      var(--bg-panel-color) 66%) 0 100%, */
+/* drop-shadow */
+/* radial-gradient(farthest-side at 50% 0,
+      rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0)),
+    radial-gradient(farthest-side at 50% 100%,
+      rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0)) 0 100%;
+  background-color: rgba(var(--bg-panel-color), var(--bg-panel-opacity));
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
+  background-size: 100% 36px, 100% 36px, 100% 5px, 100% 5px;
+}
+*/
