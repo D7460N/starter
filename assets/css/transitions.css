@@ -1,0 +1,104 @@
+/* MARK: TRANSITIONS */
+
+:root {
+  --transition-duration: 500ms;
+  --transition-property: visibility, opacity, display, transform, background, background-color, border-color, color, min-width;
+  --transition-timing-function: ease-in;
+
+  scroll-behavior: smooth;
+
+  /* https://html-css-tip-of-the-week.netlify.app/tip/interpolate-size/
+            https://12daysofweb.dev/2024/calc-size-and-interpolate-size/ */
+  interpolate-size: allow-keywords;
+}
+
+* {
+  transition-property: var(--transition-property);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  transition-behavior: allow-discrete;
+}
+
+/* Accessibility feature */
+@media (prefers-reduced-motion) {
+  * {
+    transition-duration: 0ms;
+  }
+}
+
+/* https://adactio.com/journal/21896 */
+/*https://webkit.org/blog/7551/responsive-design-for-motion/ */
+@media (prefers-reduced-motion: no-preference) {
+
+  /* https://webkit.org/blog/16967/two-lines-of-cross-document-view-transitions-code-you-can-use-on-every-website-today/ */
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+/* https://www.bram.us/2025/01/29/view-transitions-page-interactivity/ */
+@layer view-transitions {
+
+  /* Don’t capture the root, allowing pointer interaction while elements are animating */
+  @layer no-root {
+    :root {
+      view-transition-name: none;
+    }
+
+    ::view-transition {
+      pointer-events: none;
+    }
+  }
+}
+
+@starting-style {
+  * {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+/* aside {
+                                                                                        transition: all;
+                                                                                        } */
+
+
+/* a,
+                                                                                        h1,
+                                                                                        p,
+                                                                                        button,
+                                                                                        [role="button"] {
+                                                                                          transition: background-color var(--transition-duration), color var(--transition-duration);
+                                                                                          } */
+
+main article ul:last-of-type {
+  overflow-x: auto;
+  scroll-snap-type: y mandatory;
+
+  > * {
+    grid-template-columns: auto;
+    scroll-snap-align: start;
+  }
+}
+
+/* @keyframes fadeIn {
+                                                                                                            from {
+                                                                                                                opacity: 0;
+                                                                                                                    transform: translateY(-0.25rem);
+                                                                                                                      }
+
+                                                                                                                        to {
+                                                                                                                            opacity: 1;
+                                                                                                                                transform: translateY(0);
+                                                                                                                                  }
+                                                                                                                                  }
+
+                                                                                                                                  @keyframes fadeInOut {
+                                                                                                                                    from {
+                                                                                                                                        opacity: 0.4;
+                                                                                                                                          }
+
+                                                                                                                                            to {
+                                                                                                                                                opacity: 1;
+                                                                                                                                                  }
+                                                                                                                                                  } */
