@@ -101,7 +101,7 @@ Example:
 </li>
 ```
 
-This is intentional. CSS handles messaging via `:empty`.
+This is intentional. CSS handles messaging via `:empty` and or HTML tag names.
 
 ---
 
