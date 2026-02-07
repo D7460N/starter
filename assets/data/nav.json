@@ -1,7 +1,22 @@
 {
-  "itemOne": "Dashboard",
-  "itemTwo": "Reports",
-  "itemThree": "Alerts",
-  "itemFour": "Settings",
-  "itemFive": "Help"
+  "home": {
+    "label": "Home",
+    "url": "/assets/data/home.json"
+  },
+  "about": {
+    "label": "About",
+    "url": "/assets/data/about.json"
+  },
+  "events": {
+    "label": "Events",
+    "url": "/assets/data/events.json"
+  },
+  "products": {
+    "label": "Products",
+    "url": "/assets/data/products.json"
+  },
+  "contact": {
+    "label": "Contact",
+    "url": "/assets/data/contact.json"
+  }
 }
