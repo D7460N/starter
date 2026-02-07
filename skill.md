@@ -1,5 +1,5 @@
 name: css-driven-template  
-description: index.html and accompanying CSS and JS files are to be used as a starter template for all web-sites and web-applications. It is data-, project-, platform-, framework-, resolotion-agnostic, SPA, PWA template that completely separates the presentation-layer front-end from the data-layer back-end. JavaScript of any kind is strictly prohibited and is replaced with modern standard vanilla semantic baseline HTML and CSS (except when and where explicitly indicated). This means the following:
+description: index.html and accompanying CSS and JS files are to be used as a starter template for all web-sites and web-applications. It is data-, project-, platform-, framework-, resolotion-agnostic, SPA, PWA template that completely separates the presentation-layer front-end from the data-layer back-end. JavaScript of any kind is strictly prohibited and is replaced with modern standard vanilla semantic baseline HTML and CSS (except when and where explicitly indicated). This means the following is non-negotiable:
 
 1. Unless otherwise indicated, this code base shall NEVER default to, NEVER consider, NEVER refer to, NEVER suggest, and NEVER use third party dependencies.
 2. Third party dependencies are defined as any packaged code or system that is not able render natively (without assistance) or must be compiled and or pre-built to run in an evergreen web browser.
@@ -10,23 +10,22 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 7. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS replace JS equivalent functionality EXCEPT for API calls for CRUD operations.
 8. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS be limited to API calls for CRUD operations only.
 9. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `document.querySelector('');` for targeting all selectors.
-10. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `oninput` as the trigger for all API CRUD operations.
-11. Unless otherwise indicated, JS shall NEVER default to and NEVER use any event listeners.
-12. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS use `<label>`.
-13. Unless otherwise indicated, HTML markup shall ALWAYS default to and ALWAYS be semantic, minimally nested, and intuitive to developers.
-14. Unless otherwise indicated, the principal of Separation of Concerns between presentation and data layers shall ALWAYS be maintained.
-15. Unless otherwise indicated, the principal of Least Power shall ALWAYS be maintained.
-16. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS determine DOM element visibility via `:empty` and `:has()` pseudo selectors.
-17. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use modern CSS style queries and other CSS only combinations of modern CSS techniques to design and build functionality without requiring hard or static values that would otherwise need to be maintained.
-18. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS manage light and dark mode color-scheme syntax and variables in `:root{}`.
-19. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use a11y selectors when possible.
-20. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use checkboxes inside `<label>`s with `role="button"` combined with `:has()`, `:not`, and `:empty()` for state machines.
-21. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use a radio buttos inside a `<label>` with `role="button"` combined with `:has()`, `:not`, and `:empty()` inside `<nav>` for global navigation.
-22. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS use one single file, `index.html` at the project root.
-23. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS be a full-bleed Holy Grail layout.
-24. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS use the following one and only `index.html` skeletal layout markup. 
-
-# CSS-Driven Web Template
+10. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `oninput` for ALL API CRUD operations.
+11. Unless otherwise indicated, JS shall NEVER default to and NEVER use any user initiated event for any API CRUD operations.
+12. Unless otherwise indicated, JS shall NEVER default to and NEVER set or use any event listeners.
+13. Unless otherwise indicated, JS shall NEVER default to and NEVER set or use any listeners at all - ever.
+14. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS use `<label>`.
+15. Unless otherwise indicated, HTML markup shall ALWAYS default to and ALWAYS be semantic, minimally nested, and intuitive to developers.
+16. Unless otherwise indicated, the principal of Separation of Concerns between presentation and data layers shall ALWAYS be maintained.
+17. Unless otherwise indicated, the principal of Least Power shall ALWAYS be maintained.
+18. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS determine DOM element visibility via `:empty` and `:has()` pseudo selectors.
+19. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use modern CSS style queries and other CSS only combinations of modern CSS techniques to design and build functionality without requiring hard or static values that would otherwise need to be maintained.
+20. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS manage light and dark mode color-scheme syntax and variables in `:root{}`.
+21. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use a11y selectors when possible.
+22. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use checkboxes inside `<label>`s with `role="button"` combined with `:has()`, `:not`, and `:empty()` for state machines.
+23. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use a radio buttos inside a `<label>` with `role="button"` combined with `:has()`, `:not`, and `:empty()` inside `<nav>` for global navigation.
+24. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS use one single file, `index.html` at project root.
+25. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS be a full-bleed Holy Grail layout using the skeletal layout markup found in the `index.html` file.
 
 ## Architecture
 
@@ -34,17 +33,6 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 - **assets/css/**: Drop-in modular CSS files control all layout, conditional DOM visibility, themes, user interaction, heuristics
 - **assets/js/**: Data transport for CRUD operations only
 - **assets/images/**: Static assets
-
-## Key Principles (non-negotiable)
-
-1. Code shall default to and always be modern and vanilla.
-2. HTML markup shall default to and always be semantic, minimally nested, and intuitive to developers.
-3. 3rd party dependencies shall NEVER be considered, suggested, or used unless otherwise instructed.
-4. Separation of Concerns between presentation and data layers shall always be maintained.
-5. CSS controls DOM element visibility via `:empty` selectors
-6. CSS manages themes, a11y, and data states
-7. JavaScript is limited to API calls only
-8. Never add/remove DOM elements for show/hide-use CSS
 
 ## CSS Files
 
@@ -60,3 +48,34 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 - Keep JS focused on fetch/CRUD only
 - Always only ever use semantic HTML markup
 - Never use div, span, class, data-*, or id.
+
+## State Machines
+
+Consist of four parts . . .
+
+- HTML `<label>` element
+- HTML `<input type="checkbox">` or `<input type="radio">` - nested inside the `<label>`
+- CSS `:has()` for UI change
+- JS `oninput` for API CRUD operations
+
+. . . and are built with this vanilla HTML design pattern.
+
+```
+<label role="button">
+  label text
+  <input type="checkbox">
+</label>
+```
+
+Global nav items will be exactly the same but use `<input type="radio" name="nav">`
+
+
+
+
+
+
+
+
+
+
+
