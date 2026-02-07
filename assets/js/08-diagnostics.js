@@ -1,5 +1,5 @@
-function logBoundary(status, boundary) {
+function logBoundary(status, boundary, scope = 'pipeline') {
   status
-    ? console.log(`processPayload: passed ${boundary}`)
-    : console.error(`processPayload: stopped at ${boundary}`);
+    ? console.log(`${scope}: passed ${boundary}`)
+    : console.error(`${scope}: stopped ${boundary}`);
 }
