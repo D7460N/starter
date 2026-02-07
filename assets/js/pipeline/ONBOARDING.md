@@ -1,8 +1,3 @@
-Below is a **one-page onboarding cheat sheet** you can drop directly into
-`pipeline/README.md` (or as `pipeline/ONBOARDING.md`).
-
----
-
 # D7460N Pipeline — One-Page Onboarding Cheat Sheet
 
 ## What this is
