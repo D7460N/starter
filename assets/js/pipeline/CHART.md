@@ -1,119 +1,112 @@
-Below is a **clear, developer-facing process diagram** you can drop straight into the README.
-It explains **where the JS lives, how it reaches the API, how JSON becomes custom elements, and why this enables live editing later**.
-
-No code. Diagram + explanation only.
-
----
-
 ## D7460N Pipeline — Data → Custom Elements → CSS
 
 ### High-Level Flow
 
 ```
 ┌──────────────────────────────────────────┐
-│ 14-run-pipeline.js                       │
-│ (PUBLIC ENTRY POINT)                     │
-│                                          │
-│ runPipeline(url, root, options)           │
+│ 14-run-pipeline.js                               │
+│ (PUBLIC ENTRY POINT)                             │
+│                                           bb     │
+│ runPipeline(url, root, options)                  │
+└───────────────┬──────────────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────────┐
+│ 01-api-on-input.js                               │
+│                                                  │
+│ fetch(url, options)                              │
+│ → JSON payload                                  │
+│ → null on error                                 │
+│ (transport only)                                 │
+└───────────────┬──────────────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────────┐
+│ 02–04 Intake + Meaning                           │
+│                                                  │
+│ normalizePayload                                 │
+│ requirePayload                                   │
+│ selectSchema                                     │
+│                                                  │
+│ Result:                                          │
+│ data + intent (meaning)                          │
+└───────────────┬──────────────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────────┐
+│ 09-process-payload.js                            │
+│                                                  │
+│ Builds a PLAN object:                            │
+│ {                                                │
+│   data,                                          │
+│   intent,                                        │
+│   allowedRegions,                                │
+│   insertionRules                         b       │
+│ }                                                │
+└───────────────┬──────────────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────────┐
+│ 13-insert-plan.js                                │
+│                                                  │
+│ Applies plan to semantic regions                 │
+│ (nav / main / aside etc.)                        │
+│                                                  │
+│ Finds existing <ol>                              │
+└───────────────┬──────────────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────────┐
+│ 12-project-collection.js                         │
+│                                                  │
+│ For each record in data array:                   │
+│   create <li>                                    │
+│   call projectRecord                             │
+└───────────────┬──────────────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────────┐
+│ 11-project-record.js                             │
+│                                                  │
+│ For each JSON key/value pair:                    │
+│                                                  │
+│ key → tag name                                  │
+│ value → textContent                             │
+│                                                  │
+│ Missing / invalid cases:                         │
+│ <no-key>                                         │
+│ <no-value>                                       │
+│ <invalid-key>                                    │
+└───────────────┬──────────────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────────┐
+│ 10-to-tag-name.js                                │
+│                                                  │
+│ JSON key → valid HTML tag                       │
+│ camelCase → kebab-case                          │
+│ dash rules enforced                              │
 └───────────────┬──────────────────────────┘
                 │
                 ▼
 ┌──────────────────────────────────────────┐
-│ 01-api-on-input.js                       │
-│                                          │
-│ fetch(url, options)                      │
-│ → JSON payload                           │
-│ → null on error                          │
-│ (transport only)                         │
-└───────────────┬──────────────────────────┘
-                │
-                ▼
-┌──────────────────────────────────────────┐
-│ 02–04 Intake + Meaning                   │
-│                                          │
-│ normalizePayload                         │
-│ requirePayload                           │
-│ selectSchema                             │
-│                                          │
-│ Result:                                 │
-│ data + intent (meaning)                  │
-└───────────────┬──────────────────────────┘
-                │
-                ▼
-┌──────────────────────────────────────────┐
-│ 09-process-payload.js                    │
-│                                          │
-│ Builds a PLAN object:                    │
-│ {                                        │
-│   data,                                  │
-│   intent,                                │
-│   allowedRegions,                        │
-│   insertionRules                         │
-│ }                                        │
-└───────────────┬──────────────────────────┘
-                │
-                ▼
-┌──────────────────────────────────────────┐
-│ 13-insert-plan.js                        │
-│                                          │
-│ Applies plan to semantic regions          │
-│ (nav / main / aside etc.)                 │
-│                                          │
-│ Finds existing <ol>                      │
-└───────────────┬──────────────────────────┘
-                │
-                ▼
-┌──────────────────────────────────────────┐
-│ 12-project-collection.js                 │
-│                                          │
-│ For each record in data array:            │
-│   create <li>                             │
-│   call projectRecord                     │
-└───────────────┬──────────────────────────┘
-                │
-                ▼
-┌──────────────────────────────────────────┐
-│ 11-project-record.js                     │
-│                                          │
-│ For each JSON key/value pair:             │
-│                                          │
-│ key → tag name                           │
-│ value → textContent                      │
-│                                          │
-│ Missing / invalid cases:                 │
-│ <no-key>                                 │
-│ <no-value>                               │
-│ <invalid-key>                            │
-└───────────────┬──────────────────────────┘
-                │
-                ▼
-┌──────────────────────────────────────────┐
-│ 10-to-tag-name.js                        │
-│                                          │
-│ JSON key → valid HTML tag                │
-│ camelCase → kebab-case                   │
-│ dash rules enforced                      │
-└───────────────┬──────────────────────────┘
-                │
-                ▼
-┌──────────────────────────────────────────┐
-│ DOM STRUCTURE COMPLETE                   │
-│                                          │
-│ <ol>                                    │
-│   <li>                                  │
-│     <family-list-item>Smith</...>        │
-│     <no-value></no-value>                │
-│     <invalid-key></invalid-key>          │
-│   </li>                                 │
-│ </ol>                                   │
+│ DOM STRUCTURE COMPLETE                           │
+│                                                  │
+│ <ol>                                             │
+│   <li>                                           │
+│     <family-list-item>Smith</...>                │
+│     <no-value></no-value>                        │
+│     <invalid-key></invalid-key>                  │
+│   </li>                                          │
+│ </ol>                                            │
 └──────────────────────────────────────────┘
-                │
-                ▼
+                   │
+                   ▼
 ┌──────────────────────────────────────────┐
-│ CSS TAKES OVER                           │
-│                                          │
-│ Layout, visibility, fallbacks, modes     │
-│ :empty, :has(), pseudo-elements          │
+│ CSS TAKES OVER                         bbbbb     │
+│                                           b      │
+│ Layout, visibility, fallbacks, modes             │
+│ :empty, :has(), pseudo-elements                  │
 └──────────────────────────────────────────┘
 ```
 
