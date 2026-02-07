@@ -1,7 +1,23 @@
 ---
 name: css-driven-template
-description: index.html and accompanying CSS and JS files are to be used as a starter template for all web-sites and web-applications. It is data-, project-, platform-, framework-, resolotion-agnostic, SPA, PWA template that completely separates the presentation-layer front-end from the data-layer back-end using modern baseline CSS for all state management, theming, heuristics, and conditional DOM node visibility. JS handles only API calls for CRUD operations. HTML DOM structure is pre-built in index.html.
----
+description: index.html and accompanying CSS and JS files are to be used as a starter template for all web-sites and web-applications. It is data-, project-, platform-, framework-, resolotion-agnostic, SPA, PWA template that completely separates the presentation-layer front-end from the data-layer back-end. JavaScript of any kind is strictly prohibited and is replaced with modern standard vanilla semantic baseline HTML and CSS (except when and where explicitly indicated). This means the following:
+
+1. Unless otherwise indicated, this code base shall NEVER default to, NEVER consider, NEVER refer to, NEVER suggest, and NEVER use third party dependencies.
+2. Third party dependencies are defined as any packaged code or system that is not able render natively (without assistance) or must be compiled and or pre-built to run in an evergreen web browser.
+5. Unless otherwise indicated, this code base shall ALWAYS default to, ALWAYS consider, ALWAYS refer to, ALWAYS suggest, and ALWAYS use modern, advanced, vanilla, W3C/WCAG standards compliant, accessibility-first, syntax, techniques, approaches, strategies for all project design and development.
+6. Unless otherwise indicated, CSS shall default to and ALWAYS replace JS equivalent functionality EXCEPT for API calls for CRUD operations.
+7. Unless otherwise indicated, JS shall default to and ALWAYS be limited to API calls for CRUD operations only.
+8. Unless otherwise indicated, JS shall default to and ALWAYS use `document.querySelector('');` for targeting DOM elements by tag name.
+9. Unless otherwise indicated, JS shall NEVER default to or use 
+addEventListener('click)
+ limited to API calls for CRUD operations only.
+5. Unless otherwise indicated, HTML markup shall default to and always be semantic, minimally nested, and intuitive to developers.
+6. Unless otherwise indicated, Separation of Concerns between presentation and data layers shall always be maintained.
+7. Unless otherwise indicated, controls DOM element visibility via `:empty` selectors
+8. Unless otherwise indicated, manages themes, a11y, and data states
+9. Unless otherwise indicated, JavaScript is limited to API calls only
+10. Unless otherwise indicated, Never add or remove DOM elements to show or hide.
+11. Unless otherwise indicated, CSS to show or hide DOM elements.
 
 # CSS-Driven Web Template
 
