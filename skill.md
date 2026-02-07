@@ -36,11 +36,15 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 
 ## CSS Files
 
+Broken up similar to JS conventions - single purpose functions, utilities, etc.
+
 - `a11y.css` - Accessibility styles
-- `layout.css` - Grid only structure (never flex)
+- `layout.css` - Grid only (never flex) full-bleed, Holy-Grail, skeletal structure
 - `reset.css` - Browser normalization
 - `scrollbars.css` - Custom scrollbar styling
-[Add others as needed]
+- `responsive.css` - Resolution agnosticism
+- `typography.css` - Fluid (zoom), overflow, behavior, and styles 
+[Add others as needed]  
 
 ## When modifying this project
 
