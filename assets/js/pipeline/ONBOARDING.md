@@ -46,7 +46,7 @@ If this structure is missing, the pipeline will **not compensate**.
 
 ---
 
-## Mental Model (memorize this)
+## Mental Model
 
 ```
 Data → Meaning → Allowed Regions → Structure → CSS
