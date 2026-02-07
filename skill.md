@@ -91,7 +91,7 @@ Global nav items will be exactly the same but use `<input type="radio" name="nav
     global nav item 04
     <input type="radio" name="nav">
   </label>
-  </nav><label role="button">
+  <label role="button">
     global nav item 05
     <input type="radio" name="nav">
   </label>
