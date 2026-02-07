@@ -43,7 +43,7 @@ Broken up similar to JS conventions - single purpose functions, utilities, etc.
 - `reset.css` - Browser normalization
 - `scrollbars.css` - Custom scrollbar styling
 - `responsive.css` - Resolution agnosticism
-- `typography.css` - Fluid (zoom), overflow, behavior, and styles 
+- `typography.css` - Fluid (zoom), overflow, behavior, and styles  
 [Add others as needed]  
 
 ## When modifying this project
@@ -64,7 +64,7 @@ Consist of four parts . . .
 
 . . . and are built with this vanilla HTML design pattern.
 
-```
+```html
 <label role="button">
   label text
   <input type="checkbox">
@@ -73,7 +73,7 @@ Consist of four parts . . .
 
 Global nav items will be exactly the same but use `<input type="radio" name="nav">`
 
-```
+```html
 <nav>
   <label role="button">
     global nav item 01
