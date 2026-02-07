@@ -47,7 +47,7 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 - All UI states, including loading states, use CSS and HTML checkboxs as state machines
 - Keep JS focused on fetch/CRUD only
 - Always only ever use semantic HTML markup
-- Never use div, span, class, data-*, or id.
+- Never use `<div>`, `<span>`, `class`, `data-*`, or `id`.
 
 ## State Machines
 
