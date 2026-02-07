@@ -105,7 +105,7 @@ This is intentional. CSS handles messaging via `:empty` and or HTML tag names.
 
 ---
 
-## Custom Element Rules (important)
+## Custom Element Rules (enforced standards)
 
 * Must contain **at least one dash**
 * Dash **cannot be first character**
