@@ -1,4 +1,4 @@
-# D7460N Pipeline — One-Page Onboarding Cheat Sheet
+# D7460N Pipeline — Onboarding Cheat Sheet
 
 ## What this is
 
