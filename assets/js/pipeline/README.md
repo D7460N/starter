@@ -1,10 +1,7 @@
-Below is **formal developer documentation** for the D7460N Pipeline.
-It is written for **mixed audiences**: developers who *don’t yet understand it* and developers who are *debugging or extending it*.
-It prioritizes **orientation, entry/exit points, and mental models** over theory.
-
----
-
 # D7460N Pipeline
+
+> **The D7460N pipeline turns raw JSON into self-describing semantic DOM structure, making data shape visible, debuggable, and editable—while remaining completely data-agnostic and CSS-driven.**
+> 
 
 ### Developer Reference & Orientation Guide
 
