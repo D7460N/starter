@@ -77,12 +77,26 @@ Features:
   https://12daysofweb.dev/2024/calc-size-and-interpolate-size/ */
   interpolate-size: allow-keywords;
   scroll-behavior: smooth;
+
+  --surface-1: light-dark(oklch(80% 10% 250), oklch(10% 5% 250));
+  --surface-2: light-dark(oklch(90% 7% 250), oklch(20% 5% 250));
+  --surface-3: light-dark(oklch(100% 8% 250), oklch(30% 5% 250));
+  --text-1: light-dark(oklch(10% 5% 250), oklch(90% 5% 250));
+  --text-2: light-dark(oklch(20% 5% 250), oklch(80% 5% 250));
+
+  background: radial-gradient(
+    circle in oklab,
+    var(--surface-2),
+    var(--surface-1)
+  )
+  fixed;
+  color: var(--text-1);
 }
 
 /* DOM order */
 :where(app-container, header, nav, main, article, section, aside, footer) {
   display: grid;
-  border: solid 1px currentcolor;
+  border: solid 1px color-mix(in srgb, currentColor 50%, transparent);
   border-radius: 0.3rem;
 }
 
