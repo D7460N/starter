@@ -44,7 +44,7 @@ Broken up similar to JS conventions - single purpose functions, utilities, etc.
 - `scrollbars.css` - Custom scrollbar styling
 - `responsive.css` - Resolution agnosticism
 - `typography.css` - Fluid (zoom), overflow, behavior, and styles  
-[Add others as needed]  
+[Add others as needed]
 
 ## When modifying this project
 
@@ -97,11 +97,3 @@ Global nav items will be exactly the same but use `<input type="radio" name="nav
   </label>
 <nav>
 ```
-
-
-
-
-
-
-
-
