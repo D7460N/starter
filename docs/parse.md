@@ -45,16 +45,16 @@ Here is a clean conceptual diagram of the modern browser pipeline.
 ```
 
 
-
-                    __       __[ HTML Parser (C++ / Rust)
-                   /\ \     / __[ CSS Parser (C++ / Rust)
-                  /::\ \   / / __[ JS Engine (V8 / JSC / SM)
-                 /::::\ \  \/ /
-Network         /::::::\ \  \/
-(HTTPS) -----> /::User::\_\
-Request        \::Agent:/ /
-                \::::::/ /
-                 \::::/ /
+     NETWORK  /
+_____________/      __       __[ HTML Parser (C++ / Rust)
+            /      /\ \     / __[ CSS Parser (C++ / Rust)
+           /      /::\ \   / / __[ JS Engine (V8 / JSC / SM)
+          /      /::::\ \  \/ /
+(HTTPS)  /      /::::::\ \  \/
+Request /----> /::User::\_\
+       /       \::Agent:/ /
+      /         \::::::/ /
+     /           \::::/ /
                   \::/ /
                    \/_/
 
