@@ -51,6 +51,20 @@ Here is a clean conceptual diagram of the modern browser pipeline.
 __\_ __\__ _\_.__\ ___\__ _\
              .
             .__HTTP(S) request
+           .
+      /\ \.
+     /::\.\
+    /::::\ \
+   /::::::\ \
+  / BROWSER\_\
+  \  User  / /\
+   \ Agent/ /  \__[ HTML Parser (C++ / Rust) ]__
+    \::::/ /\  
+     \;;/ /  \__[ CSS Parser (C++ / Rust) ]__
+      \/_/\
+           \__[ JS Engine (V8 / JSC / SM) )__
+
+
   _ _ _ _ _._ _ _
  /\       .       \
  \ \               \
@@ -61,18 +75,6 @@ __\_ __\__ _\_.__\ ___\__ _\
 
 
 
-
-            /      __       __[ HTML Parser (C++ / Rust)
-           /      /\ \     / __[ CSS Parser (C++ / Rust)
-          /      /::\ \   / / __[ JS Engine (V8 / JSC / SM)
-         /      /::::\ \  \/ /
-        /      /::::::\ \  \/
-       /----> /::User::\_\
-      /       \::Agent:/ /
-     /         \::::::/ /
-    /           \::::/ /
-                 \::/ /
-                  \/_/
 
 ```
                            _____________
