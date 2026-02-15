@@ -59,7 +59,7 @@ Here is a clean conceptual diagram of the modern browser pipeline.
     /::::::::\ \
    / BROWSER  \_\
    \User Agent/ /
-    \::::::::/ /\
+    \::(UA)::/ /\
      \::::::/ /  \__[ HTML Parser (C++ / Rust) ]__
       \::::/ /\  
        \;;/ /  \__[ CSS Parser (C++ / Rust) ]__
