@@ -53,29 +53,29 @@ __\_ __\__ _\_ __\ ___\_   /\\           /\\
       .                   /  \\         /  \\
 HTTPS.Request            /HTML\\       /DOM \\
     .                   /Parser\\     /Struct\\
- v .      /\ \          \ Rust //  >  \ Tree //
+  v.      /\ \          \ Rust //  >  \ Tree //
   .      /::\ \     . . .\ C++//. . . .\    //. . .
- .      /::::\ \     .    \  //  /\\    \  //  /\\ . v
+ .      /::::\ \     .    \  //  /\\    \  //  /\\ .v
   .    /::::::\ \     .    \//  /  \\    \//  /  \\ .
    .v /::::::::\ \     .       /CSS \\       /CSSOM\ .
-    ./  BROWSER \ \  ^  .     /Parser\\     /Style \\ .
-    /(User Agent)\_\     .    \ Rust //  >  \Rules //  .  >
+    ./  BROWSER \ \   ^ .     /Parser\\     /Style \\ .
+    /(User Agent)\_\     .    \ Rust // >   \Rules //  .  >
     \    (UA)    / /. . . . . .\ C++//. . . .\    //. . . . . .
-     \::::::::::/ /  >     .    \  //  /\\    \  //  >   .   . v
+     \::::::::::/ /  >     .    \  //  /\\    \  //  >   .  v.
       \::::::::/ /          .    \//  /  \\    \//        . .
        \::::::/ /            .       / JS \\               .
-       .\::::/ /            v .     /Engine\\             . .
-      .  \;;/ /                .    \V8/JSC//  >         .   . ^
+       .\::::/ /              .v    /Engine\\             . .
+      .  \;;/ /                .    \V8/JSC//  >        v.  ^.
      .    \/_/                  . . .\ SM //. . . . . . . . . .
-  ^ .                                 \  //            .
-   .               /\\     /\\     /\\ \// /\\        . v
+    . ^                               \  //            .    >
+   .               /\\     /\\     /\\ \// /\\       v.
   .               /  \\   /  \\   /  \\   /  \\      .
- . . . . . . . . .\  //. .\  //. .\  //. .\  //. . .
-         <         \//  <  \//  <  \//  <  \//   <  
-                      \       \       \       \__[ Render Tree (DOM + CSSOM) ]
-                       \       \       \__[ Layout (Box geometry) ]
-                        \       \__[ Paint (Draw pixels) ]
-                         \__[ Compositing (GPU layers) ]
+ . . . . . . . . .\< //. .\< //. .\< //. .\< // . . .
+         <         \//     \//     \//     \//      
+                    \       \       \       \__[ Render Tree (DOM + CSSOM) ]
+                     \       \       \__[ Layout (Box geometry) ]
+                      \       \__[ Paint (Draw pixels) ]
+                       \__[ Compositing (GPU layers) ]
 
 
 ```
