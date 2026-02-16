@@ -72,6 +72,13 @@ HTTPS.Request            /HTML\\       /DOM \\
   .               /  \\   /  \\   /  \\   /  \\      .
  . . . . . . . . .\  //. .\  //. .\  //. .\  //. . .
                    \//     \//     \//     \//      
+                      \       \       \       \__[ Render Tree (DOM + CSSOM) ]
+                       \       \       \__[ Layout (Box geometry) ]
+                        \       \__[ Paint (Draw pixels) ]
+                         \__[ Compositing (GPU layers) ]
+
+
+
 
 
 ```
