@@ -42,7 +42,8 @@ Here is a clean conceptual diagram of the modern browser pipeline.
          │ (GPU layers)    │
          └──────────────┘
 ```
-```
+
+```rust
 
   _\ _ _\_ __\_ __\_ 
     \    \    \    \    
@@ -74,6 +75,7 @@ HTTPS.Request            /HTML\\       /DOM \\
 . . . .\    //. . .\    //. . .\    //. . .\    //
         \  //       \  //       \  //       \  //
          \//         \//         \//         \//
+```
 
 
 ```
