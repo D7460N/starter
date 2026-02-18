@@ -1,6 +1,6 @@
 # D7460N Architecture — Clear Problem Statement
 
-### • Target Customer:
+### Target Customer:
 
 Enterprise IT organizations, government agencies, and mid-to-large software teams building and maintaining browser-based applications at scale.
 
@@ -13,7 +13,7 @@ Specifically:
 
 ---
 
-### • Pain They Feel:
+### Pain They Feel:
 
 1. **Excessive JavaScript complexity**
 
@@ -50,7 +50,7 @@ The result: slower delivery, higher risk, and escalating operational cost.
 
 ---
 
-### • What Risk Is Reduced:
+### What Risk Is Reduced:
 
 D7460N reduces:
 
@@ -71,7 +71,7 @@ D7460N reduces:
 
 ---
 
-### • How It’s Proven:
+### How It’s Proven:
 
 D7460N leverages:
 
@@ -96,7 +96,7 @@ The architecture is built on standardized W3C/WHATWG browser behavior — not sp
 
 ---
 
-### • Why Existing Solutions Fail:
+### Why Existing Solutions Fail:
 
 1. **Framework Dependence**
 
