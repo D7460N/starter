@@ -128,8 +128,18 @@ section {
 }
 
 /* Only content level elements receive padding/margin */
-:where(app-logo, app-user, app-copy, app-version, h1, p) {
+:where(app-logo, app-user, app-legal, app-version, h1, p) {
   padding: 1rem;
+  display: none;
+}
+
+app-logo:not(:empty),
+app-user:not(:empty),
+app-copy:not(:empty),
+app-version:not(:empty),
+h1:not(:empty),
+p:not(:empty) {
+  display: block;
 }
 
 /* MARK: TYPOGRAPGY */
