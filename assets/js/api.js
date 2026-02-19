@@ -1,4 +1,4 @@
-export async function load(index, https://69895237c04d974bc69ee681.mockapi.io/data) {
+export async function load(index, "https://69895237c04d974bc69ee681.mockapi.io/data") {
 
   console.group(`load → index: ${index}`);
 
