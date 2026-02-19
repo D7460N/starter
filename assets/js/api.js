@@ -1,4 +1,4 @@
-export async function load(index, "https://69895237c04d974bc69ee681.mockapi.io/data") {
+export async function load(index, url) {
 
   console.group(`load → index: ${index}`);
 
@@ -150,3 +150,6 @@ export async function load(index, "https://69895237c04d974bc69ee681.mockapi.io/d
   console.info("Load complete");
   console.groupEnd();
 }
+
+// ⚡ Add the real URL here:
+load(0, "https://69895237c04d974bc69ee681.mockapi.io/data");
