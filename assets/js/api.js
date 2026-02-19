@@ -80,13 +80,6 @@ console.log();
     return;
   }
 
-  if (!page) {
-  console.table([{
-    stage: "validation",
-    message: `Page not found at index ${index}`
-  }]);
-  return;
-
   console.info(`Injecting page → ${page.pageType ?? "unknown"}`);
 
   /* =========================
