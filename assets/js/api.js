@@ -155,5 +155,5 @@ export async function load(index, url) {
 }
 
 // ⚡ Add the real URL here:
-load(0, "https://69895237c04d974bc69ee681.mockapi.io/data");
+load(0, "https://6987f917780e8375a6874dcf.mockapi.io/data");
 
