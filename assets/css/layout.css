@@ -111,6 +111,11 @@ app-container {
   border: none;
 }
 
+header {
+  align-content: space-between;
+  grid-auto-flow: column;
+}
+
 main {
   height: 100%;
   align-content: start;
