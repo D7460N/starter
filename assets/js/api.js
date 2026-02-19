@@ -55,8 +55,8 @@ export async function load(index, url) {
     return;
   }
 
-  const app = data.app;
-  const page = app.pages[index];
+  const app = root.app;           // ✅ use root, not data
+  const page = app.pages[index];  // pages is now defined
 
   if (!page) {
     console.table([{
