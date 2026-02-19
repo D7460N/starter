@@ -57,20 +57,22 @@ console.log();
     return;
   }
 
-  // If the response is an array, take the first element
+  // Top-level array of objects
   const root = Array.isArray(data) ? data : [data];
 
-  if (!root?.app?.pages) {
+  // Pull the app object from the first element
+  const app  = root[0]?.app;
+
+  // Pull the correct page from app.pages
+  const page = app?.pages?.[index];
+
+  if (!page) {
     console.table([{
       stage: "validation",
-      message: "Invalid JSON structure → app.pages missing"
+    message: `Page not found at index ${index}`
     }]);
-    console.log();
     return;
   }
-
-  const app = root.app;           // ✅ use root, not data
-  const page = root[index];
 
   if (!page) {
     console.table([{
