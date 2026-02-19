@@ -153,3 +153,4 @@ export async function load(index, url) {
 
 // ⚡ Add the real URL here:
 load(0, "https://69895237c04d974bc69ee681.mockapi.io/data");
+
