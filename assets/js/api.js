@@ -97,7 +97,7 @@ export async function load(index, url) {
 
     document.querySelectorAll("nav label")
       .forEach((el, i) => {
-        el.textContent = app.navigation.primary[i] ?? "";
+        el.preserveInputs = app.navigation.primary[i] ?? "";
       });
 
     document.querySelector("footer app-legal").preserveInputs =
