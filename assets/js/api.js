@@ -14,7 +14,7 @@ export async function load(index, url) {
     }
   }
   
-  console.group(`load → index: ${index}`);
+  console.log(`load → index: ${index}`);
 
   let response;
   let data;
@@ -29,7 +29,7 @@ export async function load(index, url) {
         statusText: response.statusText,
         url
       }]);
-      console.groupEnd();
+      console.log();
       return;
     }
 
@@ -41,7 +41,7 @@ export async function load(index, url) {
       message: error.message,
       url
     }]);
-    console.groupEnd();
+console.log();
     return;
   }
 
@@ -53,33 +53,39 @@ export async function load(index, url) {
       stage: "json-parse",
       message: error.message
     }]);
-    console.groupEnd();
+console.log();
     return;
   }
 
   // If the response is an array, take the first element
-  const root = Array.isArray(data) ? data[0] : data;
+  const root = Array.isArray(data) ? data : [data];
 
   if (!root?.app?.pages) {
     console.table([{
       stage: "validation",
       message: "Invalid JSON structure → app.pages missing"
     }]);
-    console.groupEnd();
+    console.log();
     return;
   }
 
   const app = root.app;           // ✅ use root, not data
-  const page = app.pages[index];  // pages is now defined
+  const page = root[index];
 
   if (!page) {
     console.table([{
       stage: "validation",
       message: `Page not found at index ${index}`
     }]);
-    console.groupEnd();
     return;
   }
+
+  if (!page) {
+  console.table([{
+    stage: "validation",
+    message: `Page not found at index ${index}`
+  }]);
+  return;
 
   console.info(`Injecting page → ${page.pageType ?? "unknown"}`);
 
