@@ -43,7 +43,10 @@ export async function load(index, url) {
     return;
   }
 
-  if (!data?.app?.pages) {
+  // If the response is an array, take the first element
+  const root = Array.isArray(data) ? data[0] : data;
+
+  if (!root?.app?.pages) {
     console.table([{
       stage: "validation",
       message: "Invalid JSON structure → app.pages missing"
