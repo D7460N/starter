@@ -1,5 +1,19 @@
 export async function load(index, url) {
-
+  
+  function preserveInputs(el) {
+    for (const child of Array.from(el.childNodes)) {
+      if (
+        child.nodeType === Node.ELEMENT_NODE &&
+        child.tagName.toLowerCase() === "input" &&
+        child.hasAttribute("aria-hidden") &&
+        (child.type === "radio" || child.type === "checkbox")
+      ) {
+        continue;
+      }
+      el.removeChild(child);
+    }
+  }
+  
   console.group(`load → index: ${index}`);
 
   let response;
@@ -75,10 +89,10 @@ export async function load(index, url) {
 
   try {
 
-    document.querySelector("header app-logo").textContent =
+    document.querySelector("header app-logo").preserveInputs =
       app.header.brand.name ?? "";
 
-    document.querySelector("header app-user").textContent =
+    document.querySelector("header app-user").preserveInputs =
       app.header.brand.tagline ?? "";
 
     document.querySelectorAll("nav label")
@@ -86,10 +100,10 @@ export async function load(index, url) {
         el.textContent = app.navigation.primary[i] ?? "";
       });
 
-    document.querySelector("footer app-legal").textContent =
+    document.querySelector("footer app-legal").preserveInputs =
       app.footer.legal?.[0] ?? "";
 
-    document.querySelector("footer app-version").textContent =
+    document.querySelector("footer app-version").preserveInputs =
       app.footer.version?.[0] ?? "";
 
     console.info("Global content injected successfully");
@@ -107,28 +121,28 @@ export async function load(index, url) {
 
   try {
 
-    document.querySelector("article h1").textContent =
+    document.querySelector("article h1").preserveInputs =
       page.pageTitle ?? "";
 
     const introSlots =
       document.querySelectorAll("article > p");
 
-    introSlots.forEach(p => p.textContent = "");
+    introSlots.forEach(p => p.preserveInputs = "");
 
     page.intro?.forEach((text, i) => {
       if (introSlots[i]) {
-        introSlots[i].textContent = text;
+        introSlots[i].preserveInputs = text;
       }
     });
 
     const sectionSlots =
       document.querySelectorAll("article section p");
 
-    sectionSlots.forEach(p => p.textContent = "");
+    sectionSlots.forEach(p => p.preserveInputs = "");
 
     page.sections?.[0]?.content?.forEach((text, i) => {
       if (sectionSlots[i]) {
-        sectionSlots[i].textContent = text;
+        sectionSlots[i].preserveInputs = text;
       }
     });
 
@@ -137,7 +151,7 @@ export async function load(index, url) {
     page.outro?.forEach((text, i) => {
       const slot = introSlots[introCount + i];
       if (slot) {
-        slot.textContent = text;
+        slot.preserveInputs = text;
       }
     });
 
