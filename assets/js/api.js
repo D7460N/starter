@@ -91,21 +91,21 @@ console.log();
   try {
 
     document.querySelector("header app-logo").preserveInputs =
-      app.header.brand.name ?? "";
+      app.header.brand ?? "";
 
     document.querySelector("header app-user").preserveInputs =
-      app.header.brand.tagline ?? "";
+      app.header.user ?? "";
 
     document.querySelectorAll("nav label")
       .forEach((el, i) => {
         el.preserveInputs = app.navigation.primary[i] ?? "";
       });
 
-    document.querySelector("footer app-legal").preserveInputs =
-      app.footer.legal?.[0] ?? "";
+     document.querySelector("footer app-legal").preserveInputs =
+      app.footer.legal ?? "";
 
     document.querySelector("footer app-version").preserveInputs =
-      app.footer.version?.[0] ?? "";
+      app.footer.version ?? "";
 
     console.info("Global content injected successfully");
 
