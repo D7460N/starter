@@ -127,28 +127,29 @@ console.log();
 
   try {
 
-    document.querySelector("article h1").preserveInputs =
-      page.pageTitle ?? "";
+    const h1 = document.querySelector("article h1");
+    preserveInputs(h1);
+    h1.prepend(document.createTextNode(page.pageTitle ?? ""));
 
     const introSlots =
       document.querySelectorAll("article > p");
 
-    introSlots.forEach(p => p.preserveInputs = "");
+    introSlots.forEach(p => { preserveInputs(p); });
 
     page.intro?.forEach((text, i) => {
       if (introSlots[i]) {
-        introSlots[i].preserveInputs = text;
+        introSlots[i].prepend(document.createTextNode(text));
       }
     });
 
     const sectionSlots =
       document.querySelectorAll("article section p");
 
-    sectionSlots.forEach(p => p.preserveInputs = "");
+    sectionSlots.forEach(p => { preserveInputs(p); });
 
     page.sections?.[0]?.content?.forEach((text, i) => {
       if (sectionSlots[i]) {
-        sectionSlots[i].preserveInputs = text;
+        sectionSlots[i].prepend(document.createTextNode(text));
       }
     });
 
@@ -157,7 +158,7 @@ console.log();
     page.outro?.forEach((text, i) => {
       const slot = introSlots[introCount + i];
       if (slot) {
-        slot.preserveInputs = text;
+        slot.prepend(document.createTextNode(text));
       }
     });
 
@@ -169,10 +170,6 @@ console.log();
       message: error.message
     }]);
   }
-
-  console.info("Load complete");
-  console.groupEnd();
-}
 
 // ⚡ Add the real URL here:
 load(0, "https://6987f917780e8375a6874dcf.mockapi.io/data");
