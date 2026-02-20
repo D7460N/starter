@@ -101,7 +101,7 @@ console.log();
         el.preserveInputs = app.navigation.primary[i] ?? "";
       });
 
-     document.querySelector("footer app-legal").preserveInputs =
+    document.querySelector("footer app-legal").preserveInputs =
       app.footer.legal ?? "";
 
     document.querySelector("footer app-version").preserveInputs =
