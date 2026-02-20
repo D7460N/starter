@@ -170,6 +170,7 @@ console.log();
       message: error.message
     }]);
   }
+}
 
 // ⚡ Add the real URL here:
 load(0, "https://6987f917780e8375a6874dcf.mockapi.io/data");
