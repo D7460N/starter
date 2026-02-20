@@ -90,22 +90,27 @@ console.log();
 
   try {
 
-    document.querySelector("header app-logo").preserveInputs =
-      app.header.brand ?? "";
+    const logo = document.querySelector("header app-logo");
+    preserveInputs(logo);
+    logo.prepend(document.createTextNode(app.header.brand ?? ""));
 
-    document.querySelector("header app-user").preserveInputs =
-      app.header.user ?? "";
+    const user = document.querySelector("header app-user");
+    preserveInputs(user);
+    user.prepend(document.createTextNode(app.header.user ?? ""));
 
     document.querySelectorAll("nav label")
       .forEach((el, i) => {
-        el.preserveInputs = app.navigation.primary[i] ?? "";
+        preserveInputs(el);
+        el.prepend(document.createTextNode(app.navigation.primary[i] ?? ""));
       });
 
-    document.querySelector("footer app-legal").preserveInputs =
-      app.footer.legal ?? "";
+    const legal = document.querySelector("footer app-legal");
+    preserveInputs(legal);
+    legal.prepend(document.createTextNode(app.footer.legal ?? ""));
 
-    document.querySelector("footer app-version").preserveInputs =
-      app.footer.version ?? "";
+    const version = document.querySelector("footer app-version");
+    preserveInputs(version);
+    version.prepend(document.createTextNode(app.footer.version ?? ""));
 
     console.info("Global content injected successfully");
 
