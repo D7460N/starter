@@ -1,5 +1,5 @@
-export async function load(index, url) {
-  
+async function load(index, url) {
+
   function preserveInputs(el) {
     for (const child of Array.from(el.childNodes)) {
       if (
@@ -13,8 +13,9 @@ export async function load(index, url) {
       el.removeChild(child);
     }
   }
-  
-  console.log(`load → index: ${index}`);
+
+  console.clear();
+  console.log(`load → index: ${index} @ ${new Date().toLocaleTimeString()}`);
 
   let response;
   let data;
@@ -29,7 +30,6 @@ export async function load(index, url) {
         statusText: response.statusText,
         url
       }]);
-      console.log();
       return;
     }
 
@@ -41,7 +41,6 @@ export async function load(index, url) {
       message: error.message,
       url
     }]);
-console.log();
     return;
   }
 
@@ -53,7 +52,6 @@ console.log();
       stage: "json-parse",
       message: error.message
     }]);
-console.log();
     return;
   }
 
@@ -65,14 +63,6 @@ console.log();
 
   // Pull the correct page from app.pages
   const page = app?.pages?.[index];
-
-  if (!page) {
-    console.table([{
-      stage: "validation",
-    message: `Page not found at index ${index}`
-    }]);
-    return;
-  }
 
   if (!page) {
     console.table([{
@@ -125,16 +115,19 @@ console.log();
      PAGE CONTENT
      ========================= */
 
+  // Clear page content → elements go :empty → CSS loading state shows
+  document.querySelectorAll("article h1, article > p, article section p")
+    .forEach(el => preserveInputs(el));
+
+  await new Promise(r => setTimeout(r, 1000));
+
   try {
 
     const h1 = document.querySelector("article h1");
-    preserveInputs(h1);
     h1.prepend(document.createTextNode(page.pageTitle ?? ""));
 
     const introSlots =
       document.querySelectorAll("article > p");
-
-    introSlots.forEach(p => { preserveInputs(p); });
 
     page.intro?.forEach((text, i) => {
       if (introSlots[i]) {
@@ -144,8 +137,6 @@ console.log();
 
     const sectionSlots =
       document.querySelectorAll("article section p");
-
-    sectionSlots.forEach(p => { preserveInputs(p); });
 
     page.sections?.[0]?.content?.forEach((text, i) => {
       if (sectionSlots[i]) {
@@ -170,10 +161,8 @@ console.log();
       message: error.message
     }]);
   }
-}
 
   console.info("Load complete");
-  console.groupEnd();
 }
 
 const API = "https://6987f917780e8375a6874dcf.mockapi.io/data";
