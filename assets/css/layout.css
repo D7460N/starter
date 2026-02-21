@@ -156,6 +156,7 @@ app-container,
 main,
 article {
   overflow: hidden;
+  position: relative;
 }
 
 section {
@@ -189,12 +190,16 @@ nav {
   }
 }
 
-/* MARK: LOADING */
-nav:has(input:checked) ~ main article:has(h1:empty)::after {
+main article:has(h1:empty)::after {
   content: "LOADING";
-  display: grid;
+  position: absolute;
   place-content: center;
   padding: 2rem;
+}
+
+/* MARK: LOADING */
+nav:has(input:checked) ~ main article:has(h1:empty)::after {
+  display: grid;
 }
 
 /* State machine */
