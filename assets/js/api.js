@@ -170,7 +170,6 @@ console.log();
       message: error.message
     }]);
   }
-}
 
   console.info("Load complete");
   console.groupEnd();
