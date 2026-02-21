@@ -189,6 +189,14 @@ nav {
   }
 }
 
+/* MARK: LOADING */
+nav:has(input:checked) ~ main article:has(h1:empty)::after {
+  content: "LOADING";
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+}
+
 /* State machine */
 [aria-hidden="true"] {
   display: none;
