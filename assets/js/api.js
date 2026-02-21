@@ -14,7 +14,8 @@ export async function load(index, url) {
     }
   }
   
-  console.log(`load → index: ${index}`);
+  console.clear();
+  console.log(`load → index: ${index} @ ${new Date().toLocaleTimeString()}`);
 
   let response;
   let data;
