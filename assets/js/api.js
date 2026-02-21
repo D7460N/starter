@@ -36,7 +36,8 @@ async function fetchData(url) {
 
 const API = "https://6987f917780e8375a6874dcf.mockapi.io/data";
 
-// Init — global content (once)etchData(API).then(data => {
+// Init — global content (once)
+fetchData(API).then(data => {
   if (!data) return;
 
   const app = (Array.isArray(data) ? data : [data])[0]?.app;
