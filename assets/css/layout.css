@@ -156,7 +156,6 @@ app-container,
 main,
 article {
   overflow: hidden;
-  position: relative;
 }
 
 section {
@@ -190,19 +189,29 @@ nav {
   }
 }
 
-main article:has(h1:empty)::after {
-  content: "LOADING";
-  position: absolute;
-  place-content: center;
-  padding: 2rem;
-}
-
-/* MARK: LOADING */
-nav:has(input:checked) ~ main article:has(h1:empty)::after {
-  display: grid;
-}
-
 /* State machine */
 [aria-hidden="true"] {
   display: none;
+}
+
+/* MARK: LOADING */
+:root:has(article h1:empty)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 3rem;
+  height: 3rem;
+  margin: auto;
+  border: 0.35rem solid color-mix(in srgb, currentColor 25%, transparent);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  pointer-events: none;
+  opacity: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
