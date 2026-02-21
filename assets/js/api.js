@@ -170,7 +170,6 @@ console.log();
       message: error.message
     }]);
   }
-}
 
   console.info("Load complete");
   console.groupEnd();
@@ -184,4 +183,3 @@ document.querySelectorAll("nav input[type='radio']")
   });
 
 document.querySelector("nav input[type='radio']").click();
-
