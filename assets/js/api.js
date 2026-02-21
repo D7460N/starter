@@ -1,175 +1,90 @@
-async function load(index, url) {
-
-  function preserveInputs(el) {
-    for (const child of Array.from(el.childNodes)) {
-      if (
-        child.nodeType === Node.ELEMENT_NODE &&
-        child.tagName.toLowerCase() === "input" &&
-        child.hasAttribute("aria-hidden") &&
-        (child.type === "radio" || child.type === "checkbox")
-      ) {
-        continue;
-      }
-      el.removeChild(child);
+function preserveInputs(el) {
+  for (const child of Array.from(el.childNodes)) {
+    if (
+      child.nodeType === Node.ELEMENT_NODE &&
+      child.tagName.toLowerCase() === "input" &&
+      child.hasAttribute("aria-hidden") &&
+      (child.type === "radio" || child.type === "checkbox")
+    ) {
+      continue;
     }
+    el.removeChild(child);
   }
+}
 
-  console.clear();
-  console.log(`load → index: ${index} @ ${new Date().toLocaleTimeString()}`);
+function injectData(el, text) {
+  preserveInputs(el);
+  el.prepend(document.createTextNode(text ?? ""));
+}
 
-  let response;
-  let data;
-
+async function fetchData(url) {
   try {
-    response = await fetch(url);
+    const response = await fetch(url);
 
     if (!response.ok) {
-      console.table([{
-        stage: "fetch",
-        status: response.status,
-        statusText: response.statusText,
-        url
-      }]);
-      return;
+      console.table([{ stage: "fetch", status: response.status, statusText: response.statusText, url }]);
+      return null;
     }
 
-    console.info("Fetch successful");
+    return await response.json();
 
   } catch (error) {
-    console.table([{
-      stage: "network",
-      message: error.message,
-      url
-    }]);
-    return;
+    console.table([{ stage: "network", message: error.message, url }]);
+    return null;
   }
-
-  try {
-    data = await response.json();
-    console.info("JSON parsed successfully");
-  } catch (error) {
-    console.table([{
-      stage: "json-parse",
-      message: error.message
-    }]);
-    return;
-  }
-
-  // Top-level array of objects
-  const root = Array.isArray(data) ? data : [data];
-
-  // Pull the app object from the first element
-  const app  = root[0]?.app;
-
-  // Pull the correct page from app.pages
-  const page = app?.pages?.[index];
-
-  if (!page) {
-    console.table([{
-      stage: "validation",
-      message: `Page not found at index ${index}`
-    }]);
-    return;
-  }
-
-  console.info(`Injecting page → ${page.pageType ?? "unknown"}`);
-
-  /* =========================
-     GLOBAL CONTENT
-     ========================= */
-
-  try {
-
-    const logo = document.querySelector("header app-logo");
-    preserveInputs(logo);
-    logo.prepend(document.createTextNode(app.header.brand ?? ""));
-
-    const user = document.querySelector("header app-user");
-    preserveInputs(user);
-    user.prepend(document.createTextNode(app.header.user ?? ""));
-
-    document.querySelectorAll("nav label")
-      .forEach((el, i) => {
-        preserveInputs(el);
-        el.prepend(document.createTextNode(app.navigation.primary[i] ?? ""));
-      });
-
-    const legal = document.querySelector("footer app-legal");
-    preserveInputs(legal);
-    legal.prepend(document.createTextNode(app.footer.legal ?? ""));
-
-    const version = document.querySelector("footer app-version");
-    preserveInputs(version);
-    version.prepend(document.createTextNode(app.footer.version ?? ""));
-
-    console.info("Global content injected successfully");
-
-  } catch (error) {
-    console.table([{
-      stage: "global-injection",
-      message: error.message
-    }]);
-  }
-
-  /* =========================
-     PAGE CONTENT
-     ========================= */
-
-  // Clear page content → elements go :empty → CSS loading state shows
-  document.querySelectorAll("article h1, article > p, article section p")
-    .forEach(el => preserveInputs(el));
-
-  await new Promise(r => setTimeout(r, 1000));
-
-  try {
-
-    const h1 = document.querySelector("article h1");
-    h1.prepend(document.createTextNode(page.pageTitle ?? ""));
-
-    const introSlots =
-      document.querySelectorAll("article > p");
-
-    page.intro?.forEach((text, i) => {
-      if (introSlots[i]) {
-        introSlots[i].prepend(document.createTextNode(text));
-      }
-    });
-
-    const sectionSlots =
-      document.querySelectorAll("article section p");
-
-    page.sections?.[0]?.content?.forEach((text, i) => {
-      if (sectionSlots[i]) {
-        sectionSlots[i].prepend(document.createTextNode(text));
-      }
-    });
-
-    const introCount = page.intro?.length ?? 0;
-
-    page.outro?.forEach((text, i) => {
-      const slot = introSlots[introCount + i];
-      if (slot) {
-        slot.prepend(document.createTextNode(text));
-      }
-    });
-
-    console.info("Page content injected successfully");
-
-  } catch (error) {
-    console.table([{
-      stage: "page-injection",
-      message: error.message
-    }]);
-  }
-
-  console.info("Load complete");
 }
 
 const API = "https://6987f917780e8375a6874dcf.mockapi.io/data";
 
+// Init — global content (once)etchData(API).then(data => {
+  if (!data) return;
+
+  const app = (Array.isArray(data) ? data : [data])[0]?.app;
+  if (!app) return;
+
+  injectData(document.querySelector("header app-logo"), app.header.brand);
+  injectData(document.querySelector("header app-user"), app.header.user);
+
+  document.querySelectorAll("nav label")
+    .forEach((el, i) => injectData(el, app.navigation.primary[i]));
+
+  injectData(document.querySelector("footer app-legal"), app.footer.legal);
+  injectData(document.querySelector("footer app-version"), app.footer.version);
+});
+
+// Nav — page content (every switch)
 document.querySelectorAll("nav input[type='radio']")
   .forEach((el, i) => {
-    el.oninput = () => load(i, API);
+    el.oninput = async () => {
+      console.clear();
+      console.log(`page → ${i} @ ${new Date().toLocaleTimeString()}`);
+
+      document.querySelectorAll("article h1, article > p, article section p")
+        .forEach(el => preserveInputs(el));
+
+      const data = await fetchData(API);
+      if (!data) return;
+
+      const page = (Array.isArray(data) ? data : [data])[0]?.app?.pages?.[i];
+      if (!page) return;
+
+      injectData(document.querySelector("article h1"), page.pageTitle);
+
+      document.querySelectorAll("article > p")
+        .forEach((el, i) => { if (page.intro?.[i]) injectData(el, page.intro[i]); });
+
+      document.querySelectorAll("article section p")
+        .forEach((el, i) => { if (page.sections?.[0]?.content?.[i]) injectData(el, page.sections[0].content[i]); });
+
+      const introSlots = document.querySelectorAll("article > p");
+      const introCount = page.intro?.length ?? 0;
+
+      page.outro?.forEach((text, i) => {
+        if (introSlots[introCount + i]) injectData(introSlots[introCount + i], text);
+      });
+
+      console.info("Load complete");
+    };
   });
 
 document.querySelector("nav input[type='radio']").click();
