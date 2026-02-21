@@ -14,9 +14,7 @@ export async function load(index, url) {
     }
   }
   
-  console.clear();
-  await new Promise(r => setTimeout(r, 1000));
-  console.log(`load → index: ${index} @ ${new Date().toLocaleTimeString()}`);
+  console.log(`load → index: ${index}`);
 
   let response;
   let data;
@@ -172,6 +170,7 @@ console.log();
       message: error.message
     }]);
   }
+}
 
   console.info("Load complete");
   console.groupEnd();
