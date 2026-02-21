@@ -15,6 +15,7 @@ export async function load(index, url) {
   }
   
   console.clear();
+  await new Promise(r => setTimeout(r, 1000));
   console.log(`load → index: ${index} @ ${new Date().toLocaleTimeString()}`);
 
   let response;
