@@ -172,6 +172,16 @@ console.log();
   }
 }
 
-// ⚡ Add the real URL here:
-load(0, "https://6987f917780e8375a6874dcf.mockapi.io/data");
+  console.info("Load complete");
+  console.groupEnd();
+}
+
+const API = "https://6987f917780e8375a6874dcf.mockapi.io/data";
+
+document.querySelectorAll("nav input[type='radio']")
+  .forEach((el, i) => {
+    el.oninput = () => load(i, API);
+  });
+
+document.querySelector("nav input[type='radio']").click();
 
