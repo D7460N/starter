@@ -41,6 +41,45 @@ These rules are **non-negotiable**. Always fall back to these defaults.
 24. NEVER inline CSS or JS.
 25. NEVER warn about or consider cross-browser compatibility.
 
+## HTML Layout Pattern
+
+The full-bleed Holy Grail layout from `index.html`. This is the canonical structure — ALWAYS follow this pattern unless otherwise stated or a more efficient way is discovered.
+
+```html
+<app-container>
+  <header>
+    <app-logo></app-logo>
+    <app-user></app-user>
+  </header>
+  <nav>
+    <label>
+      <input type="radio" aria-hidden="true" name="nav">
+    </label>
+  </nav>
+  <main>
+    <article>
+      <h1></h1>
+      <section></section>
+    </article>
+  </main>
+  <aside></aside>
+  <footer>
+    <app-legal></app-legal>
+    <app-version></app-version>
+  </footer>
+</app-container>
+```
+
+### Layout Regions
+
+- **`<app-container>`** — Root layout wrapper; CSS Grid Holy Grail structure
+- **`<header>`** — Contains `<app-logo>` and `<app-user>` custom elements
+- **`<nav>`** — Global navigation; radio button `<label>` state machines (see State Machine Pattern below)
+- **`<main>`** — Primary content area; contains `<article>` with `<h1>`, `<p>`, `<section>` elements
+- **`<aside>`** — Sidebar/supplementary content
+- **`<footer>`** — Contains `<app-legal>` and `<app-version>` custom elements
+- **`<script type="module">`** — Single script tag at end of `<body>`, outside `<app-container>`
+
 ## State Machine Pattern
 
 This is intentional. NEVER replace with `<button>` or JS event handlers.
