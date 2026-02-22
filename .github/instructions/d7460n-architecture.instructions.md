@@ -125,7 +125,7 @@ For navigation:
 - All UI states, including loading states, use CSS + HTML checkbox/radio state machines
 - Keep JS focused on fetch/CRUD only
 - Always use semantic HTML markup
-- Never use `<div>`, `<span>`, `class`, `data-*`, or `id` — `<div>` and `<span>` shall NEVER be used; ALWAYS use semantic HTML equivalents that address the intent of the element
+- Never use `<div>`, `<span>`, `class`, `data-*`, or `id` — ALWAYS use semantic HTML equivalents that address the intent of the element
 - NEVER nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`)
 - Forms go inside `<fieldset>` with schema/rules
 - Custom elements generated from JSON via `toTagName()`
