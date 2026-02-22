@@ -40,6 +40,47 @@ These rules are **non-negotiable**. Always fall back to these defaults.
 23. HTML ALWAYS uses full-bleed Holy Grail layout from `index.html`.
 24. NEVER inline CSS or JS.
 25. NEVER warn about or consider cross-browser compatibility.
+26. NEVER use `<div>` or `<span>` — ALWAYS use semantic HTML equivalents that address the intent of the element.
+27. NEVER nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`).
+
+## HTML Layout Pattern
+
+The full-bleed Holy Grail layout from `index.html`. This is the canonical structure — ALWAYS follow this pattern unless otherwise stated or a more efficient way is discovered.
+
+```html
+<app-container>
+  <header>
+    <app-logo></app-logo>
+    <app-user></app-user>
+  </header>
+  <nav>
+    <label>
+      <input type="radio" aria-hidden="true" name="nav">
+    </label>
+  </nav>
+  <main>
+    <article>
+      <h1></h1>
+      <section></section>
+    </article>
+  </main>
+  <aside></aside>
+  <footer>
+    <app-legal></app-legal>
+    <app-version></app-version>
+  </footer>
+</app-container>
+```
+
+### Layout Regions
+
+- **`<app-container>`** — Root layout wrapper; CSS Grid Holy Grail structure
+- **`<header>`** — Contains `<app-logo>` and `<app-user>` custom elements
+- **`<nav>`** — Global navigation; radio button `<label>` state machines (see State Machine Pattern below)
+- **`<main>`** — Primary content area; contains `<article>` with `<h1>`, `<p>`, `<section>` elements
+- **`<aside>`** — Sidebar/supplementary content
+- **`<footer>`** — Contains `<app-legal>` and `<app-version>` custom elements
+- **`<script type="module">`** — Single script tag at end of `<body>`, outside `<app-container>`
 
 ## State Machine Pattern
 
@@ -82,7 +123,8 @@ For navigation:
 - All UI states, including loading states, use CSS + HTML checkbox/radio state machines
 - Keep JS focused on fetch/CRUD only
 - Always use semantic HTML markup
-- Never use `<div>`, `<span>`, `class`, `data-*`, or `id`
+- Never use `<div>`, `<span>`, `class`, `data-*`, or `id` — `<div>` and `<span>` shall NEVER be used; ALWAYS use semantic HTML equivalents that address the intent of the element
+- NEVER nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`)
 - Forms go inside `<fieldset>` with schema/rules
 - Custom elements generated from JSON via `toTagName()`
 - Use `aria-disabled` for accessibility (styled via CSS)

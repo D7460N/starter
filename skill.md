@@ -26,6 +26,8 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 23. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use a radio buttos inside a `<label>` with `role="button"` combined with `:has()`, `:not`, and `:empty()` inside `<nav>` for global navigation.
 24. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS use one single file, `index.html` at project root.
 25. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS be a full-bleed Holy Grail layout using the skeletal layout markup found in the `index.html` file.
+26. Unless otherwise indicated, `<div>` and `<span>` shall NEVER be used. ALWAYS use semantic HTML equivalents that address the intent of the element.
+27. Unless otherwise indicated, wrapper elements shall NEVER be nested for layout purposes. ALWAYS use CSS Grid solutions instead (e.g., `grid-template-columns` and `justify-content: space-between`).
 
 ## Architecture
 
@@ -46,10 +48,50 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 - All UI states, including loading states, use CSS and HTML checkboxs as state machines
 - Keep JS focused on fetch/CRUD only
 - Always only ever use semantic HTML markup
-- Never use `<div>`, `<span>`, `class`, `data-*`, or `id`.
+- Never use `<div>`, `<span>`, `class`, `data-*`, or `id` — `<div>` and `<span>` shall NEVER be used; ALWAYS use semantic HTML equivalents that address the intent of the element
+- NEVER nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`)
 - NEVER create new coding patterns — all patterns are already established; use what exists
 - Adding code increases entropy — NEVER add new code or files unless the user explicitly states to
 - Follow user instructions in detail — no more, no less
+
+## HTML Layout Pattern
+
+The full-bleed Holy Grail layout from `index.html`. This is the canonical structure — ALWAYS follow this pattern unless otherwise stated or a more efficient way is discovered.
+
+```html
+<app-container>
+  <header>
+    <app-logo></app-logo>
+    <app-user></app-user>
+  </header>
+  <nav>
+    <label>
+      <input type="radio" aria-hidden="true" name="nav">
+    </label>
+  </nav>
+  <main>
+    <article>
+      <h1></h1>
+      <section></section>
+    </article>
+  </main>
+  <aside></aside>
+  <footer>
+    <app-legal></app-legal>
+    <app-version></app-version>
+  </footer>
+</app-container>
+```
+
+### Layout Regions
+
+- **`<app-container>`** — Root layout wrapper; CSS Grid Holy Grail structure
+- **`<header>`** — Contains `<app-logo>` and `<app-user>` custom elements
+- **`<nav>`** — Global navigation; radio button `<label>` state machines (see State Machine Pattern below)
+- **`<main>`** — Primary content area; contains `<article>` with `<h1>`, `<p>`, `<section>` elements
+- **`<aside>`** — Sidebar/supplementary content
+- **`<footer>`** — Contains `<app-legal>` and `<app-version>` custom elements
+- **`<script type="module">`** — Single script tag at end of `<body>`, outside `<app-container>`
 
 ## State Machines
 
