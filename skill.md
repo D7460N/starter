@@ -30,21 +30,16 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 ## Architecture
 
 - **index.html** (root): Complete DOM structure, pre-built
-- **assets/css/**: Drop-in modular CSS files control all layout, conditional DOM visibility, themes, user interaction, heuristics
-- **assets/js/**: Data transport for CRUD operations only
+- **assets/css/layout.css**: The only active CSS file; CSS Grid Holy Grail structure and all current layout
+- **assets/js/api.js**: The only active JS file; contains the data layer API endpoint and all fetch/CRUD operations
 - **assets/images/**: Static assets
 
-## CSS Files
+### Ignored (inactive for now)
 
-Broken up similar to JS conventions - single purpose functions, utilities, etc.
-
-- `a11y.css` - Accessibility styles
-- `layout.css` - Grid only (never flex) full-bleed, Holy-Grail, skeletal structure
-- `reset.css` - Browser normalization
-- `scrollbars.css` - Custom scrollbar styling
-- `responsive.css` - Resolution agnosticism
-- `typography.css` - Fluid (zoom), overflow, behavior, and styles  
-[Add others as needed]
+- **assets/data/**: Ignore completely; the data layer lives in `api.js` via its API endpoint
+- **assets/js/app.js**: Inactive; ignore for now
+- **assets/js/pipeline/**: Inactive; ignore for now
+- **assets/css/*.css** (other than `layout.css`): Inactive; ignore for now
 
 ## When modifying this project
 

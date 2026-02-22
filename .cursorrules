@@ -65,24 +65,16 @@ For navigation:
 ## File Responsibilities
 
 - **index.html** — Complete DOM structure
-- **assets/css/** — Modular CSS: layout, a11y, themes, reset, typography, scrollbars, transitions
-- **assets/js/app.js** — Data transport entry point
-- **assets/js/api.js** — Fetch/CRUD operations
-- **assets/js/pipeline/** — Numbered pipeline stages for data processing
-- **assets/data/** — JSON data files (decoupled from presentation)
+- **assets/css/layout.css** — The only active CSS file; CSS Grid Holy Grail structure and all current layout
+- **assets/js/api.js** — The only active JS file; contains the data layer API endpoint and all fetch/CRUD operations
 - **assets/images/** — Static assets
 
-## CSS Files (single-purpose, like JS utilities)
+### Ignored (inactive for now)
 
-- `a11y.css` — Accessibility styles
-- `layout.css` — CSS Grid Holy Grail structure
-- `reset.css` — Browser normalization
-- `fonts.css` — Font loading
-- `themes.css` — Color-scheme, variables
-- `typography.css` — Fluid type, overflow, behavior
-- `scrollbars.css` — Custom scrollbar styling
-- `transitions.css` — Motion and transitions
-- `radii.css` — Border radius tokens
+- **assets/data/** — Ignore completely; the data layer lives in `api.js` via its API endpoint
+- **assets/js/app.js** — Inactive; ignore for now
+- **assets/js/pipeline/** — Inactive; ignore for now
+- **assets/css/*.css** (other than `layout.css`) — Inactive; ignore for now
 
 ## When Modifying This Project
 
