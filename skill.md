@@ -10,7 +10,7 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 7. Unless otherwise indicated, JS shall NEVER be used for anything (exception: `api.js` for CRUD data transport). Modern HTML and CSS must be used for all development.
 8. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS replace JS equivalent functionality.
 9. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `document.querySelector('');` for targeting all selectors.
-10. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `oninput` for ALL API CRUD operations.
+10. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `oninput` for ALL API CRUD operations (per `api.js` only).
 11. Unless otherwise indicated, JS shall NEVER default to and NEVER use any user initiated event for any API CRUD operations.
 12. Unless otherwise indicated, JS shall NEVER default to and NEVER set or use any event listeners.
 13. Unless otherwise indicated, JS shall NEVER default to and NEVER set or use any listeners at all - ever.
@@ -47,6 +47,9 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 - Keep JS focused on fetch/CRUD only
 - Always only ever use semantic HTML markup
 - Never use `<div>`, `<span>`, `class`, `data-*`, or `id`.
+- NEVER create new coding patterns — all patterns are already established; use what exists
+- Adding code increases entropy — NEVER add new code or files unless the user explicitly states to
+- Follow user instructions in detail — no more, no less
 
 ## State Machines
 

@@ -23,7 +23,7 @@ These rules are **non-negotiable**. Always fall back to these defaults.
 6. JS shall NEVER be used for anything unless otherwise stated (exception: `api.js` for CRUD data transport). Modern HTML and CSS must be used for all development.
 7. CSS ALWAYS replaces JS for all functionality.
 8. JS ALWAYS uses `document.querySelector('')` for targeting selectors.
-9. JS ALWAYS uses `oninput` for ALL API CRUD operations.
+9. JS ALWAYS uses `oninput` for ALL API CRUD operations (per `api.js` only).
 10. JS NEVER uses user-initiated events for API CRUD operations.
 11. JS NEVER uses event listeners — ever.
 12. HTML ALWAYS uses `<label>` for interactive elements.
@@ -88,4 +88,7 @@ For navigation:
 - Use `aria-disabled` for accessibility (styled via CSS)
 - JS must be idempotent and stateless — no global state or side effects
 - Reuse existing functions before creating new ones
+- NEVER create new coding patterns — all patterns are already established; use what exists
+- Adding code increases entropy — NEVER add new code or files unless the user explicitly states to
+- Follow user instructions in detail — no more, no less
 - Use cutting-edge experimental CSS without regard for browser support
