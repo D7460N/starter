@@ -7,8 +7,8 @@ description: index.html and accompanying CSS and JS files are to be used as a st
 4. Established sandards can ALWAYS be found here, (https://www.w3.org/TR/) and here (https://developer.mozilla.org/en-US/docs/Web).
 5. Unless otherwise indicated, this code base shall ALWAYS default to Single Page Application (SPA) navigational architecture.
 6. Unless otherwise indicated, this code base shall ALWAYS default to being a Progressive Web Application (PWA).
-7. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS replace JS equivalent functionality EXCEPT for API calls for CRUD operations.
-8. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS be limited to API calls for CRUD operations only.
+7. Unless otherwise indicated, JS shall NEVER be used for anything. Modern HTML and CSS must be used for all development.
+8. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS replace JS equivalent functionality.
 9. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `document.querySelector('');` for targeting all selectors.
 10. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `oninput` for ALL API CRUD operations.
 11. Unless otherwise indicated, JS shall NEVER default to and NEVER use any user initiated event for any API CRUD operations.

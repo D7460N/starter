@@ -5,9 +5,10 @@ These rules are **non-negotiable**. Always fall back to these defaults.
 
 ## Core Constraints
 
+- **JS == NEVER** — JS shall NEVER be used for anything unless otherwise stated
+- **HTML + CSS == everything** — modern HTML and CSS must be used for all development
 - **HTML == structure** — semantic elements only, no `<div>`, `<span>`, `class`, `id`, or `data-*`
 - **CSS == all UI behavior** — state, heuristics, color-scheme, themes, loading states, visibility
-- **JS == CRUD data transport only** — `fetch`, inject, nothing else
 - **Zero dependencies** — no frameworks, no bundlers, no compiled code, no npm packages
 - **Single page** — one `index.html` at project root, SPA + PWA architecture
 - **Layout** — CSS Grid only (never Flexbox), full-bleed Holy Grail via `<app-container>`
@@ -19,8 +20,8 @@ These rules are **non-negotiable**. Always fall back to these defaults.
 3. Standards references: https://www.w3.org/TR/ and https://developer.mozilla.org/en-US/docs/Web
 4. ALWAYS default to SPA navigational architecture.
 5. ALWAYS default to PWA (`manifest.webmanifest`).
-6. CSS ALWAYS replaces JS for all UI functionality EXCEPT API calls for CRUD operations.
-7. JS is ALWAYS limited to API calls for CRUD operations only.
+6. JS shall NEVER be used for anything unless otherwise stated. Modern HTML and CSS must be used for all development.
+7. CSS ALWAYS replaces JS for all functionality.
 8. JS ALWAYS uses `document.querySelector('')` for targeting selectors.
 9. JS ALWAYS uses `oninput` for ALL API CRUD operations.
 10. JS NEVER uses user-initiated events for API CRUD operations.
