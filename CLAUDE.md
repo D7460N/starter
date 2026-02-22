@@ -46,7 +46,7 @@ This is intentional. NEVER replace with `<button>` or JS event handlers.
 
 For forms:
 ```html
-<label role="button" name="submit" aria-label="Save">
+<label role="button" aria-label="Save">
   Save
   <input type="checkbox" aria-hidden="true" />
 </label>
