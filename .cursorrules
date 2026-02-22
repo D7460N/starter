@@ -40,6 +40,8 @@ These rules are **non-negotiable**. Always fall back to these defaults.
 23. HTML ALWAYS uses full-bleed Holy Grail layout from `index.html`.
 24. NEVER inline CSS or JS.
 25. NEVER warn about or consider cross-browser compatibility.
+26. NEVER use `<div>` or `<span>` — ALWAYS use semantic HTML equivalents that address the intent of the element.
+27. NEVER nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`).
 
 ## HTML Layout Pattern
 
@@ -121,7 +123,8 @@ For navigation:
 - All UI states, including loading states, use CSS + HTML checkbox/radio state machines
 - Keep JS focused on fetch/CRUD only
 - Always use semantic HTML markup
-- Never use `<div>`, `<span>`, `class`, `data-*`, or `id`
+- Never use `<div>`, `<span>`, `class`, `data-*`, or `id` — `<div>` and `<span>` shall NEVER be used; ALWAYS use semantic HTML equivalents that address the intent of the element
+- NEVER nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`)
 - Forms go inside `<fieldset>` with schema/rules
 - Custom elements generated from JSON via `toTagName()`
 - Use `aria-disabled` for accessibility (styled via CSS)
