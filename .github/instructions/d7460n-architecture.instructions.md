@@ -11,6 +11,7 @@ applyTo: '**'
 - If there is ANY ambiguity in instructions or questions, STOP immediately, ask for clarification, and wait for a reply before proceeding.
 - **NEVER GUESS.** Do not assume, infer, or improvise when instructions are unclear.
 - You may NOT proceed without the clarification needed to do what is being asked.
+- **ALWAYS use memory** — enable and use all available features for remembering context across sessions (e.g., memory, notepad, stored facts). Cross-session continuity is required.
 
 ## Core Constraints
 
