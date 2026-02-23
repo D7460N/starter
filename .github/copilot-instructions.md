@@ -3,6 +3,15 @@
 This is a **zero-dependency, CSS-first, JAMstack-based, browser-native** starter template.  
 These rules are **non-negotiable**. Always fall back to these defaults.
 
+## Accuracy & Clarification
+
+- **ALWAYS prioritize accuracy over speed** — completing tasks correctly is ALWAYS more important than getting them done sooner.
+- If there is ANY ambiguity in instructions or questions, STOP immediately, ask for clarification, and wait for a reply before proceeding.
+- **NEVER GUESS.** Do not assume, infer, or improvise when instructions are unclear.
+- You may NOT proceed without the clarification needed to do what is being asked.
+- **ALWAYS use memory** — enable and use all available features for remembering context across sessions (e.g., memory, notepad, stored facts). Cross-session continuity is required.
+- **ALWAYS read entire files** — when reading files, read the complete file. Ignore all file line number caps.
+
 ## Core Constraints
 
 - **JS == NEVER** — JS shall NEVER be used for anything unless otherwise stated
