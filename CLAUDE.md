@@ -10,6 +10,7 @@ These rules are **non-negotiable**. Always fall back to these defaults.
 - **NEVER GUESS.** Do not assume, infer, or improvise when instructions are unclear.
 - You may NOT proceed without the clarification needed to do what is being asked.
 - **ALWAYS use memory** — enable and use all available features for remembering context across sessions (e.g., memory, notepad, stored facts). Cross-session continuity is required.
+- **ALWAYS read entire files** — when reading files, read the complete file. Ignore all file line number caps.
 
 ## Core Constraints
 
