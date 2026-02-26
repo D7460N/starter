@@ -1,52 +1,68 @@
-/*
-https://modern-css.com/dark-mode-colors-without-duplicating-values/
-*/
-
-h1, h2 {
-  text-wrap: balance;
-  max-width: 40ch;
-}
+/* https://modern-css.com/dark-mode-colors-without-duplicating-values/ */
 
 .parent {
   display: grid;
   place-items: center;
 }
 
-/* Preventing layout shift from scrollbar appearance */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Preventing layout shift from scrollbar appearance
+When content grows tall enough to scroll, the scrollbar appears and narrows the layout, causing a visible jump. The old fixes were overflow-y: scroll (always shows the bar) or padding-right matching the scrollbar width. scrollbar-gutter: stable reserves the space upfront. */
 body {
   scrollbar-gutter: stable;
 }
 
-/* Scrollbar styling without -webkit- pseudo-elements */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Scrollbar styling without -webkit- pseudo-elements
+Styling scrollbars required ::-webkit-scrollbar, ::-webkit-scrollbar-track, and ::-webkit-scrollbar-thumb — non-standard WebKit-only pseudo-elements that Firefox never supported. scrollbar-color and scrollbar-width are the standard two-property replacement. */
 * {
   scrollbar-width: thin;
   scrollbar-color: #888 transparent;
 }
 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Dark mode colors without duplicating values
+You defined every variable in :root and again inside @media (prefers-color-scheme: dark). light-dark() holds both values in one place so you do not repeat yourself. */
 :root {
   color-scheme: light dark;
   color: light-dark(#111, #eee);
 }
 
-/* Scaling elements without transform hacks */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Scaling elements without transform hacks
+transform: scale() shrinks an element visually but keeps its original layout space, requiring negative margins to collapse the gap. zoom scales the element and its layout footprint together — no hacks needed. */
 .thumbnail {
   zoom: 0.5;
 }
 
-/* Custom easing curves without cubic-bezier guessing */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Custom easing curves without cubic-bezier guessing
+Creating non-standard easing like bounce or spring required either a cubic-bezier approximation (which can only produce curves, not bounces) or a JavaScript animation library. linear() defines an easing function by interpolating between a list of keyframe values. */
 .el {
   transition: transform 0.6s linear(0, 1.2 60%, 0.9, 1.05, 1);
 }
 
-/* Form validation styles without JavaScript */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Form validation styles without JavaScript
+:invalid fires as soon as the page loads, marking empty required fields as errors before anyone types. The workaround was JS adding a .touched class after blur. :user-invalid only activates after the user has interacted with the field. */
 input:user-invalid {
   border-color: red;
 }
 input:user-valid {
   border-color: green;
 }
+/* no JS, no .touched class */
 
-/* Smooth height auto animations without JavaScript */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Smooth height auto animations without JavaScript
+Animating to height: auto required JS to measure scrollHeight, set a fixed pixel height, then snap back to auto. interpolate-size: allow-keywords lets CSS transition directly to and from intrinsic sizes. */
 :root { interpolate-size: allow-keywords; }
 .accordion {
   height: 0;
@@ -55,18 +71,37 @@ input:user-valid {
 }
 .accordion.open { height: auto; }
 
-/* Color variants without Sass functions */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Vivid colors beyond sRGB
+The old way was hex, rgb(), or hsl(), all stuck in sRGB. On P3 or other wide-gamut screens, those colors look flat. oklch and color(display-p3 ...) unlock the extra range. */
+.hero {
+  color: oklch(0.7 0.25 29);
+}
+/* Or: color(display-p3 1 0.2 0.1) for P3. */
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Color variants without Sass functions
+The old way used Sass functions like lighten(), darken(), and saturate() at compile time. Relative color syntax derives variants from a variable at runtime with oklch(from var(--x) ...). */
 .btn {
   background: oklch(from var(--brand) calc(l + 0.2) c h);
 }
+/* Runtime. Updates when --brand changes. */
 
-/* Lazy rendering without IntersectionObserver */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Lazy rendering without IntersectionObserver
+The old way used JavaScript's IntersectionObserver to detect when elements entered the viewport, then loaded or rendered them. Now CSS handles it with content-visibility: auto. */
 .section {
   content-visibility: auto;
   contain-intrinsic-size: auto 500px;
 }
 
-/* Scoped styles without BEM naming */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Scoped styles without BEM naming
+To avoid leaks you used BEM, CSS Modules, or styled-components. @scope limits selectors to a root and optional boundary so you can use short names safely.*/
 @scope (.card) {
   .title {
     font-size: 1.25rem;
@@ -74,9 +109,11 @@ input:user-valid {
   }
   .body { color: #444; }
 }
+/* HTML: class="card", class="title" */
 
-/* 
-Typed custom properties without JavaScript
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Typed custom properties without JavaScript
 Custom properties were strings. You couldn't animate them or get browser validation. @property gives you a type, so the browser can interpolate and validate. */
 @property --hue {
   syntax: "<angle>";
@@ -84,10 +121,41 @@ Custom properties were strings. You couldn't animate them or get browser validat
   initial-value: 0deg;
 }
 
-/* .wheel {Typed custom properties without JavaScript
-Custom properties were strings. You couldn't animate them or get browser validation. @property gives you a type, so the browser can interpolate and validate. */
-  background: hsl(var(--hue), 80%, 50%);
-  transition: --hue .3s;
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Entry animations without JavaScript timing
+Transitions only ran when a value changed. To animate in, you added a class in JS after paint. @starting-style defines the before state so CSS can transition from it. */
+.card {
+  transition: opacity .3s, transform .3s;
+  @starting-style {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Balanced headlines without manual line breaks
+You used to add br tags by hand or pull in Balance-Text.js. Now one property evens out lines so headlines don't end with a single word. */
+h1, h2 {
+  text-wrap: balance;
+  max-width: 40ch;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Dropdown menus without JavaScript toggles
+The old way used JS for toggle, click-outside, and ESC, plus manual aria. The popover attribute and popovertarget give you a built-in dismissible popover with no toggle code. */
+/* <button popovertarget="menu"> ... <div popover> */
+#menu[popover] {
+  position: absolute;
+  margin: 0.25rem 0;
+}
+/* Toggle, light dismiss, ESC: built in. */
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
 
 
