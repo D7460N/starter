@@ -1,0 +1,11 @@
+/*
+https://modern-css.com/entry-animations-without-javascript-timing/
+*/
+
+.card {
+  transition: opacity .3s, transform .3s;
+  @starting-style {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
