@@ -1,0 +1,93 @@
+/*
+https://modern-css.com/dark-mode-colors-without-duplicating-values/
+*/
+
+h1, h2 {
+  text-wrap: balance;
+  max-width: 40ch;
+}
+
+.parent {
+  display: grid;
+  place-items: center;
+}
+
+/* Preventing layout shift from scrollbar appearance */
+body {
+  scrollbar-gutter: stable;
+}
+
+/* Scrollbar styling without -webkit- pseudo-elements */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+}
+
+:root {
+  color-scheme: light dark;
+  color: light-dark(#111, #eee);
+}
+
+/* Scaling elements without transform hacks */
+.thumbnail {
+  zoom: 0.5;
+}
+
+/* Custom easing curves without cubic-bezier guessing */
+.el {
+  transition: transform 0.6s linear(0, 1.2 60%, 0.9, 1.05, 1);
+}
+
+/* Form validation styles without JavaScript */
+input:user-invalid {
+  border-color: red;
+}
+input:user-valid {
+  border-color: green;
+}
+
+/* Smooth height auto animations without JavaScript */
+:root { interpolate-size: allow-keywords; }
+.accordion {
+  height: 0;
+  overflow: hidden;
+  transition: height .3s ease;
+}
+.accordion.open { height: auto; }
+
+/* Color variants without Sass functions */
+.btn {
+  background: oklch(from var(--brand) calc(l + 0.2) c h);
+}
+
+/* Lazy rendering without IntersectionObserver */
+.section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* Scoped styles without BEM naming */
+@scope (.card) {
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .body { color: #444; }
+}
+
+/* 
+Typed custom properties without JavaScript
+Custom properties were strings. You couldn't animate them or get browser validation. @property gives you a type, so the browser can interpolate and validate. */
+@property --hue {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* .wheel {Typed custom properties without JavaScript
+Custom properties were strings. You couldn't animate them or get browser validation. @property gives you a type, so the browser can interpolate and validate. */
+  background: hsl(var(--hue), 80%, 50%);
+  transition: --hue .3s;
+}
+
+
