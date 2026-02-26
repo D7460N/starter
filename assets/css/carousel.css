@@ -1,0 +1,14 @@
+/* https://modern-css.com/carousel-navigation-without-a-javascript-library/ */
+
+.carousel::scroll-button(left) {
+  content: "⬅" / "Scroll left";
+}
+.carousel::scroll-button(right) {
+  content: "➡" / "Scroll right";
+}
+.carousel { scroll-marker-group: after; }
+.carousel li::scroll-marker {
+  content: '';
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
