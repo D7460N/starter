@@ -9,15 +9,17 @@
   - approaches
 - This file is to be updated on every code change push to ensure accuracy.
 - This file is to be checked and updated on each code push.
-- This file is to be referenced and code examples are to be referenced in all other documentation via the link.  
+- This file is to be referenced and code examples are to be referenced in all other documentation via the link.
+- This file was originaly inspired by: [https://modern-css.com/](https://modern-css.com/)  
 - Each CSS rule, technique, and approach, has an associated minimal code example and the date it was last updated.
 - Each CSS code example displays current browser support. (coming soon)
 - Each CSS code example displays a reference to the MDN resource from which it was taken. (coming soon)  
 [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
 
-> This page was originaly inspired by: [https://modern-css.com/](https://modern-css.com/)
+> “Simplicity is the ultimate sophistication.”  
+> _Leonardo da Vinci_
 
-## [Simplicity by design](#simplicity-by-design)
+## [Simplicity is the by design](#simplicity-by-design)
 
 By design and by default, all code (except where noted) is minimal and consistent as possible. Code patters and techniques, once established, are repeated the same way with the same intent and results across the board.
 
