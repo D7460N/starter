@@ -11,7 +11,7 @@ Features:
 - Data-agnostic
 - Minimal reset
 - Minimal nesting
-- Minimal markup 
+- Minimal markup
 - Semantic markup
 - Zero-dependencies
 - Zero div
@@ -23,7 +23,7 @@ Features:
 - Liquid typography
 - Cross-browser formatting consensus
 - Image behavior conformity
-- Transition consistancy
+- Transition consistency
 - JS for API/CRUD only
 */
 
@@ -142,7 +142,7 @@ p:not(:empty) {
   display: block;
 }
 
-/* MARK: TYPOGRAPGY */
+/* MARK: TYPOGRAPHY */
 h1 {
   font-size: 1.3rem;
 }
@@ -165,7 +165,7 @@ section {
 /* aside hidden until receives content */
 aside {
   display: none;
-  
+
   &:not(:empty) {
     display: grid;
   }

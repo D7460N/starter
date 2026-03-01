@@ -1,4 +1,8 @@
-/* https://modern-css.com/dark-mode-colors-without-duplicating-values/ */
+/* This file is for reference only and is taken from this resource.
+https://modern-css.com/dark-mode-colors-without-duplicating-values/
+
+@agents
+Ignore this file */
 
 .parent {
   display: grid;
@@ -248,11 +252,12 @@ Respecting a user's reduced motion preference required JavaScript to check windo
 /* Perceptually uniform colors with oklch
 HSL looks like it should be perceptually uniform, but it isn't. Yellow at hsl(60 100% 50%) appears far brighter than blue at hsl(240 100% 50%) at the same lightness. oklch uses a model where L actually means the same perceived brightness across all hues. */
 /* oklch: L is perceptually uniform across hues */
+:root {
 --brand: oklch(0.55 0.2 264);
 --brand-light: oklch(0.75 0.2 264);
 --brand-dark: oklch(0.35 0.2 264);
 /* only L changes */
-
+}
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 /*CSS feature detection without JavaScript
@@ -592,7 +597,7 @@ transform was one shorthand. To change only rotation you had to repeat translate
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 /* Page transitions without a framework
-Page transitions used to need Barba.js or React Transition Group. The View Transitions API gives you cross-fades and shared-element motion with one JS call and CSS. */
+Page transitions used to need s transition library or React Transition Group. The View Transitions API gives you cross-fades and shared-element motion with one JS call and CSS. */
 // JS: wrap DOM update
 document.startViewTransition(() => {
   document.body.innerHTML = newContent;
@@ -904,33 +909,3 @@ Media queries respond to the viewport. Components live in containers: sidebars, 
 
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

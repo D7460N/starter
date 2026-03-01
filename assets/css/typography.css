@@ -37,9 +37,11 @@ h1 {
   font-size: 2rem;
 }
 
-/* :is(h2, h3) {
+/*
+:is(h2, h3) {
     font-size: clamp(1.25rem, 5cqi, 1.5rem);
-} */
+}
+*/
 
 h4 {
   display: var(--sub-header-display);
@@ -76,14 +78,4 @@ figure,
 blockquote {
   /* hanging-punctuation: first last; */
   text-wrap: pretty;
-}
-}
-}
-}
-}
-}
-}
-}
-}
-}
 }
