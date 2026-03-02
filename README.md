@@ -1,6 +1,6 @@
 # D7460N Architecture
 
-**D7460N Architecture** is an **open-source, browser-native, fully declarative front-end architecture** for building scalable, maintainable web applications without frameworks, build tools, or transpilers.
+**D7460N Architecture** is an **open-source, browser-native, fully declarative front-end architecture** for building out-of-the-box scalable, maintainable, intuitive, and accessible web applications without frameworks, build tools, or transpilers.
 
 D7460N operates as a **Single Page Application (SPA)** pattern and is implemented as a **Progressive Web App (PWA)** with a focus on modern standards: semantic HTML, CSS state management, and data-only JavaScript.
 
