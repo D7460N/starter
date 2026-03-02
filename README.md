@@ -9,7 +9,7 @@ D7460N operates as a **Single Page Application (SPA)** pattern and is implemente
 - Browser-native and dependency-free.
 - Fully declarative, CSS-first UI logic using selectors like `:checked`, `:has()`, and `:empty`.
 - No build tools, no transpilers, no frameworks (compatible with all).
-- Dynamic JSON data via native `fetch()` and CSS reactive patterns.
-- Responsive and 508/WCAG compliant by design.
+- Dynamic UI pattern rendering via browser native CSS "always live" reactivity.
+- Simple, intuitive, responsive, and 508/WCAG compliant by design.
 
 ![Image](https://raw.githubusercontent.com/D7460N/starter/refs/heads/main/assets/images/brand/logo.svg)
