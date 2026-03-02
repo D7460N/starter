@@ -14,8 +14,8 @@ D7460N operates as a Single Page Application (SPA) and can be implemented as a P
 
 ## Separation of Concerns
 
-- Front-end JavaScript is replaced by modern CSS 
-- Front-end JavaScript CRUD API data-delivery calls are evoked via `oninput`
+- Front-end JavaScript entirely replaced by modern CSS 
+- Front-end JavaScript CRUD API data-delivery via `oninput` only
 - HTML == structure
 - CSS == everything else
 - JS == CRUD API data-delivery only
