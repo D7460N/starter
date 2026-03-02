@@ -4,7 +4,7 @@
 
 D7460N operates as a Single Page Application (SPA) and can be implemented as a Progressive Web App (PWA), with a focus on developer-friendly Separation of Concerns (SOC) and modern (W3C/WCAG) standards: semantic HTML, CSS state management, and data-delivery-only JavaScript.
 
-## Simple By Design 
+## Fast/Simple By Design 
 
 > - Browser-native and dependency-free.
 > - Fully declarative, CSS-first UI logic using selectors like `:checked`, `:has()`, and `:empty`.
