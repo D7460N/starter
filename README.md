@@ -1,6 +1,6 @@
 # D7460N Architecture
 
-Did you know that CSS can now autonomously render the presentation layer?  
+Did you know that native vanilla CSS can now autonomously render the presentation layer?  
 _No framework, AI, or 3rd party dependency needed!_ 
 
 **D7460N Architecture** is an **open-source, browser-native, fully declarative front-end architecture** for building out-of-the-box scalable, maintainable, intuitive, and accessible web applications without frameworks, build tools, or transpilers.
