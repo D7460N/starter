@@ -8,7 +8,7 @@ D7460N operates as a Single Page Application (SPA) and can be implemented as a P
 
 - Browser-native and dependency-free.
 - Fully declarative, CSS-first UI logic using selectors like `:checked`, `:has()`, and `:empty`.
-- No build tools, no transpilers, no frameworks (compatible with all).
+- No build tools, transpilers, frameworks required (optional).
 - Dynamic UI pattern rendering via browser native CSS "always live" reactivity.
 - Simple, intuitive, responsive, and 508/WCAG compliant by design.
 
