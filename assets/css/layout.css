@@ -112,7 +112,7 @@ app-container {
 }
 
 header, footer {
-  align-content: space-between;
+  justify-content: space-between;
   grid-auto-flow: column;
 }
 
