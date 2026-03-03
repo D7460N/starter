@@ -3,10 +3,10 @@ Here is a clean conceptual diagram of the modern browser pipeline.
 
 ```css
 
-  _\ _ _\_ __\_ __\_ 
-    \    \    \    \    
+  _\ _ _\_ __\_ __\_
+    \    \    \    \
 \__ _\__ _\__ _\__ _\__ _\
- \ NETWORK \    \    \     
+ \ NETWORK \    \    \
 __\_ __\__ _\_ __\ ___\_   /\\           /\\
       .                   /  \\         /  \\
 HTTPS.Request            /HTML\\       /DOM \\
@@ -17,19 +17,19 @@ HTTPS.Request            /HTML\\       /DOM \\
   .    /::::::\ \     .    \//  /  \\    \//  /  \\ .
    .  /::::::::\ \     .       /CSS \\       /CSSOM\ .
     ./  BROWSER \ \     .     /Parser\\     /Style \\ .
-    /(User Agent)\_\     .    \ Rust //     \Rules //  .  
+    /(User Agent)\_\     .    \ Rust //     \Rules //  .
     \    (UA)    / /. . . . . .\ C++//. . . .\    //. . . . . .
      \::::::::::/ /        .    \  //  /\\    \  //      .   .
       \::::::::/ /          .    \//  /  \\    \//        . .
        \::::::/ /            .       / JS \\               .
        .\::::/ /              .     /Engine\\             . .
-      .  \;;/ /                .    \V8/JSC//            .   . 
+      .  \;;/ /                .    \V8/JSC//            .   .
      .    \/_/                  . . .\ SM //. . . . . . . . . .
     .                                 \  //            .
    .               /\\     /\\     /\\ \// /\\        .
   .               /  \\   /  \\   /  \\   /  \\      .
  . . . . . . . . .\  //. .\  //. .\  //. .\  // . . .
-                   \//     \//     \//     \//      
+                   \//     \//     \//     \//
                     \       \       \       \__[ Render Tree (DOM + CSSOM) ]
                      \       \       \__[ Layout (Box geometry) ]
                       \       \__[ Paint (Draw pixels) ]
@@ -214,7 +214,7 @@ CSS and layout happen inside the rendering engine.
 
 JS runs in a separate engine.
 
-When JS touches layout or computed styles, the rendering engine may be forced to sync — that’s where performance costs appear.
+When JS touches layout or computed styles, the rendering engine may be forced to sync — that's where performance costs appear.
 
 ---
 
@@ -224,5 +224,3 @@ If you want, I can now draw:
 2. Or a side-by-side of native CSS state vs JS state engine
 
 That comparison is where the runtime discussion becomes very clear.
-
- 

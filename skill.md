@@ -1,20 +1,20 @@
 ---
-name: d7460n-css-first
-description: 'D7460N Architecture — zero-dependency, CSS-first, JAMstack-based, browser-native starter template. Use when modifying HTML, CSS, or JS files in this project. Enforces CSS-driven UI state, semantic HTML, no frameworks, no dependencies, and strict separation of concerns between presentation and data layers.'
+name: d7460n-css-only  
+description: 'D7460N Architecture — zero-dependency, CSS-only, JAMstack-based, browser-native starter template. Use when modifying HTML, CSS, or JS files in this project. Enforces CSS-driven UI state, semantic HTML, no frameworks, no dependencies, and strict separation of concerns between presentation and data layers.'
 ---
 
-# D7460N CSS-First Architecture
+# D7460N CSS-Only Architecture
 
 ## When to use this skill
 
-Use this skill when working on any file in the D7460N starter template. This ensures all changes comply with the zero-dependency, CSS-first, browser-native architecture.
+Use this skill when working on any file in the D7460N starter template. This ensures all changes comply with the zero-dependency, CSS-only, browser-native architecture.
 
 ## Non-Negotiable Rules
 
 1. Unless otherwise indicated, this code base shall NEVER default to, NEVER consider, NEVER refer to, NEVER suggest, and NEVER use third party dependencies.
 2. Third party dependencies are defined as any packaged code or system that is not able render natively (without assistance) or must be compiled and or pre-built to run in an evergreen web browser.
 3. Unless otherwise indicated, this code base shall ALWAYS default to, ALWAYS consider, ALWAYS refer to, ALWAYS suggest, and ALWAYS use modern, advanced, vanilla, W3C/WCAG standards compliant, accessibility-first, syntax, techniques, approaches, strategies for all project design and development.
-4. Established sandards can ALWAYS be found here, (https://www.w3.org/TR/) and here (https://developer.mozilla.org/en-US/docs/Web).
+4. Established standards can ALWAYS be found here, (https://www.w3.org/TR/) and here (https://developer.mozilla.org/en-US/docs/Web).
 5. Unless otherwise indicated, this code base shall ALWAYS default to Single Page Application (SPA) navigational architecture.
 6. Unless otherwise indicated, this code base shall ALWAYS default to being a Progressive Web Application (PWA).
 7. Unless otherwise indicated, JS shall NEVER be used for anything (exception: `api.js` for CRUD data transport). Modern HTML and CSS must be used for all development.
@@ -33,7 +33,7 @@ Use this skill when working on any file in the D7460N starter template. This ens
 20. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS manage light and dark mode color-scheme syntax and variables in `:root{}`.
 21. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use a11y selectors when possible.
 22. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use checkboxes inside `<label>`s with `role="button"` combined with `:has()`, `:not`, and `:empty()` for state machines.
-23. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use a radio buttos inside a `<label>` with `role="button"` combined with `:has()`, `:not`, and `:empty()` inside `<nav>` for global navigation.
+23. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS use a radio buttons inside a `<label>` with `role="button"` combined with `:has()`, `:not`, and `:empty()` inside `<nav>` for global navigation.
 24. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS use one single file, `index.html` at project root.
 25. Unless otherwise indicated, HTML shall ALWAYS default to and ALWAYS be a full-bleed Holy Grail layout using the skeletal layout markup found in the `index.html` file.
 26. Unless otherwise indicated, `<div>` and `<span>` shall NEVER be used. ALWAYS use semantic HTML equivalents that address the intent of the element.
@@ -55,7 +55,7 @@ Use this skill when working on any file in the D7460N starter template. This ens
 
 ## When modifying this project
 
-- All UI states, including loading states, use CSS and HTML checkboxs as state machines
+- All UI states, including loading states, use CSS and HTML checkboxes as state machines
 - Keep JS focused on fetch/CRUD only
 - Always only ever use semantic HTML markup
 - Never use `<div>`, `<span>`, `class`, `data-*`, or `id` — `<div>` and `<span>` shall NEVER be used; ALWAYS use semantic HTML equivalents that address the intent of the element

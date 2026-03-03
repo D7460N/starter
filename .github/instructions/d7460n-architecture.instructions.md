@@ -1,5 +1,5 @@
 ---
-description: 'D7460N Architecture — zero-dependency, CSS-first, JAMstack-based, browser-native starter template. These rules are non-negotiable. Always fall back to these defaults.'
+description: 'D7460N Architecture — zero-dependency, CSS-Only, JAMstack-based, browser-native D7460N Architecture starter template. These rules are non-negotiable. Always fall back to these defaults.'
 applyTo: '**'
 ---
 
