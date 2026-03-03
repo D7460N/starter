@@ -9,6 +9,13 @@ description: 'D7460N Architecture — zero-dependency, CSS-only, JAMstack-based,
 
 Use this skill when working on any file in the D7460N Architecture starter template. This ensures all changes comply with the zero-dependency, CSS-only, browser-native architecture.
 
+## Session Continuity (Non-Negotiable)
+
+- At the start of every session, ALWAYS read `SESSION-HANDOFF.md` before making implementation decisions.
+- ALWAYS re-assert the handoff "Constraint Lock" before coding changes.
+- If `SESSION-HANDOFF.md` conflicts with canonical architecture rules, STOP and ask for clarification.
+- NEVER skip handoff review due to time pressure.
+
 ## Non-Negotiable Rules
 
 1. Unless otherwise indicated, this code base shall NEVER default to, NEVER consider, NEVER refer to, NEVER suggest, and NEVER use third party dependencies.

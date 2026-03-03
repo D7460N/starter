@@ -14,6 +14,13 @@ applyTo: '**'
 - **ALWAYS use memory** — enable and use all available features for remembering context across sessions (e.g., memory, notepad, stored facts). Cross-session continuity is required.
 - **ALWAYS read entire files** — when reading files, read the complete file. Ignore all file line number caps.
 
+## Session Continuity (Non-Negotiable)
+
+- At the start of every session, ALWAYS read `SESSION-HANDOFF.md` before making implementation decisions.
+- ALWAYS re-assert the handoff "Constraint Lock" before coding changes.
+- If `SESSION-HANDOFF.md` conflicts with canonical architecture rules, STOP and ask for clarification.
+- NEVER skip handoff review due to time pressure.
+
 ## Core Constraints
 
 - **JS == NEVER** — JS shall NEVER be used for anything unless otherwise stated
