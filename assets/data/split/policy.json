@@ -1,0 +1,30 @@
+{
+  "page": {
+    "pageType": "policy",
+    "meta": {
+      "title": "Policy | D7460N",
+      "description": "Purpose-built tools designed for architectural clarity and maintainability.",
+      "canonical": "https://d7460n.dev/policy"
+    },
+    "pageTitle": "Policy",
+    "intro": [
+      "Purpose-built tools for clean execution.",
+      "Framework-agnostic. Data-agnostic. Future-proof."
+    ],
+    "sections": [
+      {
+        "content": [
+          "The core offering is a structural rendering contract that allows multiple projects to share a single front-end architecture without sharing visual rigidity.",
+          "Rendering decisions are declarative and tied to content presence rather than runtime flags. The UI adapts naturally to differing datasets.",
+          "Each implementation reduces duplication while preserving flexibility. Teams gain speed without sacrificing semantic correctness or accessibility compliance.",
+          "The minimized JavaScript footprint reduces attack surface and eliminates unnecessary runtime complexity.",
+          "Products built on this model benefit from predictable behavior, reduced onboarding time, and simplified long-term maintenance."
+        ]
+      }
+    ],
+    "outro": [
+      "Simplification is a competitive advantage.",
+      "Consistency at scale is achieved through structural discipline."
+    ]
+  }
+}

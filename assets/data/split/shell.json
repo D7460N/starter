@@ -1,0 +1,24 @@
+{
+  "app": {
+    "meta": {
+      "siteTitle": "D7460N Starter"
+    },
+    "header": {
+      "brand": "D7460N Starter",
+      "user": "First Lastname"
+    },
+    "navigation": {
+      "primary": [
+        "Home",
+        "About",
+        "Products",
+        "Events",
+        "Contact"
+      ]
+    },
+    "footer": {
+      "legal": "© 2026 D7460N. All rights reserved.",
+      "version": "0.0001"
+    }
+  }
+}

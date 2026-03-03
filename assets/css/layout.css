@@ -108,10 +108,10 @@ app-container {
   height: 100dvh;
   grid-template-rows: auto auto 1fr auto;
   align-items: start;
-  border: none;
+  border: none;k
 }
 
-header {
+header, footer {
   align-content: space-between;
   grid-auto-flow: column;
 }
@@ -135,7 +135,7 @@ section {
 
 app-logo:not(:empty),
 app-user:not(:empty),
-app-copy:not(:empty),
+app-legal:not(:empty),
 app-version:not(:empty),
 h1:not(:empty),
 p:not(:empty) {

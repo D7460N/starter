@@ -1,0 +1,170 @@
+[
+  {
+    "app": {
+      "meta": {
+        "siteTitle": "D7460N Starter"
+      },
+      "header": {
+        "brand": "D7460N Starter",
+        "user": "First Lastname"
+      },
+      "navigation": {
+        "primary": [
+          "Home",
+          "About",
+          "Products",
+          "Events",
+          "Contact"
+        ]
+      },
+      "footer": {
+        "legal": "© 2026 D7460N. All rights reserved.",
+        "version": "0.0001"
+      },
+      "pages": [
+        {
+          "pageType": "home",
+          "meta": {
+            "title": "D7460N | Browser-Native Architecture",
+            "description": "Structural simplification of modern web applications through strict separation of concerns.",
+            "canonical": "https://d7460n.dev/"
+          },
+          "pageTitle": "Welcome",
+          "intro": [
+            "Build once. Render everywhere.",
+            "Data-agnostic browser-native architecture.",
+            "Performance, accessibility, and security by default."
+          ],
+          "sections": [
+            {
+              "content": [
+                "Modern web applications have accumulated unnecessary complexity through dependency stacking, framework churn, and duplicated front-end implementations across projects. This approach rethinks that pattern at the structural level.",
+                "Instead of coupling presentation to runtime logic, the browser itself becomes the rendering engine in its purest form. HTML defines structure. CSS governs visibility and state. JavaScript is restricted to data retrieval and delivery only.",
+                "This architectural discipline allows multiple datasets to render uniquely while sharing a single structural skeleton. The result is flexibility without duplication.",
+                "By reducing dependency chains and runtime mutation, the surface area for failure decreases dramatically. Maintenance effort drops while performance and accessibility improve by default.",
+                "The long-term impact is cumulative stability. What was once repeated across dozens or hundreds of projects becomes centralized, predictable, and governable."
+              ]
+            }
+          ],
+          "outro": [
+            "Structural discipline is not a limitation. It is leverage.",
+            "The browser already contains the power required. The architecture simply respects it."
+          ]
+        },
+        {
+          "pageType": "about",
+          "meta": {
+            "title": "About | D7460N",
+            "description": "Our disciplined approach to structural web simplification.",
+            "canonical": "https://d7460n.dev/about"
+          },
+          "pageTitle": "About Us",
+          "intro": [
+            "Structural simplification of modern web architecture.",
+            "We eliminate unnecessary complexity.",
+            "Our method restores clarity to the browser layer."
+          ],
+          "sections": [
+            {
+              "content": [
+                "The guiding principle behind this work is separation of concerns enforced at a structural level. HTML remains structural. CSS remains declarative and state-aware. JavaScript becomes strictly a data transport layer.",
+                "By preventing presentation logic from leaking into the data layer, and by preventing runtime mutation from redefining structure, we create systems that are easier to reason about and easier to govern.",
+                "This approach recognizes that the browser already provides powerful native capabilities that are frequently bypassed in favor of abstraction layers.",
+                "Over time, abstraction debt compounds. Removing that debt requires architectural restraint and intentional boundaries.",
+                "The result is a predictable, inspectable, maintainable application surface aligned with long-term enterprise sustainability."
+              ]
+            }
+          ],
+          "outro": [
+            "Architecture should reduce entropy, not amplify it.",
+            "Clarity at the browser layer produces clarity across the system."
+          ]
+        },
+        {
+          "pageType": "product",
+          "meta": {
+            "title": "Products | D7460N",
+            "description": "Purpose-built tools designed for architectural clarity and maintainability.",
+            "canonical": "https://d7460n.dev/products"
+          },
+          "pageTitle": "Products",
+          "intro": [
+            "Purpose-built tools for clean execution.",
+            "Framework-agnostic. Data-agnostic. Future-proof."
+          ],
+          "sections": [
+            {
+              "content": [
+                "The core offering is a structural rendering contract that allows multiple projects to share a single front-end architecture without sharing visual rigidity.",
+                "Rendering decisions are declarative and tied to content presence rather than runtime flags. The UI adapts naturally to differing datasets.",
+                "Each implementation reduces duplication while preserving flexibility. Teams gain speed without sacrificing semantic correctness or accessibility compliance.",
+                "The minimized JavaScript footprint reduces attack surface and eliminates unnecessary runtime complexity.",
+                "Products built on this model benefit from predictable behavior, reduced onboarding time, and simplified long-term maintenance."
+              ]
+            }
+          ],
+          "outro": [
+            "Simplification is a competitive advantage.",
+            "Consistency at scale is achieved through structural discipline."
+          ]
+        },
+        {
+          "pageType": "event",
+          "meta": {
+            "title": "Events | D7460N",
+            "description": "Upcoming briefings and architectural demonstrations.",
+            "canonical": "https://d7460n.dev/events"
+          },
+          "pageTitle": "Events",
+          "intro": [
+            "Upcoming engagements and briefings.",
+            "Exploring structural simplification in practice."
+          ],
+          "sections": [
+            {
+              "content": [
+                "Events focus on demonstrating how a single structural skeleton can power multiple applications without duplicating UI logic.",
+                "Live walkthroughs illustrate how CSS declarative state mechanisms replace traditional JavaScript-driven toggling patterns.",
+                "Case studies highlight reductions in development effort, security exposure, and long-term operational cost.",
+                "Participants examine how overflow behavior, content mapping, and scroll isolation create predictable rendering zones.",
+                "Each session emphasizes enforceable architectural rules that produce measurable improvements in maintainability."
+              ]
+            }
+          ],
+          "outro": [
+            "Architectural clarity is observable in real systems.",
+            "Demonstrations focus on measurable, structural improvements."
+          ]
+        },
+        {
+          "pageType": "contact",
+          "meta": {
+            "title": "Contact | D7460N",
+            "description": "Reach out for focused architectural discussions.",
+            "canonical": "https://d7460n.dev/contact"
+          },
+          "pageTitle": "Contact",
+          "intro": [
+            "Get in touch with our team.",
+            "We respond to serious architectural inquiries."
+          ],
+          "sections": [
+            {
+              "content": [
+                "We prioritize conversations focused on structural integrity, long-term maintainability, and reduction of unnecessary front-end complexity.",
+                "If your organization manages multiple projects with duplicated UI stacks, this architecture may provide immediate strategic value.",
+                "Discussions typically begin with an assessment of current rendering patterns and dependency footprint.",
+                "From there, we identify opportunities to centralize structural logic while preserving unique data-driven rendering behavior.",
+                "Engagements are technical, disciplined, and grounded in measurable architectural outcomes."
+              ]
+            }
+          ],
+          "outro": [
+            "Focused dialogue produces focused solutions.",
+            "Structural clarity begins with disciplined boundaries."
+          ]
+        }
+      ]
+    }
+  }
+]
