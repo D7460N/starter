@@ -3,7 +3,7 @@ name: d7460n-css-only
 description: 'D7460N Architecture — zero-dependency, CSS-only, JAMstack-based, browser-native starter template. Use when modifying HTML, CSS, or JS files in this project. Enforces CSS-driven UI state, semantic HTML, no frameworks, no dependencies, and strict separation of concerns between presentation and data layers.'
 ---
 
-# D7460N CSS-Only Architecture
+# D7460N CSS-only Architecture
 
 ## When to use this skill
 
@@ -17,10 +17,10 @@ Use this skill when working on any file in the D7460N Architecture starter templ
 4. Established standards can ALWAYS be found here, (https://www.w3.org/TR/) and here (https://developer.mozilla.org/en-US/docs/Web).
 5. Unless otherwise indicated, this code base shall ALWAYS default to Single Page Application (SPA) navigational architecture.
 6. Unless otherwise indicated, this code base shall ALWAYS default to being a Progressive Web Application (PWA).
-7. Unless otherwise indicated, JS shall NEVER be used for anything (exception: `api.js` for CRUD data transport). Modern HTML and CSS must be used for all development.
+7. Unless otherwise indicated, JS shall NEVER be used for anything (exception: modular `assets/js/*.js` runtime files for API transport, `oninput` lifecycle orchestration, storage, and startup wiring). Modern HTML and CSS must be used for all development.
 8. Unless otherwise indicated, CSS shall ALWAYS default to and ALWAYS replace JS equivalent functionality.
 9. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `document.querySelector('');` for targeting all selectors.
-10. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `oninput` for ALL API CRUD operations (per `api.js` only).
+10. Unless otherwise indicated, JS shall ALWAYS default to and ALWAYS use `oninput` for ALL API CRUD operations through a shared lifecycle utility.
 11. Unless otherwise indicated, JS shall NEVER default to and NEVER use any user initiated event for any API CRUD operations.
 12. Unless otherwise indicated, JS shall NEVER default to and NEVER set or use any event listeners.
 13. Unless otherwise indicated, JS shall NEVER default to and NEVER set or use any listeners at all - ever.
@@ -43,13 +43,15 @@ Use this skill when working on any file in the D7460N Architecture starter templ
 
 - **index.html** (root): Complete DOM structure, pre-built
 - **assets/css/layout.css**: The only active CSS file; CSS Grid Holy Grail structure and all current layout
-- **assets/js/api.js**: The only active JS file; contains the data layer API endpoint and all fetch/CRUD operations
+- **assets/js/app.js**: JS entrypoint; startup checks, console reset, and initialization wiring
+- **assets/js/oninput.js**: Shared `oninput` lifecycle; binds nav inputs, routes API calls, and injects data
+- **assets/js/api.js**: API transport utilities; base URL, endpoint suffix resolution, fetch/parse, and logging helpers
+- **assets/js/storage.js**: Generic storage utilities (localStorage primary, cookie fallback)
+- **assets/js/tour.js**: Safe placeholder module for future onboarding/tour logic
 - **assets/images/**: Static assets
 
 ### Ignored (inactive for now)
 
-- **assets/data/**: Ignore completely; the data layer lives in `api.js` via its API endpoint
-- **assets/js/app.js**: Inactive; ignore for now
 - **assets/js/pipeline/**: Inactive; ignore for now
 - **assets/css/*.css** (other than `layout.css`): Inactive; ignore for now
 
@@ -63,6 +65,14 @@ Use this skill when working on any file in the D7460N Architecture starter templ
 - NEVER create new coding patterns — all patterns are already established; use what exists
 - Adding code increases entropy — NEVER add new code or files unless the user explicitly states to
 - Follow user instructions in detail — no more, no less
+
+## JS Runtime Conventions (Non-Negotiable)
+
+- API base address is declared once; only endpoint suffix varies (for example `shell`, `home`, `about`, `products`, `events`, `contact`)
+- Initial page load MUST enter the same `oninput` lifecycle path via programmatic nav radio `.click()`
+- Shell content (`header`, `nav`, `footer`, `meta`) is fetched/injected once per runtime session, not on every page call
+- Nav radio index maps to page endpoint suffix; same DOM targets are reused for injection
+- Console reporting policy: minimal timestamped success reports, verbose timestamped failure reports, and `console.clear()` on startup and each lifecycle run
 
 ## HTML Layout Pattern
 
