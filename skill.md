@@ -7,7 +7,7 @@ description: 'D7460N Architecture — zero-dependency, CSS-only, JAMstack-based,
 
 ## When to use this skill
 
-Use this skill when working on any file in the D7460N starter template. This ensures all changes comply with the zero-dependency, CSS-only, browser-native architecture.
+Use this skill when working on any file in the D7460N Architecture starter template. This ensures all changes comply with the zero-dependency, CSS-only, browser-native architecture.
 
 ## Non-Negotiable Rules
 
