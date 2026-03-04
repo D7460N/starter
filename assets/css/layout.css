@@ -148,6 +148,7 @@ h1 {
 }
 p {
   font-size: 0.9rem;
+  padding-block-start: 0;
 }
 
 /* MARK: HEURISTICS */
