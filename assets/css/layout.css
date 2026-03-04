@@ -151,6 +151,14 @@ p {
   padding-block-start: 0;
 }
 
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
 /* MARK: HEURISTICS */
 /* intrinsic sticky headers */
 app-container,
