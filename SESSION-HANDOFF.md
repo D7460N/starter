@@ -44,7 +44,7 @@ Carry forward the exact decisions and non-negotiables from the last implementati
 - `.github/instructions/d7460n-architecture.instructions.md`
 - `.github/copilot-instructions.md`
 - `CLAUDE.md`
-- `skill.md`
+- `.agents/skills/d7460n-css-only/SKILL.md`
 - `.cursorrules`
 
 These files were synchronized to include:
