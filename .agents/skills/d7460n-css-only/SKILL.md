@@ -1,6 +1,9 @@
 ---
-name: d7460n-css-only  
+name: d7460n-css-only
 description: 'D7460N Architecture — zero-dependency, CSS-only, JAMstack-based, browser-native starter template. Use when modifying HTML, CSS, or JS files in this project. Enforces CSS-driven UI state, semantic HTML, no frameworks, no dependencies, and strict separation of concerns between presentation and data layers.'
+license: MIT
+metadata:
+  author: D7460N
 ---
 
 # D7460N CSS-only Architecture
