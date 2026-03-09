@@ -2,7 +2,7 @@
 
 // D7460N MCP Server — single-file Model Context Protocol server
 // Implements JSON-RPC 2.0 over stdio transport
-// Run: npx tsx server.ts
+// Run: server.ts
 
 import { readFileSync, readdirSync, watch } from "node:fs";
 import { join, dirname } from "node:path";
@@ -183,7 +183,7 @@ function validateProject(files: FileEntry[]): ValidationResult {
   const dirPaths = new Set(files.filter(f => f.type === "directory").map(f => f.path));
   for (const fp of filePaths) {
     const parts = fp.split("/");
-    for (let j = 1; j < parts.length; j++) dirPaths.add(parts.slice(0, j).join("/") + "/");
+    for (let j = 1; j < parts.length; j++) dirPaths.add(parts.slice(0, j).join("/"));
   }
 
   for (const req of (rules.required_files as string[]) || []) {
@@ -461,14 +461,14 @@ function logToolCall(tool: string, args: unknown, result: string, ms: number): v
 // ---------------------------------------------------------------------------
 
 const RESOURCES = [
-  { uri: "d7460n://rules/architecture", name: "D7460N Architecture Rules", description: "Core architecture philosophy and constraints", mimeType: "application/json" },
-  { uri: "d7460n://rules/html", name: "D7460N HTML Rules", description: "HTML element and attribute constraints", mimeType: "application/json" },
-  { uri: "d7460n://rules/css", name: "D7460N CSS Rules", description: "CSS architecture rules — Grid only, state machines", mimeType: "application/json" },
-  { uri: "d7460n://rules/javascript", name: "D7460N JavaScript Rules", description: "JavaScript restrictions — CRUD transport only", mimeType: "application/json" },
-  { uri: "d7460n://rules/project-structure", name: "D7460N Project Structure", description: "Canonical project file layout", mimeType: "application/json" }
+  { uri: "d7460n://rules/architecture", name: "D7460N Architecture Rules", description: "Core architecture philosophy and constraints", mime_type: "application/json" },
+  { uri: "d7460n://rules/html", name: "D7460N HTML Rules", description: "HTML element and attribute constraints", mime_type: "application/json" },
+  { uri: "d7460n://rules/css", name: "D7460N CSS Rules", description: "CSS architecture rules — Grid only, state machines", mime_type: "application/json" },
+  { uri: "d7460n://rules/javascript", name: "D7460N JavaScript Rules", description: "JavaScript restrictions — CRUD transport only", mime_type: "application/json" },
+  { uri: "d7460n://rules/project-structure", name: "D7460N Project Structure", description: "Canonical project file layout", mime_type: "application/json" }
 ];
 
-function readResource(uri: string): { contents: Array<{ uri: string; mimeType: string; text: string }> } | undefined {
+function readResource(uri: string): { contents: Array<{ uri: string; mime_type: string; text: string }> } | undefined {
   const map: Record<string, string> = {
     "d7460n://rules/architecture": "architecture",
     "d7460n://rules/html": "html",
@@ -480,7 +480,7 @@ function readResource(uri: string): { contents: Array<{ uri: string; mimeType: s
   if (!ruleName) return undefined;
   const data = getRule(ruleName);
   if (!data) return undefined;
-  return { contents: [{ uri, mimeType: "application/json", text: JSON.stringify(data, null, 2) }] };
+  return { contents: [{ uri, mime_type: "application/json", text: JSON.stringify(data, null, 2) }] };
 }
 
 // ---------------------------------------------------------------------------
