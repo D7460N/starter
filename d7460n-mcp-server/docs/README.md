@@ -3,6 +3,8 @@
 Model Context Protocol server providing authoritative D7460N Architecture
 rules, validation, and project generation for AI coding agents.
 
+This server must never create package managers, build systems, or project scaffolding.
+
 ## Quick Start
 
 ```sh
@@ -19,8 +21,8 @@ Add to your MCP client configuration:
 {
   "mcpServers": {
     "d7460n": {
-      "command": "npx",
-      "args": ["tsx", "d7460n-mcp-server/server.ts"]
+      "command": "server.ts",
+      "args": []
     }
   }
 }
