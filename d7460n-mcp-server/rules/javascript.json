@@ -1,7 +1,6 @@
 {
   "architecture": "D7460N",
   "version": "1.0.0",
-  "domain": "javascript",
   "description": "JavaScript restrictions for D7460N Architecture",
   "allowed_files": [
     "assets/js/api.js",
