@@ -812,16 +812,21 @@ function handleRequest(req: JsonRpcRequest): void {
 
 function watchRules(): void {
   try {
-    watch(RULES_DIR, (_eventType, filename) => {
-      if (filename && filename.endsWith(".json")) {
-        try {
-          const name = filename.replace(/\.json$/, "");
-          ruleCache.set(name, JSON.parse(readFileSync(join(RULES_DIR, filename), "utf-8")));
-          send({ jsonrpc: "2.0", method: "notifications/tools/list_changed", params: undefined });
-        } catch { /* ignore invalid JSON during hot reload */ }
+    watch(RULES_DIR, () => {
+      try {
+        loadAllRules();
+        send({
+          jsonrpc: "2.0",
+          method: "notifications/tools/list_changed",
+          params: undefined
+        });
+      } catch {
+        // Ignore errors (e.g., invalid JSON during save)
       }
     });
-  } catch { /* rules directory may not be watchable in all environments */ }
+  } catch {
+    // rules directory may not be watchable in all environments
+  }
 }
 
 // ---------------------------------------------------------------------------
