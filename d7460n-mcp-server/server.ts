@@ -128,17 +128,18 @@ function validateCss(source: string): ValidationResult {
   const rules = getRule("css");
   if (!rules) return { compliant: false, violations: [{ rule: "rules-loaded", message: "CSS rules not loaded", severity: "error" }] };
 
+  const forbiddenPatterns = (rules.forbidden_patterns as string[]) || [];
   const lines = source.split("\n");
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     const num = i + 1;
     const trimmed = line.trim();
     if (trimmed.startsWith("/*") || trimmed.startsWith("*") || trimmed.startsWith("//")) continue;
-    if (/display\s*:\s*(inline-)?flex/i.test(line)) {
-      violations.push({ rule: "no-flexbox", message: "Flexbox is forbidden — use CSS Grid only", location: `line ${num}`, severity: "error" });
-    }
-    if (/flex-(direction|wrap|flow)\s*:/i.test(line)) {
-      violations.push({ rule: "no-flexbox", message: "Flex properties are forbidden — use CSS Grid equivalents", location: `line ${num}`, severity: "error" });
+    for (const pattern of forbiddenPatterns) {
+      const regex = new RegExp(pattern, "i");
+      if (regex.test(line)) {
+        violations.push({ rule: "forbidden-css-pattern", message: `Forbidden CSS pattern detected: ${pattern}`, location: `line ${num}`, severity: "error" });
+      }
     }
   }
   return { compliant: violations.length === 0, violations };
@@ -149,26 +150,30 @@ function validateJs(source: string): ValidationResult {
   const rules = getRule("javascript");
   if (!rules) return { compliant: false, violations: [{ rule: "rules-loaded", message: "JS rules not loaded", severity: "error" }] };
 
+  const eventHandling = rules.event_handling as Record<string, unknown> | undefined;
+  const domAccess = rules.dom_access as Record<string, unknown> | undefined;
+  const forbiddenEvents = (eventHandling?.forbidden as string[]) || [];
+  const forbiddenDom = (domAccess?.forbidden_methods as string[]) || [];
+
   const lines = source.split("\n");
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     const num = i + 1;
     const trimmed = line.trim();
     if (trimmed.startsWith("//") || trimmed.startsWith("/*") || trimmed.startsWith("*")) continue;
-    if (/\.addEventListener\s*\(/i.test(line)) {
-      violations.push({ rule: "no-event-listeners", message: "addEventListener is forbidden — use oninput lifecycle instead", location: `line ${num}`, severity: "error" });
+    for (const ev of forbiddenEvents) {
+      const regex = new RegExp(ev, "i");
+      if (regex.test(line)) {
+        violations.push({ rule: "forbidden-event", message: `Forbidden event handler detected: ${ev}`, location: `line ${num}`, severity: "error" });
+      }
     }
-    if (/\.(onclick|onchange|onsubmit)\s*=/i.test(line)) {
-      violations.push({ rule: "no-event-handlers", message: "Direct event handler assignment is forbidden", location: `line ${num}`, severity: "error" });
-    }
-    if (/document\.getElementById\s*\(/i.test(line)) {
-      violations.push({ rule: "use-querySelector", message: "getElementById() is forbidden — use querySelector()", location: `line ${num}`, severity: "error" });
-    }
-    if (/document\.getElementsByClassName\s*\(/i.test(line)) {
-      violations.push({ rule: "use-querySelector", message: "getElementsByClassName() is forbidden — use querySelector()", location: `line ${num}`, severity: "error" });
-    }
-    if (/document\.getElementsByTagName\s*\(/i.test(line)) {
-      violations.push({ rule: "use-querySelector", message: "getElementsByTagName() is forbidden — use querySelector()", location: `line ${num}`, severity: "error" });
+    for (const method of forbiddenDom) {
+      const base = method.replace(/\(\)$/, "");
+      const escaped = base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(escaped + "\\s*\\(", "i");
+      if (regex.test(line)) {
+        violations.push({ rule: "forbidden-dom-method", message: `Forbidden DOM method detected: ${method}`, location: `line ${num}`, severity: "error" });
+      }
     }
   }
   return { compliant: violations.length === 0, violations };
@@ -710,7 +715,6 @@ function getPrompt(name: string, args: Record<string, string>): { messages: Arra
 // ---------------------------------------------------------------------------
 
 const serverStartTime = Date.now();
-let initialized = false;
 
 function send(msg: JsonRpcResponse | { jsonrpc: "2.0"; method: string; params?: unknown }): void {
   const json = JSON.stringify(msg);
@@ -723,7 +727,7 @@ function handleRequest(req: JsonRpcRequest): void {
   // Notifications (no id) — no response needed
   if (id == null) {
     if (req.method === "notifications/initialized") {
-      initialized = true;
+      return;
     }
     return;
   }
