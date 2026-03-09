@@ -1,0 +1,63 @@
+{
+  "architecture": "D7460N",
+  "version": "1.0.0",
+  "domain": "css",
+  "description": "CSS architecture rules for D7460N Architecture",
+  "responsibilities": [
+    "All layout",
+    "All UI behavior",
+    "All state machines",
+    "All navigation state",
+    "All visibility control",
+    "All theming (light/dark mode)",
+    "All loading states",
+    "All form validation display"
+  ],
+  "layout": {
+    "system": "CSS Grid only",
+    "forbidden": ["flexbox"],
+    "pattern": "Full-bleed Holy Grail via app-container",
+    "no_wrapper_elements": true
+  },
+  "state_machines": {
+    "method": "CSS pseudo-selectors on hidden checkbox/radio inputs",
+    "selectors": [":has()", ":not()", ":empty", ":checked"],
+    "pattern": "label[role=button] > input[type=checkbox]:checked detected via :has()"
+  },
+  "visibility": {
+    "method": "CSS pseudo-selectors",
+    "selectors": [":empty", ":has()"],
+    "description": "DOM element visibility controlled via :empty and :has() pseudo selectors"
+  },
+  "theming": {
+    "method": ":root variables",
+    "color_scheme": "Managed via color-scheme in :root{}",
+    "light_dark": "CSS manages light/dark mode via color-scheme"
+  },
+  "selectors": {
+    "prefer_a11y": true,
+    "description": "Always use a11y selectors when possible"
+  },
+  "forbidden_patterns": [
+    "display: flex",
+    "display: inline-flex",
+    "flex-direction",
+    "flex-wrap",
+    "flex-flow",
+    "justify-content used with flex",
+    "align-items used with flex"
+  ],
+  "rules": [
+    "CSS controls ALL UI behavior — state, visibility, themes, loading, navigation",
+    "CSS Grid only — never Flexbox",
+    "No wrapper elements for layout — use CSS Grid",
+    "State machines use :has(), :not(), :empty on checkbox/radio inputs",
+    "Visibility via :empty and :has() pseudo selectors",
+    "Light/dark mode managed in :root{}",
+    "Use a11y selectors when possible",
+    "Use modern style queries and CSS-only techniques",
+    "No hard/static values that need maintenance",
+    "Never inline CSS",
+    "Use cutting-edge experimental CSS without regard for browser support"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "architecture": "D7460N",
+  "version": "1.0.0",
+  "domain": "javascript",
+  "description": "JavaScript restrictions for D7460N Architecture",
+  "allowed_files": [
+    "assets/js/api.js",
+    "assets/js/app.js",
+    "assets/js/oninput.js",
+    "assets/js/storage.js",
+    "assets/js/tour.js"
+  ],
+  "allowed_purposes": [
+    "API CRUD transport",
+    "oninput lifecycle orchestration",
+    "Storage utilities (localStorage, cookie fallback)",
+    "Startup wiring and initialization"
+  ],
+  "forbidden_purposes": [
+    "UI state management",
+    "DOM visibility control",
+    "Event-driven interactions",
+    "Layout manipulation",
+    "Navigation state",
+    "Animation control",
+    "Theming"
+  ],
+  "dom_access": {
+    "allowed_method": "document.querySelector()",
+    "forbidden_methods": [
+      "document.getElementById()",
+      "document.getElementsByClassName()",
+      "document.getElementsByTagName()",
+      "jQuery",
+      "$()"
+    ]
+  },
+  "event_handling": {
+    "allowed": "oninput attribute for CRUD operations via shared lifecycle",
+    "forbidden": [
+      "addEventListener",
+      "onclick",
+      "onchange",
+      "onsubmit",
+      "onkeydown",
+      "onkeyup",
+      "onmousedown",
+      "onmouseup",
+      "onmouseover"
+    ]
+  },
+  "constraints": {
+    "stateless": true,
+    "idempotent": true,
+    "no_global_state": true,
+    "no_side_effects": true,
+    "no_event_listeners": true,
+    "no_dom_mutation_unless_instructed": true
+  },
+  "runtime_conventions": {
+    "api_base_declared_once": true,
+    "endpoint_suffix_varies": ["shell", "home", "about", "products", "events", "contact"],
+    "initial_load_via_programmatic_click": true,
+    "shell_content_fetched_once": true,
+    "console_policy": {
+      "clear_on_startup": true,
+      "clear_on_lifecycle_run": true,
+      "minimal_success_reports": true,
+      "verbose_failure_reports": true
+    }
+  },
+  "rules": [
+    "JS is for data transport only — CRUD operations only",
+    "JS allowed only in modular assets/js/*.js files",
+    "Use document.querySelector() only for DOM access",
+    "Use oninput for ALL API CRUD operations through shared lifecycle",
+    "Never use addEventListener — ever",
+    "Never use onclick or other user-initiated event handlers for CRUD",
+    "JS must be stateless and idempotent",
+    "No global state or side effects",
+    "No UI logic or DOM visibility control in JS",
+    "No DOM mutation unless explicitly instructed",
+    "API base URL declared once; only endpoint suffix varies",
+    "Initial load enters oninput lifecycle via programmatic nav radio .click()",
+    "Shell content fetched/injected once per runtime session",
+    "Console: clear on startup and lifecycle run, minimal success, verbose failure"
+  ]
+}
