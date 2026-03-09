@@ -1,7 +1,6 @@
 {
   "architecture": "D7460N",
   "version": "1.0.0",
-  "domain": "html",
   "description": "HTML constraints for D7460N Architecture",
   "allowed_elements": [
     "html", "head", "body", "title", "meta", "link", "script",
@@ -17,8 +16,6 @@
     "address", "hgroup", "search",
     "slot", "template", "noscript"
   ],
-  "custom_elements_allowed": true,
-  "custom_elements_note": "Custom elements must contain a hyphen (e.g., app-container, app-logo)",
   "forbidden_elements": ["div", "span"],
   "forbidden_attributes": ["class", "id", "data-*"],
   "state_machine_pattern": {
@@ -42,6 +39,7 @@
   },
   "rules": [
     "HTML is for structure only — semantic elements only",
+    "Custom elements must contain a hyphen (e.g., app-container)",
     "Never use div or span — use semantic HTML equivalents",
     "Never use class, id, or data-* attributes",
     "Always use label for interactive elements",
