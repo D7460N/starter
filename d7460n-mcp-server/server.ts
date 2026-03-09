@@ -2,7 +2,7 @@
 
 // D7460N MCP Server — single-file Model Context Protocol server
 // Implements JSON-RPC 2.0 over stdio transport
-// Run: server.ts
+// Run: npx tsx d7460n-mcp-server/server.ts
 
 import { readFileSync, readdirSync, watch } from "node:fs";
 import { join, dirname } from "node:path";
@@ -179,23 +179,34 @@ function validateJs(source: string): ValidationResult {
   return { compliant: violations.length === 0, violations };
 }
 
+function normalizeDirPath(path: string): string {
+  return path.replace(/\/+$/, "");
+}
+
 function validateProject(files: FileEntry[]): ValidationResult {
   const violations: ValidationViolation[] = [];
   const rules = getRule("project-structure");
   if (!rules) return { compliant: false, violations: [{ rule: "rules-loaded", message: "Project-structure rules not loaded", severity: "error" }] };
 
   const filePaths = new Set(files.filter(f => f.type === "file").map(f => f.path));
-  const dirPaths = new Set(files.filter(f => f.type === "directory").map(f => f.path));
+  const dirPaths = new Set(
+    files
+      .filter(f => f.type === "directory")
+      .map(f => normalizeDirPath(f.path))
+  );
   for (const fp of filePaths) {
     const parts = fp.split("/");
-    for (let j = 1; j < parts.length; j++) dirPaths.add(parts.slice(0, j).join("/"));
+    for (let j = 1; j < parts.length; j++) {
+      dirPaths.add(normalizeDirPath(parts.slice(0, j).join("/")));
+    }
   }
 
   for (const req of (rules.required_files as string[]) || []) {
     if (!filePaths.has(req)) violations.push({ rule: "required-file", message: `Required file '${req}' is missing`, severity: "error" });
   }
   for (const req of (rules.required_directories as string[]) || []) {
-    if (!dirPaths.has(req)) violations.push({ rule: "required-directory", message: `Required directory '${req}' is missing`, severity: "error" });
+    const normalizedReq = normalizeDirPath(req);
+    if (!dirPaths.has(normalizedReq)) violations.push({ rule: "required-directory", message: `Required directory '${req}' is missing`, severity: "error" });
   }
   return { compliant: violations.length === 0, violations };
 }
@@ -412,6 +423,16 @@ async function fetchData(suffix) {
 export { endpoint, fetchData };`
     },
     {
+      path: "assets/js/app.js",
+      content: `// D7460N — app.js entrypoint
+// Startup checks, console reset, and initialization wiring
+console.clear();
+console.log(\`[\${new Date().toISOString()}] D7460N app initialized\`);
+import { fetchData } from "./api.js";
+const nav = document.querySelector('nav input[type="radio"]:checked');
+if (nav) nav.oninput = () => fetchData(nav.value);`
+    },
+    {
       path: "manifest.webmanifest",
       content: `{
   "name": "D7460N",
@@ -455,10 +476,14 @@ const RULE_EXPLANATIONS: Record<string, string> = {
 // Logging
 // ---------------------------------------------------------------------------
 
+const MAX_TOOL_LOGS = 1000;
 const toolLogs: ToolLog[] = [];
 
 function logToolCall(tool: string, args: unknown, result: string, ms: number): void {
   toolLogs.push({ tool, arguments: args, result_summary: result, execution_ms: ms, timestamp: new Date().toISOString() });
+  if (toolLogs.length > MAX_TOOL_LOGS) {
+    toolLogs.shift();
+  }
 }
 
 // ---------------------------------------------------------------------------
