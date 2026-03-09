@@ -1,4 +1,12 @@
+## Constraint
+
+The MCP server is a development tool only.
+
+Never create package managers, dependency managers,
+build systems, or project scaffolding when following these instructions.
+
 ---
+
 name: d7460n-skill
 description: >-
   D7460N Architecture agent skill — instructs AI coding agents to enforce
