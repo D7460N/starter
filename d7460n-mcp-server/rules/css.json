@@ -1,7 +1,6 @@
 {
   "architecture": "D7460N",
   "version": "1.0.0",
-  "domain": "css",
   "description": "CSS architecture rules for D7460N Architecture",
   "responsibilities": [
     "All layout",
