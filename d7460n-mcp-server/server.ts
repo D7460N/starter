@@ -67,9 +67,13 @@ const ruleCache = new Map<string, Record<string, unknown>>();
 
 function loadAllRules(): void {
   ruleCache.clear();
-  for (const file of readdirSync(RULES_DIR).filter(f => f.endsWith(".json"))) {
-    const name = file.replace(/\.json$/, "");
-    ruleCache.set(name, JSON.parse(readFileSync(join(RULES_DIR, file), "utf-8")));
+  try {
+    for (const file of readdirSync(RULES_DIR).filter(f => f.endsWith(".json"))) {
+      const name = file.replace(/\.json$/, "");
+      ruleCache.set(name, JSON.parse(readFileSync(join(RULES_DIR, file), "utf-8")));
+    }
+  } catch (err) {
+    process.stderr.write(`Rules directory not found or not accessible: ${RULES_DIR}\n`);
   }
 }
 
@@ -717,7 +721,7 @@ function handleRequest(req: JsonRpcRequest): void {
   const id = req.id ?? null;
 
   // Notifications (no id) — no response needed
-  if (id === null || id === undefined) {
+  if (id == null) {
     if (req.method === "notifications/initialized") {
       initialized = true;
     }
