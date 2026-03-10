@@ -1,7 +1,10 @@
 ## Constraint
 
-The MCP server is a development tool only.
+The D7460N MCP Server is a standalone development tool only.
+It is a separate entity from the D7460N Architecture.
 
+Never use the MCP server to bootstrap, scaffold, or generate D7460N projects.
+Never treat the MCP server as a dependency for any D7460N project.
 Never create package managers, dependency managers,
 build systems, or project scaffolding when following these instructions.
 
@@ -62,9 +65,10 @@ When working on a D7460N project, you must:
 
 ## MCP Server
 
-The D7460N MCP Server provides machine-readable rules and validation.
+The D7460N MCP Server is a standalone development tool. It is a separate entity
+from the D7460N Architecture and is never a dependency of any D7460N project.
 
 Run: `npx tsx d7460n-mcp-server/server.ts`
 
 Available tools: get_d7460n_rules, validate_html, validate_css, validate_js,
-validate_project, generate_d7460n_starter, explain_d7460n_rule, ping
+validate_project, explain_d7460n_rule, ping
