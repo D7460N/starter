@@ -312,145 +312,6 @@ function getMdnReference(topic: string): MdnReference | undefined {
 }
 
 // ---------------------------------------------------------------------------
-// Starter Generator
-// ---------------------------------------------------------------------------
-
-interface GeneratedFile { path: string; content: string }
-
-function generateStarter(): GeneratedFile[] {
-  return [
-    {
-      path: "index.html",
-      content: `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light dark">
-  <title>D7460N</title>
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="manifest" href="manifest.webmanifest">
-</head>
-<body>
-  <app-container>
-    <header>
-      <app-logo></app-logo>
-      <app-user></app-user>
-    </header>
-    <nav>
-      <label role="button">
-        Home
-        <input type="radio" name="nav" aria-hidden="true" checked>
-      </label>
-      <label role="button">
-        About
-        <input type="radio" name="nav" aria-hidden="true">
-      </label>
-      <label role="button">
-        Contact
-        <input type="radio" name="nav" aria-hidden="true">
-      </label>
-    </nav>
-    <main>
-      <article>
-        <h1></h1>
-        <section></section>
-      </article>
-    </main>
-    <aside></aside>
-    <footer>
-      <app-legal></app-legal>
-      <app-version></app-version>
-    </footer>
-  </app-container>
-  <script type="module" src="assets/js/app.js"><\/script>
-</body>
-</html>`
-    },
-    {
-      path: "assets/css/layout.css",
-      content: `:root {
-  color-scheme: light dark;
-}
-
-app-container {
-  display: grid;
-  grid-template-areas:
-    "header header header"
-    "nav    main   aside"
-    "footer footer footer";
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: auto 1fr auto;
-  min-block-size: 100dvh;
-}
-
-header  { grid-area: header; }
-nav     { grid-area: nav; }
-main    { grid-area: main; }
-aside   { grid-area: aside; }
-footer  { grid-area: footer; }
-
-nav label { cursor: pointer; }
-nav label:has(input:checked) { font-weight: bold; }
-
-nav input[type="radio"],
-label input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-h1:empty, section:empty, aside:empty { display: none; }`
-    },
-    {
-      path: "assets/js/api.js",
-      content: `const BASE_URL = "";
-function endpoint(suffix) { return BASE_URL ? \`\${BASE_URL}/\${suffix}\` : suffix; }
-async function fetchData(suffix) {
-  const url = endpoint(suffix);
-  const now = new Date().toISOString();
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(\`HTTP \${response.status}\`);
-    const data = await response.json();
-    console.log(\`[\${now}] ✓ \${suffix}\`);
-    return data;
-  } catch (err) {
-    console.error(\`[\${now}] ✗ \${suffix}\`, err);
-    return null;
-  }
-}
-export { endpoint, fetchData };`
-    },
-    {
-      path: "assets/js/app.js",
-      content: `// D7460N — app.js entrypoint
-// Startup checks, console reset, and initialization wiring
-console.clear();
-console.log(\`[\${new Date().toISOString()}] D7460N app initialized\`);
-import { fetchData } from "./api.js";
-const nav = document.querySelector('nav input[type="radio"]:checked');
-if (nav) nav.oninput = () => fetchData(nav.value);`
-    },
-    {
-      path: "manifest.webmanifest",
-      content: `{
-  "name": "D7460N",
-  "short_name": "D7460N",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000"
-}`
-    },
-    {
-      path: "assets/images/.gitkeep",
-      content: ""
-    }
-  ];
-}
-
-// ---------------------------------------------------------------------------
 // Rule Explanation
 // ---------------------------------------------------------------------------
 
@@ -569,11 +430,6 @@ const TOOLS = [
     inputSchema: { type: "object" as const, properties: { projects: { type: "array", items: { type: "object", properties: { name: { type: "string" }, files: { type: "array", items: { type: "object", properties: { path: { type: "string" }, type: { type: "string", enum: ["file", "directory"] } }, required: ["path", "type"] } } }, required: ["name", "files"] }, description: "Array of {name, files} project entries" } }, required: ["projects"] }
   },
   {
-    name: "generate_d7460n_starter",
-    description: "Generate a complete D7460N starter project",
-    inputSchema: { type: "object" as const, properties: {}, required: [] as string[] }
-  },
-  {
     name: "explain_d7460n_rule",
     description: "Return a human-readable explanation of a D7460N architecture rule",
     inputSchema: { type: "object" as const, properties: { rule_name: { type: "string", description: "Rule name to explain" } }, required: ["rule_name"] }
@@ -637,10 +493,6 @@ function callTool(name: string, args: Record<string, unknown>): { content: Array
         result = validateWorkspace(args.projects as { name: string; files: FileEntry[] }[]);
         summary = "Workspace validated";
         break;
-      case "generate_d7460n_starter":
-        result = generateStarter();
-        summary = `Generated ${(result as GeneratedFile[]).length} files`;
-        break;
       case "explain_d7460n_rule": {
         const ruleName = args.rule_name as string;
         const explanation = RULE_EXPLANATIONS[ruleName];
@@ -678,11 +530,6 @@ function callTool(name: string, args: Record<string, unknown>): { content: Array
 
 const PROMPTS = [
   {
-    name: "d7460n.generate_starter",
-    description: "Generate a new D7460N project following all architecture rules",
-    arguments: []
-  },
-  {
     name: "d7460n.validate_architecture",
     description: "Analyze a repository for D7460N architecture rule violations",
     arguments: [
@@ -700,16 +547,6 @@ const PROMPTS = [
 
 function getPrompt(name: string, args: Record<string, string>): { messages: Array<{ role: string; content: { type: string; text: string } }> } | undefined {
   switch (name) {
-    case "d7460n.generate_starter":
-      return {
-        messages: [{
-          role: "user",
-          content: {
-            type: "text",
-            text: "Generate a new D7460N Architecture starter project. Follow all D7460N rules:\n- HTML: semantic elements only, no div/span, no class/id/data-* attributes\n- CSS: Grid only (no Flexbox), state machines via :has()/:empty on hidden inputs\n- JS: CRUD transport only in assets/js/api.js, no event listeners\n- Layout: Holy Grail via <app-container>\n- Navigation: radio inputs inside <label role=\"button\"> in <nav>\n- Single index.html at root with assets/css/layout.css, assets/js/api.js, assets/images/"
-          }
-        }]
-      };
     case "d7460n.validate_architecture":
       return {
         messages: [{
