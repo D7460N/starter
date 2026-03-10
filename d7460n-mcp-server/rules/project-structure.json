@@ -1,0 +1,54 @@
+{
+  "architecture": "D7460N",
+  "version": "1.0.0",
+  "description": "Canonical project structure for D7460N Architecture",
+  "root_file": "index.html",
+  "required_files": [
+    "index.html",
+    "assets/css/layout.css",
+    "assets/js/api.js"
+  ],
+  "required_directories": [
+    "assets/css",
+    "assets/js",
+    "assets/images"
+  ],
+  "optional_files": [
+    "manifest.webmanifest",
+    "assets/js/app.js",
+    "assets/js/oninput.js",
+    "assets/js/storage.js",
+    "assets/js/tour.js"
+  ],
+  "file_responsibilities": {
+    "index.html": "Complete DOM structure — single SPA entry point",
+    "assets/css/layout.css": "The only active CSS file — CSS Grid Holy Grail layout and all UI",
+    "assets/js/api.js": "API transport utilities — base URL, endpoint resolution, fetch/parse",
+    "assets/js/app.js": "JS entrypoint — startup checks, console reset, initialization wiring",
+    "assets/js/oninput.js": "Shared oninput lifecycle — binds nav inputs, routes API calls, injects data",
+    "assets/js/storage.js": "Generic storage utilities — localStorage primary, cookie fallback",
+    "assets/js/tour.js": "Safe placeholder module for future onboarding/tour logic",
+    "assets/images/": "Static image assets"
+  },
+  "html_skeleton": {
+    "description": "Full-bleed Holy Grail layout from index.html",
+    "structure": [
+      "app-container",
+      "  header > app-logo + app-user",
+      "  nav > label > input[type=radio][name=nav]",
+      "  main > article > h1 + section",
+      "  aside",
+      "  footer > app-legal + app-version",
+      "script[type=module] (outside app-container, before </body>)"
+    ]
+  },
+  "rules": [
+    "Single index.html at project root",
+    "Full-bleed Holy Grail layout via app-container custom element",
+    "One script[type=module] tag before closing body tag",
+    "assets/css/layout.css is the only active CSS file",
+    "assets/js/ contains modular JS runtime files for transport only",
+    "assets/images/ contains static assets",
+    "PWA support via manifest.webmanifest"
+  ]
+}

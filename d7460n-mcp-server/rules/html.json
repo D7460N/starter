@@ -1,0 +1,53 @@
+{
+  "architecture": "D7460N",
+  "version": "1.0.0",
+  "description": "HTML constraints for D7460N Architecture",
+  "allowed_elements": [
+    "html", "head", "body", "title", "meta", "link", "script",
+    "header", "nav", "main", "aside", "footer",
+    "article", "section", "h1", "h2", "h3", "h4", "h5", "h6",
+    "p", "a", "ul", "ol", "li", "dl", "dt", "dd",
+    "table", "thead", "tbody", "tfoot", "tr", "th", "td", "caption", "colgroup", "col",
+    "form", "fieldset", "legend", "label", "input", "select", "option", "optgroup", "textarea", "output",
+    "figure", "figcaption", "picture", "source", "img", "video", "audio", "track",
+    "details", "summary", "dialog", "menu",
+    "time", "mark", "abbr", "cite", "code", "pre", "blockquote", "q",
+    "strong", "em", "small", "sub", "sup", "br", "hr", "wbr",
+    "address", "hgroup", "search",
+    "slot", "template", "noscript"
+  ],
+  "forbidden_elements": ["div", "span"],
+  "forbidden_attributes": ["class", "id", "data-*"],
+  "state_machine_pattern": {
+    "description": "Interactive elements use hidden inputs inside labels as CSS state machines",
+    "form_actions": {
+      "element": "label",
+      "attributes": { "role": "button" },
+      "child": { "element": "input", "type": "checkbox", "attributes": { "aria-hidden": "true" } }
+    },
+    "navigation": {
+      "parent": "nav",
+      "element": "label",
+      "attributes": { "role": "button" },
+      "child": { "element": "input", "type": "radio", "attributes": { "name": "nav", "aria-hidden": "true" } }
+    }
+  },
+  "layout_pattern": {
+    "root": "app-container",
+    "regions": ["header", "nav", "main", "aside", "footer"],
+    "single_file": "index.html"
+  },
+  "rules": [
+    "HTML is for structure only — semantic elements only",
+    "Custom elements must contain a hyphen (e.g., app-container)",
+    "Never use div or span — use semantic HTML equivalents",
+    "Never use class, id, or data-* attributes",
+    "Always use label for interactive elements",
+    "State machines use hidden checkbox/radio inputs inside labels",
+    "Navigation uses radio inputs inside labels within nav",
+    "Single index.html at project root",
+    "Full-bleed Holy Grail layout via app-container",
+    "Forms go inside fieldset with schema/rules",
+    "Markup must be semantic, minimally nested, and intuitive"
+  ]
+}

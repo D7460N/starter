@@ -1,0 +1,37 @@
+{
+  "architecture": "D7460N",
+  "version": "1.0.0",
+  "description": "D7460N Architecture — zero-dependency, CSS-only, JAMstack-based, browser-native starter template",
+  "philosophy": {
+    "html": "Structure only — semantic markup only",
+    "css": "All layout, all UI behavior, all state machines, all navigation",
+    "javascript": "Data transport only — CRUD operations only"
+  },
+  "principles": [
+    "Separation of Concerns between presentation and data layers",
+    "Principle of Least Power",
+    "Deterministic and machine-verifiable architecture",
+    "Zero runtime dependencies",
+    "Accessibility first (W3C/WCAG compliant)",
+    "CSS-driven UI state — no JS for UI logic",
+    "Single Page Application (SPA) architecture",
+    "Progressive Web Application (PWA) support"
+  ],
+  "constraints": {
+    "no_frameworks": true,
+    "no_bundlers": true,
+    "no_compiled_code": true,
+    "no_npm_packages_at_runtime": true,
+    "single_page_application": true,
+    "progressive_web_app": true,
+    "css_grid_only": true,
+    "no_flexbox": true,
+    "no_event_listeners": true,
+    "no_inline_css": true,
+    "no_inline_js": true
+  },
+  "standards_references": [
+    "https://www.w3.org/TR/",
+    "https://developer.mozilla.org/en-US/docs/Web"
+  ]
+}
