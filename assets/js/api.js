@@ -1,14 +1,14 @@
-// Shared API origin; endpoint suffix is the only variable.
-export const API_BASE_URL = "https://6987f917780e8375a6874dcf.mockapi.io";
+// Shared data origin; endpoint suffix is the only variable.
+export const API_BASE_URL = "./assets/data/split";
 
 // Endpoint suffix registry.
 export const ENDPOINT_SUFFIX = {
-  shell: "shell",
-  home: "home",
-  about: "about",
-  products: "products",
-  events: "events",
-  contact: "contact",
+  shell: "shell.json",
+  home: "home.json",
+  about: "about.json",
+  products: "products.json",
+  events: "events.json",
+  contact: "contact.json",
   tour: ""
 };
 
