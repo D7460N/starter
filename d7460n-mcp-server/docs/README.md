@@ -1,9 +1,12 @@
 # D7460N MCP Server
 
-Model Context Protocol server providing authoritative D7460N Architecture
-rules, validation, and project generation for AI coding agents.
+Standalone development tool providing authoritative D7460N Architecture
+rules, validation, and code review assistance for AI coding agents.
 
-This server must never create package managers, build systems, or project scaffolding.
+The D7460N MCP Server and the D7460N Architecture are two separate entities.
+This server is never used to bootstrap, scaffold, or generate D7460N projects.
+It is never a dependency of any D7460N project. No D7460N project depends on
+it at runtime or build time.
 
 ## Quick Start
 
@@ -52,7 +55,6 @@ Add to your MCP client configuration:
 | `validate_js` | Validate JS CRUD-only compliance |
 | `validate_project` | Validate repository file structure |
 | `validate_workspace` | Validate multiple repositories |
-| `generate_d7460n_starter` | Generate a complete starter project |
 | `explain_d7460n_rule` | Explain a specific rule |
 | `get_mdn_reference` | Get MDN/W3C reference for a topic |
 | `ping` | Health check |
@@ -61,7 +63,6 @@ Add to your MCP client configuration:
 
 | Prompt | Description |
 |--------|-------------|
-| `d7460n.generate_starter` | Generate a new D7460N project |
 | `d7460n.validate_architecture` | Analyze repository for violations |
 | `d7460n.fix_architecture` | Suggest compliant fixes |
 
@@ -73,5 +74,6 @@ directory and hot-reloads on changes, notifying connected clients via
 
 ## Architecture
 
-This MCP server is optional development tooling only. No D7460N project
-depends on it at runtime.
+The D7460N MCP Server is a standalone development tool only. It is a separate
+entity from the D7460N Architecture. It is never used for bootstrapping, never
+used as a dependency, and never required by any D7460N project.
