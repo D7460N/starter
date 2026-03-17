@@ -12,6 +12,20 @@ metadata:
 
 Use this skill when working on any file in the D7460N Architecture starter template. This ensures all changes comply with the zero-dependency, CSS-only, browser-native architecture.
 
+## External Service Issues (Non-Negotiable)
+
+When a configured external API or service fails for any reason (SSL certificate errors, network failures, authentication errors, rate limiting, HTTP errors, etc.):
+
+- **NEVER** change the codebase architecture or redirect API endpoints to work around the failure.
+- **NEVER** create local fallback files, mock data, or substitute data sources to replace the external service.
+- **NEVER** redirect `API_BASE_URL` or any configured endpoint from its declared remote origin to a local path.
+- **STOP immediately** and advise the user on how to resolve the external service issue directly.
+- **Examples of correct responses:**
+  - SSL cert error → advise the user to log into their service provider account and renew or verify the certificate.
+  - Network/fetch failure → advise the user to check service status, subscription, or provider dashboard.
+  - 4xx/5xx HTTP error → advise the user to inspect the endpoint configuration or contact the API provider.
+- Creating workarounds in code for broken external services produces more code, obscures the real problem, violates Least Power, and permanently changes the architecture in ways the user did not request.
+
 ## Session Continuity (Non-Negotiable)
 
 - At the start of every session, ALWAYS read `SESSION-HANDOFF.md` before making implementation decisions.
