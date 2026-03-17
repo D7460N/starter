@@ -2,8 +2,11 @@
 
 ## Did You Know?
 
-Did you know that CSS can now render the presentation layer independently and autonomously?  
-_No AI, framework, or 3rd party dependency needed! Just native vanilla CSS._ 
+#### Did you know that CSS can now render the presentation layer independently and autonomously?
+
+#### Did you know that CSS is natively reactive all the time? 
+
+_No AI, framework, or 3rd party dependency needed._ 
 
 > **D7460N Architecture** is an **open-source, browser-native, fully declarative front-end architecture** for building out-of-the-box scalable, maintainable, intuitive, and accessible web applications without frameworks, build tools, or transpilers.
 
