@@ -21,16 +21,15 @@ Carry forward the exact decisions and non-negotiables from the last implementati
 - HTML entry script in `index.html` points to `assets/js/app.js`
 
 ## Endpoint Model (split)
-- Base: `./assets/data/split`
+- Base: `https://6987f917780e8375a6874dcf.mockapi.io`
 - Suffixes:
-  - `shell.json`
-  - `home.json`
-  - `about.json`
-  - `products.json`
-  - `events.json`
-  - `contact.json`
+  - `shell`
+  - `home`
+  - `about`
+  - `products`
+  - `events`
+  - `contact`
 - Nav radio index maps to page suffix in `oninput.js`.
-- Local JSON files replaced the `6987f917780e8375a6874dcf.mockapi.io` remote after its SSL cert expired.
 
 ## Logging Policy (implemented)
 - `console.clear()` on app startup and on each lifecycle run.
@@ -38,9 +37,8 @@ Carry forward the exact decisions and non-negotiables from the last implementati
 - Verbose timestamped failure reports with stage details and stack (when available).
 
 ## Data/Directory Notes
-- Runtime data comes from local JSON files in `assets/data/split/`.
-- The remote `mockapi.io` endpoint was replaced after its SSL certificate expired.
-- `assets/data/split/*.json` serve as the authoritative data source.
+- Runtime data comes from API endpoints (not local JSON files).
+- `assets/data` was removed as backup-only content.
 
 ## AI Instruction Files Updated
 - `.github/instructions/d7460n-architecture.instructions.md`
