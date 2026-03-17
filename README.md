@@ -4,7 +4,7 @@
 
 Did you know that native vanilla **HTML** and **CSS** can now render the presentation layer (including all UI states) **independently** and **autonomously**?
 
-Did you know that **CSS** is always **live** and always **reactive**? 
+Did you know that **CSS** is always **live** and **reacts** to dynamic DOM changes? 
 
 > - No AI
 > - No framework
