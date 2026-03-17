@@ -8,12 +8,16 @@ Did you know that **CSS** is always **live** and always **reactive**?
 
 > - No AI
 > - No framework
-> - No tooling
+> - No build tools
 > - No 3rd party dependencies
 
-**D7460N Architecture** is an **open-source, browser-native, fully declarative front-end architecture** for building out-of-the-box scalable, maintainable, intuitive, and accessible web applications without frameworks, build tools, or transpilers.
+## D7460N Starter
 
-**D7460N** operates as a **Single Page Application (SPA)** and can be implemented as a **Progressive Web App (PWA)**, with a focus on **Separation of Concerns (SOC)** and modern (W3C/WCAG) standards.
+Based on the open-source, browser-native, fully declarative, front-end **D7460N Architecture** for building _out-of-the-box_, scalable, maintainable, intuitive, and accessible web applications without frameworks, build tools, or transpilers.
+
+The independent modern **HTML/CSS starter project** you never had. 
+
+**D7460N Starter** operates as a **Single Page Application (SPA)** and can be implemented as a **Progressive Web App (PWA)**, with a focus on **Separation of Concerns (SOC)** and modern (W3C/WCAG) standards.
 
 > - Semantic HTML structure
 > - CSS state management
