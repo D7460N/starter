@@ -3,7 +3,7 @@ import { readPersistent, writePersistent } from "./storage.js";
 
 const STORAGE_KEY = "d7460n.app.v1";
 const COOKIE_KEY = "d7460n.app.v1";
-const LOAD_DELAY_MS = 1000;
+const LOAD_DELAY_MS = 10;
 let isShellHydrated = false;
 
 const PAGE_ENDPOINT_BY_INDEX = [
