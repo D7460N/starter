@@ -35,7 +35,7 @@ Features:
 *:after,
 ::after,
 ::before {
-  --transition-property: display, height, width, padding, margin, color, border, opacity;
+  --transition-property: display, color, border, opacity;
   --transition-duration: 250ms;
   --transition-timing-function: ease;
 
@@ -108,7 +108,7 @@ app-container {
   height: 100dvh;
   grid-template-rows: auto auto 1fr auto;
   align-items: start;
-  border: none;k
+  border: none;
 }
 
 header, footer {
@@ -183,7 +183,7 @@ aside {
 /* Intrinsic space trigger */
 nav {
   grid-auto-flow: column;
-  justify-items: end;
+  justify-content: end;
 
   label {
     padding-inline: 0.5rem;
