@@ -1,20 +1,9 @@
-/* https://codepen.io/web-dot-dev/pen/OPLZWBj?editors=1100 */
+/* https://codepen.io/D7460N/pen/myrBJyO?editors=1100 */
 
 @layer support, demo;
 
 @layer demo {
-  #bad-example .scroll-container {
-    overflow: auto;
-  }
   
-  #classic-example .scroll-container {
-    overflow: auto;
-    block-size: 10rlh;
-    border: 1px solid var(--surface-1);
-    background: var(--surface-2);
-  }
-  
-  /* Example 1: opacity variables for animating */ 
   @property --_scroll-shadow-color-1-opacity {
     syntax: "<percentage>";
     inherits: false;
@@ -27,11 +16,15 @@
     initial-value: 0%;
   }
   
-  #example-1 .scroll-container {
+ .scroll-container {
     /* notice size added too, makes 100cqh contextual for the shadows */
     container-type: scroll-state size;
     overflow: auto;
     display: grid;
+   
+    inline-size: 30ch;
+    block-size: 11rlh;
+    overscroll-behavior: contain;
     
     > * {
       grid-area: 1/1;
@@ -75,79 +68,6 @@
       }
     }
   }
-  
-  #example-2 .scroll-container {
-    container-type: scroll-state;
-    overflow: auto;
-    display: grid;
-    
-    & > * {
-      grid-area: 1/1;
-    }
-    
-    > .scroll-indicator {
-      place-self: end;
-      position: sticky;
-      inset-block-end: 10px;
-      inline-size: 100%;
-      text-align: center;
-      
-      transition: translate .2s ease;
-      
-      @container scroll-state((scrollable: top) or (not (scrollable: bottom))) {
-        translate: 0 calc(100% + 10px);
-      }
-      
-      @container scroll-state((scrollable: top) and (not (scrollable: bottom))) {
-        translate: 0 calc(100% + 10px);
-        rotate: .5turn;
-      }
-      
-      > svg {
-        background: var(--surface-2);
-        aspect-ratio: 1;
-        border-radius: 1e3px;
-        inline-size: 48px;
-        block-size: 48px;
-      }
-    }
-  }
-  
-  #example-3 .scroll-container {
-    container-type: scroll-state;
-    overflow: auto;
-    display: grid;
-    
-    & > * {
-      grid-area: 1/1;
-    }
-    
-    > .scroll-to-top {
-      place-self: end;
-      position: sticky;
-      inset-block-end: 10px;
-      inset-inline-end: 10px;
-      
-      transition: translate .2s ease;
-      
-      @container not scroll-state(scrollable: top) {
-        translate: 0 calc(100% + 10px);
-      }
-      
-      > button {
-        background: var(--surface-2);
-        border: 1px solid var(--surface-3);
-        aspect-ratio: 1;
-        border-radius: 1e3px;
-        inline-size: 48px;
-        cursor: pointer;
-        
-        > svg {
-          inline-size: 75%;
-        }
-      }
-    }
-  }
 }
 
 
@@ -167,7 +87,7 @@
     margin: 0;
   }
 
-  html {
+  :root {
     block-size: 100%;
     color-scheme: dark light;
   }
@@ -184,30 +104,17 @@
     
     background: radial-gradient(circle in oklab, var(--surface-2), var(--surface-1)) fixed;
     color: var(--text-1);
-    
-    > header {
-      display: grid;
-      gap: 10px;
-      text-align: center;
-      max-inline-size: 45ch;
-      margin-inline: auto;
-    }
   }
+ 
   
-  .scroll-container {
-    inline-size: 30ch;
-    block-size: 11rlh;
-    
-    overscroll-behavior: contain;
-  }
-  
-  .scroller {
+  ul {
+    list-style: none;
     display: grid;
-    gap: 10px;
-    padding: 10px;
+    gap: .6rem;
+    padding: .6rem;
     
-    > .item {
-      padding: 10px 15px;
+    li {
+      padding: .6rem;
       background: var(--surface-3);
     }
   }
@@ -217,140 +124,35 @@
     flex-flow: row-reverse;
     gap: 30px;
     justify-items: start;
-    
-    > header {
-      display: grid;
-      place-content: center start;
-      gap: 10px;
-      
-      > p {
-        text-wrap: balance;
-        max-inline-size: 30ch;
-        color: var(--text-2);
-      }
-    }
+  }
   }
 }
 
 
-/* <header> 
-  <h1>Visual Affordances for Scroll</h1>
-  <p>How CSS scroll-state queries can help users understand that a box is scrollable. The power of scroll-state queries here is the ability to dynamically apply an affordance.</p>
-</header>
 
-<section id="bad-example">
-  <header>
-    <h2>Bad Example</h2>
-    <p>A scrollable area with no visual affordances unless scrollbars are set to visible in the OS.</p>
-  </header>
+/* <section>
   <div class="scroll-container">
-    <div class="scroller">
-      <div class="item">One</div>
-      <div class="item">Two</div>
-      <div class="item">Three</div>
-      <div class="item">Four</div>
-      <div class="item">Five</div>
-      <div class="item">Six</div>
-      <div class="item">Seven</div>
-      <div class="item">Eight</div>
-      <div class="item">Nine</div>
-      <div class="item">Ten</div>
-    </div>
-  </div>
-</section>
-
-<section id="classic-example">
-  <header>
-    <h2>Classic Example</h2>
-    <p>Border, background and cutoff visual affordances. No scroll-state queries as the effect is permanent.</p>
-  </header>
-  <div class="scroll-container">
-    <div class="scroller">
-      <div class="item">One</div>
-      <div class="item">Two</div>
-      <div class="item">Three</div>
-      <div class="item">Four</div>
-      <div class="item">Five</div>
-      <div class="item">Six</div>
-      <div class="item">Seven</div>
-      <div class="item">Eight</div>
-      <div class="item">Nine</div>
-      <div class="item">Ten</div>
-    </div>
-  </div>
-</section>
-
-<section id="example-1">
-  <header>
-    <h2>scroll-state() Example 1</h2>
-    <p>A shadow visual affordance to indicate scroll</p>
-  </header>
-  <div class="scroll-container">
-    <div class="scroller">
-      <div class="item">One</div>
-      <div class="item">Two</div>
-      <div class="item">Three</div>
-      <div class="item">Four</div>
-      <div class="item">Five</div>
-      <div class="item">Six</div>
-      <div class="item">Seven</div>
-      <div class="item">Eight</div>
-      <div class="item">Nine</div>
-      <div class="item">Ten</div>
-    </div>
-  </div> 
-</section>
-
-<section id="example-2">
-  <header>
-    <h2>scroll-state() Example 2</h2>
-    <p>An arrow visual affordance to indicate scroll</p>
-  </header>
-  <div class="scroll-container">
-    <div class="scroll-indicator">
-      <svg width="32" height="32" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M11.5 15.392V6q0-.213.143-.357T12 5.5t.357.143T12.5 6v9.392l3.746-3.746q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354l-4.389 4.388q-.242.243-.565.243t-.565-.243l-4.389-4.388q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16z"/>
-      </svg>
-    </div>
-    <div class="scroller">
-      <div class="item">One</div>
-      <div class="item">Two</div>
-      <div class="item">Three</div>
-      <div class="item">Four</div>
-      <div class="item">Five</div>
-      <div class="item">Six</div>
-      <div class="item">Seven</div>
-      <div class="item">Eight</div>
-      <div class="item">Nine</div>
-      <div class="item">Ten</div>
-    </div>
-  </div>
-</section>
-
-<section id="example-3">
-  <header>
-    <h2>scroll-state() Example 3</h2>
-    <p>A scroll-to-top affordance</p>
-  </header>
-  <div class="scroll-container">
-    <div class="scroll-to-top">
-      <button title="Scroll to top" onclick="this.closest('.scroll-container').scrollTo({top: 0, left: 0, behavior: 'smooth'})">
-        <svg width="32" height="32" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M12 13q-.425 0-.712-.288T11 12V5.825L7.1 9.7q-.275.275-.687.288T5.7 9.7q-.275-.275-.275-.7t.275-.7l5.6-5.6q.15-.15.325-.212T12 2.425t.375.063t.325.212l5.6 5.6q.275.275.275.688T18.3 9.7q-.3.3-.712.3t-.713-.3L13 5.825V12q0 .425-.288.713T12 13m0 5q-.425 0-.712-.288T11 17v-1q0-.425.288-.712T12 15t.713.288T13 16v1q0 .425-.288.713T12 18m0 4q-.425 0-.712-.288T11 21t.288-.712T12 20t.713.288T13 21t-.288.713T12 22"/>
-        </svg>
-      </button>
-    </div> 
-    <div class="scroller">
-      <div class="item">One</div>
-      <div class="item">Two</div>
-      <div class="item">Three</div>
-      <div class="item">Four</div>
-      <div class="item">Five</div>
-      <div class="item">Six</div>
-      <div class="item">Seven</div>
-      <div class="item">Eight</div>
-      <div class="item">Nine</div>
-      <div class="item">Ten</div>
-    </div>
+    <ul>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+      <li>Four</li>
+      <li>Five</li>
+      <li>Six</li>
+      <li>Seven</li>
+      <li>Eight</li>
+      <li>Nine</li>
+      <li>Ten</li>
+      <li>Ellevin</li>
+      <li>Twelve</li>
+      <li>Thirteen</li>
+      <li>Fourteen</li>
+      <li>FIfteen</li>
+      <li>Sixteen</li>
+      <li>Seventeen</li>
+      <li>Eightteen</li>
+      <li>Nineteen</li>
+      <li>Twenty</li>
+    </ul>
   </div>
 </section> */
