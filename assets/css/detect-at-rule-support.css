@@ -16,9 +16,9 @@ This CSS only gets imported when @view-transition is supported (and the browser 
 @import "view-transitions.css" supports(at-rule(@view-transition));
 */
 
-
 /* https://codepen.io/bramus/pen/LERWgbe?editors=110 */
 
+/* https://codepen.io/D7460N/pen/ogzGNZp?editors=1100 */
 #output::after {
 	content: "❌ Your browser does not @supports at-rule(…)";
 	background-color: #ff00002b;
