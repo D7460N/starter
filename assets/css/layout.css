@@ -121,9 +121,8 @@ main {
   align-content: start;
 }
 
-article,
-section {
-  border: none;
+:where(article, section) {
+  border: solid 1px color-mix(in srgb, currentColor 0%, transparent);
   height: 100%;
 }
 
@@ -137,6 +136,10 @@ section {
 :where(app-logo, app-user, app-legal, app-version) {
   padding: 1rem;
   display: none;
+}
+
+p:last-of-type {
+  padding: 1rem;
 }
 
 app-logo:not(:empty),
@@ -175,6 +178,7 @@ article {
 
 section {
   overflow: auto;
+  background-color: color-mix(in oklab, canvas 10%, transparent);
 }
 
 /* aside hidden until receives content */
