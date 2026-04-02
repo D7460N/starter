@@ -84,13 +84,10 @@ Features:
   --text-1: light-dark(oklch(10% 5% 250), oklch(90% 5% 250));
   --text-2: light-dark(oklch(20% 5% 250), oklch(80% 5% 250));
 
-  background: radial-gradient(
-    circle in oklab,
-    var(--surface-2),
-    var(--surface-1)
-  )
-  fixed;
-  color: var(--text-1);
+  background: radial-gradient(circle in oklab,
+      var(--surface-2),
+      var(--surface-1)) fixed;
+        color: var(--text-1);
 }
 
 /* DOM order */
@@ -111,9 +108,19 @@ app-container {
   border: none;
 }
 
-header, footer {
-  justify-content: space-between;
-  grid-auto-flow: column;
+header,
+footer {
+  grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+}
+
+app-logo,
+app-legal {
+  justify-self: start;
+}
+
+app-user,
+app-version {
+  justify-self: end;
 }
 
 main {
@@ -192,7 +199,8 @@ aside {
 
 /* Intrinsic space trigger */
 nav {
-  grid-auto-flow: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
   justify-content: end;
 
   label {
@@ -249,25 +257,25 @@ nav {
 	margin: 50px auto;
 
 	background: */
-		/* Shadow covers */
-		/* linear-gradient(white 30%, rgba(255,255,255,0)),
+/* Shadow covers */
+/* linear-gradient(white 30%, rgba(255,255,255,0)),
 		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%, */
 
-		/* Shadows */
-		/* radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
+/* Shadows */
+/* radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
 		radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
 	background: */
-		/* Shadow covers */
-		/* linear-gradient(white 30%, rgba(255,255,255,0)),
+/* Shadow covers */
+/* linear-gradient(white 30%, rgba(255,255,255,0)),
 		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%, */
 
-		/* Shadows */
-		/* radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
+/* Shadows */
+/* radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
 		radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
 	background-repeat: no-repeat; */
-	/* background-color: white; */
-	/* background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px; */
+/* background-color: white; */
+/* background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px; */
 
-	/* Opera doesn't support this in the shorthand */
-	/* background-attachment: local, local, scroll, scroll;
+/* Opera doesn't support this in the shorthand */
+/* background-attachment: local, local, scroll, scroll;
 } */
