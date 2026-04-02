@@ -200,8 +200,14 @@ aside {
 /* Intrinsic space trigger */
 nav {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), 1fr));
-  justify-content: end;
+  grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), min-content));
+  justify-content: start;
+
+  container-type: inline-size;
+  container-name: nav;
+  --min: 5rem; /* single source of truth */
+  --count: 5; /* set per component instance */
+  --threshold: calc(var(--min) * var(--count));
 
   label {
     padding-inline: 0.5rem;
@@ -213,6 +219,16 @@ nav {
     &:has(input:checked) {
       opacity: 1;
     }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@container nav (max-width: 25rem) {
+  nav > label {
+    grid-column: 1 / -1;
   }
 }
 
