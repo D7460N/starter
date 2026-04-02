@@ -94,7 +94,7 @@ Features:
 }
 
 /* DOM order */
-:where(app-container, header, nav, main, article, section, aside, footer) {
+:where(app-container, header, main, article, section, aside, footer) {
   display: grid;
   border: solid 1px color-mix(in srgb, currentColor 50%, transparent);
   border-radius: 0.3rem;
