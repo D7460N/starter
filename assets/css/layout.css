@@ -201,7 +201,7 @@ section {
 nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), min-content));
-  justify-content: start;
+  justify-content: end;
 
   container-type: inline-size;
   container-name: nav;
