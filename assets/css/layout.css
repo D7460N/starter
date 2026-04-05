@@ -87,7 +87,7 @@ Features:
   background: radial-gradient(circle in oklab,
       var(--surface-2),
       var(--surface-1)) fixed;
-        color: var(--text-1);
+  color: var(--text-1);
 }
 
 /* DOM order */
@@ -105,7 +105,7 @@ app-container {
   height: 100dvh;
   grid-template-rows: auto auto auto 1fr auto auto auto;
   align-items: start;
- }
+}
 
 header,
 footer {
@@ -199,14 +199,17 @@ section {
 
 /* Intrinsic space trigger */
 nav {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), min-content));
   justify-content: end;
 
   container-type: inline-size;
   container-name: nav;
-  --min: 5rem; /* single source of truth */
-  --count: 5; /* set per component instance */
+  --min: 5rem;
+  /* single source of truth */
+  --count: 5;
+  /* set per component instance */
   --threshold: calc(var(--min) * var(--count));
 
   label {
@@ -227,18 +230,189 @@ nav {
     &:first-of-type {
       padding-inline-start: 1rem;
     }
-    &:last-of-type {
+
+    &:nth-last-of-type(2) {
       padding-inline-end: 1rem;
+    }
+
+    &:nth-last-of-type(1) {
+      display: none;
     }
   }
 }
 
+/* nav > label:has(> input[type="checkbox"][aria-hidden="true"]) {
+  display: none;
+} */
+
 @container nav (max-width: 25rem) {
+  nav {
+    position: relative;
+    z-index: 10;
+  }
+
   nav > label {
+    display: none;
     grid-column: 1 / -1;
-    padding-inline-start: 1rem;
+  }
+
+  nav > label:has(> input[type="checkbox"]) {
+    display: grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    margin-inline-start: auto;
+    position: relative;
+    z-index: 11;
+    cursor: pointer;
+  }
+
+  /* hide checkbox */
+  nav > label:last-of-type > input[type="checkbox"][aria-hidden="true"] {
+    appearance: none;
+    margin: 0;
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+  }
+
+  nav > label:has(> input[type="checkbox"])::before,
+  nav > label:has(> input[type="checkbox"])::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    inline-size: 1.5rem;
+    block-size: 0.125rem;
+    background: currentColor;
+    border-radius: 999px;
+    transform-origin: center;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+    z-index: 2;
+  }
+
+  nav > label:has(> input[type="checkbox"])::before {
+    transform: translate(-50%, calc(-50% - 0.4rem));
+    box-shadow: 0 0.4rem 0 currentColor;
+  }
+
+  nav > label:has(> input[type="checkbox"])::after {
+    transform: translate(-50%, calc(-50% + 0.4rem));
+  }
+
+  nav > label:last-of-type:has(> input[type="checkbox"]:checked)::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow: none;
+  }
+
+  nav > label:last-of-type:has(> input[type="checkbox"]:checked)::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  nav::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    block-size: calc(100dvh - 100%);
+    background: color-mix(in oklab, canvas 75%, transparent);
+    backdrop-filter: blur(0.3rem);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 9;
+  }
+
+  nav > label:not(:has(> input[type="checkbox"])) {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    display: grid;
+    align-content: start;
+    padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  nav:has(> label:last-of-type > input[type="checkbox"][aria-hidden="true"]:checked)::before {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  nav:has(> label:last-of-type > input[type="checkbox"][aria-hidden="true"]:checked) > label:not(:last-of-type) {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
+
+
+
+/* @container nav (max-width: 25rem) {
+  label {
+    grid-column: 1 / -1;
+    padding-inline-start: 1rem;
+    display: none;
+  }
+
+  label:has(> input[type="checkbox"][aria-hidden="true"]) {
+    display: grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    cursor: pointer;
+    position: relative;
+  }
+
+  label:has(> input[type="checkbox"][aria-hidden="true"]) > input {
+    appearance: none;
+    margin: 0;
+    position: absolute;
+    inset: 0;
+  }
+
+  label:has(> input[type="checkbox"][aria-hidden="true"]) {
+    background:
+      linear-gradient(currentColor 0 0) center / 1.5rem 0.125rem no-repeat;
+  }
+
+  label:has(> input[type="checkbox"][aria-hidden="true"])::before,
+  label:has(> input[type="checkbox"][aria-hidden="true"])::after {
+    content: "";
+    position: absolute;
+    inline-size: 1.5rem;
+    block-size: 0.125rem;
+    background: currentColor;
+    border-radius: 999px;
+    transition:
+      rotate 0.2s ease,
+      translate 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  label:has(> input[type="checkbox"][aria-hidden="true"])::before {
+    translate: 0 -0.4rem;
+  }
+
+  label:has(> input[type="checkbox"][aria-hidden="true"])::after {
+    translate: 0 0.4rem;
+  }
+
+  label:has(> input[type="checkbox"][aria-hidden="true"]:checked)::before {
+    translate: 0 0;
+    rotate: 45deg;
+  }
+
+  label:has(> input[type="checkbox"][aria-hidden="true"]:checked)::after {
+    translate: 0 0;
+    rotate: -45deg;
+  }
+
+  label:has(> input[type="checkbox"][aria-hidden="true"]:checked) {
+    background: none;
+  }
+} */
 
 /* State machine */
 [aria-hidden="true"] {
