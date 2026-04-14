@@ -70,17 +70,21 @@ When a configured external API or service fails for any reason (SSL certificate 
 15. *Separation of Concerns* between presentation and data layers **MUST ALWAYS** be maintained.
 16. *Principle of Least Power* **MUST ALWAYS** be maintained.
 17. CSS **ALWAYS** determines DOM element visibility based on data presense via `:empty`, `:not(:empty)`, `:has()`, `if()`, etc.
-18. CSS **ALWAYS** uses modern instrinsic style-queries and CSS-only techniques — no hard/static values.
+18. CSS **ALWAYS** uses modern intrinsic sizing such as style-queries and CSS-only techniques — no hard/static values.
 19. CSS **ALWAYS** manages light/dark mode color-scheme in `:root{color-scheme: light dark}`.
 20. CSS **ALWAYS** uses modern web accessibility selectors to "bake-in" accessibility when possible.
 21. CSS **ALWAYS** uses radio buttons inside `<label>` with `role="button"` combined with `:has()`, `:not()`, `:empty`, `:not(:empty)`, inside `<nav>` for global navigation.
-22. *STATE MACHINES* == checkboxes inside `<label>`s with `role="button"` combined with optional conditional using `@container` queries, `:has()`, `:not()`, `:empty`, `:not(:empty)`, `if()`, `@property`, etc.
+22. *STATE MACHINES* == checkboxes inside `<label>`s with `role="button"` combined with optional conditional using `@container` queries, `:has()`, `:not()`, `:empty`, `:not(:empty)`, `if()`, `@property`, `@function`, `@supports`, `contain-intrinsic-*`, etc.
 23. HTML **ALWAYS** uses one single `index.html` at project root.
 24. HTML **ALWAYS** uses full-bleed Holy Grail layout from `index.html`.
 25. **NEVER** inline CSS or JS.
 26. **NEVER** warn about or consider cross-browser compatibility.
 27. **NEVER** use `<div>` or `<span>` — ALWAYS use semantic HTML equivalents that address the intent of the element.
 28. **NEVER** nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`).
+29. **ALWAYS** use `@layer` to distinguish different CSS featuers and to allow easier override by future developers.
+30. **ALWAYS** use `@starting-style` to fade in init load of page content
+31. **ALWAYS** use `@view-transition` to fade in targetted tab content.
+32. *ALWAYS** use anchor positioning for all hover content so that content never goes off the page. 
 
 ## HTML Layout Pattern
 
