@@ -31,18 +31,18 @@ When a configured external API or service fails for any reason (SSL certificate 
 
 ## Session Continuity (Non-Negotiable)
 
-- At the start of every session, ALWAYS read `SESSION-HANDOFF.md` before making implementation decisions.
-- ALWAYS re-assert the handoff "Constraint Lock" before coding changes.
+- At the start of every session, **ALWAYS** read `SESSION-HANDOFF.md` before making implementation decisions.
+- **ALWAYS** re-assert the handoff "Constraint Lock" before coding changes.
 - If `SESSION-HANDOFF.md` conflicts with canonical architecture rules, STOP and ask for clarification.
-- NEVER skip handoff review due to time pressure.
+- **NEVER** skip handoff review due to time pressure.
 
 ## Core Constraints
 
-- Never any HTML or CSS in JS.
-- Never any CSS or JS in HTML.
-- Never any JS or HTML in CSS.
-- All JS is to be written as generic drop-in/use anywhere single fuction per file native HTML modules using conventional naming nomenclature that all web developers would know.
-- All CSS is to be written as generic drop-in/use anywhere single fuction per file modules using conventional naming nomenclature that all web developers would know.
+- **NEVER** any HTML or CSS in JS.
+- **NEVER** any CSS or JS in HTML.
+- **NEVER** any JS or HTML in CSS.
+- **All** JS is to be written as generic drop-in/use anywhere single fuction per file native HTML modules using conventional naming nomenclature that all web developers would know.
+- **All** CSS is to be written as generic drop-in/use anywhere single fuction per file modules using conventional naming nomenclature that all web developers would know.
 - **JS == NEVER** — JS shall NEVER be used for anything except where explicitely stated by user
 - **HTML + CSS == everything** — modern HTML and CSS must be used for all development except where explicitely stated by user
 - **HTML == structure** — semantic elements only, never use `<div>`, `<span>`, `class`, `id`, or `data-*`
@@ -53,34 +53,34 @@ When a configured external API or service fails for any reason (SSL certificate 
 
 ## Non-Negotiable Rules
 
-1. NEVER use third-party dependencies. Third-party == any code that cannot natively render in any evergreen browser without assistance.
-2. ALWAYS use modern, vanilla, W3C/WCAG-compliant, accessibility-first/accessibility-baked-in syntax.
+1. **NEVER** use third-party dependencies. Third-party == any code that cannot natively render in any evergreen browser without assistance.
+2. **ALWAYS** use modern, vanilla, W3C/WCAG-compliant, accessibility-first/accessibility-baked-in syntax.
 3. Standards references: [https://www.w3.org/TR/](https://www.w3.org/TR/) and [https://developer.mozilla.org/en-US/docs/Web](https://developer.mozilla.org/en-US/docs/Web)
-4. ALWAYS default to SPA navigational architecture, which is `<nav><label><input type="radio" aria-hidden="true" name="nav"></label></nav>`, using `:has()` and `oninput` event to call data.  
-5. ALWAYS default to PWA (`manifest.webmanifest`).
-6. JS shall NEVER be used for anything except where explicitely stated by user (such as: modular `assets/js/*.js` runtime files for API transport, `oninput` lifecycle orchestration, and browser storage). Modern HTML and modern CSS must be used for all development at all time except where explicitely stated by user.
-7. CSS ALWAYS replaces all JS for all functionality except where explicitely stated by user.
-8. CSS ALWAYS uses 
-9. When JS is used, ALWAYS use `document.querySelector('')` for targeting selectors.
-10. JS ALWAYS uses `oninput` for ALL API CRUD operations through a shared lifecycle utility.
-11. JS NEVER uses user-initiated events for API CRUD operations.
-12. JS NEVER uses event listeners — ever.
-13. HTML ALWAYS uses state machine `<label><input type="radio" aria-hidden="true" />` for interactive elements that are not intrinsically interactive.
-14. HTML markup is ALWAYS semantic, minimally nested, and intuitive.
-15. Separation of Concerns between presentation and data layers MUST ALWAYS be maintained.
-16. Principle of Least Power MUST ALWAYS be maintained.
-17. CSS ALWAYS determines DOM element visibility based on data presense via `:empty`, `:not(:empty)`, `:has()`, `if()`, etc.
-18. CSS ALWAYS uses modern instrinsic style-queries and CSS-only techniques — no hard/static values.
-19. CSS ALWAYS manages light/dark mode color-scheme in `:root{color-scheme: light dark}`.
-20. CSS ALWAYS uses modern web accessibility selectors to "bake-in" accessibility when possible.
-21.CSS ALWAYS uses radio buttons inside `<label>` with `role="button"` combined with `:has()`, `:not()`, `:empty`, `:not(:empty)`, inside `<nav>` for global navigation.
-22. STATE MACHINES == checkboxes inside `<label>`s with `role="button"` combined with optional conditional using `@container` queries, `:has()`, `:not()`, `:empty`, `:not(:empty)`, `if()`, `@property`, etc.
-23. HTML ALWAYS uses one single `index.html` at project root.
-24. HTML ALWAYS uses full-bleed Holy Grail layout from `index.html`.
-25. NEVER inline CSS or JS.
-26. NEVER warn about or consider cross-browser compatibility.
-27. NEVER use `<div>` or `<span>` — ALWAYS use semantic HTML equivalents that address the intent of the element.
-28. NEVER nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`).
+4. **ALWAYS** default to SPA navigational architecture, which is `<nav><label><input type="radio" aria-hidden="true" name="nav"></label></nav>`, using `:has()` and `oninput` event to call data.  
+5. **ALWAYS** default to PWA (`manifest.webmanifest`).
+6. JS shall **NEVER** be used for anything except where explicitely stated by user (such as: modular `assets/js/*.js` runtime files for API transport, `oninput` lifecycle orchestration, and browser storage). Modern HTML and modern CSS must be used for all development at all time except where explicitely stated by user.
+7. CSS **ALWAYS** replaces all JS for all functionality except where explicitely stated by user.
+8. CSS **ALWAYS** uses 
+9. When JS is used, **ALWAYS** use `document.querySelector('')` for targeting selectors.
+10. JS **ALWAYS** uses `oninput` for ALL API CRUD operations through a shared lifecycle utility.
+11. JS **NEVER** uses user-initiated events for API CRUD operations.
+12. JS **NEVER** uses event listeners — ever.
+13. HTML **ALWAYS** uses state machine `<label><input type="radio" aria-hidden="true" />` for interactive elements that are not intrinsically interactive.
+14. HTML markup is **ALWAYS** semantic, minimally nested, and intuitive.
+15. *Separation of Concerns* between presentation and data layers **MUST ALWAYS** be maintained.
+16. *Principle of Least Power* **MUST ALWAYS** be maintained.
+17. CSS **ALWAYS** determines DOM element visibility based on data presense via `:empty`, `:not(:empty)`, `:has()`, `if()`, etc.
+18. CSS **ALWAYS** uses modern instrinsic style-queries and CSS-only techniques — no hard/static values.
+19. CSS **ALWAYS** manages light/dark mode color-scheme in `:root{color-scheme: light dark}`.
+20. CSS **ALWAYS** uses modern web accessibility selectors to "bake-in" accessibility when possible.
+21. CSS **ALWAYS** uses radio buttons inside `<label>` with `role="button"` combined with `:has()`, `:not()`, `:empty`, `:not(:empty)`, inside `<nav>` for global navigation.
+22. *STATE MACHINES* == checkboxes inside `<label>`s with `role="button"` combined with optional conditional using `@container` queries, `:has()`, `:not()`, `:empty`, `:not(:empty)`, `if()`, `@property`, etc.
+23. HTML **ALWAYS** uses one single `index.html` at project root.
+24. HTML **ALWAYS** uses full-bleed Holy Grail layout from `index.html`.
+25. **NEVER** inline CSS or JS.
+26. **NEVER** warn about or consider cross-browser compatibility.
+27. **NEVER** use `<div>` or `<span>` — ALWAYS use semantic HTML equivalents that address the intent of the element.
+28. **NEVER** nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`).
 
 ## HTML Layout Pattern
 
