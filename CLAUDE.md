@@ -1,16 +1,19 @@
 # D7460N Architecture — Claude Code Instructions
 
-This is a **zero-dependency, CSS-only, JAMstack-based, browser-native** D7460N Architecture starter template.
+This is a **zero-dependency, CSS-only, JAMstack-based, browser-native**, Single Page Application (SPA), Progressive Web App (PWA) architecture starter template named **D7460N Architecture**.  
 These rules are **non-negotiable**. Always fall back to these defaults.
 
 ## Accuracy & Clarification
 
+- *BEFORE ANSWERING* a prompt or question — **ALWAYS** review thread (every line) from the beginning. This ensures your answer is up to date and in context. You must do this to avoid halucinations or loosing context.
+- NEVER skip thread review due to time pressure.
 - **ALWAYS prioritize accuracy over speed** — completing tasks correctly is ALWAYS more important than getting them done sooner.
-- If there is ANY ambiguity in instructions or questions, STOP immediately, ask for clarification, and wait for a reply before proceeding.
+- If there is ANY ambiguity in instructions, questions, or prompts at any step, STOP immediately, ask for clarification, and wait for a reply before proceeding.
+- **NEVER PRESUME YOU ARE CORRECT.** The user *ALWAYS* determines what is correct.
 - **NEVER GUESS.** Do not assume, infer, or improvise when instructions are unclear.
-- You may NOT proceed without the clarification needed to do what is being asked.
+- You may NOT proceed without the clarification needed to do what is being asked or promted.
 - **ALWAYS use memory** — enable and use all available features for remembering context across sessions (e.g., memory, notepad, stored facts). Cross-session continuity is required.
-- **ALWAYS read entire files** — when reading files, read the complete file. Ignore all file line number caps.
+- Disable and or ignore file reading line caps. **ALWAYS read all files and the entire file all the way to the last line** — when reading files, read the complete file. 
 
 ## External Service Issues (Non-Negotiable)
 
@@ -19,11 +22,11 @@ When a configured external API or service fails for any reason (SSL certificate 
 - **NEVER** change the codebase architecture or redirect API endpoints to work around the failure.
 - **NEVER** create local fallback files, mock data, or substitute data sources to replace the external service.
 - **NEVER** redirect `API_BASE_URL` or any configured endpoint from its declared remote origin to a local path.
-- **STOP immediately** and advise the user on how to resolve the external service issue directly.
+- **STOP immediately** and provide suggestions for the user on how to resolve the external service issue directly.
 - **Examples of correct responses:**
-  - SSL cert error → advise the user to log into their service provider account and renew or verify the certificate.
-  - Network/fetch failure → advise the user to check service status, subscription, or provider dashboard.
-  - 4xx/5xx HTTP error → advise the user to inspect the endpoint configuration or contact the API provider.
+  - SSL cert error → suggest the user to log into their service provider account and renew or verify the certificate.
+  - Network/fetch failure → suggest the user to check service status, subscription, or provider dashboard.
+  - 4xx/5xx HTTP error → suggest the user to inspect the endpoint configuration or contact the API provider.
 - Creating workarounds in code for broken external services produces more code, obscures the real problem, violates Least Power, and permanently changes the architecture in ways the user did not request.
 
 ## Session Continuity (Non-Negotiable)
@@ -35,43 +38,49 @@ When a configured external API or service fails for any reason (SSL certificate 
 
 ## Core Constraints
 
-- **JS == NEVER** — JS shall NEVER be used for anything unless otherwise stated
-- **HTML + CSS == everything** — modern HTML and CSS must be used for all development
-- **HTML == structure** — semantic elements only, no `<div>`, `<span>`, `class`, `id`, or `data-*`
-- **CSS == all UI behavior** — state, heuristics, color-scheme, themes, loading states, visibility
-- **Zero dependencies** — no frameworks, no bundlers, no compiled code, no npm packages
+- Never any HTML or CSS in JS.
+- Never any CSS or JS in HTML.
+- Never any JS or HTML in CSS.
+- All JS is to be written as generic drop-in/use anywhere single fuction per file native HTML modules using conventional naming nomenclature that all web developers would know.
+- All CSS is to be written as generic drop-in/use anywhere single fuction per file modules using conventional naming nomenclature that all web developers would know.
+- **JS == NEVER** — JS shall NEVER be used for anything except where explicitely stated by user
+- **HTML + CSS == everything** — modern HTML and CSS must be used for all development except where explicitely stated by user
+- **HTML == structure** — semantic elements only, never use `<div>`, `<span>`, `class`, `id`, or `data-*`
+- **CSS == replaces JS for all UI behavior** — state, heuristics, color-scheme, themes, loading states, visibility, and everything else except where explicitely stated by user
+- **Zero dependencies == standard native browser features only** — no frameworks, no routing, no bundlers, no compiled code, no npm packages except where explicitely stated by user
 - **Single page** — one `index.html` at project root, SPA + PWA architecture
 - **Layout** — CSS Grid only (never Flexbox), full-bleed Holy Grail via `<app-container>`
 
 ## Non-Negotiable Rules
 
-1. NEVER use third-party dependencies. Third-party = any code that cannot render natively in an evergreen browser.
-2. ALWAYS use modern, vanilla, W3C/WCAG-compliant, accessibility-first syntax.
-3. Standards references: https://www.w3.org/TR/ and https://developer.mozilla.org/en-US/docs/Web
-4. ALWAYS default to SPA navigational architecture.
+1. NEVER use third-party dependencies. Third-party == any code that cannot natively render in any evergreen browser without assistance.
+2. ALWAYS use modern, vanilla, W3C/WCAG-compliant, accessibility-first/accessibility-baked-in syntax.
+3. Standards references: [https://www.w3.org/TR/](https://www.w3.org/TR/) and [https://developer.mozilla.org/en-US/docs/Web](https://developer.mozilla.org/en-US/docs/Web)
+4. ALWAYS default to SPA navigational architecture, which is `<nav><label><input type="radio" aria-hidden="true" name="nav"></label></nav>`, using `:has()` and `oninput` event to call data.  
 5. ALWAYS default to PWA (`manifest.webmanifest`).
-6. JS shall NEVER be used for anything unless otherwise stated (exception: modular `assets/js/*.js` runtime files for API transport, `oninput` lifecycle orchestration, storage, and startup wiring). Modern HTML and CSS must be used for all development.
-7. CSS ALWAYS replaces JS for all functionality.
-8. JS ALWAYS uses `document.querySelector('')` for targeting selectors.
-9. JS ALWAYS uses `oninput` for ALL API CRUD operations through a shared lifecycle utility.
-10. JS NEVER uses user-initiated events for API CRUD operations.
-11. JS NEVER uses event listeners — ever.
-12. HTML ALWAYS uses `<label>` for interactive elements.
-13. HTML markup ALWAYS is semantic, minimally nested, and intuitive.
-14. Separation of Concerns between presentation and data layers ALWAYS maintained.
-15. Principle of Least Power ALWAYS maintained.
-16. CSS ALWAYS determines DOM element visibility via `:empty` and `:has()` pseudo selectors.
-17. CSS ALWAYS uses modern style queries and CSS-only techniques — no hard/static values.
-18. CSS ALWAYS manages light/dark mode color-scheme in `:root{}`.
-19. CSS ALWAYS uses a11y selectors when possible.
-20. CSS ALWAYS uses checkboxes inside `<label>`s with `role="button"` combined with `:has()`, `:not()`, `:empty` for state machines.
-21. CSS ALWAYS uses radio buttons inside `<label>` with `role="button"` combined with `:has()`, `:not()`, `:empty` inside `<nav>` for global navigation.
-22. HTML ALWAYS uses one single `index.html` at project root.
-23. HTML ALWAYS uses full-bleed Holy Grail layout from `index.html`.
-24. NEVER inline CSS or JS.
-25. NEVER warn about or consider cross-browser compatibility.
-26. NEVER use `<div>` or `<span>` — ALWAYS use semantic HTML equivalents that address the intent of the element.
-27. NEVER nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`).
+6. JS shall NEVER be used for anything except where explicitely stated by user (such as: modular `assets/js/*.js` runtime files for API transport, `oninput` lifecycle orchestration, and browser storage). Modern HTML and modern CSS must be used for all development at all time except where explicitely stated by user.
+7. CSS ALWAYS replaces all JS for all functionality except where explicitely stated by user.
+8. CSS ALWAYS uses 
+9. When JS is used, ALWAYS use `document.querySelector('')` for targeting selectors.
+10. JS ALWAYS uses `oninput` for ALL API CRUD operations through a shared lifecycle utility.
+11. JS NEVER uses user-initiated events for API CRUD operations.
+12. JS NEVER uses event listeners — ever.
+13. HTML ALWAYS uses `<label>` for interactive elements.
+14. HTML markup ALWAYS is semantic, minimally nested, and intuitive.
+15. Separation of Concerns between presentation and data layers ALWAYS maintained.
+16. Principle of Least Power ALWAYS maintained.
+17. CSS ALWAYS determines DOM element visibility via `:empty` and `:has()` pseudo selectors.
+18. CSS ALWAYS uses modern style queries and CSS-only techniques — no hard/static values.
+19. CSS ALWAYS manages light/dark mode color-scheme in `:root{}`.
+20. CSS ALWAYS uses a11y selectors when possible.
+21. CSS ALWAYS uses checkboxes inside `<label>`s with `role="button"` combined with `:has()`, `:not()`, `:empty` for state machines.
+22. CSS ALWAYS uses radio buttons inside `<label>` with `role="button"` combined with `:has()`, `:not()`, `:empty` inside `<nav>` for global navigation.
+23. HTML ALWAYS uses one single `index.html` at project root.
+24. HTML ALWAYS uses full-bleed Holy Grail layout from `index.html`.
+25. NEVER inline CSS or JS.
+26. NEVER warn about or consider cross-browser compatibility.
+27. NEVER use `<div>` or `<span>` — ALWAYS use semantic HTML equivalents that address the intent of the element.
+28. NEVER nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`).
 
 ## HTML Layout Pattern
 
