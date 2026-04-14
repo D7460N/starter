@@ -183,25 +183,27 @@ For navigation:
 
 ## When Modifying This Project
 
-- All UI states, including loading states, use CSS + HTML checkbox/radio state machines
-- Keep JS focused on fetch/CRUD only
-- Always use semantic HTML markup
-- Never use `<div>`, `<span>`, `class`, `data-*`, or `id` — `<div>` and `<span>` shall NEVER be used; ALWAYS use semantic HTML equivalents that address the intent of the element
-- NEVER nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`)
-- Forms go inside `<fieldset>` with schema/rules
+- **All** UI states, including loading states, use CSS + HTML checkbox/radio state machines
+- **ALWAYS** keep JS focused on fetch/CRUD only
+- **ALWAYS** use semantic HTML markup
+- **NEVER** use `<div>`, `<span>`, `class`, `data-*`, or `id` — `<div>` and `<span>`; **ALWAYS** use semantic HTML equivalents that address the intent of the element
+- **NEVER** nest wrapper elements for layout — **ALWAYS** use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`)
+- Forms **ALWAYS** go inside `<fieldset>` with schema/rules
 - Custom elements generated from JSON via `toTagName()`
 - Use `aria-disabled` for accessibility (styled via CSS)
-- JS must be idempotent and stateless — no global state or side effects
-- Reuse existing functions before creating new ones
-- NEVER create new coding patterns — all patterns are already established; use what exists
-- Adding code increases entropy — NEVER add new code or files unless the user explicitly states to
-- Follow user instructions in detail — no more, no less
-- Use cutting-edge experimental CSS without regard for browser support
+- JS **ALWAYS MUST** be idempotent and stateless — **NEVER** global state or side effects
+- **ALWAYS** review and reuse existing functions before creating new ones
+- **NEVER** create new coding patterns — **ALL** patterns are already established; use what exists
+- Adding code **ALWAYS** increases entropy — **NEVER** add new code or files except where explicitely stated by user
+- **ALWAYS** follow user instructions in extreme detail — no more, no less
+- **ALWAYS** review user instructions after each task but before completion to ensure everything was done exactly as instructed - no more, no less
+- **NEVER** skip review of user instructions after complete due to time pressure.
+- **ALWAYS** Use cutting-edge experimental CSS without regard for browser support
 
 ## JS Runtime Conventions (Non-Negotiable)
 
-- API base address is declared once; only endpoint suffix varies (for example `shell`, `home`, `about`, `products`, `events`, `contact`)
-- Initial page load MUST enter the same `oninput` lifecycle path via programmatic nav radio `.click()`
+- API base address is declared **ONCE**; **ONLY** endpoint suffix varies (for example `shell`, `home`, `about`, `products`, `events`, `contact`)
+- Initial page load **MUST** enter the same `oninput` lifecycle path via programmatic nav radio `.click()`
 - Shell content (`header`, `nav`, `footer`, `meta`) is fetched/injected once per runtime session, not on every page call
 - Nav radio index maps to page endpoint suffix; same DOM targets are reused for injection
 - Console reporting policy: minimal timestamped success reports, verbose timestamped failure reports, and `console.clear()` on startup and each lifecycle run
