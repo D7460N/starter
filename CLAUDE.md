@@ -1,6 +1,6 @@
 # D7460N Architecture — Claude Code Instructions
 
-This is a **zero-dependency, CSS-only, JAMstack-based, browser-native**, Single Page Application (SPA), Progressive Web App (PWA) architecture starter template named **D7460N Architecture**.  
+This is a **zero-dependency, CSS-replaces-JS, JAMstack-based, browser-native**, Single Page Application (SPA), Progressive Web App (PWA) architecture starter template named **D7460N Architecture**.  
 These rules are **non-negotiable**. Always fall back to these defaults.
 
 ## Accuracy & Clarification
@@ -65,16 +65,16 @@ When a configured external API or service fails for any reason (SSL certificate 
 10. JS ALWAYS uses `oninput` for ALL API CRUD operations through a shared lifecycle utility.
 11. JS NEVER uses user-initiated events for API CRUD operations.
 12. JS NEVER uses event listeners — ever.
-13. HTML ALWAYS uses `<label>` for interactive elements.
-14. HTML markup ALWAYS is semantic, minimally nested, and intuitive.
-15. Separation of Concerns between presentation and data layers ALWAYS maintained.
-16. Principle of Least Power ALWAYS maintained.
-17. CSS ALWAYS determines DOM element visibility via `:empty` and `:has()` pseudo selectors.
-18. CSS ALWAYS uses modern style queries and CSS-only techniques — no hard/static values.
-19. CSS ALWAYS manages light/dark mode color-scheme in `:root{}`.
-20. CSS ALWAYS uses a11y selectors when possible.
-21. CSS ALWAYS uses checkboxes inside `<label>`s with `role="button"` combined with `:has()`, `:not()`, `:empty` for state machines.
-22. CSS ALWAYS uses radio buttons inside `<label>` with `role="button"` combined with `:has()`, `:not()`, `:empty` inside `<nav>` for global navigation.
+13. HTML ALWAYS uses state machine `<label><input type="radio" aria-hidden="true" />` for interactive elements that are not intrinsically interactive.
+14. HTML markup is ALWAYS semantic, minimally nested, and intuitive.
+15. Separation of Concerns between presentation and data layers MUST ALWAYS be maintained.
+16. Principle of Least Power MUST ALWAYS be maintained.
+17. CSS ALWAYS determines DOM element visibility based on data presense via `:empty`, `:not(:empty)`, `:has()`, `if()`, etc.
+18. CSS ALWAYS uses modern instrinsic style-queries and CSS-only techniques — no hard/static values.
+19. CSS ALWAYS manages light/dark mode color-scheme in `:root{color-scheme: light dark}`.
+20. CSS ALWAYS uses modern web accessibility selectors to "bake-in" accessibility when possible.
+21.CSS ALWAYS uses radio buttons inside `<label>` with `role="button"` combined with `:has()`, `:not()`, `:empty`, `:not(:empty)`, inside `<nav>` for global navigation.
+22. STATE MACHINES == checkboxes inside `<label>`s with `role="button"` combined with optional conditional using `@container` queries, `:has()`, `:not()`, `:empty`, `:not(:empty)`, `if()`, `@property`, etc.
 23. HTML ALWAYS uses one single `index.html` at project root.
 24. HTML ALWAYS uses full-bleed Holy Grail layout from `index.html`.
 25. NEVER inline CSS or JS.
@@ -88,6 +88,7 @@ The full-bleed Holy Grail layout from `index.html`. This is the canonical struct
 
 ```html
 <app-container>
+  <app-banner></app-banner>
   <header>
     <app-logo></app-logo>
     <app-user></app-user>
@@ -108,12 +109,14 @@ The full-bleed Holy Grail layout from `index.html`. This is the canonical struct
     <app-legal></app-legal>
     <app-version></app-version>
   </footer>
+  <app-banner></app-banner>
 </app-container>
 ```
 
 ### Layout Regions
 
 - **`<app-container>`** — Root layout wrapper; CSS Grid Holy Grail structure
+- **`<app-banner>`** — Generally empty, default `display: hidden;` when `:empty`, may contain optional notification or alert content
 - **`<header>`** — Contains `<app-logo>` and `<app-user>` custom elements
 - **`<nav>`** — Global navigation; radio button `<label>` state machines (see State Machine Pattern below)
 - **`<main>`** — Primary content area; contains `<article>` with `<h1>`, `<p>`, `<section>` elements
@@ -131,28 +134,47 @@ For forms:
   Save
   <input type="checkbox" aria-hidden="true" />
 </label>
+<label role="button" aria-label="Close">
+  Close
+  <input type="checkbox" aria-hidden="true" />
+</label>
 ```
 
 For navigation:
 ```html
-<nav>
-  <label role="button">
-    Nav item
-    <input type="radio" name="nav" aria-hidden="true" />
-  </label>
-</nav>
+      <nav>
+        <label>
+          <input type="radio" aria-hidden="true" name="nav">
+        </label>
+        <label>
+          <input type="radio" aria-hidden="true" name="nav">
+        </label>
+        <label>
+          <input type="radio" aria-hidden="true" name="nav">
+        </label>
+        <label>
+          <input type="radio" aria-hidden="true" name="nav">
+        </label>
+        <label>
+          <input type="radio" aria-hidden="true" name="nav">
+        </label>
+        <label>
+          <input type="checkbox" aria-hidden="true">
+        </label>
+      </nav>
 ```
 
 ## File Responsibilities
 
-- **index.html** — Complete DOM structure
+- **index.html** — Complete DOM structure, loaded upfront
 - **assets/css/layout.css** — The only active CSS file; CSS Grid Holy Grail structure and all current layout
 - **assets/js/app.js** — JS entrypoint; startup checks, console reset, and initialization wiring
 - **assets/js/oninput.js** — Shared `oninput` lifecycle; binds nav inputs, routes API calls, and injects data
 - **assets/js/api.js** — API transport utilities; base URL, endpoint suffix resolution, fetch/parse, and logging helpers
 - **assets/js/storage.js** — Generic storage utilities (localStorage primary, cookie fallback)
 - **assets/js/tour.js** — Safe placeholder module for future onboarding/tour logic
-- **assets/images/** — Static assets
+- **assets/images/app/** — Project assets not related to branding
+- **assets/images/brand/** — Project assets related to branding
 
 ### Ignored (inactive for now)
 
