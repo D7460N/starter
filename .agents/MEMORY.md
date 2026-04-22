@@ -1,4 +1,4 @@
-# MEMORY.md — D7460N Persistent Memory
+# MEMORY.md — D7460N Architecture Persistent Memory
 
 ## 1. PURPOSE
 
