@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
-/* ^^^ @import must always be top ^^^ */
-
 /*
 MARK: STARTER SETUP
 
@@ -26,15 +23,6 @@ Features:
 - Transition consistency
 - JS for API/CRUD only
 */
-
-/* https://drafts.csswg.org/selectors-4/#typedef-forgiving-selector-list
-- Forgiving selector list
-- Specificity == 0
-- Allows easy override */
-:where(img, picture, video, canvas, svg) {
-  display: block;
-  max-inline-size: 100%;
-}
 
 :where(button, input, select, textarea) {
   font-family: inherit;
