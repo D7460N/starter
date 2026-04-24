@@ -1,9 +1,10 @@
-/* MARK: TRANSITIONS */
+/* MARK: TRANSITIONS
+*/
 
 :root {
-  --transition-duration: 500ms;
-  --transition-property: visibility, opacity, display, transform, background, background-color, border-color, color, min-width;
-  --transition-timing-function: ease-in;
+  --transition-property: display, color, display, visibility, background, background-color, border-color, opacity;
+  --transition-timing-function: ease-out;
+  --transition-duration: 250ms;
 
   scroll-behavior: smooth;
 
@@ -14,8 +15,9 @@
 
 * {
   transition-property: var(--transition-property);
-  transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
+  transition-duration: var(--transition-duration);
+  
   transition-behavior: allow-discrete;
 }
 
