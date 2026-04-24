@@ -1,0 +1,25 @@
+/* MARK: FEATURE DETECTION 
+*/
+
+/* https://github.com/OliverBrotchie/CSS-Fingerprint */
+.body {
+  --unique-identifier: 'foo'; // unique generated ID
+  --pointer: 'none';
+  --theme-preference: 'none';
+  
+  // Only make one request
+  background-image: url("/some/url/?" + var(--unique-identifier) + "&" + var(--pointer) + "&" + var(--theme-preference));
+}
+
+// Detect pointer type and theme
+@media (any-pointer: coarse){
+  body {
+    --pointer: 'coarse';
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --theme-preference: 'dark';
+  }
+}
