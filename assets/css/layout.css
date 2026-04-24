@@ -25,10 +25,6 @@ Features:
 */
 
 :root {
-  --transition-duration: 250ms;
-  --transition-property: visibility, opacity, display, transform, background,
-    background-color, border-color, color, min-width;
-  --transition-timing-function: ease-in;
   color-scheme: light dark;
   font-family: Oxanium, sans-serif;
   font-size: clamp(1rem, calc(1rem + 0.8cqi), 1.75rem);
