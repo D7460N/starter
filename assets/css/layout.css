@@ -24,14 +24,6 @@ Features:
 - JS for API/CRUD only
 */
 
-:where(button, input, select, textarea) {
-  font-family: inherit;
-  font-size: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  color: currentColor;
-}
-
 :root {
   --transition-duration: 250ms;
   --transition-property: visibility, opacity, display, transform, background,
