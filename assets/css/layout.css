@@ -27,27 +27,6 @@ Features:
 - JS for API/CRUD only
 */
 
-/* MARK: RESET
-*/
-*,
-* *,
-*:before,
-*:after,
-::after,
-::before {
-  --transition-property: display, color, border, opacity;
-  --transition-duration: 250ms;
-  --transition-timing-function: ease;
-
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition-behavior: allow-discrete;
-  transition-property: var(--transition-property);
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-}
-
 /* https://drafts.csswg.org/selectors-4/#typedef-forgiving-selector-list
 - Forgiving selector list
 - Specificity == 0
