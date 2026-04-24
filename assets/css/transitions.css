@@ -2,8 +2,8 @@
 */
 
 :root {
-  --transition-property: display, color, display, visibility, background, background-color, border-color, opacity;
-  --transition-timing-function: ease-out;
+  --transition-property: display, color, display, opacity, visibility, background, background-color, border-color;
+  --transition-timing-function: ease-in;
   --transition-duration: 250ms;
 
   scroll-behavior: smooth;
