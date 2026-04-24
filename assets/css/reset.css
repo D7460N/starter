@@ -6,10 +6,6 @@
 *:after,
 ::after,
 ::before {
-  --transition-property: display, color, border, opacity;
-  --transition-duration: 250ms;
-  --transition-timing-function: ease;
-
   box-sizing: border-box;
   margin: 0;
   padding: 0;
