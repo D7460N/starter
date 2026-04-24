@@ -1,5 +1,9 @@
+/*@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap"); */
+/* ^^^ @import must always be very top ^^^ */
+
 /* MARK: FONTS
 */
+
 @font-face {
   font-family: 'Oxanium-extra-light';
   /* You can choose any name for your font */
