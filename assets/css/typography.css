@@ -1,1 +1,38 @@
+/* MARK: TYPOGRAPHY
+*/
 
+:root {
+  --font-family: 'Oxanium-light', sans-serif;
+  --font-size: clamp(1rem, 1.3cqi, 1.3rem);
+  --line-height: 1.5;
+  --letter-spacing: 0.05rem;
+  --txt-shadow-color: 0, 0, 0;
+  --txt-shadow-opacity: 0.3;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  text-shadow: var(--txt-shadow);
+}
+
+/* https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/ */
+/* Baseline for default links */
+a:not([class]) {
+  /* Relatively sized thickness and offset */
+  text-decoration-thickness: max(0.08em, 1px);
+  text-underline-offset: 0.15em;
+}
+
+/* https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/#container-query-fluid-type */
+:is(h1, h2, h3, h4) {
+  font-family: Oxanium-SemiBold, sans-serif;
+  color: rgba(var(--txt-color), 1.0);
+  padding: 1rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  text-wrap: balance;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2rem;
+}
