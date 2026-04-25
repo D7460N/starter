@@ -6,12 +6,12 @@
   --font-size: clamp(1rem, 1.3cqi, 1.3rem);
   --line-height: 1.5;
   --letter-spacing: 0.05rem;
-  --txt-shadow-color: 0, 0, 0;
-  --txt-shadow-opacity: 0.3;
+  --text-shadow-color: 0, 0, 0;
+  --text-shadow-opacity: 0.3;
 
   font-family: var(--font-family);
   font-size: var(--font-size);
-  text-shadow: var(--txt-shadow);
+  text-shadow: var(--text-shadow);
 }
 
 /* https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/ */
