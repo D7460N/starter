@@ -36,3 +36,46 @@ a:not([class]) {
 h1 {
   font-size: 2rem;
 }
+
+/*
+:is(h2, h3) {
+    font-size: clamp(1.25rem, 5cqi, 1.5rem);
+}
+*/
+
+h4 {
+  display: var(--sub-header-display);
+  letter-spacing: .05rem;
+}
+
+small {
+  margin: 1rem;
+  font-size: 75%;
+  opacity: 0.7;
+  font-stretch: normal;
+  font-style: italic;
+  letter-spacing: 0.04rem;
+  line-height: 1.3;
+  margin-inline: 1rem;
+
+  &:first-of-type {
+    margin-block-end: 0;
+  }
+
+  &:last-of-type {
+    margin-block-start: 0;
+    margin-block-end: 4rem;
+  }
+}
+
+ul,
+ol,
+dl,
+dt,
+dd,
+p,
+figure,
+blockquote {
+  /* hanging-punctuation: first last; */
+  text-wrap: pretty;
+}
