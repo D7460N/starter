@@ -20,3 +20,165 @@ aside form fieldset {
 textarea {
   scrollbar-width: thin;
 }
+
+
+
+/* SCROLL VISUAL AFFORDANCES */
+/* https://codepen.io/D7460N/pen/myrBJyO?editors=1100 */
+
+@layer support, demo;
+
+@layer demo {
+  
+  @property --_scroll-shadow-color-1-opacity {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+  }
+
+  @property --_scroll-shadow-color-2-opacity {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+  }
+  
+ .scroll-container {
+    /* notice size added too, makes 100cqh contextual for the shadows */
+    container-type: scroll-state size;
+    overflow: auto;
+    display: grid;
+   
+    inline-size: 30ch;
+    block-size: 11rlh;
+    overscroll-behavior: contain;
+    
+    > * {
+      grid-area: 1/1;
+    }
+    
+    /* pseudos of a container-type can query the container */
+    &::after {
+      content: " ";
+      grid-area: 1/1;
+      display: block;
+      position: sticky;
+      top: 0;
+      height: 100cqh;
+      width: 100cqw;
+      pointer-events: none;
+      
+      /* background props ready for scroll-state to flip on/off */
+      background: var(--_shadow-top), var(--_shadow-bottom);
+      transition: 
+        --_scroll-shadow-color-1-opacity .5s ease,
+        --_scroll-shadow-color-2-opacity .5s ease;
+      
+      /* derive shadow from background */
+      --_scroll-shadow-color-1: oklch(from var(--surface-1) 10% calc(c*2) h / var(--_scroll-shadow-color-1-opacity));
+      --_scroll-shadow-color-2: oklch(from var(--surface-1) 10% calc(c*2) h / var(--_scroll-shadow-color-2-opacity));
+      
+      /* define top and bottom gradient shadow effects */
+      --_shadow-top: linear-gradient(to bottom, var(--_scroll-shadow-color-1), #0000 20px);
+      --_shadow-bottom: linear-gradient(to top, var(--_scroll-shadow-color-2), #0000 20px);
+      
+      @media (prefers-color-scheme: dark) {
+        --_shadow-color-opacity: 90%;
+      }
+      
+      @container scroll-state(scrollable: top) {
+        --_scroll-shadow-color-1-opacity: var(--_shadow-color-opacity, 25%);
+      }
+      
+      @container scroll-state(scrollable: bottom) {
+        --_scroll-shadow-color-2-opacity: var(--_shadow-color-opacity, 25%);
+      }
+    }
+  }
+}
+
+
+
+
+@layer support {
+  :root {
+    --surface-1: light-dark(oklch(80% 10% 250), oklch(10% 5% 250));
+    --surface-2: light-dark(oklch(90% 7% 250), oklch(20% 5% 250));
+    --surface-3: light-dark(oklch(100% 8% 250), oklch(30% 5% 250));
+    --text-1: light-dark(oklch(10% 5% 250), oklch(90% 5% 250));
+    --text-2: light-dark(oklch(20% 5% 250), oklch(80% 5% 250));
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  :root {
+    block-size: 100%;
+    color-scheme: dark light;
+  }
+
+  body {
+    min-block-size: 100%;
+    font-family: system-ui, sans-serif;
+
+    display: grid;
+    place-content: center;
+    place-items: start;
+    gap: 5vh;
+    padding-block: 15vh;
+    
+    background: radial-gradient(circle in oklab, var(--surface-2), var(--surface-1)) fixed;
+    color: var(--text-1);
+  }
+ 
+  
+  ul {
+    list-style: none;
+    display: grid;
+    gap: .6rem;
+    padding: .6rem;
+    
+    li {
+      padding: .6rem;
+      background: var(--surface-3);
+    }
+  }
+  
+  section {
+    display: flex;
+    flex-flow: row-reverse;
+    gap: 30px;
+    justify-items: start;
+  }
+  }
+}
+
+
+
+/* <section>
+  <div class="scroll-container">
+    <ul>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+      <li>Four</li>
+      <li>Five</li>
+      <li>Six</li>
+      <li>Seven</li>
+      <li>Eight</li>
+      <li>Nine</li>
+      <li>Ten</li>
+      <li>Ellevin</li>
+      <li>Twelve</li>
+      <li>Thirteen</li>
+      <li>Fourteen</li>
+      <li>FIfteen</li>
+      <li>Sixteen</li>
+      <li>Seventeen</li>
+      <li>Eightteen</li>
+      <li>Nineteen</li>
+      <li>Twenty</li>
+    </ul>
+  </div>
+</section> */
