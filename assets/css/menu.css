@@ -1,6 +1,0 @@
-/* https://modern-css.com/dropdown-menus-without-javascript-toggles/ */
-
-#menu[popover] {
-  position: absolute;
-  margin: 0.25rem 0;
-}
