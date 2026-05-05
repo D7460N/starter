@@ -1,5 +1,7 @@
-/* MARK: FEATURE DETECTION 
+/* MARK: FEATURE/SUPPORT DETECTION 
 */
+
+/* FEATURE DETECTION */
 
 /* https://github.com/OliverBrotchie/CSS-Fingerprint */
 .body {
@@ -23,3 +25,6 @@
     --theme-preference: 'dark';
   }
 }
+
+/* SUPPORT DETECTION */
+
