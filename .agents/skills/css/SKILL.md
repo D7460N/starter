@@ -20,7 +20,7 @@
 > “Simplicity is the ultimate sophistication.”  
 > _Leonardo da Vinci_
 
-## [Simplicity is the by design](#simplicity-by-design)
+## [Simplicity is by design](#simplicity-by-design)
 
 By design and by default, all code (except where noted) is minimal and consistent as possible. Code patters and techniques, once established, are repeated the same way with the same intent and results across the board.
 
