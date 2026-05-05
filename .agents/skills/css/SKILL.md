@@ -3,6 +3,9 @@
 
 **CANONICAL CSS CODE REFERNECE for all @agents and developers to reference.**
 
+> “Simplicity is the ultimate sophistication.”  
+> _Leonardo da Vinci_
+
 - This file is the Single Source of Truth (SST) for all CSS in this project, to include, but not limited by the following:
   - code patterns
   - techniques
@@ -16,9 +19,6 @@
 - Each CSS code example displays current browser support. (coming soon)
 - Each CSS code example displays a reference to the MDN resource from which it was taken. (coming soon)  
   [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
-
-> “Simplicity is the ultimate sophistication.”  
-> _Leonardo da Vinci_
 
 ## [Simplicity is by design](#simplicity-by-design)
 
