@@ -1,3 +1,6 @@
+/* MARK: ALLY
+*/
+
 :root {
   --outline-size: 0.25em;
   --outline-style: dotted;
@@ -8,9 +11,9 @@
 }
 
 /*
-              https://www.joshwcomeau.com/snippets/react-components/visually-hidden/
-              screen readers only. Verify by holding down the alt key.
-              */
+https://www.joshwcomeau.com/snippets/react-components/visually-hidden/
+screen readers only. Verify by holding down the alt key.
+*/
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 0.0625rem;
