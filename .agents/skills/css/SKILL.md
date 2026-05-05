@@ -1,5 +1,12 @@
+---
+name: css
+description: The JSON-to-custom-element rendering pipeline used for data tables and list-rendered content. Defines toTagName key conversion, the lifecycle from fetch to DOM, and the strict scope (data tables only — other features have their own patterns). Use when rendering tabular or list data from JSON, never for layout, never for static content.
+license: MIT
+metadata:
+  version: "1.0.0"
+---
 
-# CSS CODE REFERENCE
+# CSS
 
 **CANONICAL CSS CODE REFERNECE for all @agents and developers to reference.**
 
@@ -20,7 +27,7 @@
 - Each CSS code example displays a reference to the MDN resource from which it was taken. (coming soon)  
   [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
 
-## [Simplicity is by design](#simplicity-by-design)
+## [Simplicity by design](#simplicity-by-design)
 
 By design and by default, all code (except where noted) is minimal and consistent as possible. Code patters and techniques, once established, are repeated the same way with the same intent and results across the board.
 
