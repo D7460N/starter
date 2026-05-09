@@ -3,7 +3,21 @@
 	"ignorePaths": [],
 	"dictionaryDefinitions": [],
 	"dictionaries": [],
-	"words": ["kizmarh", "leaverou", "originaly", "REFERNECE"],
+	"words": [
+		"Blueray",
+		"cascadiajs",
+		"Horizonal",
+		"interpolatable",
+		"kizmarh",
+		"leaverou",
+		"Noisee",
+		"oklab",
+		"oklch",
+		"originaly",
+		"orphanless",
+		"REFERNECE",
+		"somethin"
+	],
 	"ignoreWords": [],
 	"import": []
 }

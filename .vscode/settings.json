@@ -1,3 +1,5 @@
 {
-  "editor.aiStats.enabled": true
+  "editor.aiStats.enabled": true,
+  "claudeCode.enableNewConversationShortcut": true,
+  "claudeCode.preferredLocation": "sidebar"
 }
