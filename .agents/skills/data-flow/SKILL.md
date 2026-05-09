@@ -136,4 +136,3 @@ Cards exist only in plural as `ul` / `li`. Each card row is a `<li>` whose child
 - `references/schema.md` — schema file format and where it lives
 - `references/positional-mapping.md` — page-level field-to-element table
 - Custom elements spec: https://html.spec.whatwg.org/multipage/custom-elements.html
-- 

@@ -6,7 +6,13 @@
       "WebFetch(domain:www.w3.org)",
       "WebSearch",
       "WebFetch(domain:web.dev)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Read(//c/Users/chris/Downloads/**)",
+      "WebFetch(domain:claude.ai)",
+      "PowerShell(Expand-Archive -Path \"c:\\\\Users\\\\chris\\\\Downloads\\\\files.zip\" -DestinationPath \"c:\\\\Users\\\\chris\\\\Downloads\\\\files\" -Force; Write-Output \"---EXTRACTED---\"; Get-ChildItem \"c:\\\\Users\\\\chris\\\\Downloads\\\\files\" -Recurse -File | Select-Object @{N='Path';E={$_.FullName.Replace\\('c:\\\\Users\\\\chris\\\\Downloads\\\\files\\\\',''\\)}}, Length | Format-Table -AutoSize)",
+      "Bash(git mv *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
