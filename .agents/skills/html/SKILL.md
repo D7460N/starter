@@ -88,105 +88,18 @@ The `aria-hidden="true"` keeps the input out of the accessibility tree; the labe
 
 `<button>` may be used where its native semantics fit. Never substitute a button for the label/input pattern.
 
-## The canonical shell
+## Disabled state
 
-A single `index.html` at project root. The shell is the same on every page; only the data inside changes.
-
-```html
-<app-container>
-  <app-banner></app-banner>
-  <header>
-    <app-logo></app-logo>
-    <app-user></app-user>
-  </header>
-  <nav>
-    <label><input type="radio" name="nav" aria-hidden="true"></label>
-  </nav>
-  <main>
-    <article>
-      <h1></h1>
-      <section></section>
-    </article>
-  </main>
-  <aside></aside>
-  <footer>
-    <app-legal></app-legal>
-    <app-version></app-version>
-  </footer>
-  <app-banner></app-banner>
-</app-container>
-<script type="module" src="assets/js/app.js"></script>
-```
-
-`<script type="module">` is one tag, outside `<app-container>`, immediately before `</body>`.
-
-No layout wrappers. CSS Grid handles every region — see the `css` skill.
-
-## Forms
-
-Forms wrap fields in `<fieldset>` with a `<legend>`. Schema and rules come from JSON, not from HTML. See the `data-flow` skill.
-
-## Card pattern
-
-Cards exist only in plural as `ul` / `li`. Cards are not identity-bearing on their own. Use `<article>` only when a card has independent identity (a standalone post, a single product detail page) — not for repeated rows.
-
-## Scrollable containers
-
-Only `<section>`, `<ul>`, and `<ol>` are scrollable containers. No other element receives `overflow: auto` or `overflow: scroll`.
-
-## Custom elements
-
-Custom elements must contain a hyphen (HTML spec requirement). They carry no behavior on their own — they are semantic anchors for layout regions and content slots. JavaScript does not extend them. CSS targets them like any other element.
-
-Generated custom elements (from JSON content) follow the naming rule in the `naming` skill: `toTagName()` produces a valid hyphenated tag from a JSON key.
-
-## What HTML never does
-
-- No JavaScript anywhere in markup
-- No styling decisions
-- No state storage outside native attributes (`checked`, `open`, `selected`)
-- No layout via wrapper elements
-- No content that should come from JSON
-
-## References
-
-- `references/state-machines.md` — checkbox and radio patterns inside labels
-- `references/shell-layout.md` — full Holy Grail markup with regions
-- `references/forms.md` — fieldset, legend, label patterns
-- `references/custom-elements.md` — naming, semantics, no-behavior rule
-- HTML element index: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
-- ARIA roles: https://www.w3.org/TR/wai-aria-1.2/
-- Custom elements: https://html.spec.whatwg.org/multipage/custom-elements.html
-There is no JavaScript in HTML markup. Ever. The `oninput` event used for the CRUD lifecycle is wired in `assets/js/oninput.js`, not in markup.
-
-`style` attributes are forbidden. `<style>` tags are forbidden. CSS lives in `.css` files only.
-
-## The interactive-element pattern
-
-Interactive elements that are not intrinsically interactive (like `<button>`) use a hidden input inside a `<label>`. CSS reads the input's checked state via `:has()` and `:checked`.
-
-**Form actions** use checkboxes:
+Disabled state on interactive elements is conveyed with `aria-disabled` (assistive-tech aware) and styled by CSS via `[aria-disabled="true"]`. The native `disabled` attribute is used only on form controls where the browser-supplied disabled semantic exactly matches the intent.
 
 ```html
-<label role="button" aria-label="Save">
+<label role="button" aria-disabled="true" aria-label="Save">
   Save
   <input type="checkbox" aria-hidden="true" />
 </label>
 ```
 
-**Navigation** uses radios inside `<nav>`:
-
-```html
-<nav>
-  <label>
-    <input type="radio" name="nav" aria-hidden="true" />
-  </label>
-</nav>
-```
-
-The `aria-hidden="true"` keeps the input out of the accessibility tree; the label carries the accessible name and role. CSS hides the input visually via `[aria-hidden="true"] { display: none; }`. See `references/state-machines.md`.
-
-`<button>` may be used where its native semantics fit. Never substitute a button for the label/input pattern.
+CSS reads via `[aria-disabled="true"]` and applies the disabled appearance.
 
 ## The canonical shell
 

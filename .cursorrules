@@ -47,7 +47,7 @@ When a configured external API or service fails for any reason (SSL certificate 
 
 1. NEVER use third-party dependencies. Third-party = any code that cannot render natively in an evergreen browser.
 2. ALWAYS use modern, vanilla, W3C/WCAG-compliant, accessibility-first syntax.
-3. Standards references: https://www.w3.org/TR/ and https://developer.mozilla.org/en-US/docs/Web
+3. Standards references: <https://www.w3.org/TR/> and <https://developer.mozilla.org/en-US/docs/Web>
 4. ALWAYS default to SPA navigational architecture.
 5. ALWAYS default to PWA (`manifest.webmanifest`).
 6. JS shall NEVER be used for anything unless otherwise stated (exception: modular `assets/js/*.js` runtime files for API transport, `oninput` lifecycle orchestration, storage, and startup wiring). Modern HTML and CSS must be used for all development.
@@ -117,6 +117,7 @@ The full-bleed Holy Grail layout from `index.html`. This is the canonical struct
 This is intentional. NEVER replace with `<button>` or JS event handlers.
 
 For forms:
+
 ```html
 <label role="button" aria-label="Save">
   Save
@@ -125,6 +126,7 @@ For forms:
 ```
 
 For navigation:
+
 ```html
 <nav>
   <label role="button">

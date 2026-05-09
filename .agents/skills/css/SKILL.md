@@ -27,11 +27,30 @@ metadata:
 - Each CSS code example displays a reference to the MDN resource from which it was taken. (coming soon)  
   [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
 
+## Architectural CSS Rules
+
+These rules are non-negotiable. Each is categorical (the rule plus its failure mode) so the search space is bounded.
+
+1. **Layout uses CSS Grid exclusively.** Flexbox is not used. Grid handles every layout in this architecture — one-dimensional cases included.
+2. **Sizing uses intrinsic and relative units only** — `min-content`, `max-content`, `fit-content`, `auto`, `1fr`, `clamp()`, viewport units, container query units. Hard pixel/em values for layout dimensions are not used.
+3. **Light/dark color scheme is declared once at `:root`** via `color-scheme: light dark`, and color values use `light-dark()`. Themes do not duplicate values across `prefers-color-scheme` media blocks.
+4. **CSS uses native accessibility-aware selectors** (`:focus-visible`, `:user-invalid`, `:user-valid`, `:disabled`, `[aria-*]` matchers, etc.) to bake accessibility into styling rather than relying on classes or scripted state.
+5. **Initial-load page content fades in via `@starting-style`.** JavaScript does not orchestrate entry animations.
+6. **Tab/page content transitions use `@view-transition`.** JavaScript does not animate tab changes.
+7. **Hover and popover content uses CSS anchor positioning** (`anchor-name` / `position-anchor`) to keep content on-screen. Hand-rolled positioning math via JS or magic numbers is forbidden.
+8. **Cutting-edge experimental CSS is used without regard for browser support.** Cross-browser compatibility is not a concern.
+9. **Component-relative styling uses `@container` queries.** Components respond to their actual available space, not to viewport breakpoints.
+10. **Inline conditional values use `if()`** against custom properties / media features / container queries instead of toggling classes from JS.
+11. **Custom properties that need typing or animation are declared via `@property`** so the browser interpolates and validates them.
+12. **Reusable CSS calculations use `@function`.** Sass/Less mixins are not used.
+13. **Feature detection uses `@supports`.** JS-based feature detection (Modernizr, computed-style probing) is not used.
+14. **Lazy rendering / size containment uses `content-visibility` + `contain-intrinsic-size`.** JS-based IntersectionObserver visibility is not used.
+
 ## [Simplicity by design](#simplicity-by-design)
 
 By design and by default, all code (except where noted) is minimal and consistent as possible. Code patters and techniques, once established, are repeated the same way with the same intent and results across the board.
 
-This allows for writing effiecient CSS utilities - similar to JS utility functions, code consolidation - for a smaller codebase, and reduces complexity and cognative load for everyone. Learn it once, rince, and repeat.
+This allows for writing efficient CSS utilities - similar to JS utility functions, code consolidation - for a smaller codebase, and reduces complexity and cognitive load for everyone. Learn it once, rinse, and repeat.
 
 ## [GRID not FLEX](#grid-not-flex)
 

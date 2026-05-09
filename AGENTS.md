@@ -22,7 +22,7 @@ Apply to *all* repos unless explicitly overridden. All AGENTS must follow these 
 * Combine modern HTML/CSS features as needed.
 * JavaScript and all other languages (other than modern HTML and CSS) are forbidden unless explicitly stated.
 * Ignore cross-browser concerns.
-* JS allowed **only** for CRUD transport in `assets/js/api.js`.
+* JS allowed **only** for data work below the `oninput` boundary — fetch/CRUD (`api.js`), persistence (`storage.js`), lifecycle wiring (`oninput.js`), bootstrap (`app.js`).
 * HTML = structure (semantic only; no `<div>`, `<span>`, `class`, `id`, `data-*`).
 * CSS = ALL UI behavior (state, visibility, themes, loading, navigation, forms).
 * No third-party dependencies.
@@ -42,7 +42,7 @@ Apply to *all* repos unless explicitly overridden. All AGENTS must follow these 
 
 * JS must be minimal and scoped — exactly what is asked.
 * No UI or interaction state in JS.
-* Only `assets/js/api.js` for CRUD.
+* JS files: `app.js` (bootstrap), `oninput.js` (lifecycle), `api.js` (CRUD), `storage.js` (persistence), `tour.js` (placeholder). No UI logic in any JS file.
 * Do not add/remove DOM unless instructed.
 * Use `document.querySelector()` only.
 * Trigger CRUD via `oninput`; no event listeners.
@@ -119,10 +119,12 @@ One `<script type="module">` before `</body>`.
 ### **Files**
 
 * `index.html` — full DOM
-* `assets/css/layout.css` — layout + UI
-* `assets/js/api.js` — CRUD only
-* `assets/images/` — static assets
-* Ignore other JS/CSS/data except PWA files
+* `assets/css/*.css` — active CSS files (without trailing underscores); each owns a single concern
+* `assets/js/*.js` — data-layer modules below the `oninput` boundary (`app.js`, `oninput.js`, `api.js`, `storage.js`, `tour.js`)
+* `assets/images/app/` — project-functional static assets
+* `assets/images/brand/` — brand assets (logos, marks, color-bound imagery)
+* `manifest.webmanifest` — PWA manifest at project root
+* Inactive: files with trailing underscores; `docs/` and `d7460n-mcp-server/` are not part of the front-end
 
 ---
 

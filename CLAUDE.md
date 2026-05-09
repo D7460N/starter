@@ -5,13 +5,13 @@ These rules are **non-negotiable**. Always fall back to these defaults.
 
 ## Accuracy & Clarification
 
-- *BEFORE ANSWERING* a prompt or question — **ALWAYS** review thread (every line) from the beginning. This ensures your answer is up to date and in context. You must do this to avoid halucinations or loosing context.
+- *BEFORE ANSWERING* a prompt or question — **ALWAYS** review thread (every line) from the beginning. This ensures your answer is up to date and in context. You must do this to avoid hallucinations or loosing context.
 - NEVER skip thread review due to time pressure.
 - **ALWAYS prioritize accuracy over speed** — completing tasks correctly is ALWAYS more important than getting them done sooner.
 - If there is ANY ambiguity in instructions, questions, or prompts at any step, STOP immediately, ask for clarification, and wait for a reply before proceeding.
 - **NEVER PRESUME YOU ARE CORRECT.** The user *ALWAYS* determines what is correct.
 - **NEVER GUESS.** Do not assume, infer, or improvise when instructions are unclear.
-- You may NOT proceed without the clarification needed to do what is being asked or promted.
+- You may NOT proceed without the clarification needed to do what is being asked or prompted.
 - **ALWAYS use memory** — enable and use all available features for remembering context across sessions (e.g., memory, notepad, stored facts). Cross-session continuity is required.
 - Disable and or ignore file reading line caps. **ALWAYS read all files and the entire file all the way to the last line** — when reading files, read the complete file. 
 
@@ -41,13 +41,13 @@ When a configured external API or service fails for any reason (SSL certificate 
 - **NEVER** any HTML or CSS in JS.
 - **NEVER** any CSS or JS in HTML.
 - **NEVER** any JS or HTML in CSS.
-- **All** JS is to be written as generic drop-in/use anywhere single fuction per file native HTML modules using conventional naming nomenclature that all web developers would know.
-- **All** CSS is to be written as generic drop-in/use anywhere single fuction per file modules using conventional naming nomenclature that all web developers would know.
-- **JS == NEVER** — JS shall NEVER be used for anything except where explicitely stated by user
-- **HTML + CSS == everything** — modern HTML and CSS must be used for all development except where explicitely stated by user
+- **All** JS is to be written as generic drop-in/use anywhere single function per file native HTML modules using conventional naming nomenclature that all web developers would know.
+- **All** CSS is to be written as generic drop-in/use anywhere single function per file modules using conventional naming nomenclature that all web developers would know.
+- **JS == NEVER** — JS shall NEVER be used for anything except where explicitly stated by user
+- **HTML + CSS == everything** — modern HTML and CSS must be used for all development except where explicitly stated by user
 - **HTML == structure** — semantic elements only, never use `<div>`, `<span>`, `class`, `id`, or `data-*`
-- **CSS == replaces JS for all UI behavior** — state, heuristics, color-scheme, themes, loading states, visibility, and everything else except where explicitely stated by user
-- **Zero dependencies == standard native browser features only** — no frameworks, no routing, no bundlers, no compiled code, no npm packages except where explicitely stated by user
+- **CSS == replaces JS for all UI behavior** — state, heuristics, color-scheme, themes, loading states, visibility, and everything else except where explicitly stated by user
+- **Zero dependencies == standard native browser features only** — no frameworks, no routing, no bundlers, no compiled code, no npm packages except where explicitly stated by user
 - **Single page** — one `index.html` at project root, SPA + PWA architecture
 - **Layout** — CSS Grid only (never Flexbox), full-bleed Holy Grail via `<app-container>`
 
@@ -58,8 +58,8 @@ When a configured external API or service fails for any reason (SSL certificate 
 3. Standards references: [https://www.w3.org/TR/](https://www.w3.org/TR/) and [https://developer.mozilla.org/en-US/docs/Web](https://developer.mozilla.org/en-US/docs/Web)
 4. **ALWAYS** default to SPA navigational architecture, which is `<nav><label><input type="radio" aria-hidden="true" name="nav"></label></nav>`, using `:has()` and `oninput` event to call data.  
 5. **ALWAYS** default to PWA (`manifest.webmanifest`).
-6. JS shall **NEVER** be used for anything except where explicitely stated by user (such as: modular `assets/js/*.js` runtime files for API transport, `oninput` lifecycle orchestration, and browser storage). Modern HTML and modern CSS must be used for all development at all time except where explicitely stated by user.
-7. CSS **ALWAYS** replaces all JS for all functionality except where explicitely stated by user.
+6. JS shall **NEVER** be used for anything except where explicitly stated by user (such as: modular `assets/js/*.js` runtime files for API transport, `oninput` lifecycle orchestration, and browser storage). Modern HTML and modern CSS must be used for all development at all time except where explicitly stated by user.
+7. CSS **ALWAYS** replaces all JS for all functionality except where explicitly stated by user.
 8. CSS **ALWAYS** uses 
 9. When JS is used, **ALWAYS** use `document.querySelector('')` for targeting selectors.
 10. JS **ALWAYS** uses `oninput` for ALL API CRUD operations through a shared lifecycle utility.
@@ -69,7 +69,7 @@ When a configured external API or service fails for any reason (SSL certificate 
 14. HTML markup is **ALWAYS** semantic, minimally nested, and intuitive.
 15. *Separation of Concerns* between presentation and data layers **MUST ALWAYS** be maintained.
 16. *Principle of Least Power* **MUST ALWAYS** be maintained.
-17. CSS **ALWAYS** determines DOM element visibility based on data presense via `:empty`, `:not(:empty)`, `:has()`, `if()`, etc.
+17. CSS **ALWAYS** determines DOM element visibility based on data presence via `:empty`, `:not(:empty)`, `:has()`, `if()`, etc.
 18. CSS **ALWAYS** uses modern intrinsic sizing such as style-queries and CSS-only techniques — no hard/static values.
 19. CSS **ALWAYS** manages light/dark mode color-scheme in `:root{color-scheme: light dark}`.
 20. CSS **ALWAYS** uses modern web accessibility selectors to "bake-in" accessibility when possible.
@@ -81,9 +81,9 @@ When a configured external API or service fails for any reason (SSL certificate 
 26. **NEVER** warn about or consider cross-browser compatibility.
 27. **NEVER** use `<div>` or `<span>` — ALWAYS use semantic HTML equivalents that address the intent of the element.
 28. **NEVER** nest wrapper elements for layout — ALWAYS use CSS Grid instead (e.g., `grid-template-columns` and `justify-content: space-between`).
-29. **ALWAYS** use `@layer` to distinguish different CSS featuers and to allow easier override by future developers.
+29. **ALWAYS** use `@layer` to distinguish different CSS features and to allow easier override by future developers.
 30. **ALWAYS** use `@starting-style` to fade in init load of page content
-31. **ALWAYS** use `@view-transition` to fade in targetted tab content.
+31. **ALWAYS** use `@view-transition` to fade in targeted tab content.
 32. *ALWAYS** use anchor positioning for all hover content so that content never goes off the page. 
 
 ## HTML Layout Pattern
@@ -120,7 +120,7 @@ The full-bleed Holy Grail layout from `index.html`. This is the canonical struct
 ### Layout Regions
 
 - **`<app-container>`** — Root layout wrapper; CSS Grid Holy Grail structure
-- **`<app-banner>`** — Generally empty, default `display: hidden;` when `:empty`, may contain optional notification or alert content
+- **`<app-banner>`** — Generally empty, default `display: none;` when `:empty`, may contain optional notification or alert content
 - **`<header>`** — Contains `<app-logo>` and `<app-user>` custom elements
 - **`<nav>`** — Global navigation; radio button `<label>` state machines (see State Machine Pattern below)
 - **`<main>`** — Primary content area; contains `<article>` with `<h1>`, `<p>`, `<section>` elements
@@ -171,7 +171,7 @@ For navigation:
 ## File Responsibilities
 
 - **index.html** — Complete DOM structure, loaded upfront
-- **assets/css/layout.css** — The only active CSS file; CSS Grid Holy Grail structure and all current layout
+- **assets/css/*.css** — Active CSS files; all files in `assets/css/` without trailing underscores. Each file owns a single concern (see `naming/SKILL.md`).
 - **assets/js/app.js** — JS entrypoint; startup checks, console reset, and initialization wiring
 - **assets/js/oninput.js** — Shared `oninput` lifecycle; binds nav inputs, routes API calls, and injects data
 - **assets/js/api.js** — API transport utilities; base URL, endpoint suffix resolution, fetch/parse, and logging helpers
@@ -183,7 +183,7 @@ For navigation:
 ### Ignored (inactive for now)
 
 - **assets/js/pipeline/** — Inactive; ignore for now
-- **assets/css/*.css** (other than `layout.css`) — Inactive; ignore for now
+- **`assets/css/` files with trailing underscores** (e.g., `typography_.css`, `fonts_.css`) — Inactive; preserved for reference but not loaded by the runtime
 
 ## When Modifying This Project
 
@@ -198,7 +198,7 @@ For navigation:
 - JS **ALWAYS MUST** be idempotent and stateless — **NEVER** global state or side effects
 - **ALWAYS** review and reuse existing functions before creating new ones
 - **NEVER** create new coding patterns — **ALL** patterns are already established; use what exists
-- Adding code **ALWAYS** increases entropy — **NEVER** add new code or files except where explicitely stated by user
+- Adding code **ALWAYS** increases entropy — **NEVER** add new code or files except where explicitly stated by user
 - **ALWAYS** follow user instructions in extreme detail — no more, no less
 - **ALWAYS** review user instructions after each task but before completion to ensure everything was done exactly as instructed - no more, no less
 - **NEVER** skip review of user instructions after complete due to time pressure.

@@ -512,8 +512,8 @@ label:has(+ input:user-invalid) {
 
 **What is Baseline?** A unified way to understand cross-browser feature availability. Features are marked as:
 
-- **Widely Availabl:** Supported in the last 2.5 years of all major browsers
-- **Newly Availab:** Available in all major browsers
+- **Widely Available:** Supported in the last 2.5 years of all major browsers
+- **Newly Available:** Available in all major browsers
 - **Limited Availability:** Not yet in all browsers
 
 ### How to Check Baseline Status
@@ -747,7 +747,7 @@ Here's a card component using many modern CSS features:
 
 1.  **Prioritize Stability:**
     *   Recommend **Newly Available** or **Widely Available** features for production code.
-    *   Use **Limited Availability** features with progressive enhancement, graceful degredation, or `@supports`. Or ask the user how they want to handle it.
+    *   Use **Limited Availability** features with progressive enhancement, graceful degradation, or `@supports`. Or ask the user how they want to handle it.
 
 2.  **Use the web platform:**
     *   Always prefer standard CSS solutions over JavaScript libraries for layout, animation, and interaction (e.g., use CSS Masonry instead of Masonry.js, Popover API instead of custom tooltip scripts).

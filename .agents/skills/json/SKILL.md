@@ -73,6 +73,6 @@ A schema is an external description of permitted keys, types, and constraints fo
 
 - `references/shape.md` — minimal page payload, shell payload, list payload examples
 - `references/forbidden.md` — examples of JSON that violate the rules and why
-- `references/css-reactivity.md` — how `:empty` and `:has()` map to JSON value presence
+- `../css/references/reactivity.md` — how `:empty` and `:has()` map to JSON value presence (canonical CSS-side reference)
 - JSON specification: https://www.json.org/
 - JSON Schema (when stricter validation is needed): https://json-schema.org/

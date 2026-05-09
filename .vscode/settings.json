@@ -1,5 +1,8 @@
 {
   "editor.aiStats.enabled": true,
   "claudeCode.enableNewConversationShortcut": true,
-  "claudeCode.preferredLocation": "sidebar"
+  "claudeCode.preferredLocation": "sidebar",
+  "cSpell.words": [
+    "Subgrid"
+  ]
 }

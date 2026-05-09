@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\.claude\\\\projects\\\\\" -Directory | Select-Object -ExpandProperty Name)",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\.claude\\\\projects\\\\g--My-Drive--dev--projects--D7460N-2026-03-12-starter\\\\\" -Recurse | Select-Object FullName)",
+      "WebFetch(domain:www.w3.org)",
+      "WebSearch",
+      "WebFetch(domain:web.dev)",
+      "Bash(git rm *)"
+    ]
+  }
+}

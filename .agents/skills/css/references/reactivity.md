@@ -1,4 +1,4 @@
-# CSS Reactivity to JSON
+# Reactivity
 
 How CSS reacts to data presence and absence in the DOM. The chain: empty JSON value → empty DOM element → `:empty` matches → CSS hides. Non-empty JSON value → populated DOM element → `:not(:empty)` matches → CSS shows.
 

@@ -53,6 +53,27 @@ Air-gap is enforced two ways:
 - **No cross-references.** HTML never names a CSS class. CSS never reads JavaScript state. JavaScript never writes presentation. JSON never contains markup.
 - **Each layer reads only its own concern.** CSS reads the DOM tree (semantic elements, native attributes, `:empty`, `:has()`). JavaScript reads JSON. HTML is static.
 
+## Principle of Least Power
+
+For any given task, use the least powerful technology that expresses the intent declaratively. HTML before CSS, CSS before JS, declarative attributes before scripted behavior. Reaching for a more powerful tool requires that the less powerful tool genuinely cannot express the intent — and the design is re-engineered before that conclusion is accepted.
+
+## Cross-browser compatibility is not a concern
+
+The architecture targets evergreen browsers and the platform's leading edge. Cutting-edge experimental features are used without regard for older or non-evergreen browsers. The platform is the framework; the platform's latest is what we use.
+
+## Working principles
+
+- **Reuse existing functions before creating new ones.** Each skill catalogues every permitted utility. New utilities are added only with explicit user instruction.
+- **Never create new coding patterns.** All patterns in this architecture are already established and documented in the relevant skill. If a task seems to require a new pattern, the design is wrong — re-engineer until an existing pattern fits.
+- **Adding code or files always increases entropy.** Code and files are added only when the user explicitly states to. The default is to use what already exists.
+
+## Image assets
+
+Static image assets are split:
+
+- `assets/images/app/` — project-functional assets unrelated to branding (icons, illustrations, UI imagery)
+- `assets/images/brand/` — brand assets (logos, brand marks, color-bound imagery)
+
 ## Routing
 
 Pick the concern skill for the task before doing anything else. If a task touches more than one concern, do each part inside its own skill.
@@ -79,31 +100,6 @@ app-container
 ├── header (app-logo, app-user)
 ├── nav    (radio inputs inside labels)
 ├── main   (article > h1 + section)
-├── aside
-└── footer (app-legal, app-version)
-```
-
-One `<script type="module">` before `</body>`, outside `app-container`.
-
-## Standards alignment
-
-This skill set follows the Agent Skills open standard at agentskills.io. Each skill is independently loadable, each follows the YAML frontmatter spec, each uses progressive disclosure (frontmatter ~100 tokens always loaded; SKILL.md body loaded on activation; references/ loaded only when the agent reads them).
-
-## When in conflict
-
-Conflicts in declared rules are surfaced to the user. The agent never resolves a contradiction silently. The user is the sole arbiter of what is correct.
-
-## Air-gap test
-
-Before any change ships, the change must pass:
-
-1. Does this HTML change require any CSS or JS change? If yes, the air-gap is broken — fix the design.
-2. Does this CSS rule require any JS, any specific data, or any class/id? If yes, fix the design.
-3. Does this JS function touch the DOM for presentation? If yes, fix the design.
-4. Does this JSON contain HTML or styling? If yes, fix the design.
-
-The architecture exists to make these answers always "no."
-```
 ├── aside
 └── footer (app-legal, app-version)
 ```
