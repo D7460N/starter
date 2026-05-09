@@ -99,4 +99,3 @@ If a future need genuinely requires extension (e.g., shadow DOM encapsulation), 
 - HTML spec — custom element naming: https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name
 - MDN `customElements`: https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry
 - MDN custom elements guide: https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
-- 
