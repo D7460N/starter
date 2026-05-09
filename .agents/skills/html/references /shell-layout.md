@@ -91,3 +91,4 @@ One `<script type="module">` at the end of `<body>`, outside `<app-container>`. 
 - HTML `<head>` element guide: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
 - PWA manifest: https://developer.mozilla.org/en-US/docs/Web/Manifest
 - HTML script type=module: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+- 
