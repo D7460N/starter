@@ -31,17 +31,13 @@ The independent modern **HTML/CSS starter project** you never had.
 
 **D7460N Starter** operates as a native **Single Page Application (SPA)** implemented as a native **Progressive Web App (PWA)**, and easily maintained through **Separation of Concerns (SOC)** and modern (W3C/WCAG) standards.
 
-> - Semantic HTML structure
-> - CSS state management
-> - Data-delivery-only JavaScript
-
 Easy, fast, intuitive, and developer friendly
 
 ## Separation of Concerns
 
 > - Front-end JavaScript entirely replaced by modern CSS 
 > - Front-end JavaScript CRUD API data-delivery via `oninput` only
-> - HTML == structure
+> - HTML == semantic structure
 > - CSS == everything else
 > - JS == CRUD API (data-delivery only)
 
