@@ -16,7 +16,7 @@ _       ___        ___  _____     ___        __        __     ___
 
 Did you know . . . that **modern baseline CSS** can now _replace_ most, if not all, JavaScript UI equivelants? 
 
-Did you know . . . that **modern baseline HTML and CSS** ( presentation layer) render as a fetched (not copied) **independent** and **autonomous** resourse?
+Did you know . . . that **modern baseline HTML and CSS** ( presentation layer) can now render as a fetched (not copied) **independent** and **autonomous** resourse?
 
 > - No AI
 > - No framework
