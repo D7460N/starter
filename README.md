@@ -9,9 +9,9 @@ _       ___        ______  _____     ____        __        __     ___
 (      (_____|  |____|  (__)  |_| |_\ \____|  |____/       )_| |_\ \_
 ```
 
-## Did You Know?
+## Did You Know . . .
 
-Did you know that **CSS** is always **live** and **reactive** to dynamic DOM changes? 
+. . . that **CSS** is always **live** and **reactive** to dynamic DOM changes? 
 
 Did you know that **modern baseline CSS** can now _replace_ most, if not all, JavaScript UI equivelants? 
 
