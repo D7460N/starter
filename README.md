@@ -29,7 +29,7 @@ Based on the open-source, browser-native, fully declarative, front-end **D7460N 
 
 The independent modern **HTML/CSS starter project** you never had. 
 
-**D7460N Starter** operates as a **Single Page Application (SPA)** and can be implemented as a **Progressive Web App (PWA)**, with a focus on **Separation of Concerns (SOC)** and modern (W3C/WCAG) standards.
+**D7460N Starter** operates as a native **Single Page Application (SPA)** implemented as a **Progressive Web App (PWA)**, and strictly adheres to **Separation of Concerns (SOC)** and modern (W3C/WCAG) standards.
 
 > - Semantic HTML structure
 > - CSS state management
