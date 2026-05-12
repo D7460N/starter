@@ -14,9 +14,9 @@ _       ___        ___  _____     ___        __        __     ___
 
 . . . that **CSS** is always **live** and **reactive** to dynamic DOM changes? 
 
-Did you know that **modern baseline CSS** can now _replace_ most, if not all, JavaScript UI equivelants? 
+Did you know . . . that **modern baseline CSS** can now _replace_ most, if not all, JavaScript UI equivelants? 
 
-Did you know that **modern baseline HTML and CSS** can now render the presentation layer (including all UI states) **independently** and **autonomously**?
+Did you know . . . that **modern baseline HTML and CSS** ( presentation layer) render as a fetched (not copied) **independent** and **autonomous** resourse?
 
 > - No AI
 > - No framework
