@@ -25,7 +25,7 @@ Did you know . . . **modern baseline HTML and CSS** ( presentation layer) can no
 
 ## D7460N Starter
 
-Based on the open-source, browser-native, fully declarative, front-end **D7460N Architecture** for building _out-of-the-box_, scalable, maintainable, intuitive, and accessible web applications without frameworks, build tools, or transpilers.
+Based on the open-source, browser-native, fully declarative, front-end **D7460N Architecture** for building _out-of-the-box_, scalable, maintainable, intuitive, and accessible web applications without (or in conjunction with) frameworks, build tools, or transpilers.
 
 **D7460N Starter** operates as a native **Single Page Application (SPA)** implemented as a native **Progressive Web App (PWA)**, and easily maintained through **Separation of Concerns (SOC)** and modern (W3C/WCAG) standards.
 
