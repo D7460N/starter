@@ -29,12 +29,10 @@ Based on the open-source, browser-native, fully declarative, front-end **D7460N 
 
 **D7460N Starter** operates as a native **Single Page Application (SPA)** implemented as a native **Progressive Web App (PWA)**, and easily maintained through **Separation of Concerns (SOC)** and modern (W3C/WCAG) standards.
 
-Easy, fast, intuitive, and developer friendly
+Easy, fast, and developer friendly
 
 ## Separation of Concerns
 
-> - Front-end JavaScript entirely replaced by modern CSS 
-> - Front-end JavaScript CRUD API data-delivery via `oninput` only
 > - HTML == semantic structure
 > - CSS == everything else
 > - JS == CRUD API (data-delivery only)
