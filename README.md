@@ -75,9 +75,9 @@ Scale becomes a deployment instead of a migration.
 
 ## Browser-Centric SDLC
 
-Every framework and CMS sells itself as the center of software delivery. React. Angular. WordPress. Drupal. AEM. Each one positions itself in the middle of the diagram, with design, development, content, QA, and deployment orbiting around it.
+Every **framework** and **CMS** start with itself as the center of software delivery. **React**. **Angular**. **WordPress**. **Drupal**. **Joomla**, **AEM**. Each one positions itself in the middle of the diagram, with design, development, content, QA, and deployment orbiting around it.
 
-D7460N puts the browser there instead.
+**D7460N** starts with the browser
 
 > *[SDLC illustration goes here — horizontal flow with the browser as the central node, every role's lines of sight converging on it.]*
 
