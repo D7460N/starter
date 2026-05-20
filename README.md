@@ -38,11 +38,11 @@ This is the part that hasn't been done before.
 - No transpilers
 - No 3rd-party dependencies
 
-> **Bring them if you want.** D7460N runs alongside whatever's already in your stack. It just doesn't require any of it.
+**Bring them if you want.** D7460N runs alongside whatever's already in your stack. It just doesn't require any of it.
 
-**Compatible.** Works with what you've already shipped.
-**Interoperable.** Talks to any backend over HTTP and JSON.
-**Extensible.** Add your own modules without touching the core.
+> **Compatible.** Works with what you've already shipped.
+> **Interoperable.** Talks to any backend over HTTP and JSON.
+> **Extensible.** Add your own modules without touching the core.
 
 ---
 
