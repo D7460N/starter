@@ -48,7 +48,7 @@ D7460N runs alongside whatever's already in your stack. It just doesn't require 
 
 ---
 
-## One front-end. At scale.
+## One front-end, at scale
 > _Called, not copied._
 
 
