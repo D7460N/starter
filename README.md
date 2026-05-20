@@ -13,7 +13,7 @@
 
 **One codebase. One UI. Infinite backends.**
 
-Presentation layer, hosted once. Called by anything. Any backend. Any language. Any platform.
+> Presentation layer, hosted once. Called by anything. Any backend. Any language. Any platform.
 
 ---
 
