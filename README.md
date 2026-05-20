@@ -46,7 +46,9 @@ This is the part that hasn't been done before.
 
 ---
 
-## One front-end. At any scale.
+## One front-end. At scale.
+> _Called, not copied._
+
 
 | Projects | Front-ends | New codebases | New build pipelines | New dependencies | Cost to add next project | Time to launch next project |
 |---|---|---|---|---|---|---|
