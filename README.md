@@ -79,7 +79,7 @@ Scale becomes a deployment instead of a migration.
 
 Every **framework** and **CMS** start with themselves as the center of software delivery. **React**. **Angular**. **WordPress**. **Drupal**. **Joomla**, **AEM**. Each as their own SDLC center piece along with their proprietary 3rd, 4th, 5th, etc., party dependencies in the center of SDLC diagrams with design, development, content, QA, and deployment orbiting around it.
 
-**D7460N** starts, is dependent on, and ends with what is already installed in every environment, the **browser**.
+**D7460N** starts, is dependent on, and ends with what is already installed in every environment, the **BROWSER**.
 
 > *[SDLC illustration goes here — horizontal flow with the browser as the central node, every role's lines of sight converging on it.]*
 
@@ -93,7 +93,7 @@ The browser is what every role already looks at:
 
 Every visual cue about whether something is working, broken, fast, slow, accessible, on-brand, or usable comes through the browser. It is the single surface where the entire delivery pipeline gets judged.
 
-Most architectures put a framework or a CMS at the center and render through the browser. D7460N skips the middleman. The browser is the runtime, the rendering target, and the assessment surface. One focal point. No translation layer between what gets built and what gets seen.
+Most architectures put a framework or a CMS at the center and render through the browser. D7460N skips the middleman. The browser is the runtime, the rendering target, and the assessment surface all in one. No translation layer between what gets built and what gets seen. One focal point. One design. One source of truth.
 
 UX and DX converge here. The developer is looking at the same surface the user is going to look at. The feedback loop is the same loop.
 
