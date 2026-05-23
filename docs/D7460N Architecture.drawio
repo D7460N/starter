@@ -1,41 +1,44 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="1L3lwdz5k8RD5xpfTW7Q">
-    <mxGraphModel dx="2040" dy="1283" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="971" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="LfbMUPxPE-MoH8NiE-iL-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;D7460N Architecture&lt;/h1&gt;" vertex="1">
           <mxGeometry height="40" width="250" x="40" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="" vertex="1">
-          <mxGeometry height="60" width="30" x="55" y="270" as="geometry" />
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-7" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;opacity=50;" value="" vertex="1">
+          <mxGeometry height="50" width="90" x="470" y="288.5" as="geometry" />
         </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="End-user" vertex="1">
-          <mxGeometry height="30" width="60" x="40" y="180" as="geometry" />
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-8" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;opacity=50;" value="" vertex="1">
+          <mxGeometry height="50" width="90" x="470" y="268.5" as="geometry" />
         </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-7" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="" vertex="1">
-          <mxGeometry height="50" width="90" x="380" y="290" as="geometry" />
-        </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-8" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="" vertex="1">
-          <mxGeometry height="50" width="90" x="380" y="270" as="geometry" />
-        </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-9" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="" vertex="1">
-          <mxGeometry height="50" width="90" x="380" y="250" as="geometry" />
-        </mxCell>
-        <mxCell id="vN-JYQFVEooeD03goyw9-2" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="" vertex="1">
-          <mxGeometry height="100" width="50" x="220" y="180" as="geometry" />
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-9" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;opacity=50;" value="" vertex="1">
+          <mxGeometry height="50" width="90" x="470" y="248.5" as="geometry" />
         </mxCell>
         <mxCell id="vN-JYQFVEooeD03goyw9-3" edge="1" parent="1" style="edgeStyle=isometricEdgeStyle;endArrow=none;html=1;elbow=vertical;rounded=0;" value="">
           <mxGeometry height="100" relative="1" width="50" as="geometry">
-            <mxPoint x="210.8" y="410" as="sourcePoint" />
-            <mxPoint x="260.8" y="310" as="targetPoint" />
+            <mxPoint x="759.1999999999999" y="200" as="sourcePoint" />
+            <mxPoint x="809.1999999999999" y="100" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="vN-JYQFVEooeD03goyw9-4" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=0.5;size=20;position=0.5;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;autosizeText=1;fontSize=14;opacity=30;" value="Wazzuuup!" vertex="1">
-          <mxGeometry height="40" width="80" x="30" y="220" as="geometry" />
-        </mxCell>
-        <mxCell id="-z0_abtDp8Hiw1sDU8dF-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;opacity=50;textOpacity=50;" value="&lt;span style=&quot;font-family: Oxanium;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/span&gt;" vertex="1">
+        <mxCell id="-z0_abtDp8Hiw1sDU8dF-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;opacity=50;textOpacity=50;" value="&lt;span style=&quot;font-family: Oxanium;&quot;&gt;UI/UX Workflow&lt;/span&gt;" vertex="1">
           <mxGeometry height="30" width="380" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="TUrz2ZcVi2iwaZO9Qmu0-11" parent="1" style="sketch=0;outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_devices;pointerEvents=1" value="devices" vertex="1">
+          <mxGeometry height="73" width="100" x="170" y="257" as="geometry" />
+        </mxCell>
+        <mxCell id="TUrz2ZcVi2iwaZO9Qmu0-21" parent="1" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.certified_industry_standard" value="" vertex="1">
+          <mxGeometry height="78" width="100" x="740" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="TUrz2ZcVi2iwaZO9Qmu0-25" parent="1" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.end_user;strokeColor=none;fillColor=#777777;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="100.46" width="49" x="70" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="TUrz2ZcVi2iwaZO9Qmu0-26" parent="1" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.verbal;pointerEvents=1;opacity=50;" value="" vertex="1">
+          <mxGeometry height="100" width="50" x="20" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="TUrz2ZcVi2iwaZO9Qmu0-31" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;opacity=50;container=0;" value="" vertex="1">
+          <mxGeometry height="50" width="90" x="320" y="207" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
