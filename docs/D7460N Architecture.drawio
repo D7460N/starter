@@ -4,28 +4,28 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;D7460N Architecture&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" vertex="1">
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;D7460N Architecture&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" vertex="1">
           <mxGeometry height="120" width="360" x="40" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="" vertex="1">
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="" vertex="1">
           <mxGeometry height="60" width="30" x="55" y="240" as="geometry" />
         </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="End-user" vertex="1">
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="End-user" vertex="1">
           <mxGeometry height="30" width="60" x="40" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-7" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;" value="" vertex="1">
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-7" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="" vertex="1">
           <mxGeometry height="60" width="90" x="380" y="310" as="geometry" />
         </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-8" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;" value="" vertex="1">
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-8" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="" vertex="1">
           <mxGeometry height="60" width="90" x="380" y="280" as="geometry" />
         </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-9" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;" value="" vertex="1">
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-9" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="" vertex="1">
           <mxGeometry height="60" width="90" x="380" y="250" as="geometry" />
         </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-10" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;" value="" vertex="1">
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-10" parent="1" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="" vertex="1">
           <mxGeometry height="60" width="30" x="230" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="LfbMUPxPE-MoH8NiE-iL-27" edge="1" parent="1" style="edgeStyle=isometricEdgeStyle;endArrow=none;html=1;rounded=0;" value="">
+        <mxCell id="LfbMUPxPE-MoH8NiE-iL-27" edge="1" parent="1" style="edgeStyle=isometricEdgeStyle;endArrow=none;html=1;rounded=0;fontFamily=Oxanium;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOxanium;" value="">
           <mxGeometry height="100" relative="1" width="50" as="geometry">
             <mxPoint x="455.8" y="260" as="sourcePoint" />
             <mxPoint x="510" y="200" as="targetPoint" />
