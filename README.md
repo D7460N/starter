@@ -88,9 +88,9 @@ Web Browser as single true dependency:
 
     Designers ──┐                       ┌── React   ─┐
    Developers ──┤                       ├── Angular   │   require
-           QA ──┼──▶ [ BROWSER ] ◀──┼── WordPress  ├─ framework
- Stakeholders ──┤          ▲           ├── Joomla     │   + browser
-    End-users ──┘          │           ├── Svelt    ─┘
+           QA ──┼──▶ [ BROWSER ] ◀──┼── WordPress ├─  framework
+ Stakeholders ──┤                       ├── Joomla    │   + browser
+    End-users ──┘          ▲           └── Svelt    ─┘
                              │
                              └────────── D7460N ──── browser only
 
