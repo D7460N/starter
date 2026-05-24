@@ -106,73 +106,73 @@ The architecture is one thing. Its benefits land differently depending on who's 
 <details>
 <summary><strong>Developers</strong></summary>
 
-One `index.html`. One repeatable `oninput` event for all CRUD. No build step, no transpiler, no framework version to track. Open the file. It works.
+> One `index.html`. One repeatable `oninput` event for all CRUD. No build step, no transpiler, no framework version to track. Open the file. It works.
 </details>
 
 <details>
 <summary><strong>Designers</strong></summary>
 
-CSS is the runtime. Design changes ship by editing CSS, with no JavaScript intervention required. The cascade is the design system.
+> CSS is the runtime. Design changes ship by editing CSS, with no JavaScript intervention required. The cascade is the design system.
 </details>
 
 <details>
 <summary><strong>Clients</strong></summary>
 
-A site that doesn't accrue technical debt while sitting still. No framework migration bills in year three. Brand changes are CSS variable swaps.
+> A site that doesn't accrue technical debt while sitting still. No framework migration bills in year three. Brand changes are CSS variable swaps.
 </details>
 
 <details>
 <summary><strong>End users</strong></summary>
 
-Small payload. No framework runtime. Fast first paint. Keyboard navigation that works. Screen readers that work. No cookie banners for analytics nobody asked for.
+> Small payload. No framework runtime. Fast first paint. Keyboard navigation that works. Screen readers that work. No cookie banners for analytics nobody asked for.
 </details>
 
 <details>
 <summary><strong>Stakeholders and executives</strong></summary>
 
-No supply-chain risk. No deprecation deadlines. No vendor lock-in. Predictable cost. Headcount stays focused on features instead of toolchain.
+> No supply-chain risk. No deprecation deadlines. No vendor lock-in. Predictable cost. Headcount stays focused on features instead of toolchain.
 </details>
 
 <details>
 <summary><strong>Middle management and product</strong></summary>
 
-Junior devs can ship. Senior devs from any background can maintain it. Cross-team dependencies shrink because the front-end has no toolchain to coordinate.
+> Junior devs can ship. Senior devs from any background can maintain it. Cross-team dependencies shrink because the front-end has no toolchain to coordinate.
 </details>
 
 <details>
 <summary><strong>Security and compliance</strong></summary>
 
-Strict Content Security Policy on day one. No `unsafe-inline`. No `unsafe-eval`. No third-party scripts to audit. Script-based XSS attack surface near zero.
+> Strict Content Security Policy on day one. No `unsafe-inline`. No `unsafe-eval`. No third-party scripts to audit. Script-based XSS attack surface near zero.
 </details>
 
 <details>
 <summary><strong>Accessibility teams</strong></summary>
 
-Semantic HTML only. Every interactive element is a real `<button>`, `<a>`, `<input>`, `<label>`, or `<select>`. 508 and WCAG compliance falls out of the architecture, not out of remediation budgets.
+>,Semantic HTML only. Every interactive element is a real `<button>`, `<a>`, `<input>`, `<label>`, or `<select>`. 508 and WCAG compliance falls out of the architecture, not out of remediation budgets.
 </details>
 
 <details>
 <summary><strong>DevOps and SRE</strong></summary>
 
-Static assets only. CDN-cacheable. No build pipeline to maintain, monitor, or break. Deployment is a file copy.
+> Static assets only. CDN-cacheable. No build pipeline to maintain, monitor, or break. Deployment is a file copy.
 </details>
 
 <details>
 <summary><strong>QA and testing</strong></summary>
 
-The DOM is predictable because nothing is rewriting it. No virtual DOM diffing, no framework version skew, no flaky hydration. Components test in isolation.
+> The DOM is predictable because nothing is rewriting it. No virtual DOM diffing, no framework version skew, no flaky hydration. Components test in isolation.
 </details>
 
 <details>
 <summary><strong>Procurement and legal</strong></summary>
 
-Open source. No SaaS dependencies in the runtime. No license entanglements to clear. No third-party data processors to disclose.
+> Open source. No SaaS dependencies in the runtime. No license entanglements to clear. No third-party data processors to disclose.
 </details>
 
 <details>
 <summary><strong>Founders and new ventures</strong></summary>
 
-Ship a working front-end without hiring a front-end team. Add backends as the business grows. The UI scales for free.
+> Ship a working front-end without hiring a front-end team. Add backends as the business grows. The UI scales for free.
 </details>
 
 ---
