@@ -1,12 +1,12 @@
 <!--
-D7460N / THOR UI — SECURITY.md
-Compliance note: This policy follows D7460N core rules (Separation of Concerns; CSS/UI state; data-only JS; no frameworks) and has been accuracy-verified against those rules and modern browser-native best practices as of 2025-09-27.
+D7460N Architecture Starter UI — SECURITY.md
+Compliance note: This policy follows D7460N Architecture rules (Separation of Concerns; CSS/UI state; data-only JS; no frameworks) and has been accuracy-verified against those rules and modern browser-native best practices as of 2025-09-27.
 Verification complete.
 -->
 
 # Security Policy
 
-This repository implements the D7460N (THOR UI) architecture: semantic HTML for structure, CSS for UI/state, and data-only JavaScript. It is intentionally dependency-light and browser-native to reduce attack surface and supply-chain risk.
+This repository implements the D7460N Architecture: semantic HTML for structure, CSS for UI/state, and data-only JavaScript. It is intentionally dependency-light and browser-native to reduce attack surface and supply-chain risk.
 
 ## Supported Versions
 
