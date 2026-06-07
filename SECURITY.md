@@ -6,7 +6,7 @@ Verification complete.
 
 # Security Policy
 
-This repository implements the D7460N Architecture: semantic HTML for structure, CSS for UI/state, and data-only JavaScript. It is intentionally dependency-light and browser-native to reduce attack surface and supply-chain risk.
+This repository implements the **D7460N Architecture Starter**: semantic HTML for structure, CSS for UI/state, and data-only JavaScript. It is intentionally dependency-light and browser-native to reduce attack surface and supply-chain risk.
 
 ## Supported Versions
 
