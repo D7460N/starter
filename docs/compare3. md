@@ -1,0 +1,52 @@
+The demo proves that when a presentation layer is fully decoupled from the data layer, the presentation layer can then be remotely hosted and called (not copied, not instanciated, not templated), like an image or a font, and render content from multiple independent 
+
+Data agnostic 
+Project agnostic 
+Browser agnostic 
+Platform agnostic 
+Framework agnostic 
+
+
+Stovepiped World
+
+
+
+Enterprise GitHub CDN
+````
+
+
+                                                                                             Project stovepipes 
+
+                                         Project 01                Project 02               Project 03              Project 04               Project 05
+                                    _____________________    _____________________    _____________________    _____________________    _____________________
+                                   |                     |  |                     |  |                     |  |                     |  |                     |
+                                   |                     |  |                     |  |                     |  |                     |  |    Project 05       |
+                                   |                     |  |                     |  |                     |  |                     |  |                     |
+                                   |                     |  |                     |  |                     |  |   Documentation/    |  |   Documentation/    |
+                                   |    Search/Triage    |  |     Splash/Intro/   |  |       Magazine      |  |   Wiki              |  |   Wiki              |
+                                   |                     |  |     Hero            |  |                     |  |                     |  |                     |
+                                   |                     |  |                     |  |                     |  |                     |  |                     |
+                                   |       React         |  |        Vue          |  |       Angular       |  |    Vanilla          |  |                     |
+                                   |                     |  |                     |  |                     |  |                     |  |                     |
+                                   |_____________________|  |_____________________|  |_____________________|  |_____________________|  |_____________________|
+                                                      \                    \                      /                  /
+                                                       \                    \                    /                  /
+                                                        \                    \                  /                  /
+                                                         \                    \                /                  /
+                                                          \                    |______________|                  /
+                                                           \                   I              I                 /
+                                                            \                  I  Data source I                /
+                                                             \_________________I  Data source I_______________/
+                                                                               I  Data source I
+                                                                               I  Data source I
+Data agnostic ---------------------------------------------------->            I  Data source I
+                                                                               I  Data source I
+                                                                               I______________I
+ 
+
+
+
+
+
+
+````
