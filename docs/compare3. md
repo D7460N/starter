@@ -40,14 +40,21 @@ Source
 → Browser Rendering
 → User
 
-         ///////////////////////////////// FRONT END /////////////////////////////             ///// BACK END /////
-        /                                                                       /             /                  /
-       /        __            _________________________________________________/__           /_____ _  _ _  _ __/
-      /        /\ \          /\                                                   \         /\                 .\
-     /   /    /::\ \   /    /  \  Framework driven "happy path" design/development \       /::\               .  \
-    (___(___ /::::\ \_(____/    \  Build \ Compile \ Serve for Typescript and       \     /::::\  DBs        .
-     \   \  /::::::\ \ \  /      \  cross browser compatibility                      \___/::::::\           .
-      \   \/: User::\_\ \/        \___________________________________________________\ /::::::::\_______  . _     _\
+        ///////////////////////////////// FRONT END /////////////////////////////             ///// BACK END /////
+       /                                                                       /             /                  /
+      /
+     /
+    /
+   /
+  /    .
+ /    /
+(____(________
+ \    \         __            ____________________________________________________           /_____ _  _ _  _ __/
+  \    \       /\ \          /\                                                   \         /\                 .\
+   \     .    /::\ \        /  \  Framework driven "happy path" design/development \       /::\               .  \
+    \        /::::\ \      /    \  Build \ Compile \ Serve for Typescript and       \     /::::\  DBs        .
+     \      /::::::\ \    /      \  cross browser compatibility                      \___/::::::\           .
+      \    /: User::\_\  /        \___________________________________________________\ /::::::::\_______  . _     _\
        \   \:Agent::/ /  \        /                                                   / \::::::::/ . . .  .         /
         \   \::::::/ /    \      /  Gui, business, and data logic integrated with    /   \::::::/          .
          \   \::::/ /      \    /   and controlled by Framework                     / \   \::::/            .     /
