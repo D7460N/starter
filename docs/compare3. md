@@ -52,14 +52,14 @@ Source
  \ \ \ \ \ .                                                          . \ \         \ \ \ \ \ .             \ \ \
   \ \ \ \ .                                                              . \         \ \ \ \ .               . \ \
    \ \ \ .        __            ____________________________________________\_______  \ \ \ .        _____________\_______
-    \ \ .        /\ \          /\                                             .    .\  \ \ .        /\             .     .\
-     \ .        /::\ \        /::\  Framework driven "happy path"              .  .  \  \ .        /::\             .   .  \
-      \        /::::\ \      /::::\  Build \ Compile \ Serve for Typescript     ..    \  \        /::::\  DBs        . .    \
-       \      /::::::\ \    /::::::\  cross browser compatibility               ..     \  \      /:Data:\             .      \
-        \    /:User-::\_\  /:Frame-:\_________________________________________ .  .  _ _\  \    /::base::\_______ _  . .  _ __\
-         \   \:Agent::/ /  \::work::/                                .  .  .  .    .    /   \   \:storage/    .  .  .   .     /
-          \   \::::::/ /    \::::::/  Gui, business, and data logic integrated .    .  /     \   \::::::/            .   .   /
-           \   \::::/ /      \::::/   and controlled by Framework               .    ./       \   \::::/              .   . /
+    \ \ .        /\ \          /\                                             .    .\  \ \ .        /\              .    .\
+     \ .        /::\ \        /::\  Framework driven "happy path"              .  .  \  \ .        /::\              .  .  \
+      \        /::::\ \      /::::\  Build \ Compile \ Serve for Typescript     ..    \  \        /::::\  DBs         ..    \
+       \      /::::::\ \    /::::::\  cross browser compatibility               ..     \  \      /:Data:\             ..     \
+        \    /:User-::\_\  /:Frame-:\_________________________________________ .  .  _ _\  \    /::base::\_______ _  .  . _ __\
+         \   \:Agent::/ /  \::work::/                                .  .  .  .    .    /   \   \:storage/    .  .  .    .    /
+          \   \::::::/ /    \::::::/  Gui, business, and data logic integrated .    .  /     \   \::::::/            .    .  /
+           \   \::::/ /      \::::/   and controlled by Framework               .    ./       \   \::::/              .    ./
             \   \::/ /        \::/                                               .   /\        \   \::/                .   /\
              \   \/_/          \/___________________________________________________/  \        \   \/____________________/  \
               \                                                                         \        \                            \
