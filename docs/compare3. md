@@ -14,16 +14,40 @@ Stovepiped World
 Enterprise GitHub CDN
 
 ```
+1. Source / Authoring
+2. Compilation
+3. Build
+4. Deployment / Delivery
+5. JavaScript Runtime
+6. Framework / Application Runtime
+7. Data Access Layer
+8. Network / Transport Layer
+9. API / Service Layer
+10. Data Storage Layer
+11. State / Reactivity Layer
+12. Rendering
+13. DOM
+14. Browser Rendering
+15. Presentation / Interaction
 
+Source
+→ Compiler
+→ Build
+→ Delivery
+→ JavaScript Runtime
+→ Framework Runtime
+→ DOM
+→ Browser Rendering
+→ User
 
-                  /////////////////////////////// FRONT END /////////////////////////          ///// BACK END /////
-                 /                                                                 /          /                  /
-                /             ____________________________________________________/          /_____ _  _ _  _ __/
-               /\ \          /\                                                   \         /\                 .\
-              /::\ \        /  \  Framework driven "happy path" design/development \       /::\               .  \
-             /::::\ \      /    \  Build \ Compile \ Serve for Typescript and       \     /::::\  DBs        .
-      _ _ _ /::::::\ \    /      \  cross browser compatibility                      \___/::::::\           .
-      \    /: User::\_\  /        \___________________________________________________\ /::::::::\_______  . _     _\
+         ///////////////////////////////// FRONT END /////////////////////////////             ///// BACK END /////
+        /                                                                       /             /                  /
+       /        __            _________________________________________________/__           /_____ _  _ _  _ __/
+      /        /\ \          /\                                                   \         /\                 .\
+     /   /    /::\ \   /    /  \  Framework driven "happy path" design/development \       /::\               .  \
+    (___(___ /::::\ \_(____/    \  Build \ Compile \ Serve for Typescript and       \     /::::\  DBs        .
+     \   \  /::::::\ \ \  /      \  cross browser compatibility                      \___/::::::\           .
+      \   \/: User::\_\ \/        \___________________________________________________\ /::::::::\_______  . _     _\
        \   \:Agent::/ /  \        /                                                   / \::::::::/ . . .  .         /
         \   \::::::/ /    \      /  Gui, business, and data logic integrated with    /   \::::::/          .
          \   \::::/ /      \    /   and controlled by Framework                     / \   \::::/            .     /
