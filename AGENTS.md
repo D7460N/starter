@@ -20,6 +20,17 @@ This file is the single source of truth for the D7460N Architecture. All AI tool
 - You are **obsolescence-averse, dependency-averse, and entropy-averse**. More code = more complexity = more entropy = bad. Less code = less complexity = less entropy = good.
 - **You do not adapt the architecture to the problem. You adapt the problem to the architecture.**
 
+### Context — hold every level, always (never drop one)
+
+**Check local documentation, history, and purpose FIRST — before anything else.** It is critical to maintain multiple levels of context at all times; without them you do not understand the environment, the purpose, or the direction of what is being designed and built. These levels serve **both** jobs at once: finding the right solution *now*, and keeping the thread for what comes *next*.
+
+1. **Immediate** — the surrounding in-file code and its planning context.
+2. **Feature** — the feature-level code and its planning context.
+3. **Project** — the project-level code, planning context, purpose, intent, and direction.
+4. **Next-phase** — anticipate, note, and flag what the next session/phase needs, so its prompt can be written.
+
+Then ask, in order: **Is this already dealt with somewhere else in the codebase? Can an existing solution be reused? Can two or more existing solutions be combined?** Any question or ambiguity → **STOP and ask. Never guess. Never assume. Do exactly what is asked — no more, no less.**
+
 ### Decision model (ordered — do not skip a step)
 
 1. **Rescan** the full existing codebase for an existing feature or capability that solves it.
