@@ -74,7 +74,11 @@ Every architectural or technical claim cites an authoritative source: W3C, WHATW
 
 - Semantic elements only. No `<div>`, `<span>`, `class`, `id`, `data-*`.
   - **Why (know why you are doing this):** it minimizes selector-dependency complexity, enforces semantics, ensures portability, and **gets out of the way of other systems who do use classes/IDs/`data-*`** — their selectors land unopposed.
-- Interactive elements that are not intrinsically interactive use `<label>` wrapping a hidden `<input type="checkbox">` or `<input type="radio">` with `aria-hidden="true"`. No JS-driven `<button>` or `eventListener`
+- Interactive elements that are not intrinsically interactive use `<label>` wrapping an `<input type="checkbox">` or `<input type="radio">`. No JS-driven `<button>` or `eventListener`. **The `<input>` is the control — preserve its native semantics. It already provides role, state, and keyboard support for free; that is the accessibility, baked in.** Four non-negotiables follow, each with its citation:
+  - **NEVER put `role="button"` on these labels.** The `button` role does not support semantic children, so browsers apply role `presentation` to **every descendant** — which **erases the input's `radio`/`checkbox` role and its checked state** from the accessibility tree. A screen-reader user can then no longer tell what is selected. `role="button"` also announces button behavior (Enter/Space activation) that only JS could supply — and JS is forbidden here. A nav radio is semantically a **radio** (one of a group), not a button; calling it a button loses "2 of 5, selected". → [MDN: button role — "All descendants are presentational"](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role#all_descendants_are_presentational)
+  - **NEVER put `aria-hidden="true"` on the `<input>` or on its `<label>`.** ARIA forbids it on focusable elements **and on any ancestor of a focusable element** — the `<label>` is exactly that ancestor. → [MDN: aria-hidden](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden)
+  - **NEVER `display:none` the input.** That removes it from the accessibility tree *and* from keyboard reach. Hide it **visually but keep it focusable** (clip / opacity / `appearance`) so `:checked` still drives every CSS rule while the control stays operable. Note: once an element is `display:none`, `aria-hidden` is redundant anyway — it is already out of the tree. → [MDN: aria-hidden — when not to add it](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden#description)
+  - The `<label>` supplies the accessible name. `:checked` drives all CSS. **Zero JS, zero ARIA, full semantics.** Prefer native elements over ARIA roles — native controls are supported by every user agent and AT and provide keyboard and focus behavior by default. → [MDN: button role — Best practices](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role#best_practices)
 - Forms inside `<fieldset>` with schema/rules from JSON.
 - One `<script type="module">` before `</body>`, outside `<app-container>`.
 - No HTML in JSON. Ever.
@@ -112,7 +116,8 @@ Every architectural or technical claim cites an authoritative source: W3C, WHATW
 - Stateless and idempotent. No module-level mutable state. No globals.
 - No `innerHTML`. No inline styles. No DOM manipulation for presentation.
 - API base URL declared once; only endpoint suffix varies.
-- Initial load enters the `oninput` lifecycle via programmatic nav radio `.click()`.
+- **`.click()` and `onclick` are forbidden. Never. Anywhere.** `oninput` is the only event.
+- Initial load enters the **same** `oninput` lifecycle by *selecting* a nav radio: read the persisted selection from storage (or the first nav radio if none — no nav radio is `checked` in the HTML by default), set `input.checked = true`, then dispatch an input event on it (`input.dispatchEvent(new Event('input', { bubbles: true }))`) so the input's **own** `oninput` fires. Setting `.checked` alone does not fire `oninput`, and `.click()`/`onclick` are forbidden — so this `dispatchEvent` is the **single sanctioned** use, only for programmatic selection on load/restore where no real user event exists. Every real user interaction fires `oninput` natively; never dispatch for those. `:checked` remains the single source of truth for both the CSS state machine and the data call.
 - Shell content fetched once per runtime session.
 - Console: `console.clear()` on startup and each lifecycle run. Success = minimal timestamped. Failure = verbose timestamped.
 - Full ruleset: [`.agents/skills/javascript/SKILL.md`](./.agents/skills/javascript/SKILL.md).
@@ -153,7 +158,7 @@ Working around broken external services produces more code, obscures the real pr
 <app-container>
   <app-banner></app-banner>
   <header><app-logo></app-logo><app-user></app-user></header>
-  <nav><label><input type="radio" name="nav" aria-hidden="true"></label></nav>
+  <nav><label><input type="radio" name="nav"></label></nav>
   <main><article><h1></h1><section></section></article></main>
   <aside></aside>
   <footer><app-legal></app-legal><app-version></app-version></footer>
