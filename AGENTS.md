@@ -15,7 +15,25 @@ This file is the single source of truth for the D7460N Architecture. All AI tool
 - No experiential or emotional self-language, such as gaslighting or virtue signaling.
 - No dead-end answers — always give verifiable options to fix and continue.
 - Do exactly what is asked — no more, no less.
+- **Priority order, always: 1. Accuracy/Quality → 2. Time → 3. Cost.** Accuracy outranks both. Time means timely *and* concise answers; concise answers in turn cost fewer tokens. Cost is last but never irrelevant.
+- Output is **complete, correct, and copy-paste-ready**.
+- You are **obsolescence-averse, dependency-averse, and entropy-averse**. More code = more complexity = more entropy = bad. Less code = less complexity = less entropy = good.
+- **You do not adapt the architecture to the problem. You adapt the problem to the architecture.**
 
+### Decision model (ordered — do not skip a step)
+
+1. **Rescan** the full existing codebase for an existing feature or capability that solves it.
+2. **Rescan** the full existing codebase for a **combination** of existing features/capabilities that solves it.
+3. If neither exists — **STOP, alert the user, and await instructions.** Do not start new code on your own authority.
+4. Only when authorized by the user, start a new solution with the **least powerful** browser-native language: HTML.
+5. If HTML cannot do it, **use CSS**.
+6. JavaScript is **STRICTLY FORBIDDEN** except data transport (CRUD) invoked by `oninput`.
+
+### Known agent failure modes (documented, not hypothetical — actively prevent)
+
+- Agents **default to JavaScript** → actively prevent.
+- Agents **introduce classes by habit** → block.
+- Agents **assume dynamic rendering of content only** → correct.
 
 ### Pre-send gate
 
@@ -41,6 +59,8 @@ Every architectural or technical claim cites an authoritative source: W3C, WHATW
 
 ## 2. Stack
 
+- **The user-agent (web browser) is the single source of truth. It is the platform. It is the framework.** Anything and everything that is not native to the browser is, by definition, optional and custom.
+- **The system must function even with JavaScript disabled.**
 - **HTML + CSS only** for everything except data transport (CRUD).
 - Combine modern standard vanilla HTML/CSS features and techniques as needed.
 - **JavaScript** is permitted only below the `oninput` boundary: `app.js` (bootstrap), `oninput.js` (lifecycle), `api.js` (CRUD), `storage.js` (persistence), `tour.js` (placeholder).
@@ -53,6 +73,7 @@ Every architectural or technical claim cites an authoritative source: W3C, WHATW
 ## 3. HTML — structure only
 
 - Semantic elements only. No `<div>`, `<span>`, `class`, `id`, `data-*`.
+  - **Why (know why you are doing this):** it minimizes selector-dependency complexity, enforces semantics, ensures portability, and **gets out of the way of other systems who do use classes/IDs/`data-*`** — their selectors land unopposed.
 - Interactive elements that are not intrinsically interactive use `<label>` wrapping a hidden `<input type="checkbox">` or `<input type="radio">` with `aria-hidden="true"`. No JS-driven `<button>` or `eventListener`
 - Forms inside `<fieldset>` with schema/rules from JSON.
 - One `<script type="module">` before `</body>`, outside `<app-container>`.
@@ -63,6 +84,9 @@ Every architectural or technical claim cites an authoritative source: W3C, WHATW
 
 ## 4. CSS — the UI runtime
 
+- **CSS is the UI execution layer AND the styling.** Both, not one or the other. Modern vanilla HTML (structure) and CSS (everything else) **own the presentation layer, exclusively.** Every presentation-layer solution must be modern HTML + CSS only.
+  - **Why (know why you are doing this):** CSS-first reduces the JavaScript attack surface, increases performance, and enforces determinism.
+- CSS stays **copy/paste modular, unopinionated, and out of the way** via `@layer` and `@scope`.
 - Fully replaces JavaScript for all UI behavior: state, visibility, themes, color-scheme, transitions, loading, navigation, forms, default and conditional layout, responsiveness, feature detection, except for the one thing HTML and CSS cannot do - data transport for CRUD operations (applied principle of Least Power).
 - Visibility controlled by data presence via `:empty`, `:not(:empty)`, `:has()` or chained combinations thereof driven by declarative logic. No `"visible": true` flags in data.
 - Light/dark via `:root { color-scheme: light dark }` and `light-dark()`. No duplicated `@media (prefers-color-scheme: dark)` blocks.
@@ -77,6 +101,10 @@ Every architectural or technical claim cites an authoritative source: W3C, WHATW
 
 ## 5. JavaScript — data transport only
 
+- **Modern vanilla JavaScript owns the API/data logic layer — and nothing else.** In the UI it does nothing but CRUD API calls and data transport. It never owns presentation.
+- **`oninput` is the one and only event permitted in the presentation layer.** No other event, anywhere.
+- **Why (know why you are doing this):** a minimal JavaScript surface reduces attack vectors.
+- **Secrets never live in the browser.** Never expose, embed, or commit them; avoid unnecessary external calls. See [`security`](./.agents/skills/security/SKILL.md).
 - Five files exist in `assets/js/`, period: `app.js`, `oninput.js`, `api.js`, `storage.js`, `tour.js`.
 - `document.querySelector()` only. No `getElementById`, no `getElementsByClassName`.
 - No `addEventListener`. Anywhere. The `oninput` lifecycle uses direct `.oninput` property assignment.
