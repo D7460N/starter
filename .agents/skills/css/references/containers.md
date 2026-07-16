@@ -71,6 +71,16 @@ The header gets a shadow when it becomes sticky. No JS scroll listener.
 - Never use static `min-width` / `max-width` breakpoints
 - Never read scroll position via JavaScript when scroll-state queries cover the case
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `@container` (size + style queries) — **Baseline Widely available (Feb 2023)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@container
+- `container-type` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/container-type
+- `container-type: scroll-state` + `scroll-state()` queries — **Limited availability / experimental (Chromium only)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@container#scroll-state_queries
+
+**D7460N Architecture:** serves container queries replace media queries; intrinsic sizing (no static breakpoints). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN container queries: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries

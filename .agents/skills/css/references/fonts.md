@@ -20,7 +20,11 @@ For self-hosted variable fonts:
 @layer fonts {
   @font-face {
     font-family: 'Oxanium';
-    src: url('../fonts/oxanium/Oxanium.woff2') format('woff2-variations');
+    /* Modern form first: format(woff2) + tech(variations). The legacy
+       `format('woff2-variations')` string is kept as a fallback for engines
+       that don't yet parse the format()+tech() syntax. */
+    src: url('../fonts/oxanium/Oxanium.woff2') format(woff2) tech(variations),
+         url('../fonts/oxanium/Oxanium.woff2') format('woff2-variations');
     font-weight: 200 800;
     font-style: normal;
     font-display: swap;
@@ -28,7 +32,7 @@ For self-hosted variable fonts:
 }
 ```
 
-One file covers the full weight range. `font-weight: 200 800` declares the variable axis.
+One file covers the full weight range. `font-weight: 200 800` declares the variable axis. `format(woff2) tech(variations)` is the current standard spelling; `format('woff2-variations')` is the older non-normalized string, kept only as a backward-compat fallback.
 
 ## Discrete-weight fallback (when variable font is unavailable)
 
@@ -56,6 +60,15 @@ This is the inactive `fonts_.css` pattern preserved for reference. The variable-
 - Never load fonts without `font-display: swap` (causes flash of invisible text)
 - Never load fonts inside `@layer` ordering after the consuming rules — `@import` must be at file top
 - Never load multiple weight files when a variable font covers the range
+
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `@font-face` `src` (incl. `format()`+`tech()`) — **Baseline Widely available (2015)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src
+- `font-display: swap` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display
+
+**D7460N Architecture:** serves zero third-party (non-native-browser) dependencies; future-proofing (self-host). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

@@ -25,10 +25,25 @@ CSS-only loading indicator that activates when the H1 is empty (data not yet arr
       transform: rotate(360deg);
     }
   }
+
+  /* Accessibility: never spin for users who request reduced motion.
+     Replace the rotating ring with static text via `content`. */
+  @media (prefers-reduced-motion: reduce) {
+    :root:has(article h1:empty)::before {
+      content: "Loading . . .";
+      inline-size: auto;
+      block-size: auto;
+      border: none;
+      border-radius: 0;
+      animation: none;
+    }
+  }
 }
 ```
 
 The spinner is a `::before` pseudo-element on `:root`. It exists only when `article h1:empty` matches — that is, when data has not arrived. As soon as JS injects the page title, the H1 is no longer empty and the spinner disappears automatically.
+
+Under `prefers-reduced-motion: reduce` the animation is dropped and the same pseudo-element shows static `content: "Loading . . ."` text instead — the loading state stays visible without any motion.
 
 ## Why this works
 
@@ -58,6 +73,19 @@ For sections that load independently:
 - Never add a `loading` class to anything
 - Never use `display: none` toggled by JS
 - Never use a JavaScript timer to hide the spinner — let the data drive it
+
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `:empty` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
+- `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+- `::before` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/::before
+- `@keyframes` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
+- `color-mix()` — **Baseline Widely available (May 2023)** — https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
+- `prefers-reduced-motion` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+
+**D7460N Architecture:** serves CSS loading states from data presence; accessibility baked-in. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

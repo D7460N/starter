@@ -87,6 +87,11 @@ Pick the concern skill for the task before doing anything else. If a task touche
 | JSON-to-element rendering for data tables | `data-flow` |
 | Naming files, tags, skills | `naming` |
 | Headers, CSP, hosting | `security` |
+| Manifest, service worker, install behavior | `pwa` |
+| SPA shell, radio-nav routing, view lifecycle, view transitions | `spa` |
+| Choosing an approach, trade-offs, "which tool / why this design" | `principles` |
+| Verifying a change before it ships | `testing` |
+| Session start/end, handoff, backlog, board, docs | `session` |
 
 If the task is "make X visible when data arrives" → `css` (uses `:empty` / `:has()`), not `javascript`.
 If the task is "fetch data when nav changes" → `javascript` (uses `oninput.js`), not `html`.

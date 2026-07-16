@@ -61,13 +61,24 @@ The radio name (`name="nav"`) groups the inputs so only one is checked at a time
 
 ```css
 @layer state {
-  [aria-hidden="true"] {
-    display: none;
+  /* Visually hide the input but keep it in the layout and the tab order, so the
+     control stays keyboard-operable (Tab to reach it, Space / arrow keys to
+     toggle). This is the accepted a11y technique — see the a11y skill's
+     `.visually-hidden` pattern. */
+  input[aria-hidden="true"] {
+    position: absolute;
+    inline-size: 0.0625rem;
+    block-size: 0.0625rem;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 }
 ```
 
-The input is removed from the visual tree but the form state still works. `aria-hidden="true"` removes it from the accessibility tree, so screen readers announce only the label.
+The input is hidden visually but **remains focusable** — the label provides the visible control while the real radio/checkbox still receives keyboard focus and holds `:checked`. Do **not** use `display: none` here: it removes the input from the tab order, so a keyboard or AT user can no longer toggle the state.
+
+> **Open a11y nuance to resolve:** `aria-hidden="true"` on a *focusable* input is itself an ARIA anti-pattern (a focusable element should not be hidden from the accessibility tree). The label carries `role="button"` + `aria-label`. Whether the input should keep `aria-hidden`, or the accessible name/role should move entirely to the label with the input exposed, is a pattern-level decision worth confirming — flagged, not silently changed.
 
 ## Why this pattern instead of a button
 
@@ -117,6 +128,18 @@ The `:has()` selector at the parent level reads the checked state of a descendan
 - Never store state in `data-*` (forbidden) or in JS variables
 - Never use `addEventListener` to track the state
 - Never animate state via JS — see the `transitions` reference
+
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+- `:checked` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:checked
+- `:not()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:not
+- `:empty` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
+- `@container` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@container
+
+**D7460N Architecture:** serves CSS-replaces-JS UI behavior; state machines (radio/checkbox in label + :has()); browser-native accessibility. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

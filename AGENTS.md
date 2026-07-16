@@ -65,6 +65,10 @@ Inactive: files with trailing underscores. `docs/` and `d7460n-mcp-server/` are 
 | Naming files, tags, skills | [`naming`](./.agents/skills/naming/SKILL.md) |
 | Headers, CSP, hosting | [`security`](./.agents/skills/security/SKILL.md) |
 | Manifest, service worker, install behavior | [`pwa`](./.agents/skills/pwa/SKILL.md) |
+| SPA shell, radio-nav routing, view lifecycle, view transitions | [`spa`](./.agents/skills/spa/SKILL.md) |
+| Choosing an approach, trade-offs, "which tool / why this design" | [`principles`](./.agents/skills/principles/SKILL.md) |
+| Verifying a change before it ships | [`testing`](./.agents/skills/testing/SKILL.md) |
+| Session start/end, handoff, backlog, board, docs | [`session`](./.agents/skills/session/SKILL.md) |
 
 If a task touches more than one concern, do each part inside its own skill.
 
