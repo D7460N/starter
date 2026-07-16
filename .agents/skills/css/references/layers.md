@@ -1,18 +1,11 @@
 # Layers
 
-`@layer` controls cascade order without specificity wars or `!important`.
+`@layer` sets cascade priority by order — no specificity wars, no `!important`.
+(`@layer` is Baseline: available across browsers since March 2022.)
 
-## Only this layer order is used
+## Every rule lives in a named layer
 
-Declared once at the project root, before any other rules:
-
-```css
-@layer reset, fonts, layout, typography, themes, transitions, inputs, media, state, loading;
-```
-
-Everything in the project is wrapped in one of those layers. A rule outside any layer wins over a rule inside any layer — that is forbidden, so every rule lives inside a layer.
-
-## How to write a rule
+All D7460N CSS is wrapped in a `@layer` named for its concern — one layer per file.
 
 ```css
 @layer layout {
@@ -23,29 +16,39 @@ Everything in the project is wrapped in one of those layers. A rule outside any 
 }
 ```
 
-The layer name describes the concern. Grouping is by concern, not by file.
+A normal (non-`!important`) rule left **outside** any layer overrides every layered rule, so nothing is left unlayered — that is what keeps our styles deliberately low priority (see the interop note below).
+
+## Layer order = load order (no master list)
+
+There is **no master `@layer` order statement**. A layer takes its priority from **where its name first appears**, and in this project that is the **`<link>` order in `index.html`**. The load order *is* the cascade (the "C" in CSS), used on purpose: link the most foundational file first (e.g. `reset`) so it is **lowest priority**, and each later `<link>` layers on top.
+
+A master order list would just be a second source of truth to keep in sync with the link order — extra complexity for no gain — so it is omitted. (Re-declaring an existing layer name later only appends rules to it; it does not change the order already established by first appearance.)
 
 ## How to override
 
-When a later rule needs to win:
+- **Within a layer** — be more specific to the actual element.
+- **Across layers** — put the override in a file that links later.
+- **Never** `!important`.
 
-- **Within the same layer** — increase specificity by being more specific to the actual element.
-- **Across layers** — put the override in a layer declared later in the order list.
-- **Never** use `!important` to win.
+## Why no `!important`
 
-## Precedence summary
-
-1. Layered rules in declared order — last layer wins.
-2. Unlayered rules win over layered rules. (We forbid unlayered rules to avoid this.)
-3. `!important` wins over everything. (Forbidden.)
+```css
+/* No !important — ever.
+   Normal layered styles are deliberately LOW priority: a consuming system's own
+   unlayered styles then win by default (interop). !important throws that away —
+   important declarations beat the whole normal cascade, important *layered*
+   styles beat important *unlayered* ones, and among important layers the order
+   is INVERTED. So !important defeats the entire point of layers.
+   We win priority by layer/load order, never by escalation. */
+```
 
 ## What layers never do
 
-- Never use `!important` inside a layer
-- Never put a rule outside a layer
-- Never reorder layers per file (the order list is declared once)
+- Never use `!important`
+- Never leave a rule outside a layer
+- Never declare a master layer-order list — the `<link>` order is the order
 
 ## Reference
 
-- MDN @layer: https://developer.mozilla.org/en-US/docs/Web/CSS/@layer
+- MDN `@layer`: https://developer.mozilla.org/en-US/docs/Web/CSS/@layer
 - W3C CSS Cascading and Inheritance Level 5: https://www.w3.org/TR/css-cascade-5/
