@@ -53,11 +53,11 @@ Components respond to their container, not the viewport:
     container-type: inline-size;
     container-name: nav;
   }
-}
 
-@container nav (max-width: 25rem) {
-  nav > label {
-    /* compact nav for narrow containers */
+  @container nav (max-width: 25rem) {
+    nav > label {
+      /* compact nav for narrow containers */
+    }
   }
 }
 ```
@@ -113,6 +113,12 @@ Only `<section>`, `<ul>`, `<ol>` receive overflow:
 This pattern produces intrinsically sticky headers (header is in the non-scrolling parent; only the section scrolls).
 
 ## Subgrid for aligned nested grids
+
+> **Future — not in use yet.** Subgrid is the intended mechanism for aligning
+> data-table cells to their header columns. The snippet below uses `.parent` /
+> `.child-grid` classes purely as a generic demo — D7460N runtime CSS never uses
+> classes, so this does not apply to any live element. Kept here as a reminder for
+> the table-alignment effort. Tracked in AutoCSS board issue #99.
 
 When inner grids must align with parent tracks:
 
