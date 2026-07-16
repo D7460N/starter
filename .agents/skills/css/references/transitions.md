@@ -1,49 +1,51 @@
 # Transitions
 
-Project file: `assets/css/transitions.css` (one skill ↔ one file).
+Universal transitions driven by custom properties. View transitions for cross-document navigation. `prefers-reduced-motion` honored.
 
-**Two mechanisms live here.** Same-document changes — SPA tab-content swaps, `<aside>`/form reveals, `:empty` → `:not(:empty)` flips — fade via a **universal `*` transition** with `transition-behavior: allow-discrete`. Genuine **cross-document navigations** fade via `@view-transition`. First paint fades via `@starting-style`. `prefers-reduced-motion` is honored throughout. No JavaScript animates anything; JS only injects data, and CSS reacts.
-
-## Universal transition — this is what fades same-document (tab) content
+## Only this universal transition setup
 
 ```css
-:root {
-  --transition-duration: 500ms;
-  --transition-property: visibility, opacity, display, transform,
-    background, background-color, border-color, color, min-width;
-  --transition-timing-function: ease-in;
+@layer transitions {
+  :root {
+    --transition-property: visibility, opacity, display, transform, background, background-color, border-color, color, min-width;
+    --transition-timing-function: ease-in;
+    --transition-duration: 500ms;
 
-  scroll-behavior: smooth;
-  interpolate-size: allow-keywords;
-}
+    scroll-behavior: smooth;
+    interpolate-size: allow-keywords;
+  }
 
-* {
-  transition-property: var(--transition-property);
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-  transition-behavior: allow-discrete;
-}
-```
-
-One `*` rule applies the same transition to every element; a per-element rule later in the cascade overrides it only where genuinely needed. Timing lives in `:root` custom properties — never magic-numbered inline.
-
-**`transition-behavior: allow-discrete` is the load-bearing part.** By default the *discrete* properties `display` and `visibility` snap; `allow-discrete` lets them transition. When tab content is injected into the **same document** — an element flips `display: none` → a visible value, or goes `:empty` → `:not(:empty)` — the browser holds the visible value across the whole duration and animates `opacity`, so the incoming tab **fades in** instead of popping. (Per MDN: when animating `display` from `none` to a visible value, the value flips at `0%` of the duration so the content shows throughout. `transition-behavior` is **Baseline 2024**.)
-
-`interpolate-size: allow-keywords` lets sizes animate to/from intrinsic keywords such as `auto` and `min-content`. `scroll-behavior: smooth` animates programmatic and anchored scrolls.
-
-## Reduced motion is honored
-
-```css
-@media (prefers-reduced-motion) {
   * {
-    transition-duration: 0ms;
+    transition-property: var(--transition-property);
+    transition-timing-function: var(--transition-timing-function);
+    transition-duration: var(--transition-duration);
+    transition-behavior: allow-discrete;
   }
 }
 ```
 
-`prefers-reduced-motion` with no value means `reduce`. When the OS requests reduced motion, every transition becomes instant.
+The universal `*` selector applies the same transition to everything. Per-element overrides come later in the cascade if needed.
 
-## Cross-document view transitions — navigations only, NOT SPA tab swaps
+`transition-behavior: allow-discrete` enables transitions on discrete properties like `display: none → display: block` and `visibility` — this is what fades same-document (tab) content as it is injected.
+`interpolate-size: allow-keywords` enables transitions to/from `auto`, `min-content`, etc.
+
+## Reduced motion is honored
+
+```css
+@layer transitions {
+  @media (prefers-reduced-motion) {
+    * {
+      transition-duration: 0ms;
+    }
+  }
+}
+```
+
+When the user has enabled reduced motion in their OS, transitions become instant.
+
+## View transitions
+
+Native cross-document fade-and-morph — on navigations only, not same-document tab swaps:
 
 ```css
 @media (prefers-reduced-motion: no-preference) {
@@ -53,7 +55,6 @@ One `*` rule applies the same transition to every element; a per-element rule la
 }
 
 @layer view-transitions {
-  /* Don't capture the root, so the page stays interactive while elements animate. */
   @layer no-root {
     :root {
       view-transition-name: none;
@@ -66,9 +67,7 @@ One `*` rule applies the same transition to every element; a per-element rule la
 }
 ```
 
-`@view-transition { navigation: auto }` opts both the current and destination documents into a fade — **only on same-origin cross-document navigations** (a `navigationType` of `traverse`, `push`, or `replace`). It does **not** fire when content changes inside the same document, so it is **not** what animates this SPA's tab swaps — the universal `*` transition above is. It is guarded by `prefers-reduced-motion: no-preference`. `view-transition-name: none` on `:root` (root not captured) plus `pointer-events: none` on `::view-transition` keep the page interactive while the animation runs.
-
-**Boundary to know:** same-document view transitions *do* exist, but they require the **JavaScript** `document.startViewTransition()` API — forbidden in this architecture. So same-document fades use the universal `*` transition; `@view-transition` is reserved for real navigations. (`@view-transition` is **"Limited availability," not Baseline** — MDN.)
+`navigation: auto` enables view transitions on same-origin cross-document navigations (a `navigationType` of `traverse`, `push`, or `replace`); it does not fire on same-document changes. `view-transition-name: none` on `:root` keeps the root out of the capture, and `pointer-events: none` on `::view-transition` keeps the page interactive during the animation.
 
 ## Initial-load fade
 
@@ -81,23 +80,19 @@ One `*` rule applies the same transition to every element; a per-element rule la
 }
 ```
 
-`@starting-style` supplies the "before" state for an element's first style resolution. On first paint the universal `*` transition animates from hidden/transparent to each element's real computed value, fading the page in. Without it, first paint would not transition — browsers do not transition an element's initial styles, nor a `display` change from `none`, unless a starting style is given.
+`@starting-style` defines the "before" state. The browser transitions from this to the actual computed value on first paint.
 
 ## What transitions never do
 
-- Never animate via JavaScript when CSS can — no `setInterval` / `requestAnimationFrame` for UI motion, and no `document.startViewTransition()` (same-document view transitions are JS; this architecture uses the universal `*` transition instead).
-- Never `transition: all` — the animated properties are listed explicitly in `--transition-property`.
-- Never magic-number a timing value outside the `:root` custom properties.
-- Never a `class` / `id` / `data-*` selector — those attributes do not exist in this HTML.
+- Never animate via JavaScript when CSS can do it
+- Never use `setInterval` or `requestAnimationFrame` for UI animation
+- Never use `transition: all` (over-broad — list properties explicitly)
+- Never use timing values that magic-number out of `:root` custom properties
 
 ## Reference
 
-- MDN `transition-behavior` (Baseline 2024): https://developer.mozilla.org/en-US/docs/Web/CSS/transition-behavior
+- MDN `transition`: https://developer.mozilla.org/en-US/docs/Web/CSS/transition
 - MDN `@starting-style`: https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style
-- MDN `@view-transition` (cross-document): https://developer.mozilla.org/en-US/docs/Web/CSS/@view-transition
-- MDN View Transition API (same-document `document.startViewTransition()`): https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API
-- MDN `interpolate-size`: https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size
+- MDN view transitions: https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API
 - MDN `prefers-reduced-motion`: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
-- W3C CSS View Transitions Level 2: https://drafts.csswg.org/css-view-transitions-2/
-- WebKit — two lines of cross-document view transitions: https://webkit.org/blog/16967/two-lines-of-cross-document-view-transitions-code-you-can-use-on-every-website-today/
-- Bram.us — view transitions & page interactivity: https://www.bram.us/2025/01/29/view-transitions-page-interactivity/
+- W3C View Transitions Level 1: https://www.w3.org/TR/css-view-transitions-1/
