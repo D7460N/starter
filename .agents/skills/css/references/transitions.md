@@ -72,10 +72,12 @@ Native cross-document fade-and-morph — on navigations only, not same-document 
 ## Initial-load fade
 
 ```css
-@starting-style {
-  * {
-    visibility: hidden;
-    opacity: 0;
+@layer transitions {
+  @starting-style {
+    * {
+      visibility: hidden;
+      opacity: 0;
+    }
   }
 }
 ```
