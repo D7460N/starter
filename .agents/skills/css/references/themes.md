@@ -108,6 +108,19 @@ System preference remains the default; the toggle only overrides when checked.
 - Never use `class="dark-mode"` to switch themes — `color-scheme` and `light-dark()` handle it
 - Never re-style native form controls when `accent-color` covers the need
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `color-scheme` — **Baseline Widely available (Jan 2022)** — https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+- `oklch()` — **Baseline Widely available (May 2023)** — https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch
+- `light-dark()` — **Baseline 2024 (Newly available, May 2024)** — https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark
+- `color-mix()` — **Baseline Widely available (May 2023)** — https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
+- relative color syntax `oklch(from …)` — **Newly available (~2024)** — https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Relative_colors
+- `accent-color` — **Limited availability (not Baseline)** — https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color
+
+**D7460N Architecture:** serves light/dark via color-scheme + light-dark(); oklch for perceptual uniformity; zero preprocessor. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `color-scheme`: https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme

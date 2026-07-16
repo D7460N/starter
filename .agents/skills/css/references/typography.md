@@ -100,6 +100,17 @@ Percentage `font-size` scales with the inherited size, preserving the relative r
 - Never declares `font-family` per element (set once at `:root`, override only for headings)
 - Never ships text without `text-wrap: balance` or `pretty`
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `clamp()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
+- container query units `cqi` — **Baseline (2022–23)** — https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_size_and_style_queries
+- `text-wrap: balance` / `pretty` — **Baseline 2024 (Newly available, Mar 2024)** — https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap
+- `text-decoration-thickness` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness
+
+**D7460N Architecture:** serves fluid intrinsic sizing (clamp + cqi); no static font sizes. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `clamp()`: https://developer.mozilla.org/en-US/docs/Web/CSS/clamp

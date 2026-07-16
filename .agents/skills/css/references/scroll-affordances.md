@@ -80,6 +80,18 @@ Top and bottom scroll-shadow indicators that fade in only when more content exis
 - Never use untyped custom properties for animated values (use `@property`)
 - Never hardcode shadow colors (derive from theme via `oklch(from ...)`)
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `@property` — **Baseline 2024 (Newly available)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@property
+- `container-type: scroll-state` — **Limited availability / experimental (Chromium only, Chrome 133+)** — https://developer.mozilla.org/en-US/docs/Web/CSS/container-type
+- `@container scroll-state()` — **Limited availability / experimental (Chromium only)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@container#scroll-state_queries
+- `cqh` / `cqw` units — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/length#container_query_length_units
+- relative color `oklch(from …)` — **Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch
+
+**D7460N Architecture:** serves `@property`-typed animatable custom props; scroll-state queries (no JS scroll listeners). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `@property`: https://developer.mozilla.org/en-US/docs/Web/CSS/@property

@@ -12,11 +12,11 @@ The component declares itself a container, then descendants respond to its size:
     container-type: inline-size;
     container-name: nav;
   }
-}
 
-@container nav (max-width: 25rem) {
-  nav > label {
-    /* compact nav */
+  @container nav (max-width: 25rem) {
+    nav > label {
+      /* compact nav */
+    }
   }
 }
 ```
@@ -29,10 +29,9 @@ Respond to a custom property's value:
 
 ```css
 @layer state {
-  .progress-container {
-    container-type: style;
-  }
-
+  /* Style queries need no container-type — every element is a style-query
+     container by default. The queried custom property (--progress) is read
+     from the nearest ancestor that sets it. */
   @container style(--progress > 75%) {
     .bar { background: oklch(70% 0.18 145); }
   }
@@ -43,7 +42,7 @@ Respond to a custom property's value:
 }
 ```
 
-Range comparisons (`>`, `<`, `<=`, `>=`) avoid stacked discrete blocks.
+Range comparisons (`>`, `<`, `<=`, `>=`, `=`) avoid stacked discrete blocks. The range form compares resolved values numerically, so `--progress` must hold a numeric value (e.g. a `<percentage>`); the plain form `style(--x: value)` compares against the computed value instead.
 
 ## Scroll-state queries
 
@@ -71,6 +70,16 @@ The header gets a shadow when it becomes sticky. No JS scroll listener.
 - Never use viewport `@media` for component-scoped responsiveness (containers do that)
 - Never use static `min-width` / `max-width` breakpoints
 - Never read scroll position via JavaScript when scroll-state queries cover the case
+
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `@container` (size + style queries) — **Baseline Widely available (Feb 2023)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@container
+- `container-type` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/container-type
+- `container-type: scroll-state` + `scroll-state()` queries — **Limited availability / experimental (Chromium only)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@container#scroll-state_queries
+
+**D7460N Architecture:** serves container queries replace media queries; intrinsic sizing (no static breakpoints). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

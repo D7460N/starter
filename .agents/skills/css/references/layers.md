@@ -48,6 +48,14 @@ A master order list would just be a second source of truth to keep in sync with 
 - Never leave a rule outside a layer
 - Never declare a master layer-order list — the `<link>` order is the order
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `@layer` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@layer
+
+**D7460N Architecture:** serves cascade control without `!important` and deliberate low-priority interop (a consuming system's unlayered styles win by default) — upholding Separation of Concerns, Least Power, and zero-dependency, browser-native styling. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `@layer`: https://developer.mozilla.org/en-US/docs/Web/CSS/@layer

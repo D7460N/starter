@@ -46,7 +46,7 @@ Scroll-snap with native `::scroll-button` and `::scroll-marker` pseudo-elements.
     background: color-mix(in srgb, currentColor 30%, transparent);
   }
 
-  .carousel li::scroll-marker:checked {
+  .carousel li::scroll-marker:target-current {
     background: var(--accent);
   }
 }
@@ -67,10 +67,21 @@ The browser provides:
 - Never animate slides via `setInterval`
 - Never replace the native `<ul>` with a `<div>` carousel container
 
+## Baseline & support (verified via MDN, 2026-07)
+
+Scroll-snap is safe everywhere; the carousel pseudo-elements are Chromium-only — plan for graceful degradation to a plain scroll-snap list.
+
+- `scroll-snap-type`, `scroll-snap-align` — **Baseline Widely available**
+- `content` alt-text (`"⬅" / "Scroll left"`) — **Baseline Widely available**
+- `::scroll-button()`, `::scroll-marker`, `::scroll-marker:target-current`, `scroll-marker-group` — **Limited availability / experimental (Chromium only)**; no Firefox/Safari yet
+
+**D7460N Architecture:** serves *cutting-edge experimental CSS* and *no JS carousel libraries, no event listeners* — canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `scroll-snap-type`: https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type
 - MDN `::scroll-button`: https://developer.mozilla.org/en-US/docs/Web/CSS/::scroll-button
 - MDN `::scroll-marker`: https://developer.mozilla.org/en-US/docs/Web/CSS/::scroll-marker
+- MDN `:target-current`: https://developer.mozilla.org/en-US/docs/Web/CSS/:target-current
 - MDN `scroll-marker-group`: https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-marker-group
 - W3C CSS Overflow Module Level 5: https://www.w3.org/TR/css-overflow-5/

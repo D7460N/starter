@@ -74,6 +74,17 @@ When the inner scroll reaches its end, scroll does not chain to the page behind.
 - Never apply scroll to `<div>`, `<article>`, `<header>`, etc. — only to the four permitted elements
 - Never use JavaScript to react to scroll position (use `scroll-state` container queries — see containers.md)
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `scrollbar-width` — **Baseline 2024 (Newly available, Dec 2024)** — https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width
+- `scrollbar-color` — **Baseline 2025 (Newly available, Dec 2025)** — https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color
+- `scrollbar-gutter` — **Baseline 2024 (Newly available, Dec 2024)** — https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter
+- `overscroll-behavior` — **Limited availability (not Baseline)** — https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior
+
+**D7460N Architecture:** serves limited scrollable elements; standard scrollbar properties, never `::-webkit-scrollbar`. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `scrollbar-color`: https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color
