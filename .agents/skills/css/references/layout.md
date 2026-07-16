@@ -146,6 +146,24 @@ Inner grid inherits parent tracks. No track duplication.
 - Never magic numbers (use `clamp`, `minmax`, container query units, custom properties)
 - Never `!important`
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `display: grid` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/display
+- `minmax()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/minmax
+- `min()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/min
+- `subgrid` — **Baseline Widely available** (interoperable 2023-09-12; crossed 30-month threshold 2026-03) — https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid
+- `container-type` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/container-type
+- `@container` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@container
+- `:has()` — **Baseline Widely available** (interoperable 2023-12-19; crossed 30-month threshold 2026-06) — https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+- `:where()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:where
+- `:not()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:not
+- `:empty` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
+- Dynamic viewport units (`dvh` etc.) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/length
+
+**D7460N Architecture:** serves Grid-only Holy Grail layout, breakpoint-free intrinsic sizing (`minmax`/`min`/auto-fit), container-driven component responsiveness, and CSS-replaces-JS visibility keyed to data presence (`:empty`/`:not(:empty)`/`:has()`) — upholding Least Power, Separation of Concerns, zero dependencies, and no wrapper elements. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN CSS Grid: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
