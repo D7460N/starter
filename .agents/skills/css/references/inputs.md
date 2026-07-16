@@ -52,7 +52,7 @@ Form-control reset to inherit typography. Validation display via `:user-invalid`
 ```css
 @layer inputs {
   select,
-  select::picker(select) {
+  ::picker(select) {
     appearance: base-select;
   }
 

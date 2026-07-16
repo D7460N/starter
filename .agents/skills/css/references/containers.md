@@ -12,11 +12,11 @@ The component declares itself a container, then descendants respond to its size:
     container-type: inline-size;
     container-name: nav;
   }
-}
 
-@container nav (max-width: 25rem) {
-  nav > label {
-    /* compact nav */
+  @container nav (max-width: 25rem) {
+    nav > label {
+      /* compact nav */
+    }
   }
 }
 ```
@@ -29,10 +29,9 @@ Respond to a custom property's value:
 
 ```css
 @layer state {
-  .progress-container {
-    container-type: style;
-  }
-
+  /* Style queries need no container-type — every element is a style-query
+     container by default. The queried custom property (--progress) is read
+     from the nearest ancestor that sets it. */
   @container style(--progress > 75%) {
     .bar { background: oklch(70% 0.18 145); }
   }
@@ -43,7 +42,7 @@ Respond to a custom property's value:
 }
 ```
 
-Range comparisons (`>`, `<`, `<=`, `>=`) avoid stacked discrete blocks.
+Range comparisons (`>`, `<`, `<=`, `>=`, `=`) avoid stacked discrete blocks. The range form compares resolved values numerically, so `--progress` must hold a numeric value (e.g. a `<percentage>`); the plain form `style(--x: value)` compares against the computed value instead.
 
 ## Scroll-state queries
 
