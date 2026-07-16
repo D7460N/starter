@@ -33,6 +33,13 @@ The browser handles toggle, click-outside-to-close, Escape-to-close, and focus m
 
 `popover="hint"` plus `interestfor` produces a tooltip that appears on hover and focus, with no JavaScript event listeners.
 
+> **Verify `interestfor` before relying on it.** As of this writing it has **no MDN
+> reference page**, and the interest-invokers proposal was renamed during
+> standardization (`interesttarget` → `interestfor`), so the attribute name is not
+> yet stable. Re-check MDN before shipping this half of the example. (`popover="hint"`
+> itself *is* documented — MDN lists the popover state as `auto | hint | manual`:
+> https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover)
+
 ## Modal dialog via Invoker Commands
 
 ```html
