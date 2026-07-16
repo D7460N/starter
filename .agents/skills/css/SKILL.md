@@ -36,7 +36,7 @@ The architecture mandates these specific modern CSS features for these specific 
 
 1. **CSS uses native accessibility-aware selectors** (`:focus-visible`, `:user-invalid`, `:user-valid`, `:disabled`, `[aria-*]` matchers, etc.) to bake accessibility into styling rather than relying on classes or scripted state.
 2. **Initial-load page content fades in via `@starting-style`.** JavaScript does not orchestrate entry animations.
-3. **Tab/page content transitions use `@view-transition`.** JavaScript does not animate tab changes.
+3. **Same-document (SPA tab) content transitions come from the universal `*` transition + `transition-behavior: allow-discrete`; `@view-transition` opts into transitions on cross-document navigations only.** JavaScript does not animate tab changes — it only injects data, and CSS transitions it. (Same-document view transitions would require the JS `document.startViewTransition()` API, which is forbidden here.)
 4. **Hover and popover content uses CSS anchor positioning** (`anchor-name` / `position-anchor`) to keep content on-screen. Hand-rolled positioning math via JS or magic numbers is forbidden.
 5. **Cutting-edge experimental CSS is used without regard for browser support.** Cross-browser compatibility is not a concern.
 6. **Component-relative styling uses `@container` queries.** Components respond to their actual available space, not to viewport breakpoints.

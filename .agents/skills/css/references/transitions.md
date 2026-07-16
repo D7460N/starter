@@ -7,10 +7,11 @@ Universal transitions driven by custom properties. View transitions for cross-do
 ```css
 @layer transitions {
   :root {
-    --transition-property: display, color, opacity, visibility, background, background-color, border-color;
+    --transition-property: visibility, opacity, display, transform, background, background-color, border-color, color, min-width;
     --transition-timing-function: ease-in;
-    --transition-duration: 250ms;
+    --transition-duration: 500ms;
 
+    scroll-behavior: smooth;
     interpolate-size: allow-keywords;
   }
 
@@ -25,7 +26,7 @@ Universal transitions driven by custom properties. View transitions for cross-do
 
 The universal `*` selector applies the same transition to everything. Per-element overrides come later in the cascade if needed.
 
-`transition-behavior: allow-discrete` enables transitions on properties like `display: none → display: block`.
+`transition-behavior: allow-discrete` enables transitions on discrete properties like `display: none → display: block` and `visibility` — this is what fades same-document (tab) content as it is injected.
 `interpolate-size: allow-keywords` enables transitions to/from `auto`, `min-content`, etc.
 
 ## Reduced motion is honored
@@ -44,50 +45,44 @@ When the user has enabled reduced motion in their OS, transitions become instant
 
 ## View transitions
 
-Native cross-document fade-and-morph:
+Native cross-document fade-and-morph — on navigations only, not same-document tab swaps:
 
 ```css
-@layer transitions {
-  @media (prefers-reduced-motion: no-preference) {
-    @view-transition {
-      navigation: auto;
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+@layer view-transitions {
+  @layer no-root {
+    :root {
+      view-transition-name: none;
     }
-  }
 
-  :root {
-    view-transition-name: none;
-  }
-
-  ::view-transition {
-    pointer-events: none;
+    ::view-transition {
+      pointer-events: none;
+    }
   }
 }
 ```
 
-`navigation: auto` enables view transitions on all same-origin navigations. `view-transition-name: none` on `:root` allows pointer interaction during the animation.
+`navigation: auto` enables view transitions on same-origin cross-document navigations (a `navigationType` of `traverse`, `push`, or `replace`); it does not fire on same-document changes. `view-transition-name: none` on `:root` keeps the root out of the capture, and `pointer-events: none` on `::view-transition` keeps the page interactive during the animation.
 
 ## Initial-load fade
 
 ```css
-@starting-style {
-  * {
-    visibility: hidden;
-    opacity: 0;
+@layer transitions {
+  @starting-style {
+    * {
+      visibility: hidden;
+      opacity: 0;
+    }
   }
 }
 ```
 
 `@starting-style` defines the "before" state. The browser transitions from this to the actual computed value on first paint.
-
-## Custom easing without cubic-bezier
-
-```css
-.bouncing {
-  transition: transform 0.6s linear(0, 1.2 60%, 0.9, 1.05, 1);
-}
-```
-
-`linear()` interpolates between keyframe values. Produces curves that `cubic-bezier()` cannot.
 
 ## What transitions never do
 
@@ -102,5 +97,4 @@ Native cross-document fade-and-morph:
 - MDN `@starting-style`: https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style
 - MDN view transitions: https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API
 - MDN `prefers-reduced-motion`: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
-- MDN `linear()` easing: https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function/linear
 - W3C View Transitions Level 1: https://www.w3.org/TR/css-view-transitions-1/
