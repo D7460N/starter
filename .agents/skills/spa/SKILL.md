@@ -72,6 +72,16 @@ Switching views is a **same-document** change, so it fades via the universal `*`
 | View JSON shape | `json` |
 | Offline shell caching + install | `pwa` |
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+- `transition-behavior` (incl. `allow-discrete`) — **Baseline 2024 Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/transition-behavior
+- `@view-transition` — **Limited availability** — https://developer.mozilla.org/en-US/docs/Web/CSS/@view-transition
+
+**D7460N Architecture:** serves the single-document SPA model — radio-nav routing read by CSS and the `oninput` data lifecycle. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `:has()`: https://developer.mozilla.org/en-US/docs/Web/CSS/:has

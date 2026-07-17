@@ -118,3 +118,24 @@ Each feature has its own reference. Read only the reference for the feature you 
 - Never magic numbers
 - Never `class`, `id`, or `data-*` selectors (those attributes don't exist in this architecture's HTML)
 - Never inline `<style>` or `style=` attributes
+
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+- `:focus-visible` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
+- `@layer` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@layer
+- `@container` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@container
+- `oklch()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch
+- `light-dark()` — **Baseline 2024 Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark
+- `@property` — **Baseline 2024 Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@property
+- `@starting-style` — **Baseline 2024 Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style
+- `transition-behavior` — **Baseline 2024 Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/transition-behavior
+- `content-visibility` — **Baseline 2024 Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/content-visibility
+- `anchor-name` (anchor positioning) — **Baseline 2026 Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/anchor-name
+- `@view-transition` — **Limited availability** — https://developer.mozilla.org/en-US/docs/Web/CSS/@view-transition
+- `if()` — **Limited availability** — https://developer.mozilla.org/en-US/docs/Web/CSS/if
+- `@function` — **Limited availability** — https://developer.mozilla.org/en-US/docs/Web/CSS/@function
+
+**D7460N Architecture:** serves the CSS UI-runtime rules — layout, state, themes, transitions, visibility, and loading. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
