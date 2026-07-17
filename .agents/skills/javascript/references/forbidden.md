@@ -69,6 +69,14 @@ The two permitted utilities — `removeInlineStyles` and `clearFieldset` — exi
 | Functions that mutate their input arguments | Not idempotent |
 | Functions whose behavior changes based on call count | Not idempotent |
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- Dynamic `import()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import
+
+**D7460N Architecture:** serves the catalog of forbidden JavaScript patterns and the layer that owns each concern instead. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - The full reasoning chain for each prohibition lives in the relevant skill (html, css, javascript)

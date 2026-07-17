@@ -74,6 +74,21 @@ When the project sets cookies (typically server-side):
 
 Session cookies must use `Secure` and `HttpOnly`. CSRF tokens go in cookies + matching headers, not in `localStorage`.
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `Content-Security-Policy` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy
+- `Strict-Transport-Security` (HSTS) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security
+- `Referrer-Policy` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy
+- `Permissions-Policy` — **Limited availability** (Experimental; not supported in Firefox or Safari) — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy
+- `Cross-Origin-Opener-Policy` — **MDN assigns no Baseline tier**; cross-browser per BCD — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Opener-Policy
+- `Cross-Origin-Embedder-Policy` — **MDN assigns no Baseline tier**; cross-browser per BCD (Safari 15.2+) — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy
+- `Cross-Origin-Resource-Policy` — **MDN assigns no Baseline tier**; cross-browser per BCD — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Resource-Policy
+- `X-Content-Type-Options: nosniff` — **MDN assigns no Baseline tier**; universally supported — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options
+
+**D7460N Architecture:** serves the recommended HTTP security response headers and their rationale. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN HTTP headers index: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers

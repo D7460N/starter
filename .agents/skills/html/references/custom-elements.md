@@ -55,7 +55,7 @@ For data-row elements, the `naming` skill's `toTagName()` rule produces names th
 
 ## No JavaScript extension
 
-Custom elements are **not** registered with `customElements.define(...)`. They are plain unknown elements (`HTMLUnknownElement`). The browser renders them as inline-by-default; CSS gives them their actual layout.
+Custom elements are **not** registered with `customElements.define(...)`. Because their names are valid custom-element names (hyphenated), the browser gives them the `HTMLElement` interface as *undefined custom elements* — **not** `HTMLUnknownElement`, which MDN defines as an *invalid* HTML element (a non-hyphenated unknown tag). The browser renders them inline-by-default; CSS gives them their actual layout.
 
 Why no extension:
 
@@ -93,6 +93,14 @@ If a future need genuinely requires extension (e.g., shadow DOM encapsulation), 
 - Never have inline styles
 - Never get registered with `customElements.define()` in the default architecture
 - Never substitute for a re-engineering of weak design
+
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- Custom elements (autonomous) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
+
+**D7460N Architecture:** serves the two-category custom-element discipline that keeps markup semantic and div-less. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

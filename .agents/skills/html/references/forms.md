@@ -105,6 +105,15 @@ For forms whose fields come from JSON, the schema declares:
 - `class` or `id` (except where required by external integration, in which case surface to user first)
 - `<br>` for layout — use CSS Grid
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `:user-invalid` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:user-invalid
+- `:user-valid` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:user-valid
+
+**D7460N Architecture:** serves native, JS-free form validation over semantic fieldset/label form structure. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - HTML `<form>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form

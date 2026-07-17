@@ -65,6 +65,17 @@ The architecture uses cutting-edge CSS. Before relying on a feature, confirm its
 - Never treats a green unit check as proof a user-facing flow works — drive the flow
 - Never skips the air-gap test under time pressure
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `@supports` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@supports
+- `getComputedStyle` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+- `prefers-reduced-motion` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion
+- scroll-state container queries — **Limited availability** — https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Conditional_rules/Container_scroll-state_queries
+
+**D7460N Architecture:** serves how to verify a change before it ships. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN Testing (learn): https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing

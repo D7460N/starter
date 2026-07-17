@@ -86,6 +86,16 @@ One `<script type="module">` at the end of `<body>`, outside `<app-container>`. 
 - More than one `<script>` tag
 - More than one `<title>` element
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- Custom elements (autonomous) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
+- `<script type="module">` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script
+- `<link rel="manifest">` — **Baseline Limited availability** (no Firefox desktop support) — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/manifest
+
+**D7460N Architecture:** serves the single-file canonical shell — Holy Grail regions, PWA manifest, and one module entrypoint. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - HTML `<head>` element guide: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML

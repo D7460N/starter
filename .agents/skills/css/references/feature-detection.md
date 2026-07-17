@@ -44,6 +44,16 @@ Only loads the file when the browser supports the feature.
 - Never use computed-style probing (`getComputedStyle()` heuristics)
 - Never assume a feature exists — declare the supported path inside `@supports`
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `@supports` (feature queries) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@supports
+- `@supports at-rule()` — **Limited availability / experimental (Chromium only)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#at-rule
+- `@view-transition` (the detected feature in the example) — **Limited availability** (no Firefox) — https://developer.mozilla.org/en-US/docs/Web/CSS/@view-transition
+
+**D7460N Architecture:** serves native `@supports` feature detection — the CSS-only alternative to JS capability probing. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `@supports`: https://developer.mozilla.org/en-US/docs/Web/CSS/@supports

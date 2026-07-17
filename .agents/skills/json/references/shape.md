@@ -93,6 +93,14 @@ Empty strings, `null`, missing keys, and absent rows are all valid. CSS reacts:
 - Functions
 - DOM references
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- No version-sensitive web-platform features are referenced here — everything used is **Baseline Widely available**.
+
+**D7460N Architecture:** serves the canonical shell, page, and list-rendered payload shapes. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - JSON.org spec: https://www.json.org/

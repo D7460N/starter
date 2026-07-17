@@ -82,3 +82,11 @@ When a topic legitimately spans two concerns (e.g., state-machines have an HTML 
 - `css/references/state-machines.md` — the styling side
 
 They reference each other in their "Reference" sections by text path, never as a single file linked in two places.
+
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- No version-sensitive web-platform features are referenced here — everything used is **Baseline Widely available**.
+
+**D7460N Architecture:** serves concrete good/bad naming examples for each named-thing kind. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md

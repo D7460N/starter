@@ -57,6 +57,17 @@ The browser handles toggle, click-outside-to-close, Escape-to-close, and focus m
 - Never use ARIA hacks to simulate popover behavior — use the native attribute
 - Never use `<div>` for a menu — use `<menu>` (which contains `<li>` items)
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- Popover API (`popover` attribute) — **Baseline 2024 Newly available** — https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
+- `<dialog>` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog
+- Invoker Commands (`command` / `commandfor`) — **Baseline 2025 Newly available** — https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API
+- `<dialog closedby>` (light-dismiss) — **Limited availability** (no Safari release yet) — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog
+
+**D7460N Architecture:** serves native popover/menu behavior via HTML attributes and invokers — no JS toggle, click-outside, or Escape handlers. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN popover API: https://developer.mozilla.org/en-US/docs/Web/API/Popover_API

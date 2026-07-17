@@ -67,15 +67,15 @@ The browser provides:
 - Never animate slides via `setInterval`
 - Never replace the native `<ul>` with a `<div>` carousel container
 
-## Baseline & support (verified via MDN, 2026-07)
+## Baseline & support
 
-Scroll-snap is safe everywhere; the carousel pseudo-elements are Chromium-only — plan for graceful degradation to a plain scroll-snap list.
+_Checked against MDN as of 2026-07-16._
 
-- `scroll-snap-type`, `scroll-snap-align` — **Baseline Widely available**
-- `content` alt-text (`"⬅" / "Scroll left"`) — **Baseline Widely available**
-- `::scroll-button()`, `::scroll-marker`, `::scroll-marker:target-current`, `scroll-marker-group` — **Limited availability / experimental (Chromium only)**; no Firefox/Safari yet
+- `scroll-snap-type`, `scroll-snap-align` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type
+- `content` alt-text (`"⬅" / "Scroll left"`) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/content
+- `::scroll-button()`, `::scroll-marker`, `::scroll-marker:target-current`, `scroll-marker-group` — **Limited availability / experimental (Chromium only)** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker
 
-**D7460N Architecture:** serves *cutting-edge experimental CSS* and *no JS carousel libraries, no event listeners* — canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**D7460N Architecture:** serves *cutting-edge experimental CSS* and *no JS carousel libraries, no event listeners*. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

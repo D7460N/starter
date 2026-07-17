@@ -77,6 +77,16 @@ Keep the function signature minimal. If a project needs a higher-level wrapper, 
 - Never touches the DOM
 - Never depends on UI state
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `fetch` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch
+- `Response.ok` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Response/ok
+- `Response.json()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Response/json
+
+**D7460N Architecture:** serves the single API transport surface — fetch base URL, endpoint-suffix resolution, JSON parsing, and error handling. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API

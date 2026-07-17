@@ -131,3 +131,11 @@ Before any change ships, the change must pass:
 4. Does this JSON contain HTML or styling? If yes, fix the design.
 
 The architecture exists to make these answers always "no."
+
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+
+**D7460N Architecture:** serves the concern-separation entry point and task routing for the browser-native, declarative-first architecture. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md

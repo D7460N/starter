@@ -94,6 +94,16 @@ When an API call fails (SSL error, network failure, 4xx, 5xx, rate limit), the J
 - Never tracks UI state in JS variables (state lives in DOM via native `checked`, `open`, attributes)
 - Never uses `eval`, `Function` constructor, or dynamic code generation
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `fetch` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch
+- ES modules (`import` / `export`) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+- `console.clear()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/console/clear_static
+
+**D7460N Architecture:** serves the JavaScript data-transport layer — fetch, `oninput` lifecycle, storage, and startup wiring. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## References
 
 - `references/lifecycle.md` — the canonical `oninput` flow from input event to data injection

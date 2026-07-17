@@ -78,6 +78,15 @@ The architecture renders the whole list every time. No virtual DOM, no diff algo
 - Never mutates a row's fields after render — re-render replaces the whole row
 - Never uses a framework reconciler
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `Element.replaceChildren()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren
+- `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has
+
+**D7460N Architecture:** serves the fetch-to-DOM render sequence for a list-rendered page. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `Element.replaceChildren()`: https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren

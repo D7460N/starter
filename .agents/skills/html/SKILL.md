@@ -12,7 +12,7 @@ HTML is structure only. Semantic. Static. Pre-defined.
 
 ## Only these elements are allowed
 
-53 elements. Anything not on this list is forbidden.
+82 elements. Anything not on this list is forbidden.
 
 **Document:** `html`, `head`, `body`, `title`, `meta`, `link`, `script`, `noscript`, `template`, `slot`
 
@@ -160,6 +160,21 @@ Generated custom elements (from JSON content) follow the naming rule in the `nam
 - No state storage outside native attributes (`checked`, `open`, `selected`)
 - No layout via wrapper elements
 - No content that should come from JSON
+
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `<search>` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/search
+- `<dialog>` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog
+- `<details>` / `<summary>` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details
+- `<output>` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/output
+- `<slot>` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/slot
+- `<template>` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template
+- Custom elements (autonomous) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
+- `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has
+
+**D7460N Architecture:** serves the semantic-only, div-less structure layer — the finite element/attribute whitelist every UI behavior binds to. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## References
 
