@@ -104,6 +104,17 @@ This is the threat model for a public-facing SPA / PWA built per the architectur
 
 These need their own threat model at the deployment layer.
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `Content-Security-Policy` (`script-src`, `style-src`, `frame-ancestors`, `form-action`, `upgrade-insecure-requests`) — **Baseline Widely available** (\* some directives vary) — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy
+- `Strict-Transport-Security` (HSTS) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security
+- `Referrer-Policy` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy
+- `Permissions-Policy` — **Limited availability** (Experimental; not in Firefox or Safari) — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy
+
+**D7460N Architecture:** serves the SPA/PWA threat model — threats, defenses, and residual risks. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - OWASP ASVS (Application Security Verification Standard): https://owasp.org/www-project-application-security-verification-standard/

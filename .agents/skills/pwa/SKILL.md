@@ -94,6 +94,16 @@ If a project genuinely needs a custom in-page install affordance, the pattern us
 - Never introduces UI logic into the service worker (service worker is data-layer only)
 - Never blocks or replaces the native install prompt with a custom UI unless explicitly required and surfaced to the user
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `<link rel="manifest">` (Web App Manifest) — **Limited availability** (not Baseline; Firefox desktop does not support `rel="manifest"`) — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/manifest
+- Service Worker API — **MDN assigns no Baseline tier** on the API overview; cross-browser per BCD (Chrome, Edge, Firefox, Safari 11.1+) — https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+- `beforeinstallprompt` event — **Limited availability** (not Baseline; Chromium-only — absent in Firefox and Safari) — https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeinstallprompt_event
+
+**D7460N Architecture:** serves the PWA baseline — the web app manifest, service worker, and install behavior. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## References
 
 - W3C Web App Manifest: https://www.w3.org/TR/appmanifest/
