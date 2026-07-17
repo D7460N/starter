@@ -62,6 +62,14 @@ Never store secrets, tokens, or session credentials in `localStorage`. The brows
 - Never stores secrets
 - Never silently swallows JSON parse errors (they throw — caller handles)
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `localStorage` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
+**D7460N Architecture:** serves the `localStorage`-primary / cookie-fallback storage utilities. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `localStorage`: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage

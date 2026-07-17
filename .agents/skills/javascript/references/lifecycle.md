@@ -99,6 +99,14 @@ A second call to `initLifecycle()` produces no change in observable behavior. A 
 - Never uses `setTimeout`, `setInterval`, or `requestAnimationFrame` for lifecycle progression
 - Never branches on click vs. programmatic-click — both enter through the `input` event
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- ES modules (`import` / `export`) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+
+**D7460N Architecture:** serves the single `oninput` lifecycle from input event to data injection. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN `input` event: https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event
