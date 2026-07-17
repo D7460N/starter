@@ -12,7 +12,7 @@ HTML is structure only. Semantic. Static. Pre-defined.
 
 ## Only these elements are allowed
 
-53 elements. Anything not on this list is forbidden.
+82 elements. Anything not on this list is forbidden.
 
 **Document:** `html`, `head`, `body`, `title`, `meta`, `link`, `script`, `noscript`, `template`, `slot`
 

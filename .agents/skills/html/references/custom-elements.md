@@ -55,7 +55,7 @@ For data-row elements, the `naming` skill's `toTagName()` rule produces names th
 
 ## No JavaScript extension
 
-Custom elements are **not** registered with `customElements.define(...)`. They are plain unknown elements (`HTMLUnknownElement`). The browser renders them as inline-by-default; CSS gives them their actual layout.
+Custom elements are **not** registered with `customElements.define(...)`. Because their names are valid custom-element names (hyphenated), the browser gives them the `HTMLElement` interface as *undefined custom elements* — **not** `HTMLUnknownElement`, which MDN defines as an *invalid* HTML element (a non-hyphenated unknown tag). The browser renders them inline-by-default; CSS gives them their actual layout.
 
 Why no extension:
 
