@@ -94,6 +94,14 @@ If a future need genuinely requires extension (e.g., shadow DOM encapsulation), 
 - Never get registered with `customElements.define()` in the default architecture
 - Never substitute for a re-engineering of weak design
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- Custom elements (autonomous) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
+
+**D7460N Architecture:** serves the two-category custom-element discipline that keeps markup semantic and div-less. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - HTML spec — custom element naming: https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name

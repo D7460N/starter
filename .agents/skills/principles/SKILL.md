@@ -121,6 +121,16 @@ Hold this as the **overall context** (Charter §8) on every D7460N response: you
 
 Surface the conflict to the user with the trade-off named. The user is the sole arbiter. Never pick silently, and never let one principle quietly override another without saying so.
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has
+- `:empty` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:empty
+- `light-dark()` — **Baseline Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark
+
+**D7460N Architecture:** serves the decision rules that resolve trade-offs beneath the concern skills. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - MDN Web Docs (authoritative platform reference): https://developer.mozilla.org/
