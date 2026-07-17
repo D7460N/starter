@@ -129,6 +129,16 @@ Cards exist only in plural as `ul` / `li`. Each card row is a `<li>` whose child
 - Never sets visibility via JS (CSS does that)
 - Never re-renders the shell (shell fetched once per session)
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- `custom elements` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
+- `subgrid` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Subgrid
+- `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has
+
+**D7460N Architecture:** serves the JSON-to-custom-element rendering pipeline for data tables and list-rendered content. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## References
 
 - `references/totagname.md` — the function specification with edge cases (single words, all-caps, numerals)

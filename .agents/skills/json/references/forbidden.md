@@ -159,6 +159,14 @@ The number of columns adapts to container width automatically.
 
 Pure data. The shape is the contract. The architecture's other layers know how to render it.
 
+## Baseline & support
+
+_Checked against MDN as of 2026-07-16._
+
+- No version-sensitive web-platform features are referenced here — everything used is **Baseline Widely available**.
+
+**D7460N Architecture:** serves the catalog of JSON contents the architecture rejects and their correct replacements. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+
 ## Reference
 
 - JSON.org: https://www.json.org/
