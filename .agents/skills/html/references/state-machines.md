@@ -12,7 +12,7 @@ The HTML side of the state-machine pattern. The CSS side is in `../../css/refere
 ```
 
 - `<label>` is the interactive element. It carries the role and accessible name.
-- `role="button"` tells assistive technology this is a button-like control. The browser supplies focus, keyboard activation, and click forwarding to the input.
+- `role="button"` tells assistive technology this control is button-like. ARIA `role` conveys **semantics only — it does not make the label focusable or add keyboard activation** (a common misconception). Reliable keyboard operability for this pattern is a known, deferred a11y item; do not rely on `role` to provide it.
 - `aria-label` provides the accessible name when the label text is short or stylized.
 - `<input type="checkbox">` holds the state.
 - `aria-hidden="true"` removes the input from the accessibility tree (the label already conveys the role and state).
