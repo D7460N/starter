@@ -12,6 +12,20 @@ Concern skills say *what* each layer may do. These principles say *how to decide
 
 Each principle below carries: the **rule**, the **why**, how it **shows up** in this architecture, and the **tell** (how to catch a violation).
 
+## The thesis these principles serve — one UI, every project at once
+
+D7460N is not one project's UI; it is **every** project's UI at once. One presentation layer, served once from one place, called remotely like a font or an image, rendering each back-end's data. This is the claim that makes the architecture matter, and every principle below exists to protect it.
+
+- **The stove-pipe it dissolves.** In siloed, high-security environments each project is walled off, so it is treated as law that every project starts its front-end from scratch. Frameworks only soften the restart — each project still ships an isolated *copy*, built independently. Because the data and data-logic differ per project, teams assume the *UI* must differ too, so every project rebuilds and re-owns its own front-end (and increasingly one overloaded full-stack developer owns both ends). D7460N rejects that assumption.
+- **Why it is now possible.** Native declarative browser features — `:has()`, `:empty` / `:not(:empty)`, container and style queries, `light-dark()` — let a single remotely-served UI (not a copy) lay out, style, and render each project's content from the **presence and shape of the data itself**, with no relationship to that data. For the first time the same UI serves many unrelated back-ends without being forked.
+- **What that buys.** Usability, accessibility, and standards-compliance stop being per-project rework and become **one shared channel of effort** — fixed once, inherited by every consumer. No framework-per-project stack can match that.
+- **Consistency *and* individuality at once.** Department heads want a coherent look/feel across a department's apps while each app keeps its own identity for unique requirements. The shared UI provides the coherence; data-presence-driven rendering gives each app its individuality — both from the same source, no fork.
+- **Each engineer's best work, not a watered-down average.** Because presentation and data are air-gapped, UI/UX specialists spend their seniority on UI/UX and data engineers on data — neither is conscripted into the other's craft. The customer gets each person's *best*, and department heads staff to solve real problems instead of hoping one overloaded generalist covers everything.
+- **The compounding payoff.** Higher-quality apps in less time → better usability → happier, more productive users → more work done at lower total cost. Every app ships faster — a win for users, engineers, and whoever pays for the work.
+- **Why the principles follow.** All eggs in one basket → the basket must be the single most durable, universal thing there is: **one dependency, the modern browser**. One basket for everyone makes decay catastrophic → **future-proofing is existential**, and `modern-web-guidance` + MDN are how the basket stays current and correct (not optional advice). A shared UI can only be worked as its own channel if it is fully isolated from every back-end → **air-gapped Separation of Concerns is the enabler**, not a nicety.
+
+Hold this as the **overall context** (Charter §8) on every D7460N response: you are never touching one project — you are touching all of them at once, which is why usability, accessibility, and standards compliance are always in force, for every consumer, all the time.
+
 ## Least Power
 
 - **Rule:** For any task, use the least powerful technology that expresses the intent declaratively. Ask in order — can HTML do it? If not, can CSS? Only then JS. JS is never used for the presentation layer.
