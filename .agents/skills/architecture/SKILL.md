@@ -102,11 +102,13 @@ The single SPA entry point is `index.html` at project root. Layout regions:
 
 ```
 app-container
+├── app-banner (optional; hidden when :empty)
 ├── header (app-logo, app-user)
 ├── nav    (radio inputs inside labels)
 ├── main   (article > h1 + section)
 ├── aside
-└── footer (app-legal, app-version)
+├── footer (app-legal, app-version)
+└── app-banner (optional; hidden when :empty)
 ```
 
 One `<script type="module">` before `</body>`, outside `app-container`.
