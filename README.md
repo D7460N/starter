@@ -86,7 +86,7 @@ Every **framework** and **CMS** start with themselves as the center of software 
 Web Browser as single true dependency:
 
 ```
-                     Moment of truth
+               Single Point of Truth (SPOT)
                      _______________
                             │
           AUDIENCE          │          FRONT-END OPTIONS
