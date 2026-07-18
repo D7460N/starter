@@ -88,11 +88,11 @@ Web Browser as single true dependency:
 ```
           AUDIENCE                        FRONT-END OPTIONS
 
-    Designers ──┐                       ┌── React   ─┐
-   Developers ──┤                       ├── Angular  │   require
-           QA ──┼──▶ [ BROWSER ] ◀──┼── WordPress  ├─  framework
- Stakeholders ──┤                       ├── Joomla   │   + browser
-    End-users ──┘          ▲           └── Svelt   ─┘
+    Designers ──┐                     ┌── React    ─┐
+   Developers ──┤                     ├── Angular   │   require
+           QA ──┼──▶ [ BROWSER ] ◀──┼── WordPress ├─  framework
+ Stakeholders ──┤                     ├── Joomla    │   + browser
+    End-users ──┘          ▲         └── Svelt    ─┘
                             │
                             └────────── D7460N ──── browser only
 
