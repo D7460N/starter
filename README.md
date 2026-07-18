@@ -130,7 +130,7 @@ UX and DX converge here. The developer is looking at the same surface the user i
 
 <details>
 <summary><strong>Developers</strong></summary>
-
+  
 > &#160;
 > - One `index.html`  
 > - One event `oninput` for all CRUD  
@@ -144,20 +144,29 @@ UX and DX converge here. The developer is looking at the same surface the user i
 
 <details>
 <summary><strong>Designers</strong></summary>
-
+  
+> &#160;
 > CSS is the runtime. Design changes ship by editing CSS, with no JavaScript intervention required. The cascade is the design system.
+> &#160;
+
 </details>
 
 <details>
 <summary><strong>Clients</strong></summary>
 
+> &#160;
 > A site that doesn't accrue technical debt while sitting still. No framework migration bills in year three. Brand changes are CSS variable swaps.
+> &#160;
+
 </details>
 
 <details>
 <summary><strong>End users</strong></summary>
 
+> &#160;
 > Small payload. No framework runtime. Fast first paint. Keyboard navigation that works. Screen readers that work. No cookie banners for analytics nobody asked for.
+> &#160;
+
 </details>
 
 <details>
