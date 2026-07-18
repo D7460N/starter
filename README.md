@@ -58,7 +58,9 @@ AutoCSS runs alongside whatever's already in your stack. It just doesn't require
 
 ---
 
-## One front-end, at scale
+## AutoCSS at scale
+
+**One front-end, many back-ends**
 > _Called, not copied._
 
 | Projects | Front-ends | New codebases | New build pipelines | New dependencies | Cost to add next project | Time to launch next project |
