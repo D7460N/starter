@@ -86,10 +86,12 @@ Every **framework** and **CMS** start with themselves as the center of software 
 Web Browser as single true dependency:
 
 ```
-          AUDIENCE                     FRONT-END OPTIONS
-
-    Designers ──┐                     ┌── React    ─┐
-   Developers ──┤                     ├── Angular   │   All require
+                     Moment of truth
+                           │
+          AUDIENCE         │            FRONT-END OPTIONS
+                           │
+    Designers ──┐          │          ┌── React    ─┐
+   Developers ──┤          V          ├── Angular   │   All require
       Testers ──┼──▶ [ BROWSER ] ◀──┼── WordPress ├─  frameworks AND
  Stakeholders ──┤          ▲         ├── Joomla    │   the browser
     End-users ──┘          │          └── Svelt    ─┘
