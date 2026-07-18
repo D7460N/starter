@@ -152,8 +152,8 @@ UX and DX converge here. The developer is looking at the same surface the user i
 </details>
 
 <details>
-<summary><strong>Clients</strong></summary>
-
+<summary><strong>Clients</strong></summary>  
+  
 > &#160;
 > A site that doesn't accrue technical debt while sitting still. No framework migration bills in year three. Brand changes are CSS variable swaps.
 > &#160;
