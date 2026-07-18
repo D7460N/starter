@@ -173,7 +173,7 @@ The architecture is one thing. Its benefits land differently depending on who's 
 <details>
 <summary><strong>Accessibility teams</strong></summary>
 
->,Semantic HTML only. Every interactive element is a real `<button>`, `<a>`, `<input>`, `<label>`, or `<select>`. 508 and WCAG compliance falls out of the architecture, not out of remediation budgets.
+> Semantic HTML only. Every interactive element is a real `<button>`, `<a>`, `<input>`, `<label>`, or `<select>`. 508 and WCAG compliance falls out of the architecture, not out of remediation budgets.
 </details>
 
 <details>
