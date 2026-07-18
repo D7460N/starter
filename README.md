@@ -48,7 +48,7 @@ state, behavior, or presentation.
 - No classes
 - No IDs
 
-**Ready for developers to bring their own.**
+**Nothing to maintain, all overwrite-able, ready for developers to bring their own.**
 
 AutoCSS runs alongside whatever's already in your stack. It just doesn't require any of it.
 
