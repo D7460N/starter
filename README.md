@@ -215,9 +215,9 @@ This is the part that hasn't been done before.
 
 ## What this is
 
-**D7460N Architecture** is an open-source, browser-native, fully declarative front-end architecture for building scalable, maintainable, accessible web applications.
+**AutoCSS Architecture** is an open-source, browser-native, fully declarative front-end architecture for building scalable, maintainable, accessible web applications.
 
-**D7460N Starter** is the reference implementation. A Single Page Application that is also a Progressive Web App, served from a single `index.html`, maintained through strict Separation of Concerns and modern W3C / WCAG standards.
+**AutoCSS Starter** is the reference implementation. A Single Page Application that is also a Progressive Web App, served from a single `index.html`, maintained through strict Separation of Concerns and modern W3C / WCAG standards.
 
 Easy. Fast. Developer-friendly. Stakeholder-defensible.
 
@@ -227,7 +227,7 @@ Easy. Fast. Developer-friendly. Stakeholder-defensible.
 
 Most architectures organize HTML, CSS, and JS into separate files and call it Separation of Concerns. The layers are decoupled in name. Coupled in practice. They still talk to each other constantly through class hooks, ID selectors, `data-*` attributes, framework bindings, and ref objects.
 
-D7460N takes decoupling all the way. The layers are air-gapped.
+AutoCSS takes decoupling all the way. The layers are air-gapped.
 
 | Layer | Job | What it never does | What it never touches |
 |---|---|---|---|
