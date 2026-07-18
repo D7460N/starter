@@ -5,7 +5,7 @@ Carry forward the exact decisions and non-negotiables from the last implementati
 
 ## Constraint Lock (must re-assert at start of next session)
 - API CRUD calls must flow through the shared `oninput` lifecycle.
-- Initial load must enter lifecycle via programmatic nav radio `.click()`.
+- Initial load must enter lifecycle via programmatic nav radio.
 - API base URL is declared once; only endpoint suffix varies.
 - Shell content (`header`, `nav`, `footer`, `meta`) is fetched/injected once per runtime session.
 - No event listeners (`addEventListener`) and no `onclick` usage.
