@@ -105,7 +105,7 @@ The browser is what every role already looks at:
 
 - **Designers** evaluate the design in the browser.
 - **Developers** verify the code in the browser.
-- **QA** tests the build in the browser.
+- **Testers** tests the build in the browser.
 - **Stakeholders** approve the work in the browser.
 - **End-users** do their job in the browser.
 
