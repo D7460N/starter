@@ -96,7 +96,7 @@ Web Browser as single true dependency:
 
 ```
                Single Point of Truth (SPOT)
-                \________________________/
+             [______________________________
                             │
           AUDIENCE          │          FRONT-END OPTIONS
                             │
@@ -128,12 +128,18 @@ UX and DX converge here. The developer is looking at the same surface the user i
 
 ## Same architecture. Many audiences.
 
-The architecture is one thing. Its benefits land differently depending on who's reading.
-
 <details>
 <summary><strong>Developers</strong></summary>
 
-> One `index.html`. One repeatable `oninput` event for all CRUD. No build step, no transpiler, no framework version to track. Open the file. It works.
+> &#160;
+> - One `index.html`  
+> - One event `oninput` for all CRUD  
+> - No build step  
+> - No transpiler  
+> - No framework version to track  
+> - Open the file and It works  
+> &#160;
+
 </details>
 
 <details>
