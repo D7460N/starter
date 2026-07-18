@@ -87,13 +87,13 @@ Web Browser as single true dependency:
 
 ```
                Single Point of Truth (SPOT)
-                     _______________
+                \________________________/
                             │
           AUDIENCE          │          FRONT-END OPTIONS
                             │
     Designers ──┐          │          ┌── React    ─┐
    Developers ──┤          V          ├── Angular   │   All require
-      Testers ──┼──▶ [ BROWSER ] ◀──┼── WordPress ├─  frameworks AND
+      Testers ──┼──▶ [ BROWSER ] ◀──┼── WordPress ├─  frameworks plus
  Stakeholders ──┤          ▲         ├── Joomla    │   the browser
     End-users ──┘          │          └── Svelt    ─┘
                             │
