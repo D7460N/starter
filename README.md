@@ -38,7 +38,7 @@ state, behavior, or presentation.
 
 ---
 
-## What you don't need to bring
+## AutoCSS has : :
 
 - No AI
 - No framework
@@ -48,7 +48,7 @@ state, behavior, or presentation.
 - No classes
 - No IDs
 
-**Bring them if you want.**
+**Ready for developers to bring their own.**
 
 AutoCSS runs alongside whatever's already in your stack. It just doesn't require any of it.
 
