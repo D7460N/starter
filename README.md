@@ -87,9 +87,10 @@ Web Browser as single true dependency:
 
 ```
                      Moment of truth
-                           │
-          AUDIENCE         │            FRONT-END OPTIONS
-                           │
+                     _______________
+                            │
+          AUDIENCE          │          FRONT-END OPTIONS
+                            │
     Designers ──┐          │          ┌── React    ─┐
    Developers ──┤          V          ├── Angular   │   All require
       Testers ──┼──▶ [ BROWSER ] ◀──┼── WordPress ├─  frameworks AND
