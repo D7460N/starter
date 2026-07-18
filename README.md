@@ -34,7 +34,7 @@ state, behavior, or presentation.
 
 **One codebase. One UI. Infinite backends.**
 
-> Presentation layer, hosted once. Called by anything. Any backend. Any language. Any platform.
+> Decoupled independent presentation layer, hosted once. Called by any backend. Any language. Any platform.
 
 ---
 
