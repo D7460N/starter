@@ -24,12 +24,9 @@
 # AutoCSS Architecture
 
 A zero-dependency, **CSS-replaces-JS**, browser-native **SPA + PWA** starter — the
-**D7460N Architecture**. One UI, driven almost entirely by modern HTML and CSS.
+**AutoCSS Architecture**. One UI, driven almost entirely by modern HTML and CSS.
 JavaScript is used *only* as a thin CRUD transport to external APIs — never for UI
 state, behavior, or presentation.
-
-
-
 
 ## STARTER 
 
@@ -63,7 +60,6 @@ D7460N runs alongside whatever's already in your stack. It just doesn't require 
 
 ## One front-end, at scale
 > _Called, not copied._
-
 
 | Projects | Front-ends | New codebases | New build pipelines | New dependencies | Cost to add next project | Time to launch next project |
 |---|---|---|---|---|---|---|
