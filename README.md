@@ -1,15 +1,39 @@
-# D7460N Architecture
-
-```
-        ___        ___  _____     ___        __        __     ___
- )  ____) (__    __) /  \    |    \ (__    __) \    ___) |    \  
-(  (___      |  |   /    \   |     )   |  |     |  (__   |     ) 
- \___  \     |  |  /  ()  \  |    /    |  |     |   __)  |    /  
- ____)  )    |  | |   __   | | |\ \    |  |     |  (___  | |\ \  
-(      (_____|  |_|  (__)  |_| |_\ \___|  |____/       )_| |_\ \_
 ```
 
-## Have UI, bring data.
+                   A U T O C S S
+
+  ::::======  :::::  ===== :::::======  ::::====== 
+ :::::  ===== :::::  ===== :::::====== :::::  =====
+ ============ =====  =====    =====    =====  =====
+ =====  ===== =====  =====    =====    =====  =====
+ =====  =====  ==========     =====      ======== 
+                                   
+            ::::====    ::::===   ::::===
+           :::::       :::::     :::::    
+           =====       =======   ======= 
+           =====          =====     =====
+            ========   =======   =======
+
+               C E L E B R A T I N G
+                 250 Y E A R S  O F
+                  A M E R I C A N
+              I N D E P E N D E N C E
+
+```
+
+# AutoCSS Architecture
+
+A zero-dependency, **CSS-replaces-JS**, browser-native **SPA + PWA** starter — the
+**D7460N Architecture**. One UI, driven almost entirely by modern HTML and CSS.
+JavaScript is used *only* as a thin CRUD transport to external APIs — never for UI
+state, behavior, or presentation.
+
+
+
+
+## STARTER 
+
+### Have UI, bring data.
 
 **One codebase. One UI. Infinite backends.**
 
