@@ -115,7 +115,7 @@ _Checked against MDN as of 2026-07-16._
 - `Element.setHTMLUnsafe()` — **Baseline 2025 Newly available** (since Sep 2025) — https://developer.mozilla.org/en-US/docs/Web/API/Element/setHTMLUnsafe
 - Trusted Types API + CSP `require-trusted-types-for` — **Baseline 2026 Newly available** (since Feb 2026, when Firefox 148 shipped; absent in older browsers) — https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API
 
-**D7460N Architecture:** serves the text-vs-HTML injection rules and DOM sanitization at the data boundary. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the text-vs-HTML injection rules and DOM sanitization at the data boundary. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

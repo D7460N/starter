@@ -1,9 +1,9 @@
 ---
-description: 'D7460N Architecture — zero-dependency, CSS-only, JAMstack-based, browser-native D7460N Architecture starter template. These rules are non-negotiable. Always fall back to these defaults.'
+description: 'AutoCSS Architecture — zero-dependency, CSS-only, JAMstack-based, browser-native AutoCSS Architecture starter template. These rules are non-negotiable. Always fall back to these defaults.'
 applyTo: '**'
 ---
 
-# D7460N Architecture
+# AutoCSS Architecture
 
 ## Accuracy & Clarification
 

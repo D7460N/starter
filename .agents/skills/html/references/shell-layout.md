@@ -94,7 +94,7 @@ _Checked against MDN as of 2026-07-16._
 - `<script type="module">` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script
 - `<link rel="manifest">` — **Baseline Limited availability** (no Firefox desktop support) — https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/manifest
 
-**D7460N Architecture:** serves the single-file canonical shell — Holy Grail regions, PWA manifest, and one module entrypoint. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the single-file canonical shell — Holy Grail regions, PWA manifest, and one module entrypoint. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

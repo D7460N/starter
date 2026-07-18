@@ -44,7 +44,7 @@ Periodically optimize the docs **for AI accessibility/usability, not human readi
 
 ## Standards consultation
 
-Consult the standing references — `modern-web-guidance` and MDN Web Docs (search / doc / compat) — and periodically reconcile them against the app's current features. Their content is **advisory and subordinate**: on any conflict, the D7460N rules win. But the requirement to consult, to reconcile, and to *suggest* improvements is canonical. Identify ≠ apply — never silently change anything; confirm with the user first.
+Consult the standing references — `modern-web-guidance` and MDN Web Docs (search / doc / compat) — and periodically reconcile them against the app's current features. Their content is **advisory and subordinate**: on any conflict, the AutoCSS rules win. But the requirement to consult, to reconcile, and to *suggest* improvements is canonical. Identify ≠ apply — never silently change anything; confirm with the user first.
 
 ## What session-handling never does
 
@@ -60,10 +60,10 @@ _Checked against MDN as of 2026-07-16._
 
 - No version-sensitive web-platform features are referenced here — everything used is **Baseline Widely available**.
 
-**D7460N Architecture:** serves cross-session continuity, backlog, and handoff discipline. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves cross-session continuity, backlog, and handoff discipline. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 
-- D7460N Architecture + Response Integrity Charter (canonical): https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+- AutoCSS Architecture + Response Integrity Charter (canonical): https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 - Agent Skills open standard: https://agentskills.io
 - GitHub Projects (board automation): https://docs.github.com/issues/planning-and-tracking-with-projects

@@ -96,7 +96,7 @@ _Checked against MDN as of 2026-07-16._
 - `Content-Security-Policy` — **Baseline Widely available** (across browsers since Aug 2016; \* some directives vary) — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy
 - CSP `report-to` directive + `Reporting-Endpoints` (the Reporting section) — **narrower support**: MDN notes `report-to` is not yet broadly supported, so pair it with the legacy `report-uri` — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/report-to
 
-**D7460N Architecture:** serves the strict Content Security Policy and its per-directive rationale. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the strict Content Security Policy and its per-directive rationale. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

@@ -93,7 +93,7 @@ _Checked against MDN as of 2026-07-16._
 
 - `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has
 
-**D7460N Architecture:** serves CSS-read interactive state via hidden radio/checkbox inputs inside labels, with no JS event handlers. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves CSS-read interactive state via hidden radio/checkbox inputs inside labels, with no JS event handlers. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

@@ -1,6 +1,6 @@
 ---
 name: principles
-description: The foundational engineering principles every D7460N effort obeys, one section per principle. These sit beneath the concern skills (html/css/javascript/json/…) and decide trade-offs when a task could be solved more than one way. Use when choosing an approach, justifying a design, resolving "which tool", or reviewing whether a change earns its place.
+description: The foundational engineering principles every AutoCSS effort obeys, one section per principle. These sit beneath the concern skills (html/css/javascript/json/…) and decide trade-offs when a task could be solved more than one way. Use when choosing an approach, justifying a design, resolving "which tool", or reviewing whether a change earns its place.
 license: MIT
 metadata:
   version: "1.0.0"
@@ -8,15 +8,15 @@ metadata:
 
 # Principles
 
-Concern skills say *what* each layer may do. These principles say *how to decide* when there is a choice. They are foundational to any effort that leverages the D7460N Architecture. When a principle and a concern skill agree, follow them. When they appear to conflict, surface it to the user — never resolve silently.
+Concern skills say *what* each layer may do. These principles say *how to decide* when there is a choice. They are foundational to any effort that leverages the AutoCSS Architecture. When a principle and a concern skill agree, follow them. When they appear to conflict, surface it to the user — never resolve silently.
 
 Each principle below carries: the **rule**, the **why**, how it **shows up** in this architecture, and the **tell** (how to catch a violation).
 
 ## The thesis these principles serve — one UI, every project at once
 
-D7460N is not one project's UI; it is **every** project's UI at once. One presentation layer, served once from one place, called remotely like a font or an image, rendering each back-end's data. This is the claim that makes the architecture matter, and every principle below exists to protect it.
+AutoCSS is not one project's UI; it is **every** project's UI at once. One presentation layer, served once from one place, called remotely like a font or an image, rendering each back-end's data. This is the claim that makes the architecture matter, and every principle below exists to protect it.
 
-- **The stove-pipe it dissolves.** In siloed, high-security environments each project is walled off, so it is treated as law that every project starts its front-end from scratch. Frameworks only soften the restart — each project still ships an isolated *copy*, built independently. Because the data and data-logic differ per project, teams assume the *UI* must differ too, so every project rebuilds and re-owns its own front-end (and increasingly one overloaded full-stack developer owns both ends). D7460N rejects that assumption.
+- **The stove-pipe it dissolves.** In siloed, high-security environments each project is walled off, so it is treated as law that every project starts its front-end from scratch. Frameworks only soften the restart — each project still ships an isolated *copy*, built independently. Because the data and data-logic differ per project, teams assume the *UI* must differ too, so every project rebuilds and re-owns its own front-end (and increasingly one overloaded full-stack developer owns both ends). AutoCSS rejects that assumption.
 - **Why it is now possible.** Native declarative browser features — `:has()`, `:empty` / `:not(:empty)`, container and style queries, `light-dark()` — let a single remotely-served UI (not a copy) lay out, style, and render each project's content from the **presence and shape of the data itself**, with no relationship to that data. For the first time the same UI serves many unrelated back-ends without being forked.
 - **What that buys.** Usability, accessibility, and standards-compliance stop being per-project rework and become **one shared channel of effort** — fixed once, inherited by every consumer. No framework-per-project stack can match that.
 - **Consistency *and* individuality at once.** Department heads want a coherent look/feel across a department's apps while each app keeps its own identity for unique requirements. The shared UI provides the coherence; data-presence-driven rendering gives each app its individuality — both from the same source, no fork.
@@ -24,7 +24,7 @@ D7460N is not one project's UI; it is **every** project's UI at once. One presen
 - **The compounding payoff.** Higher-quality apps in less time → better usability → happier, more productive users → more work done at lower total cost. Every app ships faster — a win for users, engineers, and whoever pays for the work.
 - **Why the principles follow.** All eggs in one basket → the basket must be the single most durable, universal thing there is: **one dependency, the modern browser**. One basket for everyone makes decay catastrophic → **future-proofing is existential**, and `modern-web-guidance` + MDN are how the basket stays current and correct (not optional advice). A shared UI can only be worked as its own channel if it is fully isolated from every back-end → **air-gapped Separation of Concerns is the enabler**, not a nicety.
 
-Hold this as the **overall context** (Charter §8) on every D7460N response: you are never touching one project — you are touching all of them at once, which is why usability, accessibility, and standards compliance are always in force, for every consumer, all the time.
+Hold this as the **overall context** (Charter §8) on every AutoCSS response: you are never touching one project — you are touching all of them at once, which is why usability, accessibility, and standards compliance are always in force, for every consumer, all the time.
 
 ## Least Power
 
@@ -112,7 +112,7 @@ Hold this as the **overall context** (Charter §8) on every D7460N response: you
 
 ## Verify and cite (standards-first)
 
-- **Rule:** Never guess. Verify feature behavior and support against authoritative sources (MDN Web Docs + BCD, the `modern-web-guidance` reference) and cite them. Those sources are advisory and subordinate — on any conflict, the D7460N rules win, but the duty to consult and reconcile is canonical.
+- **Rule:** Never guess. Verify feature behavior and support against authoritative sources (MDN Web Docs + BCD, the `modern-web-guidance` reference) and cite them. Those sources are advisory and subordinate — on any conflict, the AutoCSS rules win, but the duty to consult and reconcile is canonical.
 - **Why:** A claim of correctness is not correctness; the platform moves and only fresh checks catch drift.
 - **Shows up:** the css references' dated "Baseline & support" sections; `@supports` feature-detection over assumption.
 - **Tell:** an assertion about support or behavior with no source and no recent check.
@@ -129,11 +129,11 @@ _Checked against MDN as of 2026-07-16._
 - `:empty` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:empty
 - `light-dark()` — **Baseline Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark
 
-**D7460N Architecture:** serves the decision rules that resolve trade-offs beneath the concern skills. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the decision rules that resolve trade-offs beneath the concern skills. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 
 - MDN Web Docs (authoritative platform reference): https://developer.mozilla.org/
 - W3C TR index (standards): https://www.w3.org/TR/
 - W3C — Rule of Least Power: https://www.w3.org/2001/tag/doc/leastPower.html
-- D7460N Architecture + Response Integrity Charter (canonical): https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+- AutoCSS Architecture + Response Integrity Charter (canonical): https://github.com/Autocss-com/ai/blob/main/AGENTS.md

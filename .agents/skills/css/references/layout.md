@@ -116,7 +116,7 @@ This pattern produces intrinsically sticky headers (header is in the non-scrolli
 
 > **Future — not in use yet.** Subgrid is the intended mechanism for aligning
 > data-table cells to their header columns. The snippet below uses `.parent` /
-> `.child-grid` classes purely as a generic demo — D7460N runtime CSS never uses
+> `.child-grid` classes purely as a generic demo — AutoCSS runtime CSS never uses
 > classes, so this does not apply to any live element. Kept here as a reminder for
 > the table-alignment effort. Tracked in AutoCSS board issue #99.
 
@@ -162,7 +162,7 @@ _Checked against MDN as of 2026-07-16._
 - `:empty` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
 - Dynamic viewport units (`dvh` etc.) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/length
 
-**D7460N Architecture:** serves Grid-only Holy Grail layout, breakpoint-free intrinsic sizing (`minmax`/`min`/auto-fit), container-driven component responsiveness, and CSS-replaces-JS visibility keyed to data presence (`:empty`/`:not(:empty)`/`:has()`) — upholding Least Power, Separation of Concerns, zero dependencies, and no wrapper elements. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves Grid-only Holy Grail layout, breakpoint-free intrinsic sizing (`minmax`/`min`/auto-fit), container-driven component responsiveness, and CSS-replaces-JS visibility keyed to data presence (`:empty`/`:not(:empty)`/`:has()`) — upholding Least Power, Separation of Concerns, zero dependencies, and no wrapper elements. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

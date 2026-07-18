@@ -5,7 +5,7 @@
 
 ## Every rule lives in a named layer
 
-All D7460N CSS is wrapped in a `@layer` named for its concern — one layer per file.
+All AutoCSS CSS is wrapped in a `@layer` named for its concern — one layer per file.
 
 ```css
 @layer layout {
@@ -54,7 +54,7 @@ _Checked against MDN as of 2026-07-16._
 
 - `@layer` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@layer
 
-**D7460N Architecture:** serves cascade control without `!important` and deliberate low-priority interop (a consuming system's unlayered styles win by default) — upholding Separation of Concerns, Least Power, and zero-dependency, browser-native styling. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves cascade control without `!important` and deliberate low-priority interop (a consuming system's unlayered styles win by default) — upholding Separation of Concerns, Least Power, and zero-dependency, browser-native styling. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

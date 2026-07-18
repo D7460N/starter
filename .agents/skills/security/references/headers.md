@@ -87,7 +87,7 @@ _Checked against MDN as of 2026-07-16._
 - `Cross-Origin-Resource-Policy` — **MDN assigns no Baseline tier**; cross-browser per BCD — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Resource-Policy
 - `X-Content-Type-Options: nosniff` — **MDN assigns no Baseline tier**; universally supported — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options
 
-**D7460N Architecture:** serves the recommended HTTP security response headers and their rationale. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the recommended HTTP security response headers and their rationale. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

@@ -57,7 +57,7 @@ _Checked against MDN as of 2026-07-16._
 - `anchor-size()` — **Baseline 2026 (Newly available)** — https://developer.mozilla.org/en-US/docs/Web/CSS/anchor-size
 - `position-try-fallbacks` — **Baseline 2026 (Newly available)** — https://developer.mozilla.org/en-US/docs/Web/CSS/position-try-fallbacks
 
-**D7460N Architecture:** serves anchor positioning for hover/popover content (keeps it on-screen); no JS positioning libraries. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves anchor positioning for hover/popover content (keeps it on-screen); no JS positioning libraries. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

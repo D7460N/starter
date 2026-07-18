@@ -102,7 +102,7 @@ _Checked against MDN as of 2026-07-16._
 - ES modules (`import` / `export`) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 - `console.clear()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/console/clear_static
 
-**D7460N Architecture:** serves the JavaScript data-transport layer — fetch, `oninput` lifecycle, storage, and startup wiring. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the JavaScript data-transport layer — fetch, `oninput` lifecycle, storage, and startup wiring. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## References
 

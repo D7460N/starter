@@ -1,11 +1,11 @@
 # D7460N MCP Server
 
-Standalone development tool providing authoritative D7460N Architecture
+Standalone development tool providing authoritative AutoCSS Architecture
 rules, validation, and code review assistance for AI coding agents.
 
-The D7460N MCP Server and the D7460N Architecture are two separate entities.
-This server is never used to bootstrap, scaffold, or generate D7460N projects.
-It is never a dependency of any D7460N project. No D7460N project depends on
+The D7460N MCP Server and the AutoCSS Architecture are two separate entities.
+This server is never used to bootstrap, scaffold, or generate AutoCSS projects.
+It is never a dependency of any AutoCSS project. No AutoCSS project depends on
 it at runtime or build time.
 
 ## Quick Start
@@ -75,5 +75,5 @@ directory and hot-reloads on changes, notifying connected clients via
 ## Architecture
 
 The D7460N MCP Server is a standalone development tool only. It is a separate
-entity from the D7460N Architecture. It is never used for bootstrapping, never
-used as a dependency, and never required by any D7460N project.
+entity from the AutoCSS Architecture. It is never used for bootstrapping, never
+used as a dependency, and never required by any AutoCSS project.

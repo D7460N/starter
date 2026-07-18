@@ -44,7 +44,7 @@ If no semantic element's main purpose fits, **the design is flawed**. Stop. Go t
 
 Custom elements are not an escape hatch for "no semantic fits." Custom elements exist in exactly two finite categories:
 
-1. **D7460N standard layout elements** — the curated set authored by D7460N: `<app-container>`, `<app-logo>`, `<app-user>`, `<app-legal>`, `<app-version>`, `<app-banner>`. Finite. Part of the architecture's canonical shell. Not extended by ad-hoc additions.
+1. **AutoCSS standard layout elements** — the curated set authored by AutoCSS: `<app-container>`, `<app-logo>`, `<app-user>`, `<app-legal>`, `<app-version>`, `<app-banner>`. Finite. Part of the architecture's canonical shell. Not extended by ad-hoc additions.
 2. **Data-table row elements** — generated at runtime from JSON keys via `toTagName()`. Used inside `<ul>` / `<li>` for list-rendered tabular content. See the `data-flow` skill.
 
 Anything outside those two categories is forbidden. If a new shape genuinely needs accommodation, surface it to the user before adding — never invent a new custom element to paper over a design problem.
@@ -174,7 +174,7 @@ _Checked against MDN as of 2026-07-16._
 - Custom elements (autonomous) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
 - `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has
 
-**D7460N Architecture:** serves the semantic-only, div-less structure layer — the finite element/attribute whitelist every UI behavior binds to. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the semantic-only, div-less structure layer — the finite element/attribute whitelist every UI behavior binds to. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## References
 

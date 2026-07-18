@@ -78,7 +78,7 @@ _Checked against MDN as of 2026-07-16._
 - `scroll-behavior` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
 - Custom properties (`--*` / `var()`) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/--*
 
-**D7460N Architecture:** serves CSS-replaces-JS UI motion (state/tab/init fades with no `setInterval`/`requestAnimationFrame`), single-source-of-truth timing via custom properties, and baked-in accessibility through `prefers-reduced-motion` — upholding Least Power and zero dependencies. `interpolate-size` is experimental: keep it as progressive enhancement (auto-keyword size transitions degrade gracefully where unsupported). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves CSS-replaces-JS UI motion (state/tab/init fades with no `setInterval`/`requestAnimationFrame`), single-source-of-truth timing via custom properties, and baked-in accessibility through `prefers-reduced-motion` — upholding Least Power and zero dependencies. `interpolate-size` is experimental: keep it as progressive enhancement (auto-keyword size transitions degrade gracefully where unsupported). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

@@ -46,7 +46,7 @@ _Checked against MDN as of 2026-07-16._
 - `box-sizing` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
 - `@layer` (wrapping the reset) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@layer
 
-**D7460N Architecture:** serves a minimal browser-native reset that preserves intrinsic (accessible) UA defaults, layered at lowest priority so consumers override without `!important` — upholding Least Power, minimal entropy, baked-in accessibility, and zero dependencies. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves a minimal browser-native reset that preserves intrinsic (accessible) UA defaults, layered at lowest priority so consumers override without `!important` — upholding Least Power, minimal entropy, baked-in accessibility, and zero dependencies. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

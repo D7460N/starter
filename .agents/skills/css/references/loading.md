@@ -85,7 +85,7 @@ _Checked against MDN as of 2026-07-16._
 - `color-mix()` — **Baseline Widely available (May 2023)** — https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
 - `prefers-reduced-motion` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
 
-**D7460N Architecture:** serves CSS loading states from data presence; accessibility baked-in. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves CSS loading states from data presence; accessibility baked-in. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

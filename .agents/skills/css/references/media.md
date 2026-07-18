@@ -74,7 +74,7 @@ _Checked against MDN as of 2026-07-16._
 - `max-inline-size` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/max-inline-size
 - `dvh` dynamic viewport unit — **Widely available (2022)** — https://developer.mozilla.org/en-US/docs/Web/CSS/length#dvh
 
-**D7460N Architecture:** serves intrinsic sizing (`aspect-ratio`, `object-fit`); no wrapper nesting; `100dvh` not `100vh`. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves intrinsic sizing (`aspect-ratio`, `object-fit`); no wrapper nesting; `100dvh` not `100vh`. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 
