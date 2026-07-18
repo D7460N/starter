@@ -37,6 +37,8 @@ This is the part that hasn't been done before.
 - No build tools
 - No transpilers
 - No 3rd-party dependencies
+- No classes
+- No IDs
 
 **Bring them if you want.**
 
