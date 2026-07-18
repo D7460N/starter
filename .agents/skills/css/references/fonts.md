@@ -68,7 +68,7 @@ _Checked against MDN as of 2026-07-16._
 - `@font-face` `src` (incl. `format()`+`tech()`) — **Baseline Widely available (2015)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src
 - `font-display: swap` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display
 
-**D7460N Architecture:** serves zero third-party (non-native-browser) dependencies; future-proofing (self-host). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves zero third-party (non-native-browser) dependencies; future-proofing (self-host). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

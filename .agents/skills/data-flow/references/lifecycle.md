@@ -85,7 +85,7 @@ _Checked against MDN as of 2026-07-16._
 - `Element.replaceChildren()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren
 - `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has
 
-**D7460N Architecture:** serves the fetch-to-DOM render sequence for a list-rendered page. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the fetch-to-DOM render sequence for a list-rendered page. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

@@ -109,7 +109,7 @@ _Checked against MDN as of 2026-07-16._
 - `text-wrap: balance` / `pretty` — **Baseline 2024 (Newly available, Mar 2024)** — https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap
 - `text-decoration-thickness` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness
 
-**D7460N Architecture:** serves fluid intrinsic sizing (clamp + cqi); no static font sizes. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves fluid intrinsic sizing (clamp + cqi); no static font sizes. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

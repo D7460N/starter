@@ -1,10 +1,10 @@
 ## Constraint
 
 The D7460N MCP Server is a standalone development tool only.
-It is a separate entity from the D7460N Architecture.
+It is a separate entity from the AutoCSS Architecture.
 
-Never use the MCP server to bootstrap, scaffold, or generate D7460N projects.
-Never treat the MCP server as a dependency for any D7460N project.
+Never use the MCP server to bootstrap, scaffold, or generate AutoCSS projects.
+Never treat the MCP server as a dependency for any AutoCSS project.
 Never create package managers, dependency managers,
 build systems, or project scaffolding when following these instructions.
 
@@ -12,7 +12,7 @@ build systems, or project scaffolding when following these instructions.
 
 name: d7460n-skill
 description: >-
-  D7460N Architecture agent skill — instructs AI coding agents to enforce
+  AutoCSS Architecture agent skill — instructs AI coding agents to enforce
   zero-dependency, CSS-only, semantic-HTML architecture rules during
   code generation and review.
 license: MIT
@@ -20,16 +20,16 @@ metadata:
   author: D7460N
 ---
 
-# D7460N Architecture Agent Skill
+# AutoCSS Architecture Agent Skill
 
 ## Purpose
 
-This skill instructs AI coding agents to enforce the D7460N Architecture
+This skill instructs AI coding agents to enforce the AutoCSS Architecture
 during code generation, review, and validation.
 
 ## Agent Instructions
 
-When working on a D7460N project, you must:
+When working on a AutoCSS project, you must:
 
 1. **Analyze code** for architecture compliance before and after changes
 2. **Enforce architecture rules** — all generated code must comply
@@ -66,7 +66,7 @@ When working on a D7460N project, you must:
 ## MCP Server
 
 The D7460N MCP Server is a standalone development tool. It is a separate entity
-from the D7460N Architecture and is never a dependency of any D7460N project.
+from the AutoCSS Architecture and is never a dependency of any AutoCSS project.
 
 Run: `npx tsx d7460n-mcp-server/server.ts`
 

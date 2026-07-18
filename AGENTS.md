@@ -2,7 +2,7 @@
 
 **The canonical laws are NOT here.** They live in ONE file, once, for every project and
 every AI vendor: **`Autocss-com/ai` → `AGENTS.md`** (Response Integrity Charter `C0`–`C8`
-+ D7460N Architecture `1`–`15`). Never copy or restate them here.
++ AutoCSS Architecture `1`–`15`). Never copy or restate them here.
 
 **How they reach you:** clone the ai repo once and import it from your user-level memory —
 then every repo on the machine gets them automatically, no per-repo file:

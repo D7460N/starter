@@ -101,7 +101,7 @@ _Checked against MDN as of 2026-07-16._
 - `:not()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:not
 - `:has()` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:has
 
-**D7460N Architecture:** serves CSS determines visibility from data presence (:empty / :not(:empty) / :has()); Separation of Concerns. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves CSS determines visibility from data presence (:empty / :not(:empty) / :has()); Separation of Concerns. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

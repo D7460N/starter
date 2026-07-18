@@ -102,7 +102,7 @@ _Checked against MDN as of 2026-07-16._
 - Service Worker API — **MDN assigns no Baseline tier** on the API overview; cross-browser per BCD (Chrome, Edge, Firefox, Safari 11.1+) — https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 - `beforeinstallprompt` event — **Limited availability** (not Baseline; Chromium-only — absent in Firefox and Safari) — https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeinstallprompt_event
 
-**D7460N Architecture:** serves the PWA baseline — the web app manifest, service worker, and install behavior. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the PWA baseline — the web app manifest, service worker, and install behavior. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## References
 

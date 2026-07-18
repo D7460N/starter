@@ -139,7 +139,7 @@ _Checked against MDN as of 2026-07-16._
 - `:empty` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
 - `@container` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/@container
 
-**D7460N Architecture:** serves CSS-replaces-JS UI behavior; state machines (radio/checkbox in label + :has()); browser-native accessibility. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves CSS-replaces-JS UI behavior; state machines (radio/checkbox in label + :has()); browser-native accessibility. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

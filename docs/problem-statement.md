@@ -1,4 +1,4 @@
-# D7460N Architecture — Clear Problem Statement
+# AutoCSS Architecture — Clear Problem Statement
 
 ### Target Customer:
 
@@ -52,7 +52,7 @@ The result: slower delivery, higher risk, and escalating operational cost.
 
 ### What Risk Is Reduced:
 
-D7460N reduces:
+AutoCSS reduces:
 
 * **Security Risk**
   By minimizing or eliminating unnecessary JavaScript and third-party runtime dependencies, attack surface shrinks materially.
@@ -73,7 +73,7 @@ D7460N reduces:
 
 ### How It’s Proven:
 
-D7460N leverages:
+AutoCSS leverages:
 
 * Native browser parsing engines (HTML parser, CSS parser, style engine, layout engine)
 * Declarative state via semantic HTML primitives
@@ -124,7 +124,7 @@ The architecture is built on standardized W3C/WHATWG browser behavior — not sp
 
 The industry trend favors abstraction and dependency accumulation.
 
-D7460N favors structural simplification and browser-native capability.
+AutoCSS favors structural simplification and browser-native capability.
 
 ---
 
@@ -132,6 +132,6 @@ D7460N favors structural simplification and browser-native capability.
 
 Modern front-end architecture has become dependency-heavy, security-exposed, operationally expensive, and structurally over-engineered — despite browsers already providing the necessary primitives natively.
 
-D7460N addresses this by restoring architectural separation and leveraging built-in browser engines to deliver faster, cheaper, more secure, more maintainable front-ends — without additional runtime layers.
+AutoCSS addresses this by restoring architectural separation and leveraging built-in browser engines to deliver faster, cheaper, more secure, more maintainable front-ends — without additional runtime layers.
 
 ---

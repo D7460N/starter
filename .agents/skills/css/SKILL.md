@@ -138,4 +138,4 @@ _Checked against MDN as of 2026-07-16._
 - `if()` — **Limited availability** — https://developer.mozilla.org/en-US/docs/Web/CSS/if
 - `@function` — **Limited availability** — https://developer.mozilla.org/en-US/docs/Web/CSS/@function
 
-**D7460N Architecture:** serves the CSS UI-runtime rules — layout, state, themes, transitions, visibility, and loading. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the CSS UI-runtime rules — layout, state, themes, transitions, visibility, and loading. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md

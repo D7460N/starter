@@ -1,12 +1,12 @@
 <!--
-D7460N Architecture Starter UI — SECURITY.md
-Compliance note: This policy follows D7460N Architecture rules (Separation of Concerns; CSS/UI state; data-only JS; no frameworks) and has been accuracy-verified against those rules and modern browser-native best practices as of 2025-09-27.
+AutoCSS Architecture Starter UI — SECURITY.md
+Compliance note: This policy follows AutoCSS Architecture rules (Separation of Concerns; CSS/UI state; data-only JS; no frameworks) and has been accuracy-verified against those rules and modern browser-native best practices as of 2025-09-27.
 Verification complete.
 -->
 
 # Security Policy
 
-This repository implements the **D7460N Architecture Starter**: semantic HTML for structure, CSS for UI/state, and data-only JavaScript. It is intentionally dependency-light and browser-native to reduce attack surface and supply-chain risk.
+This repository implements the **AutoCSS Architecture Starter**: semantic HTML for structure, CSS for UI/state, and data-only JavaScript. It is intentionally dependency-light and browser-native to reduce attack surface and supply-chain risk.
 
 ## Supported Versions
 
@@ -79,7 +79,7 @@ Common risks we consider:
 
 ---
 
-## D7460N Secure Development Rules (Non-Negotiable)
+## AutoCSS Secure Development Rules (Non-Negotiable)
 
 1. **Separation of concerns**
 
@@ -218,4 +218,4 @@ If you follow **good-faith** testing:
 * Private report: **GitHub Security Advisory** (preferred)
 * If that fails: open a minimal “security-concern” issue **without PoC details**, and we’ll move to a private channel.
 
-Thank you for helping keep D7460N secure.
+Thank you for helping keep AutoCSS secure.

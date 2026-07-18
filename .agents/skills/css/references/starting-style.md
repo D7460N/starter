@@ -48,7 +48,7 @@ _Checked against MDN as of 2026-07-16._
 - `@starting-style` — **Baseline 2024 (Newly available, Aug 2024)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style
 - `transition` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/transition
 
-**D7460N Architecture:** serves @starting-style fade-in on load; CSS-replaces-JS (no setTimeout class toggles). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves @starting-style fade-in on load; CSS-replaces-JS (no setTimeout class toggles). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

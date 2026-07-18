@@ -79,7 +79,7 @@ _Checked against MDN as of 2026-07-16._
 - `container-type` — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/container-type
 - `container-type: scroll-state` + `scroll-state()` queries — **Limited availability / experimental (Chromium only)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@container#scroll-state_queries
 
-**D7460N Architecture:** serves container queries replace media queries; intrinsic sizing (no static breakpoints). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves container queries replace media queries; intrinsic sizing (no static breakpoints). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

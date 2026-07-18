@@ -10,9 +10,9 @@ If no semantic element's main purpose fits, stop. Walk back up to the parent ele
 
 ## The two categories of custom elements
 
-### 1. D7460N standard layout elements
+### 1. AutoCSS standard layout elements
 
-A finite, curated set authored as part of the D7460N standard. They exist because the layout has shapes that are not addressable by any standard semantic element AND that are not data-derived. They replace what would otherwise have been `<div>` or `<span>`.
+A finite, curated set authored as part of the AutoCSS standard. They exist because the layout has shapes that are not addressable by any standard semantic element AND that are not data-derived. They replace what would otherwise have been `<div>` or `<span>`.
 
 The full set:
 
@@ -23,7 +23,7 @@ The full set:
 - `<app-legal>` — legal text slot
 - `<app-version>` — version display slot
 
-This list is closed. Adding to it is a D7460N standard change, not a per-project decision. If a project genuinely needs a new layout custom element, surface the need to the user — do not invent one.
+This list is closed. Adding to it is a AutoCSS standard change, not a per-project decision. If a project genuinely needs a new layout custom element, surface the need to the user — do not invent one.
 
 ### 2. Data-table row elements
 
@@ -33,7 +33,7 @@ These are not authored by hand. They appear in the DOM because the data shape pr
 
 ## Why custom elements rather than divs
 
-The D7460N standard is **div-less and span-less**. `<div>` and `<span>` are presentational sinks — they make markup styleable without making it meaningful. The architecture rejects them. Custom elements in the two permitted categories give CSS specific, semantic selectors that name what the element is for.
+The AutoCSS standard is **div-less and span-less**. `<div>` and `<span>` are presentational sinks — they make markup styleable without making it meaningful. The architecture rejects them. Custom elements in the two permitted categories give CSS specific, semantic selectors that name what the element is for.
 
 This is harder than reaching for `<div>`. Nothing worth doing is easy. The hardness is the point — it forces the design to express meaning at every level instead of papering over weak structure with style.
 
@@ -100,7 +100,7 @@ _Checked against MDN as of 2026-07-16._
 
 - Custom elements (autonomous) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
 
-**D7460N Architecture:** serves the two-category custom-element discipline that keeps markup semantic and div-less. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the two-category custom-element discipline that keeps markup semantic and div-less. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

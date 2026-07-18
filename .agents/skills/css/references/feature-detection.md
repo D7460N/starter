@@ -52,7 +52,7 @@ _Checked against MDN as of 2026-07-16._
 - `@supports at-rule()` — **Limited availability / experimental (Chromium only)** — https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#at-rule
 - `@view-transition` (the detected feature in the example) — **Limited availability** (no Firefox) — https://developer.mozilla.org/en-US/docs/Web/CSS/@view-transition
 
-**D7460N Architecture:** serves native `@supports` feature detection — the CSS-only alternative to JS capability probing. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves native `@supports` feature detection — the CSS-only alternative to JS capability probing. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

@@ -105,7 +105,7 @@ _Checked against MDN as of 2026-07-16._
 
 - ES modules (`import` / `export`) — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 
-**D7460N Architecture:** serves the single `oninput` lifecycle from input event to data injection. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the single `oninput` lifecycle from input event to data injection. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

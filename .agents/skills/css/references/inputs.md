@@ -92,7 +92,7 @@ _Checked against MDN as of 2026-07-16._
 - `appearance: base-select` + `::picker(select)` — **Limited availability / experimental (Chromium)** — https://developer.mozilla.org/en-US/docs/Web/CSS/::picker
 - `accent-color` — **Limited availability (not Baseline)** — https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color
 
-**D7460N Architecture:** serves style native controls, never replace them; validity via :user-invalid, no JS validation classes. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves style native controls, never replace them; validity via :user-invalid, no JS validation classes. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 

@@ -147,7 +147,7 @@ _Checked against MDN as of 2026-07-16._
 - `Cross-Origin-Opener-Policy` / `Cross-Origin-Embedder-Policy` / `Cross-Origin-Resource-Policy` — **MDN assigns no Baseline tier**; cross-browser per BCD (COOP/COEP in Chrome, Edge, Firefox and Safari 15.2+) — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy
 - `X-Content-Type-Options: nosniff` — **MDN assigns no Baseline tier**; universally supported — https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options
 
-**D7460N Architecture:** serves the deployment security posture — the strict CSP, recommended security headers, and the separation-of-concerns decisions that make them enforceable without `unsafe-*`. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves the deployment security posture — the strict CSP, recommended security headers, and the separation-of-concerns decisions that make them enforceable without `unsafe-*`. Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## References
 

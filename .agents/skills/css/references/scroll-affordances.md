@@ -90,7 +90,7 @@ _Checked against MDN as of 2026-07-16._
 - `cqh` / `cqw` units — **Baseline Widely available** — https://developer.mozilla.org/en-US/docs/Web/CSS/length#container_query_length_units
 - relative color `oklch(from …)` — **Newly available** — https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch
 
-**D7460N Architecture:** serves `@property`-typed animatable custom props; scroll-state queries (no JS scroll listeners). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
+**AutoCSS Architecture:** serves `@property`-typed animatable custom props; scroll-state queries (no JS scroll listeners). Canonical rules: https://github.com/Autocss-com/ai/blob/main/AGENTS.md
 
 ## Reference
 
