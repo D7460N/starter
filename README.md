@@ -17,19 +17,6 @@
 
 ---
 
-## Did you know . . .
-
-**. . . CSS is always live, always reactive to dynamic DOM changes?**
-The word "reactive" got hijacked by React. CSS was reactive first. Native. Zero overhead. It's been this way the whole time.
-
-**. . . modern baseline CSS can now replace most, if not all, JavaScript UI equivalents?**
-`:has()`, `:checked`, `:empty`, container queries, `@starting-style`, anchor positioning, view transitions. The browser ships a UI runtime. Nobody's been using it.
-
-**. . . the presentation layer can now be fetched (not copied) as an independent, autonomous resource?**
-This is the part that hasn't been done before.
-
----
-
 ## What you don't need to bring
 
 - No AI
@@ -194,6 +181,17 @@ The architecture is one thing. Its benefits land differently depending on who's 
 </details>
 
 ---
+
+## Did you know . . .
+
+**. . . CSS is always live, always reactive to dynamic DOM changes?**
+The word "reactive" got hijacked by React. CSS was reactive first. Native. Zero overhead. It's been this way the whole time.
+
+**. . . modern baseline CSS can now replace most, if not all, JavaScript UI equivalents?**
+`:has()`, `:checked`, `:empty`, container queries, `@starting-style`, anchor positioning, view transitions. The browser ships a UI runtime. Nobody's been using it.
+
+**. . . the presentation layer can now be fetched (not copied) as an independent, autonomous resource?**
+This is the part that hasn't been done before.
 
 ## What this is
 
