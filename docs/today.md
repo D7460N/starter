@@ -4,11 +4,11 @@
                                  /\\
                                 /::\\
                    .           /::::\\
-                    .         /::::::\\
-          END-USERS  .       /::WEB:::\\         DEVOPS         [ ACCOUNTS, ACCESSES, VIRTUAL HOSTING, CONNECTIVITY, SECURITY ] 
-           MANAGERS   .      \:BROWSER:\\         UI/UX          [ PRESENTATION LAYER ]
-            CUSTOMERS  .      \:::::::://          API/FRAMEWORK  [ DATA LAYER ]
-             CLIENTS    .   _\/\::::::// .          DATABASE       [ DATA STORAGE ]
+                    .         /:: W::\\
+          END-USERS  .       /:::: E::\\    DEVOPS _________[ ACCOUNTS, ACCESSES, VIRTUAL HOSTING, CONNECTIVITY, SECURITY ] 
+           MANAGERS   .      \::::: B::\\    UI/UX  _________[ PRESENTATION LAYER ]
+            CUSTOMERS  .      \BROOSER://     API/FRAMEWORK __[ DATA LAYER ]
+             CLIENTS    .   _\/\::::::// .     DATABASE _______[ DATA STORAGE ]
               PRIMES     .    \ \:::://   .
                           .   _\/\:://     .
                            .    \ \//       .
