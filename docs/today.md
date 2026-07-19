@@ -1,8 +1,5 @@
 ```
 
-
-
-
                       // BROWSER               //////// FRONT END /////////                                  ///// BACK END /////
                      /                        //////// FRAMEWORK /////////                                  /                  /
                     /                        /                          /                                  /                  /
@@ -37,8 +34,6 @@
                                       // Huge maintenance tail
                                      // Complex. Must add layers to decrease complexity
                                     //
-
-
 
 
                    // HTML structure          // Interoperability
@@ -89,18 +84,10 @@
                                          )                            )                            )
                                         .                            .                            .
                                        .                            .                            .
-
-
-
-
-
-
 agents
 - architect.toml
 - security.toml
 - standards.toml
-
-
                                 // End-users
                                // see
                               /_                                 __                               __________________
@@ -192,9 +179,12 @@ HTTPS.Request            /HTML\\       /DOM \\
  . . . . . . . . .\  //. .\  //. .\  //. .\  // . . .
                    \//     \//     \//     \//
                     \       \       \       \__[ Render Tree (DOM + CSSOM) ]
-                     \       \       \__[ Layout (Box geometry) ]
-                      \       \__[ Paint (Draw pixels) ]
-                       \__[ Compositing (GPU layers) ]
+                     \       \       \
+                      \       \       \__[ Layout (Box geometry) ]
+                       \       \
+                        \       \__[ Paint (Draw pixels) ]
+                         \
+                          \__[ Compositing (GPU layers) ]
 
 
 
