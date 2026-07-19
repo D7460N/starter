@@ -82,8 +82,8 @@
                                   (                            (                            (
                                    .                            .                            .
                                     .                            .                            .
-                       DEVELOPER     .         DEVELOPER          .      DEVELOPER             .
-                        SWIMLANE      .         SWIMLANE           .      SWIMLANE              .
+                       DEVELOPER     .            DEVELOPER       .           DEVELOPER        .
+                        SWIMLANE      .            SWIMLANE        .           SWIMLANE         .
                                        .                            .                            .
                                         .                            .                            .
                                          )                            )                            )
