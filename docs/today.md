@@ -41,24 +41,24 @@
 
 
 
-                   // HTML structure                  // Interoperability
-                  // CSS heuristics                  /
-                 // JavaScript                      /
-                // Decoupled            .          / Decoupled                   // Decoupled
-               // What we see          .          // Data transport only        // Data layer
-              // PRESENTATION Layer   .          //
-             // CSS replaces JS      .          //
-            // for all UI logic     .                            .
-           // Semantic HTML        .                            .
-          // Single `oninput`     .                            .
-         // Waite for data       .                            .
-                                .                            .
-                               .                            .
-                              .                            .
-                             .                            .
-                            .                            .
-                       __  .                        __  .                        __
-                      /\ \.                        /\ \.                        /\ \
+                   // HTML structure          // Interoperability
+                  // CSS heuristics          /
+                 // JavaScript              /
+                // Decoupled            .  / Decoupled                   // Decoupled
+               // What we see          .  // Data transport only        // Data layer
+              // PRESENTATION Layer   .  //
+             // CSS replaces JS      .  //
+            // for all UI logic     .                            .                            .
+           // Semantic HTML        .                            .                            .
+          // Single `oninput`     .                            .                            .
+         // Waite for data       .                            .                            .
+                                .                            .                            .
+                               .                            .                            .
+                              .                            .                            .
+                             .                            .                            .
+                            .                            .                            .
+                       __  .                        __  .                        __  .
+                      /\ \.                        /\ \.                        /\ \.
                      /::\ \                       /::\ \                       /::\ \
                     /::::\ \                     /::::\ \                     /::::\ \
                    /::::::\ \                   /::::::\ \                   /::::::\ \
@@ -67,28 +67,28 @@
            _ _ _/:: USER  :::\ \        _ _ _/::::::::::::\ \        _ _ _/::::::::::::\ \
           /\   /::: AGENT ::::\_\      /\   /:::: API :::::\_\      /\   /::  DATA   :::\_\
             \  \::(Browser):::/ /        \  \::::::::::::::/ /        \  \:: STORAGE :::/ /
-             \  \::::::::::::/ /.         \  \::::::::::::/ /.         \  \::::::::::::/ /
-              \  \::::::::::/ /  .         \  \::::::::::/ /  .         \  \::::::::::/ /
-               \  \::::::::/ /    .         \  \::::::::/ /    .         \  \::::::::/ /
-                \  \::::::/ /      .         \  \::::::/ /      .         \  \::::::/ /
-                 \  \::::/ /        .         \  \::::/ /        .         \  \::::/ /
-                  \  \::/ /          .         \  \::/ /          .         \  \::/ /
-                   \  \/_/ \          .         \  \/_/ \          .         \  \/_/ \
-                    )       )          )         )       )          )         )       )
-                   /       /          .         /       /          .         /       /
-                                     .                            .
-                                    .                            .
-                                   .                            .
-                                  (                            (
-                                   .                            .
-                                    .                            .
-                       DEVELOPER     .         DEVELOPER          .      DEVELOPER
-                        SWIMLANE      .         SWIMLANE           .      SWIMLANE
-                                       .                            .
-                                        .                            .
-                                         )                            )
-                                        .                            .
-                                       .                            .
+             \  \::::::::::::/ /.         \  \::::::::::::/ /.         \  \::::::::::::/ /.
+              \  \::::::::::/ /  .         \  \::::::::::/ /  .         \  \::::::::::/ /  .
+               \  \::::::::/ /    .         \  \::::::::/ /    .         \  \::::::::/ /    .
+                \  \::::::/ /      .         \  \::::::/ /      .         \  \::::::/ /      .
+                 \  \::::/ /        .         \  \::::/ /        .         \  \::::/ /        .
+                  \  \::/ /          .         \  \::/ /          .         \  \::/ /          .
+                   \  \/_/ \          .         \  \/_/ \          .         \  \/_/ \          .
+                    )       )          )         )       )          )         )       )          )
+                   /       /          .         /       /          .         /       /          .
+                  /       /          .         /       /          .         /       /          .
+                                    .                            .                            .
+                                   .                            .                            .
+                                  (                            (                            (
+                                   .                            .                            .
+                                    .                            .                            .
+                       DEVELOPER     .         DEVELOPER          .      DEVELOPER             .
+                        SWIMLANE      .         SWIMLANE           .      SWIMLANE              .
+                                       .                            .                            .
+                                        .                            .                            .
+                                         )                            )                            )
+                                        .                            .                            .
+                                       .                            .                            .
 
 
 
