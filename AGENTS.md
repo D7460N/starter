@@ -4,7 +4,7 @@
 every AI vendor: **`D7460N-ai/D7460N.ai` → `AGENTS.md`** (Response Integrity Charter `C0`–`C8`
 + D7460N Architecture `1`–`15`). Never copy or restate them here.
 
-**How they reach you:** clone the ai repo once and import it from your user-level memory —
+**How they reach you:** clone the D7460N.ai repo once and import it from your user-level memory —
 then every repo on the machine gets them automatically, no per-repo file:
 
 ```bash
@@ -41,8 +41,8 @@ This file declares only what is TRUE OF THIS REPO and nothing else.
 - `assets/images/app/` — project-functional assets
 - `assets/images/brand/` — brand assets (logos, marks, color-bound imagery)
 - `manifest.webmanifest` — PWA manifest
-- `.agents/skills/*/SKILL.md` — concern-specific rules
-- `.agents/skills/*/references/*.md` — deep references and citations
+- `.agents/skills/*/SKILL.md` — concern-specific rules: in `D7460N-ai/D7460N.ai` (see §14)
+- `.agents/skills/*/references/*.md` — deep references and citations: in `D7460N-ai/D7460N.ai`
 - `.agents/SESSION-HANDOFF.md` — current session state
 
 Inactive: files with trailing underscores. `docs/` and `d7460n-mcp-server/` are not part of the front-end runtime.
