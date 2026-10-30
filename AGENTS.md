@@ -1,19 +1,19 @@
 # AGENTS.md — D7460N/starter (project-specific ONLY)
 
 **The canonical laws are NOT here.** They live in ONE file, once, for every project and
-every AI vendor: **`Autocss-com/ai` → `AGENTS.md`** (Response Integrity Charter `C0`–`C8`
+every AI vendor: **`D7460N-ai/D7460N.ai` → `AGENTS.md`** (Response Integrity Charter `C0`–`C8`
 + AutoCSS Architecture `1`–`15`). Never copy or restate them here.
 
 **How they reach you:** clone the ai repo once and import it from your user-level memory —
 then every repo on the machine gets them automatically, no per-repo file:
 
 ```bash
-git clone https://github.com/Autocss-com/ai ~/.claude/ai
-# ~/.claude/CLAUDE.md  ->  @~/.claude/ai/AGENTS.md
-git -C ~/.claude/ai pull      # refresh the laws for ALL projects at once
+git clone https://github.com/D7460N-ai/D7460N.ai ~/D7460N.ai
+# ~/.claude/CLAUDE.md  ->  @~/D7460N.ai/AGENTS.md
+git -C ~/D7460N.ai pull      # refresh the laws for ALL projects at once
 ```
 
-**Conflict priority:** `Autocss-com/ai` AGENTS.md > this file > `.agents/SESSION-HANDOFF.md`.
+**Conflict priority:** `D7460N-ai/D7460N.ai` AGENTS.md > this file > `.agents/SESSION-HANDOFF.md`.
 On conflict, surface it to the user. **Never resolve silently.**
 
 This file declares only what is TRUE OF THIS REPO and nothing else.
@@ -57,18 +57,18 @@ Inactive: files with trailing underscores. `docs/` and `d7460n-mcp-server/` are 
 
 | Task | Skill |
 |---|---|
-| Page structure, regions, custom elements | [`html`](./.agents/skills/html/SKILL.md) |
-| Layout, theme, state, transitions, any UI behavior | [`css`](./.agents/skills/css/SKILL.md) |
-| API call, `oninput` lifecycle, storage, startup | [`javascript`](./.agents/skills/javascript/SKILL.md) |
-| Data shape, schema, content payload | [`json`](./.agents/skills/json/SKILL.md) |
-| JSON-to-element rendering for data tables | [`data-flow`](./.agents/skills/data-flow/SKILL.md) |
-| Naming files, tags, skills | [`naming`](./.agents/skills/naming/SKILL.md) |
-| Headers, CSP, hosting | [`security`](./.agents/skills/security/SKILL.md) |
-| Manifest, service worker, install behavior | [`pwa`](./.agents/skills/pwa/SKILL.md) |
-| SPA shell, radio-nav routing, view lifecycle, view transitions | [`spa`](./.agents/skills/spa/SKILL.md) |
-| Choosing an approach, trade-offs, "which tool / why this design" | [`principles`](./.agents/skills/principles/SKILL.md) |
-| Verifying a change before it ships | [`testing`](./.agents/skills/testing/SKILL.md) |
-| Session start/end, handoff, backlog, board, docs | [`session`](./.agents/skills/session/SKILL.md) |
+| Page structure, regions, custom elements | [`html`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/html/SKILL.md) |
+| Layout, theme, state, transitions, any UI behavior | [`css`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/css/SKILL.md) |
+| API call, `oninput` lifecycle, storage, startup | [`javascript`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/javascript/SKILL.md) |
+| Data shape, schema, content payload | [`json`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/json/SKILL.md) |
+| JSON-to-element rendering for data tables | [`data-flow`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/data-flow/SKILL.md) |
+| Naming files, tags, skills | [`naming`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/naming/SKILL.md) |
+| Headers, CSP, hosting | [`security`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/security/SKILL.md) |
+| Manifest, service worker, install behavior | [`pwa`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/pwa/SKILL.md) |
+| SPA shell, radio-nav routing, view lifecycle, view transitions | [`spa`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/spa/SKILL.md) |
+| Choosing an approach, trade-offs, "which tool / why this design" | [`principles`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/principles/SKILL.md) |
+| Verifying a change before it ships | [`testing`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/testing/SKILL.md) |
+| Session start/end, handoff, backlog, board, docs | [`session`](https://github.com/D7460N-ai/D7460N.ai/blob/main/.agents/skills/session/SKILL.md) |
 
 If a task touches more than one concern, do each part inside its own skill.
 
